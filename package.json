@@ -1,7 +1,7 @@
 {
   "name": "@wonderflow/design",
   "description": "The Wonderflow Design System website.",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "author": "Wonderflow",
   "license": "MIT",
@@ -21,13 +21,14 @@
   "scripts": {
     "start": "next dev",
     "build": "next build && next export -o dist",
-    "format": "prettier --check \"src/**/*.{css,html,js,json,md}\"",
-    "format:write": "prettier --write \"src/**/*.{css,html,js,json,md}\"",
+    "format": "prettier --check \"**/*.{css,html,js,json,md,yml}\"",
+    "format:write": "prettier --write \"**/*.{css,html,js,json,md,yml}\"",
     "lint": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "eslint \"src/**/*.js\"",
     "lint:styles": "stylelint \"src/**/*.css\"",
     "lint:commits": "commitlint --edit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "semantic-release"
   },
   "dependencies": {
     "next": "11.0.1",
@@ -37,6 +38,10 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.3",
+    "@semantic-release/release-notes-generator": "^9.0.3",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "7.29.0",
@@ -51,8 +56,8 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "2.3.2",
     "prettier-config-standard": "^4.0.0",
+    "semantic-release": "^17.4.4",
     "stylelint": "^13.13.1",
-    "stylelint-config-recommended": "^5.0.0",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-recommended": "^5.0.0"
   }
 }
