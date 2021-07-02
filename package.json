@@ -21,8 +21,8 @@
   "scripts": {
     "start": "next dev",
     "build": "next build && next export -o dist",
-    "format": "prettier --check \"src/**/*.{css,html,js,json,md}\"",
-    "format:write": "prettier --write \"src/**/*.{css,html,js,json,md}\"",
+    "format": "prettier --check \"**/*.{css,html,js,json,md,yml}\"",
+    "format:write": "prettier --write \"**/*.{css,html,js,json,md,yml}\"",
     "lint": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "eslint \"src/**/*.js\"",
     "lint:styles": "stylelint \"src/**/*.css\"",
