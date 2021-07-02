@@ -2,7 +2,7 @@ name: Continous Deployment
 
 on:
   release:
-    types: [released]
+    types: [published]
 
 jobs:
   install:
