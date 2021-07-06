@@ -30,7 +30,7 @@
     "format": "prettier --check \"**/*.{json,md,yml}\"",
     "format:write": "prettier --loglevel silent --write \"**/*.{json,md,yml}\"",
     "lint": "npm run lint:scripts && npm run lint:styles",
-    "lint:scripts": "eslint src/**/*.{jsx,js} pages/**/*.jsx",
+    "lint:scripts": "eslint \"src/**/*.{jsx,js}\" \"pages/**/*.jsx\"",
     "lint:styles": "stylelint src/**/*.css pages/**/*.css",
     "lint:commits": "commitlint --edit",
     "prepare": "husky install",
