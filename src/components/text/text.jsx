@@ -3,6 +3,10 @@ import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import styles from './text.module.css'
 
+/**
+ * Represents a book.
+ * @augments {Component<Props, State>}
+ */
 export const Text = ({
   as = 'p',
   size,
