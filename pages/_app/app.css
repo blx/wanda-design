@@ -1,0 +1,4 @@
+body {
+  border: 5px solid hsl(123 59% 90%);
+  color: hsl(env(--color-blue-10));
+}

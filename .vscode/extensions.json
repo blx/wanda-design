@@ -9,6 +9,6 @@
     "stylelint.vscode-stylelint",
 		"kamikillerto.vscode-colorize",
     "esbenp.prettier-vscode",
-    "kamikillerto.vscode-colorize"
+		"paradigm-sy.vscode-css-variables-autocomplete"
 	]
 }

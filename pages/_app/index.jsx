@@ -1,5 +1,5 @@
-import '@/styles/globals.css'
-import '@wonderflow/tokens/platforms/web/tokens.css'
+import React from 'react'
+import './app.css'
 
 function MyApp ({ Component, pageProps }) {
   return <Component {...pageProps} />

@@ -1,5 +1,8 @@
 {
   "editor.formatOnSave": false,
+  "cssVarriablesAutocomplete.files": [ "./node_modules/@wonderflow/tokens/platforms/web/tokens.css" ],
+  "cssVarriablesAutocomplete.languageModes": [ "css", "postcss" ],
+  "cssVarriablesAutocomplete.propertyPrefixes": {},
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
