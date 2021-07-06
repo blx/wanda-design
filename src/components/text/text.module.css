@@ -1,0 +1,38 @@
+.Text {
+  line-height: 1.5;
+  font-size: inherit;
+  color: var(--color, inherit);
+  font-style: normal;
+
+  &[data-text-size='display'] {
+    font-size: env(--font-size-28);
+  }
+
+  &[data-text-size='big'] {
+    font-size: env(--font-size-22);
+  }
+
+  &[data-text-size='regular'] {
+    font-size: env(--font-size-18);
+  }
+
+  &[data-text-size='small'] {
+    font-size: env(--font-size-16);
+  }
+
+  &[data-text-size='smaller'] {
+    font-size: env(--font-size-14);
+  }
+
+  &[data-text-weight='thin'] {
+    font-weight: 100;
+  }
+
+  &[data-text-weight='medium'] {
+    font-weight: 500;
+  }
+
+  &[data-text-weight='bold'] {
+    font-weight: 700;
+  }
+}
