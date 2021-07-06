@@ -1,6 +1,6 @@
 {
   "extends": ["stylelint-config-equinusocio"],
-  "ignoreFiles": ["!**/*.css", "**/*.tsx", "node_modules"],
+  "ignoreFiles": ["!**/*.css", "**/*.jsx", "node_modules"],
   "plugins": ["stylelint-design-tokens-plugin"],
   "rules": {
     "designtokens/check": [

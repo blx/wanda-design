@@ -5,9 +5,14 @@ const flatten = require('flat')
  * Prepare env variables from tokens
  * to be assigned to postcss-preset-env
  */
-const environmentVariables = flatten(jsonTokens, {
+const flatTokens = flatten(jsonTokens, {
   delimiter: '-'
 })
+const environmentVariables = Object.keys(flatTokens).reduce((acc, key) => {
+  const newKey = `--${key}`
+  acc[newKey] = `${flatTokens[key]}`
+  return acc
+}, {})
 
 module.exports = {
   plugins: {
