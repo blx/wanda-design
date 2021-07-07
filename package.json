@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "11.0.1",
+    "@wonderflow/react-components": "1.0.0",
     "@wonderflow/tokens": "1.1.0",
     "clsx": "1.1.1",
     "cssnano": "5.0.6",
@@ -46,6 +47,7 @@
     "flat": "5.0.2",
     "next": "11.0.1",
     "next-compose-plugins": "2.2.1",
+    "next-transpile-modules": "8.0.0",
     "postcss": "8.3.5",
     "postcss-easy-import": "3.0.0",
     "postcss-inset": "1.0.0",
