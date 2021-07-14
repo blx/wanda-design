@@ -3,7 +3,8 @@ name: New icon
 about: Ask for a new icon
 title: 'New icon request'
 labels: 'feature'
-assignees: '@equinusocio'
+assignees: ''
+
 ---
 
 <!-- To ask for a new icon, please search the icon from Font Awesome v6 https://fontawesome.com/v6.0/icons -->
