@@ -1,14 +1,13 @@
 import { Meta } from '@/components/meta'
-import { Text } from '@/components/text'
-import { Button } from '@wonderflow/react-components'
+import { Button, Container } from '@wonderflow/react-components'
 import React from 'react'
 
 export default function Home ({ props }) {
   return (
     <div>
       <Meta />
-      <Text>Asd</Text>
-      <Button>click</Button>
+      <Container size="medium">dio</Container>
+      <Button type="primary">Click</Button>
     </div>
   )
 }
