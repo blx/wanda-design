@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "11.0.1",
-    "@wonderflow/react-components": "1.5.0",
+    "@wonderflow/react-components": "1.6.0",
     "@wonderflow/tokens": "1.1.2",
     "clsx": "1.1.1",
     "cssnano": "5.0.6",
