@@ -1,5 +1,15 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, HTMLAttributes } from 'react'
 import Head from 'next/head'
+
+interface IMetaProps extends HTMLAttributes<HTMLElement> {
+  description?: string;
+  title?: string;
+  url?: string;
+  canonical?: string;
+  image?: string;
+  siteName?: string;
+  keywords?: string[];
+}
 
 export const Meta = ({
   description = 'Wanda is Wonderflow\'s design system',
@@ -10,7 +20,7 @@ export const Meta = ({
   url = process.env.NEXT_PUBLIC_DOMAIN,
   canonical,
   children
-}) => (
+}: IMetaProps) => (
   <Fragment>
     <Head>
       <title>{title}</title>

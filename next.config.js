@@ -10,8 +10,6 @@ module.exports = withPlugins([
   [withImages],
   [withTranspileModules]
 ], {
-  webpack5: false,
-  reactStrictMode: true,
   distDir: 'build',
   trailingSlash: true
 })
