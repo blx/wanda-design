@@ -6,6 +6,7 @@ export const Home = () => {
   return (
     <Stack
       direction="row"
+      fill={false}
       style={{
         height: '100vh'
       }}
