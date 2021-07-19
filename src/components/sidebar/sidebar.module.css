@@ -1,0 +1,17 @@
+.Sidebar {
+  block-size: 100%;
+}
+
+.Header {
+  padding: env(--space-24);
+
+  & > a {
+    display: block;
+    background: none;
+  }
+}
+
+.Logo {
+  block-size: 2.66rem;
+  inline-size: 100%;
+}

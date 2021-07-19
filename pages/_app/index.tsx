@@ -3,8 +3,8 @@ import '@wonderflow/react-components/themes/light.css'
 import '@wonderflow/react-components/core.css'
 import './app.css'
 
-function MyApp ({ Component, pageProps }: any) {
+function App ({ Component, pageProps }: any) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default App

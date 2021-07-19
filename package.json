@@ -27,10 +27,8 @@
   "scripts": {
     "start": "next dev",
     "build": "next build && next export -o dist",
-    "format": "prettier --check \"**/*.{json,md,yml}\"",
-    "format:write": "prettier --loglevel silent --write \"**/*.{json,md,yml}\"",
     "lint": "npm run lint:scripts && npm run lint:styles",
-    "lint:scripts": "eslint \"src/**/*.{jsx,js}\" \"pages/**/*.jsx\"",
+    "lint:scripts": "eslint \"src/**/*.{tsx,ts}\" \"pages/**/*.{tsx,ts}\"",
     "lint:styles": "stylelint src/**/*.css pages/**/*.css",
     "lint:commits": "commitlint --edit",
     "prepare": "husky install",
@@ -39,7 +37,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "11.0.1",
-    "@wonderflow/react-components": "1.6.0",
+    "@wonderflow/react-components": "1.7.1",
     "@wonderflow/tokens": "1.1.2",
     "clsx": "1.1.1",
     "cssnano": "5.0.6",
@@ -67,7 +65,7 @@
     "@semantic-release/github": "7.2.3",
     "@semantic-release/release-notes-generator": "9.0.3",
     "@svgr/webpack": "5.5.0",
-    "@types/node": "16.3.2",
+    "@types/node": "16.3.3",
     "@types/react": "17.0.14",
     "@typescript-eslint/eslint-plugin": "4.28.3",
     "@typescript-eslint/parser": "4.28.3",
@@ -76,7 +74,7 @@
     "@wonderflow/stylelint-config": "1.0.1",
     "commitizen": "4.2.4",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "7.30.0",
+    "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "16.0.3",
@@ -93,6 +91,7 @@
     "stylelint-config-equinusocio": "1.0.5",
     "stylelint-design-tokens-plugin": "0.0.12",
     "svg-sprite-loader": "6.0.9",
-    "typescript": "3.9.10"
+    "typescript": "4.3.5",
+    "typescript-plugin-css-modules": "3.4.0"
   }
 }

@@ -1,0 +1,14 @@
+.Shell {
+  position: relative;
+}
+
+.Aside {
+  position: sticky;
+  top: 0;
+  block-size: 100vh;
+  min-inline-size: 15.55rem;
+  border-right: 1px solid var(--dimmed-2);
+
+  /* stylelint-disable-next-line */
+  block-size: -webkit-fill-available;
+}
