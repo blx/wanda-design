@@ -4,10 +4,10 @@
  */
 
  declare module '*.svg' {
-  const svgUrl: string;
-  const svgComponent: React.StatelessComponent<React.SVGAttributes<SVGElement>>;
-  export default svgUrl;
-  export { svgComponent as ReactComponent };
+  const svgUrl: string
+  const svgComponent: React.StatelessComponent<React.SVGAttributes<SVGElement>>
+  export default svgUrl
+  export { svgComponent as ReactComponent }
 }
 
 declare namespace NodeJS {
@@ -19,4 +19,9 @@ declare namespace NodeJS {
     CONTENTFUL_CDA_TOKEN: string;
     CONTENTFUL_CPA_TOKEN: string;
   }
+}
+
+type PropsWithClass = {
+  style?: Record<string, any>;
+  className?: string;
 }

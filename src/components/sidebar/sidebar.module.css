@@ -1,5 +1,8 @@
 .Sidebar {
   block-size: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .Header {
@@ -14,4 +17,5 @@
 .Logo {
   block-size: 2.66rem;
   inline-size: 100%;
+  display: block;
 }
