@@ -3,6 +3,7 @@ import React from 'react'
 import { Logo } from '@/components/logo'
 import styles from './sidebar.module.css'
 import { Navigation } from '../navigation'
+import navigation from 'src/navigation'
 
 export const Sidebar = () => {
   return (
@@ -12,7 +13,7 @@ export const Sidebar = () => {
           <Logo className={styles.Logo} />
         </a>
       </header>
-      <Navigation />
+      <Navigation data={navigation} />
     </Stack>
   )
 }

@@ -77,10 +77,6 @@
       display: none;
     }
   }
-
-  &[open] > *:not(summary) {
-    animation: env(--duration-250) env(--easing-entrance) fadeInDown;
-  }
 }
 
 .ExpandIcon {
@@ -90,23 +86,11 @@
   top: 50%;
   margin-top: calc(-1 * env(--space-8));
   right: env(--space-16);
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
   transition: transform env(--duration-100) env(--easing-standard);
   transform-origin: 50% center;
 
   @nest details[open] > summary > & {
-    transform: none;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-
-  100% {
-    opacity: 1;
     transform: none;
   }
 }

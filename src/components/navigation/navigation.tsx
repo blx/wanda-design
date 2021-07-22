@@ -1,55 +1,63 @@
-import React from 'react'
+import React, { Fragment, useCallback } from 'react'
 import { Tree } from '@/components/tree'
 import { Separator, Stack } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-export const Navigation = () => {
+type NavigationProps = {
+  data: Navigation
+};
+
+export const Navigation = ({ data }: NavigationProps) => {
   const router = useRouter()
+
+  const includesPath = useCallback(
+    (path) => router.asPath.includes(`${path}/`),
+    [router]
+  )
 
   return (
     <Stack fill={false} horizontalAlign="stretch" rowGap={24}>
-      <Tree.Group title="Get started">
-        <Tree.Menu>
-          <Tree.Li>
-            <Link href="/introduction">
-              <a aria-current={router.asPath.includes('/introduction/') ? 'page' : undefined} href="/">Introduction</a>
-            </Link>
-          </Tree.Li>
-          <Tree.Li>
-            <Link href="/introduction">
-              <a aria-current={router.asPath.includes('/asd/') ? 'page' : undefined} href="/">Introduction</a>
-            </Link>
-          </Tree.Li>
-          <Tree.Li>
-            <Link href="/introduction">
-              <a aria-current={router.asPath.includes('/asd/') ? 'page' : undefined} href="/">Introduction</a>
-            </Link>
-          </Tree.Li>
-        </Tree.Menu>
-      </Tree.Group>
+      {
+        data.map((group, index) => {
+          return (
+            <Fragment key={group.title}>
 
-      <Separator aria-hidden="true" />
+              {index !== 0 && <Separator />}
 
-      <Tree.Group title="Get started">
-        <Tree.Menu>
-          <Tree.Li>
-            <Link href="/introduction">
-              <a aria-current={router.asPath.includes('/introduction/') ? 'page' : undefined} href="/">Introduction</a>
-            </Link>
-          </Tree.Li>
-          <Tree.Li>
-            <Link href="/introduction">
-              <a aria-current={router.asPath.includes('/asd/') ? 'page' : undefined} href="/">Introduction</a>
-            </Link>
-          </Tree.Li>
-          <Tree.Li>
-            <Link href="/introduction">
-              <a aria-current={router.asPath.includes('/asd/') ? 'page' : undefined} href="/">Introduction</a>
-            </Link>
-          </Tree.Li>
-        </Tree.Menu>
-      </Tree.Group>
+              <Tree.Group title={group.title}>
+                {
+                group.items.map(link => (
+                  <Tree.Menu
+                    key={link.label}
+                    open={link.items?.some(includesPath)}
+                    expandable={!!link.items}
+                    summary={!!link.items && link.label}
+                  >
+                    {link.items
+                      ? link.items.map(subItem => (
+                        <Tree.Li key={subItem.path}>
+                          <Link href={subItem.path}>
+                            <a aria-current={includesPath(subItem.path) ? 'page' : undefined}>{subItem.label}</a>
+                          </Link>
+                        </Tree.Li>
+                      ))
+                      : (
+                        <Tree.Li key={link.path}>
+                          <Link href={link.path}>
+                            <a aria-current={includesPath(link.path) ? 'page' : undefined}>{link.label}</a>
+                          </Link>
+                        </Tree.Li>
+                        )
+                    }
+                  </Tree.Menu>
+                ))
+              }
+              </Tree.Group>
+            </Fragment>
+          )
+        })
+      }
     </Stack>
   )
 }

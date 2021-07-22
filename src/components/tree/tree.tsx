@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { Icon, Stack, Text } from '@wonderflow/react-components'
 import styles from './tree.module.css'
 
@@ -6,15 +6,11 @@ type TreeGroupProps = {
   title?: ReactNode;
 }
 
-type MenuCommonProps = {
+type MenuProps = {
   expandable?: boolean;
+  summary?: ReactNode;
+  open?: boolean;
 }
-
-type ConditionalProps =
-  | { expandable?: true; summary: ReactNode;}
-  | { expandable?: false; summary?: never }
-
-type MenuProps = MenuCommonProps & ConditionalProps & HTMLAttributes<HTMLUListElement>
 
 export const Tree: {
   Group: React.FC<TreeGroupProps>;
@@ -30,14 +26,14 @@ export const Tree: {
     </Stack>
   ),
 
-  Menu: ({ children, summary, expandable = false, ...props }) => {
+  Menu: ({ children, summary, open, expandable = false, ...props }) => {
     return expandable
       ? (
-        <details className={styles.Expander} {...props}>
-          <summary>
-            <Text as="span" fluid={false} size={16} weight="bold">{summary}</Text>
+        <details open={open} className={styles.Expander} {...props}>
+          <Text as="summary" fluid={false} size={16} weight="bold">
+            {summary}
             <Icon className={styles.ExpandIcon} name="chevron-up" size={16} />
-          </summary>
+          </Text>
           <Stack as="ul" rowGap={4}>
             {children}
           </Stack>
