@@ -1,0 +1,7 @@
+.DesktopOnly {
+  display: none;
+
+  @media (width >= 320px) {
+    display: unset;
+  }
+}
