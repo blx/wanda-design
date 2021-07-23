@@ -1,5 +1,5 @@
-import { Stack } from '@wonderflow/react-components'
 import React from 'react'
+import { Stack } from '@wonderflow/react-components'
 import { Logo } from '@/components/logo'
 import styles from './sidebar.module.css'
 import { Navigation } from '../navigation'
