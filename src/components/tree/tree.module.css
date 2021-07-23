@@ -1,0 +1,96 @@
+.Tree {
+  font-size: env(--font-size-16);
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  & details ul {
+    padding-left: env(--space-24);
+  }
+}
+
+.Title {
+  text-transform: uppercase;
+  color: var(--dimmed-5);
+  padding: 0 env(--space-24);
+}
+
+.Li {
+  & > a {
+    padding: 0 env(--space-24);
+    background: none;
+    font-weight: 600;
+    display: block;
+    outline-offset: -2px;
+    color: var(--global-foreground);
+  }
+
+  @nest details & a {
+    color: var(--dimmed-6);
+    font-weight: 400;
+  }
+
+  & > *[aria-current='page'] {
+    color: var(--cta-default);
+  }
+
+  /* Stupid Safari fix
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#accessibility_concerns
+   */
+  &::before {
+    position: absolute;
+    content: '\200B';
+  }
+}
+
+.Expander {
+  display: block;
+  position: relative;
+  transform: translateZ(0);
+
+  & * {
+    box-sizing: border-box;
+  }
+
+  & summary {
+    line-height: 1;
+    display: list-item;
+    touch-action: manipulation;
+    position: relative;
+    padding: env(--space-2) env(--space-24);
+    user-select: none;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: color 200ms;
+    color: var(--global-foreground);
+
+    &::marker {
+      content: '';
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+
+.ExpandIcon {
+  content: '';
+  transform-box: fill-box;
+  position: absolute;
+  top: 50%;
+  margin-top: calc(-1 * env(--space-8));
+  right: env(--space-16);
+  transform: rotate(180deg);
+  transition: transform env(--duration-100) env(--easing-standard);
+  transform-origin: 50% center;
+
+  @nest details[open] > summary > & {
+    transform: none;
+  }
+}

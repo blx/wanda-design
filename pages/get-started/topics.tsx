@@ -1,12 +1,12 @@
 import { Shell } from '@/components/layouts/shell'
 import React from 'react'
 
-export const Home = () => {
+const Topics = () => {
   return (
     <Shell>
-      Home
+      Topics
     </Shell>
   )
 }
 
-export default Home
+export default Topics

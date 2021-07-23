@@ -1,12 +1,12 @@
 import { Shell } from '@/components/layouts/shell'
 import React from 'react'
 
-export const Home = () => {
+const Accessibility = () => {
   return (
     <Shell>
-      Home
+      Accessibility
     </Shell>
   )
 }
 
-export default Home
+export default Accessibility

@@ -1,0 +1,9 @@
+@import '@wonderflow/react-components/core/media.css';
+
+.DesktopOnly {
+  display: none;
+
+  @media (width >= 320px) {
+    display: unset;
+  }
+}
