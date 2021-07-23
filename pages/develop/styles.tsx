@@ -1,11 +1,11 @@
-import { Shell } from '@/components/layouts/shell'
+import { ShellLayout } from '@/components/layouts/shell'
 import React from 'react'
 
 const Styles = () => {
   return (
-    <Shell>
+    <ShellLayout>
       Styles
-    </Shell>
+    </ShellLayout>
   )
 }
 

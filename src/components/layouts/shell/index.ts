@@ -1,1 +1,1 @@
-export { Shell } from './shell'
+export { ShellLayout } from './shell'

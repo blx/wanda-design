@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useState, useEffect, useRef, useCallback } from 'react'
+import React, { ReactNode, useState, useEffect, useRef, useCallback } from 'react'
 import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
@@ -8,14 +8,17 @@ import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
 import styles from './shell.module.css'
 
-type ShellProps = {
+type ShellLayoutProps = {
+  header?: ReactNode;
+  stickyHeader?: boolean;
+}
 
-} & HTMLAttributes<HTMLElement>
-
-export const Shell = ({
+export const ShellLayout: React.FC<ShellLayoutProps> = ({
   children,
+  header,
+  stickyHeader = false,
   ...props
-}: ShellProps) => {
+}) => {
   const scrollerRef = useRef<any>(null)
   const [collapsed, setCollapsed] = useState<boolean>(true)
   const isWide = useMedia(`(min-width: ${tkns.breakpoint.small})`)
@@ -45,14 +48,24 @@ export const Shell = ({
   }, [isWide, router.events])
 
   return (
-    <Stack fill={false} data-shell-collapsed={collapsed} direction="row" className={styles.Shell} {...props}>
+    <Stack
+      fill={false}
+      data-shell-collapsed={collapsed}
+      data-shell-sticky-header={stickyHeader}
+      direction="row"
+      className={styles.Shell}
+      {...props}
+    >
       <Meta />
       <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} size="big" className={styles.MenuTrigger} />
       <aside className={styles.Aside} ref={scrollerRef}>
         <Sidebar />
       </aside>
-      <Stack as="main" className={styles.Content}>
-        {children}
+      <Stack as="main" verticalAlign="start" fill={false} className={styles.Content}>
+        {header && <header className={styles.Header}>{header}</header>}
+        <div className={styles.ContentArea}>
+          {children}
+        </div>
       </Stack>
     </Stack>
   )

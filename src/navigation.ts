@@ -30,7 +30,6 @@ export default [
       {
         label: 'Foundation',
         expandable: true,
-        target: '',
         items: [
           {
             path: '/design/foundation/colors',
