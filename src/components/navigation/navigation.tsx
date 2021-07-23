@@ -19,12 +19,12 @@ export const Navigation = ({ data }: NavigationProps) => {
 
   useEffect(() => {
     const routeChangeStart = () => {
-      const currentElements = menuRef?.current?.querySelectorAll('[aria-current="page"')
+      const currentElements = menuRef?.current?.querySelector('[aria-current="page"')
       if (currentElements) console.log('start', currentElements)
     }
 
     const routeChangeEnd = () => {
-      const currentElements = menuRef?.current?.querySelectorAll('[aria-current="page"')
+      const currentElements = menuRef?.current?.querySelector('[aria-current="page"')
       if (currentElements) console.log('end', currentElements)
     }
 
@@ -52,7 +52,7 @@ export const Navigation = ({ data }: NavigationProps) => {
                 group.items.map(link => (
                   <Tree.Menu
                     key={link.label}
-                    open={link.items?.some(includesPath)}
+                    open={link.items?.some(item => includesPath(item.path))}
                     expandable={!!link.items}
                     summary={!!link.items && link.label}
                   >
