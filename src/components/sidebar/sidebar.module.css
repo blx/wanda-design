@@ -1,8 +1,5 @@
 .Sidebar {
-  block-size: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
+  position: relative;
 }
 
 .Header {
