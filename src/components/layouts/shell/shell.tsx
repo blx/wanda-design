@@ -36,7 +36,7 @@ export const Shell = ({
 
   useEffect(() => {
     const currentRef = scrollerRef.current
-    if (isWide) enableBodyScroll(scrollerRef.current)
+    if (isWide) enableBodyScroll(currentRef)
     router.events.on('routeChangeStart', () => enableBodyScroll(currentRef))
 
     return () => {
