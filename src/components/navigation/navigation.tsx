@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback } from 'react'
+import React, { Fragment, useCallback, useRef, useEffect } from 'react'
 import { Tree } from '@/components/tree'
 import { Separator, Stack } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
@@ -9,16 +9,38 @@ type NavigationProps = {
 };
 
 export const Navigation = ({ data }: NavigationProps) => {
+  const menuRef = useRef<any>(null)
   const router = useRouter()
 
   const includesPath = useCallback(
     (path) => router.asPath.includes(`${path}/`),
-    [router]
+    [router.asPath]
   )
 
+  useEffect(() => {
+    const routeChangeStart = () => {
+      const currentElements = menuRef?.current?.querySelectorAll('[aria-current="page"')
+      if (currentElements) console.log('start', currentElements)
+    }
+
+    const routeChangeEnd = () => {
+      const currentElements = menuRef?.current?.querySelectorAll('[aria-current="page"')
+      if (currentElements) console.log('end', currentElements)
+    }
+
+    router.events.on('routeChangeStart', routeChangeStart)
+    router.events.on('routeChangeComplete', routeChangeEnd)
+
+    return () => {
+      router.events.off('routeChangeStart', routeChangeStart)
+      router.events.off('routeChangeComplete', routeChangeEnd)
+    }
+  }, [router])
+
   return (
-    <Stack fill={false} horizontalAlign="stretch" rowGap={24}>
-      {
+    <nav ref={menuRef}>
+      <Stack fill={false} horizontalAlign="stretch" rowGap={24}>
+        {
         data.map((group, index) => {
           return (
             <Fragment key={group.title}>
@@ -58,6 +80,7 @@ export const Navigation = ({ data }: NavigationProps) => {
           )
         })
       }
-    </Stack>
+      </Stack>
+    </nav>
   )
 }
