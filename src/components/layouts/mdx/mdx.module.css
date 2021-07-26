@@ -1,0 +1,10 @@
+
+.MdxLayout {
+  position: relative;
+}
+
+.Content {
+  & pre[class*='prism-code'] {
+    border-radius: env(--radius-16);
+  }
+}

@@ -1,0 +1,16 @@
+.ToC {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.ToCItem {
+  font-size: env(--font-size-22);
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-gap: env(--space-16);
+  color: var(--global-interactive-text);
+}

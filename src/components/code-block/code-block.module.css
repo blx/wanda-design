@@ -1,0 +1,17 @@
+.CodeBlock {
+  position: relative;
+  border-radius: env(--radius-8);
+  overflow: hidden;
+}
+
+.Code {
+  overflow: auto;
+  padding: 28px env(--space-24) env(--space-24);
+}
+
+.Action.Action {
+  position: absolute;
+  top: env(--space-8);
+  right: env(--space-8);
+  color: hsl(env(--color-support-white));
+}

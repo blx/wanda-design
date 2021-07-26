@@ -1,6 +1,7 @@
 import React, { ReactNode, useState, useEffect, useRef, useCallback } from 'react'
 import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
+import clsx from 'clsx'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { Stack, IconButton } from '@wonderflow/react-components'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
@@ -11,12 +12,13 @@ import styles from './shell.module.css'
 type ShellLayoutProps = {
   header?: ReactNode;
   stickyHeader?: boolean;
-}
+} & PropsWithClass
 
 export const ShellLayout: React.FC<ShellLayoutProps> = ({
   children,
   header,
   stickyHeader = false,
+  className,
   ...props
 }) => {
   const scrollerRef = useRef<any>(null)
@@ -53,7 +55,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       data-shell-collapsed={collapsed}
       data-shell-sticky-header={stickyHeader}
       direction="row"
-      className={styles.Shell}
+      className={clsx(styles.Shell, className)}
       {...props}
     >
       <Meta />
