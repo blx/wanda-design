@@ -44,25 +44,25 @@ export default [
     title: 'Develop',
     items: [
       {
-        path: '/develop/configurations',
-        label: 'Configurations',
+        path: '/develop/installation',
+        label: 'Installation',
         target: ''
       },
       {
         path: '/develop/design-tokens',
         label: 'Design tokens',
         target: ''
+      },
+      {
+        path: '/develop/styles',
+        label: 'Styles',
+        target: ''
+      },
+      {
+        path: '/develop/themes',
+        label: 'Themes',
+        target: ''
       }
-      // {
-      //   path: '/develop/styles',
-      //   label: 'Styles',
-      //   target: ''
-      // },
-      // {
-      //   path: '/develop/themes',
-      //   label: 'Themes',
-      //   target: ''
-      // },
     ]
   },
   {

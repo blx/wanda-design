@@ -1,10 +1,35 @@
 import { MdxLayout } from '@/components/layouts/mdx';
+import { ThemeList } from '@/components/theme-list';
+import light from '@wonderflow/react-components/themes/light.json'
 
 export default ({ children }) => (
   <MdxLayout
     title="Themes"
-    description="sample description"
+    description="Plug n'play colors for your product"
   >
     {children}
   </MdxLayout>
 )
+
+Themes are a set of predefined colors paired with common usage and situations. At the moment Wanda provides only the `light` theme but more may be added in the future.
+
+## Usage
+
+A themes is activated by importing the relative `css` or `json` file inside your project (within js or css) or by embedding a `style` tag with its content into your page. Once you include the file all the theme keys will be available as custom properties, eg. `var(--global-foreground)`.
+
+```js
+import '@wonderflow/react-components/themes/light.css'
+/* or */
+import '@wonderflow/react-components/themes/light.json'
+```
+
+```html
+<style>
+  /* Content of light.css */
+</style>
+```
+
+
+## Light theme
+
+<ThemeList theme={light} />

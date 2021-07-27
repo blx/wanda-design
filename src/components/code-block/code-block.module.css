@@ -3,6 +3,8 @@
 .CodeBlock {
   position: relative;
   font-size: 0.9em;
+  font-family: env(--font-family-mono);
+  white-space: pre;
 
   @media (--from-small) {
     font-size: 1em;

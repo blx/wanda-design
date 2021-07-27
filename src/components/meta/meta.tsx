@@ -26,8 +26,8 @@ export const Meta: React.FC<MetaProps> = ({
       <title>{title}</title>
       <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
       { keywords && <meta name="keywords" content={keywords.join()} />}
-      <link rel="icon" href="favicon.svg" />
-      <link rel="apple-touch-icon" href="touch-icon.png" />
+      <link rel="icon" href="/favicon.svg" />
+      <link rel="apple-touch-icon" href="/touch-icon.png" />
 
       {canonical && <link rel="canonical" href={canonical} /> }
       <meta property="og:site_name" content={title} />

@@ -4,7 +4,7 @@ import { Snackbar } from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
-    title="Configurations"
+    title="Installation"
     description="Learn how to use Wanda design system"
   >
     {children}
@@ -28,14 +28,28 @@ npm install -D @wonderflow/config
   The <b>@wonderflow/config</b> exposes predefined configurations which you have to use in order to compile all the elements from the design system. Read the next section for more info.
 </Snackbar>
 
-## Configuring PostCSS
+## Configuring your project
 
-Inside your local **postcss.config.js** file import `postcssConfig` from **@wonderflow/config** and export it.
+To being able to use the components and styles from the design system there are a couple of steps to follow before doing everything else.
+
+The first thing to do is configuring Postcss, so inside your local **postcss.config.js** file import `postcssConfig` from **@wonderflow/config** and export it.
 
 ```js
 const { postcssConfig } = require("@wonderflow/config");
 module.exports = postcssConfig;
 ```
+
+Then inside your app js entry point you have to import two required css files, one is the core styles and other is the theme file which contains all the theme keys used by components and that you can have to use inside your custom css.
+
+```js
+import '@wonderflow/react-components/core.css'
+import '@wonderflow/react-components/themes/light.css'
+```
+
+<Snackbar type="warning" title="Include at least one theme">
+  You must include at least one theme file in order to make the components work as expected.
+</Snackbar>
+
 
 ## Recommended tools
 

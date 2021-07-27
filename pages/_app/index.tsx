@@ -31,10 +31,7 @@ const App = ({ Component, pageProps }: any) => {
 
   useEffect(() => {
     router.events.on('routeChangeStart', () => { document.documentElement.dataset.htmlSmooth = 'false' })
-    router.events.on('routeChangeComplete', () => {
-      document.documentElement.dataset.htmlSmooth = 'true'
-      window.scrollTo(0, 0)
-    })
+    router.events.on('routeChangeComplete', () => { document.documentElement.dataset.htmlSmooth = 'true' })
 
     return () => {
       router.events.off('routeChangeStart', () => { document.documentElement.dataset.htmlSmooth = 'false' })

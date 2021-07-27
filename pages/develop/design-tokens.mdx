@@ -33,8 +33,11 @@ Then you can get the tokens by using the `env()` notation as in the following ex
 .MyCustomComponent {
   padding: env(--space-8); /* 8px => 0.44rem */
   border-radius: env(--radius-24); /* 24px => 1.33rem */
+  color: hsl(env(--color-red-20) / 20%); /* hsl(351 77% 64% / 20%)*/
 }
 ```
+
+As you may noticed color tokens are shipped as css `hsl` colors but without the `hsl()` notation. This is useful to handle different opacities by using the [level 4 color module syntax](https://www.w3.org/TR/css-color-4/#the-hsl-notation) like in the example above.
 
 <Snackbar type="positive" title="About css tokens">If you're using Wanda's postcss shared configuration tokens are already available and you don't need to import them.</Snackbar>
 

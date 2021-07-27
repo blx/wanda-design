@@ -28,35 +28,33 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   )
 
   return (
-    <div className={clsx(styles.CodeBlock)}>
-      <Highlight {...defaultProps} theme={theme} code={children.trim()} language={language}>
-        {({
-          className, style, tokens, getLineProps, getTokenProps
-        }) => (
-          <>
-            <Button
-              className={styles.Action}
-              size="small"
-              type="flat"
-              onClick={copyContent()}
-            >
-              Copy
-            </Button>
+    <Highlight {...defaultProps} theme={theme} code={children.trim()} language={language}>
+      {({
+        className, style, tokens, getLineProps, getTokenProps
+      }) => (
+        <div className={clsx(styles.CodeBlock)}>
+          <Button
+            className={styles.Action}
+            size="small"
+            type="flat"
+            onClick={copyContent()}
+          >
+            Copy
+          </Button>
 
-            <pre className={clsx(styles.Code, className)} style={{ ...style }}>
-              <div ref={CodeRef}>
-                {tokens.map((line, i) => (
-                  <div key={i} {...getLineProps({ line, key: i })}>
-                    {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </pre>
-          </>
-        )}
-      </Highlight>
-    </div>
+          <div className={clsx(styles.Code, className)} style={{ ...style }}>
+            <div ref={CodeRef}>
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </Highlight>
   )
 }

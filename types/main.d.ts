@@ -22,3 +22,5 @@ type PropsWithClass = {
   style?: Record<string, any>;
   className?: string;
 }
+
+declare module 'css-color-converter'
