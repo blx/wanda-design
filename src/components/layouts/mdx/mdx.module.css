@@ -4,7 +4,9 @@
 }
 
 .Content {
-  & pre[class*='prism-code'] {
+  & > p img {
+    width: 100%;
+    overflow: hidden;
     border-radius: env(--radius-16);
   }
 }

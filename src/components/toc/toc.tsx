@@ -1,39 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import { Icon, Stack } from '@wonderflow/react-components'
+import React, { Children, ReactNode } from 'react'
+import { Icon, Stack, Text } from '@wonderflow/react-components'
 import slugify from 'slugify'
 import clsx from 'clsx'
 
 import styles from './toc.module.css'
+
+type ToCTableProps = {
+  content?: ReactNode;
+} & PropsWithClass
 
 type ToCItemProps = {
   text: string;
 } & PropsWithClass
 
 export const ToC: {
-  Table: React.FC<PropsWithClass>;
+  Table: React.FC<ToCTableProps>;
   Li: React.FC<ToCItemProps>
 } = {
-  Table: ({ className, children, ...props }) => {
-    const [headings, setHeadings] = useState<HTMLElement[]>([])
-
-    useEffect(() => {
-      const headingElements = [...document.querySelectorAll('h2')]
-      setHeadings(headingElements)
-    }, [])
-
-    return headings.length > 0
-      ? (
-        <Stack as="ul" rowGap={8} className={clsx(styles.ToC, className)} {...props}>
-          {headings.map(item => item && <ToC.Li key={item.innerText} text={item.innerText} />)}
-        </Stack>
-        )
-      : <></>
-  },
+  Table: ({ className, content, ...props }) => (
+    <Stack as="ul" rowGap={8} className={clsx(styles.ToC, className)} {...props}>
+      {Children.toArray(content)
+        .filter((item: { props: any }) => /h2/g.test(item.props.mdxType))
+        .map((child: { props: any }) => (
+          <ToC.Li key={child.props.children} text={child.props.children} />
+        ))
+      }
+    </Stack>
+  ),
 
   Li: ({ className, text, ...props }) => (
     <li className={clsx(styles.ToCItem, className)} {...props}>
       <Icon name="turn-down-right" size={24} />
-      <a href={`#${slugify(text, { lower: true })}`}>{text.replace('#', '')}</a>
+      <Text as="a" size={22} href={`#${slugify(text[1], { lower: true })}`}>{text[1].replace('#', '')}</Text>
     </li>
   )
 }

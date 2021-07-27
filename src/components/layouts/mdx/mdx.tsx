@@ -18,8 +18,8 @@ export const MdxLayout: React.FC<DocHeadProps & PropsWithClass> = ({
     <Meta title={`${title} - Wanda Design System`} description={description} />
     <Stack rowGap={48}>
       <DocHead title={title} description={description} />
+      <ToC.Table content={children} />
       <Prose>
-        <ToC.Table />
         {children}
       </Prose>
     </Stack>

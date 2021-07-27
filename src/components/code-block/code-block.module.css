@@ -1,11 +1,18 @@
+@import '@wonderflow/react-components/core/media.css';
+
 .CodeBlock {
   position: relative;
-  border-radius: env(--radius-8);
-  overflow: hidden;
+  font-size: 0.9em;
+
+  @media (--from-small) {
+    font-size: 1em;
+  }
 }
 
 .Code {
   overflow: auto;
+  border-radius: env(--radius-8);
+  white-space: pre-wrap;
   padding: 28px env(--space-24) env(--space-24);
 }
 

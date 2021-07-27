@@ -38,7 +38,7 @@ const theme: PrismTheme = {
   }, {
     types: ['variable'],
     style: {
-      color: `hsl(${tkns.color.primary[80]})`
+      color: `hsl(${tkns.color.support.white})`
     }
   }, {
     types: ['number'],
@@ -46,9 +46,14 @@ const theme: PrismTheme = {
       color: `hsl(${tkns.color.yellow[20]})`
     }
   }, {
-    types: ['builtin', 'char', 'constant', 'function'],
+    types: ['builtin', 'char', 'constant'],
     style: {
       color: `hsl(${tkns.color.cyan[20]})`
+    }
+  }, {
+    types: ['function'],
+    style: {
+      color: `hsl(${tkns.color.blue[10]})`
     }
   }, {
     types: ['constant'],
@@ -58,14 +63,14 @@ const theme: PrismTheme = {
   }, {
     // This was manually added after the auto-generation
     // so that punctuations are not italicised
-    types: ['punctuation'],
+    types: ['punctuation', 'operator'],
     style: {
       color: `hsl(${tkns.color.purple[20]})`
     }
   }, {
     types: ['selector', 'doctype'],
     style: {
-      color: `hsl(${tkns.color.primary[60]})`,
+      color: `hsl(${tkns.color.red[20]})`,
       fontStyle: 'italic'
     }
   }, {
@@ -74,9 +79,14 @@ const theme: PrismTheme = {
       color: `hsl(${tkns.color.cyan[20]})`
     }
   }, {
-    types: ['tag', 'operator', 'keyword'],
+    types: ['tag'],
     style: {
       color: `hsl(${tkns.color.green[10]})`
+    }
+  }, {
+    types: ['keyword', 'atrule'],
+    style: {
+      color: `hsl(${tkns.color.red[20]})`
     }
   }, {
     types: ['boolean'],

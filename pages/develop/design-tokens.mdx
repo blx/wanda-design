@@ -1,10 +1,60 @@
 import { MdxLayout } from '@/components/layouts/mdx';
+import { CodeBlock } from '@/components/code-block';
+import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
+import { Snackbar } from '@wonderflow/react-components';
 
 export default ({ children }) => (
   <MdxLayout
     title="Design tokens"
-    description="sample description"
+    description="One way to bring them all"
   >
     {children}
   </MdxLayout>
 )
+
+Design tokens are constant and platform-agnostic shared values. This set of data-value dictionary is used to ensure a better consistency across different platforms and digita products, plus it solve the issue of hardcoding fixed values inside the code over and over.
+
+## Usage
+
+Wanda's design tokens are generated for different platforms, this means that from a single source of truth — containing informations about colors, space, fonts, and more — we can generate platform-specific files which you can import and use.
+
+For the web platform we provide two ways to use Wanda's design tokens, you can access them inside javascript or css by importing the relative file from the correct node_modules path.
+
+
+### CSS
+
+```css
+@import "@wonderflow/tokens/platforms/web/tokens.css";
+```
+
+Then you can get the tokens by using the `env()` notation as in the following example. Note that **custom environment variables** are replaced with the final token value at build-time, so they are not dynamic like custom properties.
+
+```css
+.MyCustomComponent {
+  padding: env(--space-8); /* 8px => 0.44rem */
+  border-radius: env(--radius-24); /* 24px => 1.33rem */
+}
+```
+
+<Snackbar type="positive" title="About css tokens">If you're using Wanda's postcss shared configuration tokens are already available and you don't need to import them.</Snackbar>
+
+### Javascript
+
+```js
+import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
+```
+
+Once you import the tokens `JSON` schema, you can use them inside any javascript file:
+
+```js
+export const Component = () => (
+  <div style={{ color: `hsl(${tkns.color.blue[70]})`}} />
+)
+```
+
+
+## Tokens list
+
+<CodeBlock className="language-json">
+  { JSON.stringify(tkns, null, 2) }
+</CodeBlock>
