@@ -25,7 +25,9 @@ npm install -D @wonderflow/config
 ```
 
 <Snackbar type="info">
-  The <b>@wonderflow/config</b> exposes predefined configurations which you have to use in order to compile all the elements from the design system. Read the next section for more info.
+  The <b>@wonderflow/config</b> exposes predefined configurations which you have
+  to use in order to compile all the elements from the design system. Read the
+  next section for more info.
 </Snackbar>
 
 ## Configuring your project
@@ -42,14 +44,14 @@ module.exports = postcssConfig;
 Then inside your app js entry point you have to import two required css files, one is the core styles and other is the theme file which contains all the theme keys used by components and that you can have to use inside your custom css.
 
 ```js
-import '@wonderflow/react-components/core.css'
-import '@wonderflow/react-components/themes/light.css'
+import "@wonderflow/react-components/core.css";
+import "@wonderflow/react-components/themes/light.css";
 ```
 
 <Snackbar type="warning" title="Include at least one theme">
-  You must include at least one theme file in order to make the components work as expected.
+  You must include at least one css theme file in order to make the components
+  work as expected.
 </Snackbar>
-
 
 ## Recommended tools
 
@@ -77,7 +79,6 @@ Then add the following code inside your `.stylelintrc.json` configuration file.
   ]
 }
 ```
-
 
 ### Eslint
 

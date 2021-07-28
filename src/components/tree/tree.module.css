@@ -7,6 +7,10 @@
     list-style-type: none;
   }
 
+  & summary {
+    padding-left: env(--space-24);
+  }
+
   & details ul {
     padding-left: env(--space-24);
     margin-top: env(--space-8);
@@ -44,54 +48,5 @@
   &::before {
     position: absolute;
     content: '\200B';
-  }
-}
-
-.Expander {
-  display: block;
-  position: relative;
-  transform: translateZ(0);
-
-  & * {
-    box-sizing: border-box;
-  }
-
-  & summary {
-    line-height: 1;
-    display: list-item;
-    touch-action: manipulation;
-    position: relative;
-    padding: env(--space-2) env(--space-24);
-    user-select: none;
-    cursor: pointer;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: color 200ms;
-    color: var(--global-foreground);
-
-    &::marker {
-      content: '';
-    }
-
-    &::-webkit-details-marker {
-      display: none;
-    }
-  }
-}
-
-.ExpandIcon {
-  content: '';
-  transform-box: fill-box;
-  position: absolute;
-  top: 50%;
-  margin-top: calc(-1 * env(--space-8));
-  right: env(--space-16);
-  transform: rotate(180deg);
-  transition: transform env(--duration-100) env(--easing-standard);
-  transform-origin: 50% center;
-
-  @nest details[open] > summary > & {
-    transform: none;
   }
 }

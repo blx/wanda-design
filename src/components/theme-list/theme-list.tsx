@@ -43,7 +43,7 @@ export const ThemeList: React.FC<ThemeListProps> = ({
                     showCopy={false}
                     key={groupedData[item][color] + color}
                     color={groupedData[item][color]}
-                    name={`--${color}`}
+                    name={color}
                   />
                 ))}
               </Stack>

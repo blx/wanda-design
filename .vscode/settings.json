@@ -22,6 +22,12 @@
     "editor.rulers": [80],
     "editor.wordWrap": "wordWrapColumn",
   },
+  "[mdx]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80],
+    "editor.wordWrap": "wordWrapColumn",
+  },
   "[json]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"

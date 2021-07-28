@@ -72,10 +72,10 @@ export const Swatch: React.FC<SwatchProps> = ({
         fill={false}
       >
         {name && <Title level="6">{name}</Title>}
-        <Stack direction="row" columnGap={4}>
-          <Text size={16}>{hslColor}</Text>
+        <Stack className={styles.Values} direction="row" columnGap={4}>
+          <Text size={14}>{hslColor}</Text>
           ｜
-          <Text size={16}>{hexColor}</Text>
+          <Text size={14}>{hexColor}</Text>
         </Stack>
       </Stack>
     </Stack>

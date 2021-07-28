@@ -1,0 +1,18 @@
+.Props {
+  position: relative;
+}
+
+.PropName {
+  display: block;
+  width: 120px;
+}
+
+.PropsValue {
+  padding: 0;
+  list-style: none;
+
+  & code {
+    background-color: var(--highlight-gray-background);
+    color: var(--highlight-gray-foreground);
+  }
+}

@@ -1,16 +1,13 @@
-import { MdxLayout } from '@/components/layouts/mdx';
-import { CodeBlock } from '@/components/code-block';
-import { Stack } from '@wonderflow/react-components';
-import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
+import { MdxLayout } from "@/components/layouts/mdx";
+import { CodeBlock } from "@/components/code-block";
+import { Stack } from "@wonderflow/react-components";
+import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
 
 export default ({ children }) => (
-  <MdxLayout
-    title="Styles"
-    description="Core styles for any digital product"
-  >
+  <MdxLayout title="Styles" description="Core styles for any digital product">
     {children}
   </MdxLayout>
-)
+);
 
 Core styles are what you need to write your custom css. They include custom properties, custom media queries and utilities.
 
@@ -60,7 +57,6 @@ Inside the core style, we provide a set of breakpoints which you can use while b
 /* (prefers-reduced-motion: no-preference) */
 ```
 
-
 ## Elevations
 
 Our shadows are defined based on the Elevations schema. Each level makes elements cast a specific type of shadow.
@@ -68,18 +64,26 @@ Our shadows are defined based on the Elevations schema. Each level makes element
 export const CardStyles = {
   width: 130,
   height: 130,
-  backgroundColor: 'var(--background-color)',
+  backgroundColor: "var(--background-color)",
   borderRadius: 8,
-  display: 'flex',
-  placeContent: 'center',
-  placeItems: 'center',
+  display: "flex",
+  placeContent: "center",
+  placeItems: "center",
 };
 
 <Stack direction="row" columnGap={24}>
-  <div style={CardStyles} data-elevation="1">Z1</div>
-  <div style={CardStyles} data-elevation="2">Z2</div>
-  <div style={CardStyles} data-elevation="3">Z3</div>
-  <div style={CardStyles} data-elevation="4">Z4</div>
+  <div style={CardStyles} data-elevation="1">
+    Z1
+  </div>
+  <div style={CardStyles} data-elevation="2">
+    Z2
+  </div>
+  <div style={CardStyles} data-elevation="3">
+    Z3
+  </div>
+  <div style={CardStyles} data-elevation="4">
+    Z4
+  </div>
 </Stack>
 
 ```html
@@ -91,9 +95,10 @@ export const CardStyles = {
 
 ### Interactive elevation
 
-
-<Stack direction="row" columnGap={24}>
-  <div style={CardStyles} data-elevation="1" data-elevation-hover="3">Z1 to Z3</div>
+<Stack fill={false} horizontalAlign="center" direction="row" columnGap={24}>
+  <div style={CardStyles} data-elevation="1" data-elevation-hover="3">
+    Z1 to Z3
+  </div>
 </Stack>
 
 ```html

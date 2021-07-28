@@ -1,26 +1,24 @@
-import { MdxLayout } from '@/components/layouts/mdx';
-import { ThemeList } from '@/components/theme-list';
-import light from '@wonderflow/react-components/themes/light.json'
+import { MdxLayout } from "@/components/layouts/mdx";
+import { ThemeList } from "@/components/theme-list";
+import light from "@wonderflow/react-components/themes/light.json";
+import { Snackbar } from "@wonderflow/react-components";
 
 export default ({ children }) => (
-  <MdxLayout
-    title="Themes"
-    description="Plug n'play colors for your product"
-  >
+  <MdxLayout title="Themes" description="Plug n'play colors for your product">
     {children}
   </MdxLayout>
-)
+);
 
-Themes are a set of predefined colors paired with common usage and situations. At the moment Wanda provides only the `light` theme but more may be added in the future.
+Themes are a set of predefined keys which should be used whenever the color should be dynamic based on the current active theme. At the moment Wanda provides only the `light` theme but more may come in the future.
 
 ## Usage
 
 A themes is activated by importing the relative `css` or `json` file inside your project (within js or css) or by embedding a `style` tag with its content into your page. Once you include the file all the theme keys will be available as custom properties, eg. `var(--global-foreground)`.
 
 ```js
-import '@wonderflow/react-components/themes/light.css'
+import "@wonderflow/react-components/themes/light.css";
 /* or */
-import '@wonderflow/react-components/themes/light.json'
+import "@wonderflow/react-components/themes/light.json";
 ```
 
 ```html
@@ -29,7 +27,12 @@ import '@wonderflow/react-components/themes/light.json'
 </style>
 ```
 
-
 ## Light theme
 
+<Snackbar type="info">
+  To use the theme keys inside CSS you have to add the standard <b>"--"</b>{" "}
+  prefix used for custom properties, for example <b>var(--global-foreground)</b>
+</Snackbar>
+<br />
+<br />
 <ThemeList theme={light} />

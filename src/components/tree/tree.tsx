@@ -1,6 +1,7 @@
-import React, { ReactNode, Fragment, useState, useCallback } from 'react'
-import { Icon, Stack, Text } from '@wonderflow/react-components'
+import React, { ReactNode, Fragment } from 'react'
+import { Stack, Text } from '@wonderflow/react-components'
 import styles from './tree.module.css'
+import { Disclosure } from '../disclosure'
 
 type TreeGroupProps = {
   title?: ReactNode;
@@ -27,27 +28,19 @@ export const Tree: {
   ),
 
   Menu: ({ children, summary, open = false, expandable = false, ...props }) => {
-    const [isOpen, setIsOpen] = useState(open)
-    const handleOpen = useCallback(
-      () => (event: any) => {
-        event.preventDefault()
-        setIsOpen(!isOpen)
-      },
-      [isOpen]
-    )
-
     return expandable
       ? (
         <Tree.Li>
-          <details open={isOpen} className={styles.Expander} {...props}>
-            <Text as="summary" onClick={handleOpen()} fluid={false} size={16} weight="bold">
-              {summary}
-              <Icon className={styles.ExpandIcon} name="chevron-up" size={16} />
-            </Text>
+          <Disclosure
+            padding={false}
+            open={open}
+            summary={summary}
+            {...props}
+          >
             <Stack as="ul" rowGap={4}>
               {children}
             </Stack>
-          </details>
+          </Disclosure>
         </Tree.Li>
         )
       : <Fragment>{children}</Fragment>

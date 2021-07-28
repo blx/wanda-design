@@ -64,27 +64,27 @@ export default [
         target: ''
       }
     ]
+  },
+  {
+    title: '',
+    items: [
+      {
+        label: 'Components',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/develop/components/button',
+            label: 'Button',
+            target: ''
+          }
+          // {
+          //   path: '/develop/components/icon-button',
+          //   label: 'Icon button',
+          //   target: ''
+          // }
+        ]
+      }
+    ]
   }
-  // {
-  //   title: '',
-  //   items: [
-  //     {
-  //       label: 'Components',
-  //       expandable: true,
-  //       target: '',
-  //       items: [
-  //         {
-  //           path: '/develop/components/button',
-  //           label: 'Button',
-  //           target: ''
-  //         },
-  //         {
-  //           path: '/develop/components/icon-button',
-  //           label: 'Icon button',
-  //           target: ''
-  //         }
-  //       ]
-  //     }
-  //   ]
-  // }
 ]
