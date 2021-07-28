@@ -77,12 +77,12 @@ export default [
             path: '/develop/components/button',
             label: 'Button',
             target: ''
+          },
+          {
+            path: '/develop/components/icon-button',
+            label: 'Icon button',
+            target: ''
           }
-          // {
-          //   path: '/develop/components/icon-button',
-          //   label: 'Icon button',
-          //   target: ''
-          // }
         ]
       }
     ]
