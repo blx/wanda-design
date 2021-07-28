@@ -42,17 +42,17 @@ export const Props: React.FC<PropsProps> = ({
               <Text size={14} className={styles.PropsValue}>{item.description}</Text>
             </Stack>
           )}
+
           <Stack direction="row" fill={false} wrap columnGap={16}>
             <Text as="b" size={14} className={styles.PropName}>Default:</Text>
-            <Text size={14} className={styles.PropsValue}><Markdown>{`\`${item.default.replace(/"/g, '') || 'null'}\``}</Markdown></Text>
+            <Text size={14} className={styles.PropsValue}><Markdown>{`\`${item.default || 'null'}\``}</Markdown></Text>
           </Stack>
+
           {item.type && (
             <Stack direction="row" fill={false} wrap columnGap={16}>
               <Text as="b" size={14} className={styles.PropName}>Type:</Text>
-              <Text as="ul" size={14} className={styles.PropsValue}>
-                {item.type.map((value: string) => (
-                  <Text key={value} as="li" size={14}><Markdown>{`\`${value}\``}</Markdown></Text>
-                ))}
+              <Text size={14} className={styles.PropsValue}>
+                {item.type.map((value: any, index: any) => <Markdown>{`${index !== 0 ? ', ' : ''}\`${value}\``}</Markdown>)}
               </Text>
             </Stack>
           )}
