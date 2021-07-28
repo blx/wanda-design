@@ -16,3 +16,8 @@
     color: var(--highlight-gray-foreground);
   }
 }
+
+.Props summary small code {
+  background-color: var(--highlight-cyan-background);
+  color: var(--highlight-cyan-foreground);
+}

@@ -1,7 +1,7 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Button, Snackbar } from "@wonderflow/react-components";
+import { Button } from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
@@ -20,18 +20,20 @@ Buttons can be used to communicate and immediately trigger actions a user can ta
 
 ## Usage
 
-The very basic usge of the component doesn't require any property. If you want to use a `regular` `primary` button you just have to drop the component inside your code. The visual appearance of the button can be changed by using the `type` property.
+The very basic usge of the component doesn't require any property. If you want to use a `regular` and `primary` button you just have to drop the component inside your code. The visual appearance of the button can be changed by using the `type` property.
 
 <LiveArea direction="row">
   <Button>Click</Button>
   <Button type="secondary">Click</Button>
   <Button type="flat">Click</Button>
+  <Button disabled>Click</Button>
 </LiveArea>
 
 ```jsx
 <Button>Click</Button>
 <Button type="secondary">Click</Button>
 <Button type="flat">Click</Button>
+<Button disabled>Click</Button>
 ```
 
 ## Sizes
@@ -88,11 +90,6 @@ If you need a link which must look like a button you can change the element used
 </Button>
 ```
 
-<Snackbar title="Caution" type="warning">
-  Using the prop <b>"as"</b> is dangerous and may leads to some type validation
-  issue. Use it only if necessary.
-</Snackbar>
-
 ## Properties
 
 <Props
@@ -102,6 +99,7 @@ If you need a link which must look like a button you can change the element used
       type: ['"primary"', '"secondary"', '"flat"'],
       default: '"primary"',
       required: false,
+      dangerous: false,
       description: "Set the element visual style",
     },
     {
@@ -109,6 +107,7 @@ If you need a link which must look like a button you can change the element used
       type: ['"small"', '"regular"', '"big"'],
       default: '"regular"',
       required: false,
+      dangerous: false,
       description: "Set the element size",
     },
     {
@@ -116,6 +115,7 @@ If you need a link which must look like a button you can change the element used
       type: ["boolean"],
       default: "",
       required: false,
+      dangerous: false,
       description: "Set the element to fill the available space",
     },
     {
@@ -123,6 +123,7 @@ If you need a link which must look like a button you can change the element used
       type: ["IconNames"],
       default: "",
       required: false,
+      dangerous: false,
       description: "Set the icon to show inside the element",
     },
     {
@@ -130,6 +131,7 @@ If you need a link which must look like a button you can change the element used
       type: ['"left"', '"right"'],
       default: '"left"',
       required: false,
+      dangerous: false,
       description: "Set the icon position",
     },
     {
@@ -137,6 +139,7 @@ If you need a link which must look like a button you can change the element used
       type: ["boolean"],
       default: "",
       required: false,
+      dangerous: false,
       description: "Set the disabled state",
     },
     {
@@ -144,13 +147,15 @@ If you need a link which must look like a button you can change the element used
       type: ["boolean"],
       default: "(MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void",
       required: false,
-      description: "Set the disabled state",
+      dangerous: false,
+      description: "Callback for the click event",
     },
     {
       name: "as",
       type: ["PolymorphicPropsWithRef"],
       default: '"button"',
       required: false,
+      dangerous: true,
       description: "Set the component outer html tag",
     },
   ]}

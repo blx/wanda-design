@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import Markdown from 'markdown-to-jsx'
 import React from 'react'
 import { Disclosure } from '../disclosure'
-import { Stack, Separator, Text } from '@wonderflow/react-components'
+import { Stack, Separator, Text, Title, Snackbar } from '@wonderflow/react-components'
 
 import styles from './props.module.css'
 
@@ -29,12 +29,12 @@ export const Props: React.FC<PropsProps> = ({
         size="big"
         summary={(
           <Stack direction="row" fill={false} verticalAlign="center" columnGap={8}>
-            <Markdown>{`\`${item.name}\``}</Markdown>
+            <Title level="5"><Markdown>{`\`${item.name}\``}</Markdown></Title>
             {item.required && <small><Markdown>`required`</Markdown></small>}
           </Stack>
         )}
       >
-        <Stack rowGap={8}>
+        <Stack rowGap={16}>
           <Separator />
           {item.description && (
             <Stack direction="row" fill={false} wrap columnGap={16}>
@@ -52,9 +52,16 @@ export const Props: React.FC<PropsProps> = ({
             <Stack direction="row" fill={false} wrap columnGap={16}>
               <Text as="b" size={14} className={styles.PropName}>Type:</Text>
               <Text size={14} className={styles.PropsValue}>
-                {item.type.map((value: any, index: any) => <Markdown>{`${index !== 0 ? ', ' : ''}\`${value}\``}</Markdown>)}
+                {item.type.map((value: any, index: any) => <Markdown key={value}>{`${index !== 0 ? ', ' : ''}\`${value}\``}</Markdown>)}
               </Text>
             </Stack>
+          )}
+
+          {item.dangerous && (
+            <Snackbar type="warning">
+              Using this prop is dangerous and may leads to some type validation
+              issue.
+            </Snackbar>
           )}
         </Stack>
       </Disclosure>
