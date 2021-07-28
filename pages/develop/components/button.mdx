@@ -99,14 +99,14 @@ If you need a link which must look like a button you can change the element used
   properties={[
     {
       name: "type",
-      type: ["primary", "secondary", "flat"],
+      type: ['"primary"', '"secondary"', '"flat"'],
       default: '"primary"',
       required: false,
       description: "Set the element visual style",
     },
     {
       name: "size",
-      type: ["small", "regular", "big"],
+      type: ['"small"', '"regular"', '"big"'],
       default: '"regular"',
       required: false,
       description: "Set the element size",
@@ -127,8 +127,8 @@ If you need a link which must look like a button you can change the element used
     },
     {
       name: "iconPosition",
-      type: ["left", "right"],
-      default: "left",
+      type: ['"left"', '"right"'],
+      default: '"left"',
       required: false,
       description: "Set the icon position",
     },
@@ -149,7 +149,7 @@ If you need a link which must look like a button you can change the element used
     {
       name: "as",
       type: ["PolymorphicPropsWithRef"],
-      default: "button",
+      default: '"button"',
       required: false,
       description: "Set the component outer html tag",
     },
