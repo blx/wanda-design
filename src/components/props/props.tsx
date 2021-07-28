@@ -51,7 +51,7 @@ export const Props: React.FC<PropsProps> = ({
               <Text as="b" size={14} className={styles.PropName}>Type:</Text>
               <Text as="ul" size={14} className={styles.PropsValue}>
                 {item.type.map((value: string) => (
-                  <Text as="li" size={14}><Markdown>{`\`${value}\``}</Markdown></Text>
+                  <Text key={value} as="li" size={14}><Markdown>{`\`${value}\``}</Markdown></Text>
                 ))}
               </Text>
             </Stack>
