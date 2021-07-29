@@ -144,8 +144,8 @@ If you need a link which must look like a button you can change the element used
     },
     {
       name: "onClick",
-      type: ["boolean"],
-      default: "(MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void",
+      type: ["(MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void"],
+      default: "",
       required: false,
       dangerous: false,
       description: "Callback for the click event",

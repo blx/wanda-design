@@ -39,14 +39,9 @@ export const Props: React.FC<PropsProps> = ({
           {item.description && (
             <Stack direction="row" fill={false} wrap columnGap={16}>
               <Text as="b" size={14} className={styles.PropName}>Description:</Text>
-              <Text size={14} className={styles.PropsValue}>{item.description}</Text>
+              <Text size={14} className={styles.PropsValue}><Markdown>{item.description}</Markdown></Text>
             </Stack>
           )}
-
-          <Stack direction="row" fill={false} wrap columnGap={16}>
-            <Text as="b" size={14} className={styles.PropName}>Default:</Text>
-            <Text size={14} className={styles.PropsValue}><Markdown>{`\`${item.default || 'null'}\``}</Markdown></Text>
-          </Stack>
 
           {item.type && (
             <Stack direction="row" fill={false} wrap columnGap={16}>
@@ -56,6 +51,11 @@ export const Props: React.FC<PropsProps> = ({
               </Text>
             </Stack>
           )}
+
+          <Stack direction="row" fill={false} wrap columnGap={16}>
+            <Text as="b" size={14} className={styles.PropName}>Default:</Text>
+            <Text size={14} className={styles.PropsValue}><Markdown>{`\`${item.default || 'null'}\``}</Markdown></Text>
+          </Stack>
 
           {item.dangerous && (
             <Snackbar type="warning">

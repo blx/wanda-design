@@ -1,0 +1,111 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { Snackbar } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout title="Snackbar" description="Highlight prominent message">
+    {children}
+  </MdxLayout>
+);
+
+```js
+import { Snackbar } from "@wonderflow/react-components";
+```
+
+A Snackbar is a notification that provides brief information to the user without blocking their workflow.
+
+## Usage
+
+This component is used to show inline or floating alerts, but it never stops the user workflow.
+
+<LiveArea fill>
+  <Snackbar>
+    The Relevance section uses only Feedback with that can be analysed with NLP
+    and have a score. <a href="#">Learn more</a>
+  </Snackbar>
+</LiveArea>
+
+```jsx
+<Snackbar>
+  The Relevance section uses only Feedback with that can be analysed with NLP
+  and have a score. <a href="#">Learn more</a>
+</Snackbar>
+```
+
+## Types of message
+
+By default the Snackbar uses neutral colors to provide additional informations without alarming the user. With the `type` property you can change the severity of the message and convey a meaning with the messagge.
+
+<LiveArea fill>
+  <Snackbar title="Attention" type="warning">
+    The Relevance section uses only Feedback with that can be analysed with NLP
+    and have a score. <a href="#">Learn more</a>
+  </Snackbar>
+  <Snackbar title="Did you know?" type="info">
+    The Relevance section uses only Feedback with that can be analysed with NLP
+    and have a score. <a href="#">Learn more</a>
+  </Snackbar>
+  <Snackbar title="Good!" type="positive">
+    The Relevance section uses only Feedback with that can be analysed with NLP
+    and have a score. <a href="#">Learn more</a>
+  </Snackbar>
+  <Snackbar title="Ooops!" type="danger">
+    The Relevance section uses only Feedback with that can be analysed with NLP
+    and have a score. <a href="#">Learn more</a>
+  </Snackbar>
+</LiveArea>
+
+```jsx
+<Snackbar title="Attention" type="warning">
+  The Relevance section uses only Feedback with that can be analysed with NLP
+  and have a score. <a href="#">Learn more</a>
+</Snackbar>
+```
+
+## Properties
+
+<Props
+  properties={[
+    {
+      name: "icon",
+      type: ["IconNames"],
+      default: '"based on the type prop"',
+      required: false,
+      dangerous: false,
+      description: "Set the icon to show inside the element",
+    },
+    {
+      name: "title",
+      type: ["string"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the label associated with the element",
+    },
+    {
+      name: "elevated",
+      type: ["boolean"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Add a shadow for the floating notifications",
+    },
+    {
+      name: "type",
+      type: ['"info"', '"warning"', '"neutral"', '"positive"', '"danger"'],
+      default: '"neutral"',
+      required: false,
+      dangerous: false,
+      description: "Set the severity of the message",
+    },
+    {
+      name: "as",
+      type: ["PolymorphicPropsWithoutRef"],
+      default: '"div"',
+      required: false,
+      dangerous: true,
+      description: "Set the component outer html tag",
+    },
+  ]}
+/>

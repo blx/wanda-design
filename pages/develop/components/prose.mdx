@@ -1,0 +1,102 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { Prose, Text, Title, Separator } from "@wonderflow/react-components";
+import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
+
+export default ({ children }) => (
+  <MdxLayout title="Prose" description="Vertical rhythm for text content">
+    {children}
+  </MdxLayout>
+);
+
+```js
+import { Prose } from "@wonderflow/react-components";
+```
+
+The `Prose` component is a special container which is used do format long sections of text content, componsed by titles and paragraphs.
+
+## Usage
+
+The usage of the component is pretty simple, it doesn't have special properties. It automagically add the correct spaces between titles and text elements.
+
+<LiveArea>
+  <Prose>
+    <Title as="h1" level="display">Title</Title>
+    <Text size={28}>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+      tempore quas labore officiis praesentium.
+    </Text>
+    <Title as="h2" level="2">Sample H2 Title</Title>
+    <img style={{ width: '100%' }} src="https://images.unsplash.com/photo-1593963171957-d87a6279226d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+    <Text>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+      tempore quas labore officiis praesentium. Porro sed dolorem, numquam temporibus
+      consequuntur quam doloremque ducimus error tempora illo aliquam nesciunt nostrum!
+    </Text>
+    <Separator />
+    <Title as="h2" level="2">Sample H2 Title</Title>
+    <Text>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+      tempore quas labore officiis praesentium. Porro sed dolorem, numquam temporibus
+      consequuntur quam doloremque ducimus error tempora illo aliquam nesciunt nostrum!
+    </Text>
+    <img style={{ width: '100%' }} src="https://images.unsplash.com/photo-1593963171957-d87a6279226d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+    <Text>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+      tempore quas labore officiis praesentium. Porro sed dolorem, numquam temporibus
+      consequuntur quam doloremque ducimus error tempora illo aliquam nesciunt nostrum!
+    </Text>
+    <Text>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+      tempore quas labore officiis praesentium. Porro sed dolorem, numquam temporibus
+      consequuntur quam doloremque ducimus error tempora illo aliquam nesciunt nostrum!
+    </Text>
+    <Title as="h3" level="3">Sample H3 Title</Title>
+    <Text>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+      tempore quas labore officiis praesentium. Porro sed dolorem, numquam temporibus
+      consequuntur quam doloremque ducimus error tempora illo aliquam nesciunt nostrum!
+    </Text>
+    <Title as="h4" level="4">Sample H4 Title</Title>
+    <Text>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+      tempore quas labore officiis praesentium. Porro sed dolorem, numquam temporibus
+      consequuntur quam doloremque ducimus error tempora illo aliquam nesciunt nostrum!
+    </Text>
+
+  </Prose>
+</LiveArea>
+
+```jsx
+<Prose>
+  <Title as="h1" level="display">
+    Title
+  </Title>
+  <Text>...</Text>
+  <Title as="h2" level="2">
+    Sample H2 Title
+  </Title>
+  <Text>...</Text>
+  <Separator />
+  <Title as="h2" level="2">
+    Sample H2 Title
+  </Title>
+  <Text>...</Text>
+</Prose>
+```
+
+## Properties
+
+<Props
+  properties={[
+    {
+      name: "as",
+      type: ["PolymorphicPropsWithoutRef"],
+      default: '"div"',
+      required: false,
+      dangerous: true,
+      description: "Set the component outer html tag",
+    },
+  ]}
+/>

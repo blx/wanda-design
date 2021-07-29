@@ -4,7 +4,10 @@ import { Props } from "@/components/props";
 import { IconButton, Snackbar } from "@wonderflow/react-components";
 
 export default ({ children }) => (
-  <MdxLayout title="Icon button" description="sample description">
+  <MdxLayout
+    title="Icon button"
+    description="When the action a button invoke is so clear that needs no words, just an icon"
+  >
     {children}
   </MdxLayout>
 );
@@ -99,8 +102,8 @@ If you need a link which must look like a button you can change the element used
     },
     {
       name: "onClick",
-      type: ["boolean"],
-      default: "(MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void",
+      type: ["(MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void"],
+      default: "",
       required: false,
       dangerous: false,
       description: "Callback for the click event",

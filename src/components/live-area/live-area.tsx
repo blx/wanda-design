@@ -18,6 +18,7 @@ export const LiveArea: React.FC<StackProps> = ({
       direction="row"
       verticalAlign="center"
       columnGap={16}
+      rowGap={16}
       {...props}
     >
       {children}

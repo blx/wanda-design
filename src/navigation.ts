@@ -97,6 +97,26 @@ export default [
             path: '/develop/components/icon',
             label: 'Icon',
             target: ''
+          },
+          {
+            path: '/develop/components/prose',
+            label: 'Prose',
+            target: ''
+          },
+          {
+            path: '/develop/components/select',
+            label: 'Select',
+            target: ''
+          },
+          {
+            path: '/develop/components/separator',
+            label: 'Separator',
+            target: ''
+          },
+          {
+            path: '/develop/components/snackbar',
+            label: 'Snackbar',
+            target: ''
           }
         ]
       }

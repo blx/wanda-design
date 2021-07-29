@@ -1,0 +1,184 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { Select, Snackbar } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Select"
+    description="The simplest way to pick an option from the list"
+  >
+    {children}
+  </MdxLayout>
+);
+
+```js
+import { Select } from "@wonderflow/react-components";
+```
+
+The `Select` component is a native html elements which let the user pick an option from a predefined list. This component can be also used outside forms.
+
+## Usage
+
+This component must have children in order to be valid. You can compose the list by using the native `option` od `optgroup` elements, and all the global html attributes.
+
+<LiveArea>
+  <Select style={{ width: 200 }}>
+    <option value="placeholder" hidden selected disabled>
+      Pick an option
+    </option>
+    <optgroup label="Option Group One">
+      <option value="1">
+        This is a very long option selected which is truncated
+      </option>
+      <option value="2">Option 2</option>
+    </optgroup>
+    <optgroup label="Option Group Two">
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+      <option value="5">Option 5</option>
+    </optgroup>
+  </Select>
+  <Select disabled style={{ width: 200 }}>
+    <option value="placeholder" hidden selected disabled>
+      Pick an option
+    </option>
+    <optgroup label="Option Group One">
+      <option value="1">
+        This is a very long option selected which is truncated
+      </option>
+      <option value="2">Option 2</option>
+    </optgroup>
+    <optgroup label="Option Group Two">
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+      <option value="5">Option 5</option>
+    </optgroup>
+  </Select>
+</LiveArea>
+
+```jsx
+<Select>
+  <option value="placeholder" hidden selected disabled>
+    Pick an option
+  </option>
+  <optgroup label="Option Group">
+    <option value="3">Option 1</option>
+    <option value="4">Option 2</option>
+    <option value="5">Option 3</option>
+  </optgroup>
+</Select>
+
+<Select disabled>
+  ...
+</Select>
+```
+
+## Custom icon and size
+
+This component is highly customizable, for example you can set a different icon or size.
+
+<LiveArea>
+  <Select icon="compass" size="small" style={{ width: 200 }}>
+    <option value="placeholder" hidden selected disabled>
+      Pick an option
+    </option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </Select>
+</LiveArea>
+
+```jsx
+<Select icon="compass" size="small">
+  <option value="placeholder" hidden selected disabled>
+    Pick an option
+  </option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+</Select>
+```
+
+<Snackbar title="About custom icon">
+  Even if you can change the icon, we strongly recommend to avoid it to keep the
+  component recognizable by the user.
+</Snackbar>
+
+## Multiple
+
+As the native `select` element, this component can be rendered as multiple select to enable multiple selection:
+
+<LiveArea>
+  <Select type="multiple" style={{ width: 200 }}>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+    <option value="4">Option 4</option>
+    <option value="5">Option 5</option>
+  </Select>
+</LiveArea>
+
+```jsx
+<Select type="multiple">
+  <option value="3">Option 3</option>
+  <option value="4">Option 4</option>
+  <option value="5">Option 5</option>
+  <option value="5">Option 5</option>
+</Select>
+```
+
+## Properties
+
+<Props
+  properties={[
+    {
+      name: "icon",
+      type: ["IconNames"],
+      default: '"sort-alt"',
+      required: false,
+      dangerous: false,
+      description: "Set the icon to show inside the element",
+    },
+    {
+      name: "label",
+      type: ["ReactNode"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the label associated with the element",
+    },
+    {
+      name: "type",
+      type: ['"single"', '"multiple"'],
+      default: '"single"',
+      required: false,
+      dangerous: false,
+      description: "Enable multiple selection",
+    },
+    {
+      name: "size",
+      type: ['"small"', '"regular"', '"big"'],
+      default: '"regular"',
+      required: false,
+      dangerous: false,
+      description: "Set the size of the element",
+    },
+    {
+      name: "disabled",
+      type: ["boolean"],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Set the disabled state",
+    },
+    {
+      name: "onChange",
+      type: ["(ChangeEvent<HTMLSelectElement>) => void"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Callback for the change event",
+    },
+  ]}
+/>

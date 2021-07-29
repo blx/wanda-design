@@ -58,7 +58,7 @@ const theme: PrismTheme = {
   }, {
     types: ['constant'],
     style: {
-      color: `hsl(${tkns.color.primary[80]})`
+      color: `hsl(${tkns.color.blue[20]})`
     }
   }, {
     // This was manually added after the auto-generation
