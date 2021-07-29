@@ -1,0 +1,151 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { Text, Snackbar } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Text"
+    description="Dynamic and fluid typography with control"
+  >
+    {children}
+  </MdxLayout>
+);
+
+```js
+import { Text } from "@wonderflow/react-components";
+```
+
+With the `Text` component you can add elements using the style from the Wanda typography like size, colors, weight and the fluid typography.
+
+## Usage
+
+By default the Text component just renders a `p` element with the default font size, which is `1rem` (18px).
+
+<LiveArea>
+  <Text>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
+    temporibus.
+  </Text>
+</LiveArea>
+
+```jsx
+<Text>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+  tempore quas labore officiis praesentium. Porro sed dolorem, numquam
+  temporibus.
+</Text>
+```
+
+With `size`, `color` and `weight` properties you can change the visual appearance of the element, keeping it consistent with the design system guidelines:
+
+<LiveArea>
+  <Text size={22}>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
+    temporibus.
+  </Text>
+  <Text size={14} color="positive">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
+    temporibus.
+  </Text>
+  <Text size={16} weight="bold">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
+    temporibus.
+  </Text>
+</LiveArea>
+
+```jsx
+<Text size={22}>...</Text>
+<Text size={14} color="positive">...</Text>
+<Text size={16} weight="bold">...</Text>
+```
+
+## Fluid typography
+
+Any `Text` element have a dynamic font size by default and the value is computed by following this formula:
+
+```bash
+slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
+yAxisIntersection = -minWidth * slope + minFontSize
+preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
+
+font-size: clamp(minFontSize, preferredValue, maxFontSize)
+```
+
+To disable this intrinsic behaviour you can set the `fluid` property to `false` in order to fix the font-size value to the specified value.
+
+<LiveArea>
+  <Text size={22} fluid={false}>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
+    temporibus.
+  </Text>
+  <Text size={22}>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
+    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
+    temporibus.
+  </Text>
+</LiveArea>
+
+<Snackbar type="info" title="Resize your browser window">
+  If you resize the browser window you can check that the first text block is
+  not resized based on the viewport.
+</Snackbar>
+
+```jsx
+<Text size={22} fluid={false}>
+  ...
+</Text>
+```
+
+## Properties
+
+<Props
+  properties={[
+    {
+      name: "size",
+      type: ["14", "16", "18", "22", "28"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the text font-size",
+    },
+    {
+      name: "color",
+      type: ["positive", "informative", "danger", "warning"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description:
+        "Set the text color. This changes based on the current theme",
+    },
+    {
+      name: "weight",
+      type: ["thin", "bold"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the weight of the text",
+    },
+    {
+      name: "fluid",
+      type: ["boolean"],
+      default: "true",
+      required: false,
+      dangerous: false,
+      description: "Set the responsive font-size",
+    },
+    {
+      name: "as",
+      type: ["PolymorphicPropsWithoutRef"],
+      default: '"p"',
+      required: false,
+      dangerous: true,
+      description: "Set the component outer html tag",
+    },
+  ]}
+/>

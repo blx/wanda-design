@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import clsx from 'clsx'
 import { Stack } from '@wonderflow/react-components'
 
 import styles from './live-area.module.css'
 import { StackProps } from '@wonderflow/react-components/stack'
 
-export const LiveArea: React.FC<StackProps> = ({
+type LiveAreaProps = {
+  maxHeight?: string;
+} & StackProps
+
+export const LiveArea: React.FC<LiveAreaProps> = ({
   children,
+  maxHeight,
+  style,
   ...props
 }) => {
+  const dynamicStyle: CSSProperties = {
+    '--maxHeight': maxHeight
+  }
+
   return (
     <Stack
       className={clsx(styles.LiveArea)}
@@ -19,6 +29,7 @@ export const LiveArea: React.FC<StackProps> = ({
       verticalAlign="center"
       columnGap={16}
       rowGap={16}
+      style={{ ...dynamicStyle, ...style }}
       {...props}
     >
       {children}

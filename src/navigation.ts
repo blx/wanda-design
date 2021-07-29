@@ -117,6 +117,21 @@ export default [
             path: '/develop/components/snackbar',
             label: 'Snackbar',
             target: ''
+          },
+          {
+            path: '/develop/components/stack',
+            label: 'Stack',
+            target: ''
+          },
+          {
+            path: '/develop/components/text',
+            label: 'Text',
+            target: ''
+          },
+          {
+            path: '/develop/components/title',
+            label: 'Title',
+            target: ''
           }
         ]
       }
