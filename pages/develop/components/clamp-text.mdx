@@ -1,0 +1,79 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { ClampText } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout title="Clamp Text" description="Multiline text truncation">
+    {children}
+  </MdxLayout>
+);
+
+```js
+import { ClampText } from "@wonderflow/react-components";
+```
+
+The `ClampText` component is used to truncate multi-line texts without losing the ability to select and copy all the text content.
+
+## Usage
+
+The very basic usge of the component doesn't require any property. By default the text is clampet after the first line. If you need to change the visibile lines use the `rows` property:
+
+<LiveArea direction="row">
+  <ClampText rows={3}>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis autem quis
+    qui nam excepturi libero laudantium rerum earum illo illum, quisquam iure
+    aperiam ipsam corporis inventore voluptas dignissimos obcaecati modi!
+    Voluptate nesciunt quibusdam sit? Nobis possimus harum laboriosam iste
+    facilis quas. Minus quod corporis recusandae assumenda nobis architecto
+    deleniti obcaecati ad, ipsam pariatur facere odit possimus voluptatibus
+    nostrum? Magnam, eum.
+  </ClampText>
+</LiveArea>
+
+```jsx
+<ClampText rows={3}>...</ClampText>
+```
+
+## Dynamic tag
+
+If you need to change the element rendered by the `<ClampText>` from `<span>` to something else you can use the `as` property.
+
+<LiveArea direction="row">
+  <ClampText as="p" rows={1}>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis autem quis
+    qui nam excepturi libero laudantium rerum earum illo illum, quisquam iure
+    aperiam ipsam corporis inventore voluptas dignissimos obcaecati modi!
+  </ClampText>
+</LiveArea>
+
+```jsx
+<ClampText as="p" rows={1}>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis autem quis
+  qui nam excepturi libero laudantium rerum earum illo illum, quisquam iure
+  aperiam ipsam corporis inventore voluptas dignissimos obcaecati modi!
+</ClampText>
+```
+
+## Properties
+
+<Props
+  properties={[
+    {
+      name: "rows",
+      type: ["number"],
+      default: "1",
+      required: false,
+      dangerous: false,
+      description: "Set visible text lines",
+    },
+    {
+      name: "as",
+      type: ["PolymorphicPropsWithoutRef"],
+      default: '"span"',
+      required: false,
+      dangerous: true,
+      description: "Set the component outer html tag",
+    },
+  ]}
+/>

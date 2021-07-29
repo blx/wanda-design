@@ -15,6 +15,7 @@ export const LiveArea: React.FC<StackProps> = ({
       fill={false}
       wrap
       horizontalAlign="center"
+      direction="row"
       verticalAlign="center"
       columnGap={16}
       {...props}

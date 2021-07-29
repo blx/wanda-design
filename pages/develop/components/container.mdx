@@ -1,0 +1,116 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { Resizer } from "@/components/resizer";
+import { Container } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout title="Container" description="Who contains the content">
+    {children}
+  </MdxLayout>
+);
+
+```js
+import { Container } from "@wonderflow/react-components";
+```
+
+The `Container` component is a common wrapper that follows the Wanda rules about page grids. It automatically centers the content, sets the max column size, and adds the required padding.
+
+## Usage
+
+Unless specificed with the `size` property the container will fill the available space.
+
+<Resizer>
+  <LiveArea>
+    <Container className="ContainerEx"></Container>
+  </LiveArea>
+</Resizer>
+
+```jsx
+<Container>...</Container>
+```
+
+## Sizes
+
+When you need a thinner or wider column size you can use the `size` property to change the size of the container, by choosing from three options: `large`, `medium`, `full` (default):
+
+<Resizer>
+  <LiveArea direction="row">
+    <Container className="ContainerEx" size="medium">
+      ...
+    </Container>
+    <Container className="ContainerEx" size="large">
+      ...
+    </Container>
+    <Container className="ContainerEx">...</Container>
+  </LiveArea>
+</Resizer>
+
+```jsx
+<Container size="medium">...</Container>
+<Container size="large">...</Container>
+<Container>...</Container>
+```
+
+## Removing padding
+
+While the padding is automagically reduced on smaller viewports, this component has a boolean `padding` property which let you to remove the padding completely.
+
+<Resizer>
+  <LiveArea direction="row">
+    <Container padding={false} className="ContainerEx">
+      ...
+    </Container>
+  </LiveArea>
+</Resizer>
+
+```jsx
+<Container padding={false}>...</Container>
+```
+
+## Dynamic tag
+
+If you need to change the element rendered by the `<Container>` from `<div>` to something else you can use the `as` property.
+
+<Resizer>
+  <LiveArea direction="row">
+    <Container as="section" className="ContainerEx">
+      ...
+    </Container>
+  </LiveArea>
+</Resizer>
+
+```jsx
+<Container as="section">...</Container>
+```
+
+## Properties
+
+<Props
+  properties={[
+    {
+      name: "size",
+      type: ['"full"', '"medium"', '"large"'],
+      default: '"full"',
+      required: false,
+      dangerous: false,
+      description: "Set the element max width",
+    },
+    {
+      name: "padding",
+      type: ["boolean"],
+      default: "true",
+      required: false,
+      dangerous: false,
+      description: "Enable or disable the predefined padding",
+    },
+    {
+      name: "as",
+      type: ["PolymorphicPropsWithoutRef"],
+      default: '"div"',
+      required: false,
+      dangerous: true,
+      description: "Set the component outer html tag",
+    },
+  ]}
+/>

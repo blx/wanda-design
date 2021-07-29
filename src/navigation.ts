@@ -82,6 +82,21 @@ export default [
             path: '/develop/components/icon-button',
             label: 'Icon button',
             target: ''
+          },
+          {
+            path: '/develop/components/clamp-text',
+            label: 'Clamp text',
+            target: ''
+          },
+          {
+            path: '/develop/components/container',
+            label: 'Container',
+            target: ''
+          },
+          {
+            path: '/develop/components/icon',
+            label: 'Icon',
+            target: ''
           }
         ]
       }

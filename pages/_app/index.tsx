@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import '@wonderflow/react-components/themes/light.css'
 import '@wonderflow/react-components/core.css'
 import './app.css'
+import './shame.css'
 import Link from 'next/link'
 
 /* eslint-disable react/display-name, react/destructuring-assignment */
