@@ -54,8 +54,9 @@ By default the Title component just renders a `span` element with the visual sty
 You can notice how the visual appearance of the title is decoupled from its html tag, this way you can keep the headings structure while using different styles. For example you can render an `h2` element with the `as` property, while using the style for an `h5` by defining the `level` property to `5`.
 
 <Snackbar type="warning" title="About semantic">
-  It's important to use the correct tag and in order to keep the content
-  accessible to screen readers and assistive technologies in general.
+  It's important to use the correct tag and the headings structure in order to
+  keep the content accessible to screen readers and assistive technologies in
+  general.
 </Snackbar>
 
 Here is an example with different parameters: the fake h4 and h5 titles get semantically rendered as an h2 and h3, while stylistically they are an h4 and h5
