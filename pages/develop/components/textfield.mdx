@@ -1,0 +1,211 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import {
+  Textfield,
+  Snackbar,
+  Button,
+  Stack,
+} from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout title="Textfield" description="Input areas for data entry">
+    {children}
+  </MdxLayout>
+);
+
+```js
+import { Textfield } from "@wonderflow/react-components";
+```
+
+The `Textfield` component is a dynamic input field that reacts to entered data, providing a basic content format validation feedback and custom icons.
+
+## Usage
+
+By default, the Textfield component just renders an `input` element without any type declared. To define a field of type `text` you need then to specify the `type="text"` attribute.
+
+<LiveArea>
+  <Textfield
+    type="text"
+    id="filled"
+    label="Filled"
+    defaultValue="Prefilled value"
+  />
+</LiveArea>
+
+```jsx
+<Textfield
+  type="text"
+  id="demo1"
+  label="Label"
+  defaultValue="Prefilled value"
+/>
+```
+
+Since Wanda uses HTML native elements where possible there are many different input types you can use, most of them are handled by the platform so you don't need to care about positioning, scroll, overflow, OS themes, high contrast, etc. Here is a list of the available types:
+
+<LiveArea direction="column" horizontalAlign="start">
+  <Textfield type="text" label="Label" defaultValue="Prefilled value" />
+  <Textfield
+    type="text"
+    label="Read only"
+    defaultValue="Prefilled value"
+    readOnly
+  />
+  <Textfield
+    type="text"
+    label="Empty disbled"
+    placeholder="Placeholder"
+    disabled
+  />
+  <Textfield
+    type="text"
+    label="Filled disabled"
+    defaultValue="Prefilled value"
+    disabled
+  />
+  <Textfield type="number" label="Type number" defaultValue={100} />
+  <Textfield type="search" label="Type search" />
+  <Textfield type="date" label="Type date" />
+  <Textfield type="time" label="Type time" />
+  <Textfield type="month" label="Type month" />
+  <Textfield type="week" label="Type week" />
+  <Textfield type="datetime-local" label="Type datetime-local" />
+</LiveArea>
+
+```jsx
+<Textfield type="text" label="Label" defaultValue="Prefilled value" />
+<Textfield type="text" label="Read only" defaultValue="Prefilled value" readOnly />
+<Textfield type="text" label="Empty disbled" placeholder="Placeholder" disabled />
+<Textfield type="text" label="Filled disabled" defaultValue="Prefilled value" disabled />
+<Textfield type="number" label="Type number" defaultValue={100} />
+<Textfield type="search" label="Type search" />
+<Textfield type="date" label="Type date" />
+<Textfield type="time" label="Type time" />
+<Textfield type="month" label="Type month" />
+<Textfield type="week" label="Type week" />
+<Textfield type="datetime-local" label="Type datetime-local" />
+```
+
+## Sizes and icons
+
+Like other components, the size of thr `Textfield` can be controlled with the `size` property. If needed you can also add an icon to convey meaning.
+
+<LiveArea>
+  <Stack verticalAlign="end" direction="row" columnGap={8}>
+    <Textfield type="date" size="big" icon="calendar" label="Label" />
+    <Button size="big">Confirm</Button>
+  </Stack>
+</LiveArea>
+
+```jsx
+<Stack verticalAlign="end" direction="row" columnGap={8}>
+  <Textfield type="date" size="big" icon="calendar" label="Label" />
+  <Button size="big">Confirm</Button>
+</Stack>
+```
+
+## Data validation
+
+The input `invalid` property can be used to provide visual feedback about the validation of entered data. This feedback is meant to be used only when the data doesn't match a specific format required by the field.
+
+Don't use this visual feedback for errors generated after the form submissions, but instead trigger the validation when the user move outside the field (like blur event or click outside).
+
+<LiveArea>
+  <Textfield invalid size="big" icon="user" type="text" label="Label" />
+</LiveArea>
+
+```jsx
+<Textfield invalid size="big" icon="user" type="text" label="Label" />
+```
+
+## Multiline text
+
+By using the `textarea` property you can render a `textarea` element which allows multiline text instead of single-line.
+
+<LiveArea>
+  <Textfield textarea defaultValue="Prefilled value" />
+</LiveArea>
+
+```jsx
+<Textfield textarea defaultValue="Prefilled value" />
+```
+
+## Properties
+
+<Props
+  properties={[
+    {
+      name: "icon",
+      type: ["IconNames"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the icon to show inside the element",
+    },
+    {
+      name: "label",
+      type: ["string"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Add a label to the field. Requires the ID attribute.",
+    },
+    {
+      name: "textarea",
+      type: ["boolean"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Convert the field into multiline textarea",
+    },
+    {
+      name: "size",
+      type: ['"small"', '"regular"', '"big"'],
+      default: '"regular"',
+      required: false,
+      dangerous: false,
+      description: "Set the element size",
+    },
+    {
+      name: "readOnly",
+      type: ["boolean"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Makes the element readonly to prevent edits",
+    },
+    {
+      name: "iconPosition",
+      type: ['"left"', '"right"'],
+      default: '"right"',
+      required: false,
+      dangerous: false,
+      description: "Change the position of the icon",
+    },
+    {
+      name: "disabled",
+      type: ["boolean"],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Set the disabled state",
+    },
+    {
+      name: "invalid",
+      type: ["boolean"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the invalid state",
+    },
+    {
+      name: "onChange",
+      type: ["(ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Callback for the change event",
+    },
+  ]}
+/>

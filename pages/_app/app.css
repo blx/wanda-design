@@ -22,8 +22,8 @@ h6 {
   font-size: env(--font-size-16);
   right: calc(100% + env(--space-8));
   top: 0;
-  width: 24px;
-  height: 24px;
+  inline-size: 24px;
+  block-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;

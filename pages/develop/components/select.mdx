@@ -79,7 +79,13 @@ This component must have children in order to be valid. You can compose the list
 This component is highly customizable, for example you can set a different icon or size.
 
 <LiveArea>
-  <Select icon="compass" size="small" style={{ width: 200 }}>
+  <Select
+    label="Label"
+    id="demo1"
+    icon="compass"
+    size="small"
+    style={{ width: 200 }}
+  >
     <option value="placeholder" hidden selected disabled>
       Pick an option
     </option>
@@ -90,7 +96,7 @@ This component is highly customizable, for example you can set a different icon 
 </LiveArea>
 
 ```jsx
-<Select icon="compass" size="small">
+<Select label="Label" id="demo1" icon="compass" size="small">
   <option value="placeholder" hidden selected disabled>
     Pick an option
   </option>

@@ -1,6 +1,6 @@
 .ContainerEx {
   background-color: hsl(env(--color-primary-50) / 20%);
-  min-height: env(--space-24);
+  min-block-size: env(--space-24);
 }
 
 

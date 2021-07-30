@@ -132,6 +132,11 @@ export default [
             path: '/develop/components/title',
             label: 'Title',
             target: ''
+          },
+          {
+            path: '/develop/components/textfield',
+            label: 'Textfield',
+            target: ''
           }
         ]
       }
