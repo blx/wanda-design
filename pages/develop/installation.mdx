@@ -53,6 +53,21 @@ import "@wonderflow/react-components/themes/light.css";
   work as expected.
 </Snackbar>
 
+### Merging config
+
+If you're already using some PostCSS plugin you need to merge the configurations:
+
+```js
+const { postcssConfig } = require("@wonderflow/config");
+
+module.exports = {
+  plugins: {
+    ...postcssConfig.plugins,
+    "other-plugins": {},
+  },
+};
+```
+
 ## Recommended tools
 
 To ensure elvetated code standards and consistency Wanda provides also a set of sharable configurations for eslint and stylelint.
