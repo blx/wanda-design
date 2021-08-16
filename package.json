@@ -39,7 +39,7 @@
     "@mdx-js/loader": "1.6.22",
     "@next/bundle-analyzer": "11.0.1",
     "@next/mdx": "11.0.1",
-    "@wonderflow/react-components": "1.13.17",
+    "@wonderflow/react-components": "1.14.1",
     "@wonderflow/tokens": "1.3.2",
     "body-scroll-lock": "4.0.0-beta.0",
     "clsx": "1.1.1",

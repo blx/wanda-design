@@ -111,6 +111,14 @@ If you need a link which must look like a button you can change the element used
       description: "Set the element size",
     },
     {
+      name: "htmlType",
+      type: ['"reset"', '"submit"', '"button"'],
+      default: '"button"',
+      required: false,
+      dangerous: false,
+      description: "Set the value for the `type` attribute",
+    },
+    {
       name: "fullWidth",
       type: ["boolean"],
       default: "",
