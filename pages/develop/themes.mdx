@@ -13,12 +13,14 @@ Themes are a set of predefined keys which should be used whenever the color shou
 
 ## Usage
 
-A themes is activated by importing the relative `css` or `json` file inside your project (within js or css) or by embedding a `style` tag with its content into your page. Once you include the file all the theme keys will be available as custom properties, eg. `var(--global-foreground)`.
+A themes is activated by importing the relative `css` file inside your project (within js or css) or by embedding a `style` tag with the theme content into your page. Once you include the file all the theme keys will be available as custom properties, eg. `var(--global-foreground)`.
 
 ```js
 import "@wonderflow/react-components/themes/light.css";
-/* or */
-import "@wonderflow/react-components/themes/light.json";
+```
+
+```css
+@import "@wonderflow/react-components/themes/light.css";
 ```
 
 ```html
