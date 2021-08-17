@@ -6,13 +6,36 @@
   overflow: hidden;
   padding: env(--space-32) env(--space-24);
   color: hsl(env(--color-support-white));
+  position: relative;
 
   @media (--from-small) {
     padding: env(--space-48) env(--space-64);
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(var(--cta-default) 0.9px, transparent 0.9px);
+    background-size: 29px 29px;
+    pointer-events: none;
+  }
 }
 
+.Content {
+  position: relative;
+  z-index: 1;
+  max-inline-size: 55ch;
+}
 
-.Tagline {
-  max-inline-size: 35ch;
+.Video {
+  filter: saturate(0.5) hue-rotate(333deg);
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
 }
