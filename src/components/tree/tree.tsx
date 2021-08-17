@@ -1,6 +1,6 @@
 import React, { ReactNode, Fragment } from 'react'
 import { Stack, Text } from '@wonderflow/react-components'
-import styles from './tree.module.css'
+import { Tree as TreeClass, Title, Li } from './tree.module.css'
 import { Disclosure } from '../disclosure'
 
 type TreeGroupProps = {
@@ -19,8 +19,8 @@ export const Tree: {
   Li: React.FC;
 } = {
   Group: ({ children, title, ...props }) => (
-    <Stack rowGap={16} verticalAlign="start" className={styles.Tree} {...props}>
-      {title && <Text size={14} className={styles.Title}>{title}</Text>}
+    <Stack rowGap={16} verticalAlign="start" className={TreeClass} {...props}>
+      {title && <Text size={14} className={Title}>{title}</Text>}
       <Stack as="ul" rowGap={4}>
         {children}
       </Stack>
@@ -46,7 +46,7 @@ export const Tree: {
       : <Fragment>{children}</Fragment>
   },
 
-  Li: ({ children, ...props }) => <li className={styles.Li} {...props}>{children}</li>
+  Li: ({ children, ...props }) => <li className={Li} {...props}>{children}</li>
 }
 
 Tree.Group.displayName = 'Tree.Group'

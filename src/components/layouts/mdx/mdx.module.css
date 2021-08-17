@@ -2,11 +2,3 @@
 .MdxLayout {
   position: relative;
 }
-
-.Content {
-  & > p img {
-    inline-size: 100%;
-    overflow: hidden;
-    border-radius: env(--radius-16);
-  }
-}

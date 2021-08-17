@@ -1,7 +1,7 @@
 import { Resizable } from 're-resizable'
 import React from 'react'
 
-import styles from './resizer.module.css'
+import { Resizer as ResizerClass, Handle } from './resizer.module.css'
 
 type ResizerProps = {
   width?: string;
@@ -41,7 +41,7 @@ export const Resizer: React.FC<ResizerProps> = ({
 }) => {
   return (
     <Resizable
-      className={styles.Resizer}
+      className={ResizerClass}
       minHeight={minHeight}
       maxHeight={maxHeight}
       enable={directions}
@@ -55,10 +55,10 @@ export const Resizer: React.FC<ResizerProps> = ({
         left: { width: 16, left: 0 }
       }}
       handleClasses={{
-        right: styles.Handle,
-        left: styles.Handle,
-        top: styles.Handle,
-        bottom: styles.Handle
+        right: Handle,
+        left: Handle,
+        top: Handle,
+        bottom: Handle
       }}
     >
       {children}

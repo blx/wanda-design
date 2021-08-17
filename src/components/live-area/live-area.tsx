@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react'
 import clsx from 'clsx'
 import { Stack } from '@wonderflow/react-components'
 
-import styles from './live-area.module.css'
+import { LiveArea as LiveAreaClass } from './live-area.module.css'
 import { StackProps } from '@wonderflow/react-components/stack'
 
 type LiveAreaProps = {
@@ -21,7 +21,7 @@ export const LiveArea: React.FC<LiveAreaProps> = ({
 
   return (
     <Stack
-      className={clsx(styles.LiveArea)}
+      className={clsx(LiveAreaClass)}
       fill={false}
       wrap
       horizontalAlign="center"

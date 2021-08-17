@@ -4,7 +4,7 @@ import { Meta } from '@/components/meta'
 import { Prose, Stack } from '@wonderflow/react-components'
 import { ToC } from '@/components/toc'
 
-import styles from './mdx.module.css'
+import { MdxLayout as Mdx } from './mdx.module.css'
 import { DocHead, DocHeadProps } from '@/components/doc-head'
 
 export const MdxLayout: React.FC<DocHeadProps & PropsWithClass> = ({
@@ -14,7 +14,7 @@ export const MdxLayout: React.FC<DocHeadProps & PropsWithClass> = ({
   description,
   ...props
 }) => (
-  <ShellLayout className={styles.MdxLayout} {...props}>
+  <ShellLayout className={Mdx} {...props}>
     <Meta title={`${title} - Wanda Design System`} description={description} />
     <Stack rowGap={48}>
       <DocHead title={title} description={description} />

@@ -5,7 +5,7 @@ import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import React, { useCallback, useRef } from 'react'
 import { useCopyToClipboard } from 'react-use'
 
-import styles from './code-block.module.css'
+import { CodeBlock as CodeBlockClass, Action, Code } from './code-block.module.css'
 import theme from './wonder-theme'
 
 type CodeBlockProps = {
@@ -32,9 +32,9 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
       {({
         className, style, tokens, getLineProps, getTokenProps
       }) => (
-        <div className={clsx(styles.CodeBlock)}>
+        <div className={clsx(CodeBlockClass)}>
           <Button
-            className={styles.Action}
+            className={Action}
             size="small"
             type="flat"
             onClick={copyContent()}
@@ -42,7 +42,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
             Copy
           </Button>
 
-          <div className={clsx(styles.Code, className)} style={{ ...style }}>
+          <div className={clsx(Code, className)} style={{ ...style }}>
             <div ref={CodeRef}>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line, key: i })}>

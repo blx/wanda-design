@@ -3,7 +3,7 @@ import { Icon, Stack, Text } from '@wonderflow/react-components'
 import slugify from 'slugify'
 import clsx from 'clsx'
 
-import styles from './toc.module.css'
+import { ToC as ToCClass, ToCItem } from './toc.module.css'
 
 type ToCTableProps = {
   content?: ReactNode;
@@ -18,7 +18,7 @@ export const ToC: {
   Li: React.FC<ToCItemProps>
 } = {
   Table: ({ className, content, ...props }) => (
-    <Stack as="ul" rowGap={8} className={clsx(styles.ToC, className)} {...props}>
+    <Stack as="ul" rowGap={8} className={clsx(ToCClass, className)} {...props}>
       {Children.toArray(content)
         .filter((item: { props: any }) => /h2/g.test(item.props.mdxType))
         .map((child: { props: any }) => (
@@ -29,7 +29,7 @@ export const ToC: {
   ),
 
   Li: ({ className, text, ...props }) => (
-    <li className={clsx(styles.ToCItem, className)} {...props}>
+    <li className={clsx(ToCItem, className)} {...props}>
       <Icon name="turn-down-right" size={24} />
       <Text as="a" size={22} href={`#${slugify(text[1], { lower: true })}`}>{text[1].replace('#', '')}</Text>
     </li>

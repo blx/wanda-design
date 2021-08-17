@@ -7,7 +7,7 @@ import { Stack, IconButton } from '@wonderflow/react-components'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
-import styles from './shell.module.css'
+import { Shell, MenuTrigger, Aside, Content, Header, ContentArea } from './shell.module.css'
 
 type ShellLayoutProps = {
   header?: ReactNode;
@@ -55,17 +55,17 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       data-shell-collapsed={collapsed}
       data-shell-sticky-header={stickyHeader}
       direction="row"
-      className={clsx(styles.Shell, className)}
+      className={clsx(Shell, className)}
       {...props}
     >
       <Meta />
-      <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} size="big" className={styles.MenuTrigger} />
-      <aside className={styles.Aside} ref={scrollerRef}>
+      <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} size="big" className={MenuTrigger} />
+      <aside className={Aside} ref={scrollerRef}>
         <Sidebar />
       </aside>
-      <Stack as="main" verticalAlign="start" fill={false} className={styles.Content}>
-        {header && <header className={styles.Header}>{header}</header>}
-        <div className={styles.ContentArea}>
+      <Stack as="main" verticalAlign="start" fill={false} className={Content}>
+        {header && <header className={Header}>{header}</header>}
+        <div className={ContentArea}>
           {children}
         </div>
       </Stack>

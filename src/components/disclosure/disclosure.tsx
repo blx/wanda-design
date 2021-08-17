@@ -1,6 +1,6 @@
 import React, { CSSProperties, HTMLAttributes, ReactNode, useCallback, useState } from 'react'
 import clsx from 'clsx'
-import styles from './disclosure.module.css'
+import { Disclosure as DisclosureClass, Summary, ExpandIcon, Content } from './disclosure.module.css'
 import { Icon, Text } from '@wonderflow/react-components'
 
 type DisclosureProps = {
@@ -41,7 +41,7 @@ export const Disclosure: React.FC<DisclosureProps> = ({
   return (
     <details
       style={{ ...dynamicStyle, ...style }}
-      className={clsx(styles.Disclosure, className)}
+      className={clsx(DisclosureClass, className)}
       data-disclosure-icon-position={iconPosition}
       data-disclosure-size={size}
       aria-expanded={isOpen ? 'true' : 'false'}
@@ -51,16 +51,16 @@ export const Disclosure: React.FC<DisclosureProps> = ({
       <Text
         as="summary"
         onClick={handleOpen()}
-        className={styles.Summary}
+        className={Summary}
         fluid={false}
         size={size === 'regular' ? 16 : 22}
         weight="bold"
       >
         {summary}
-        <Icon className={styles.ExpandIcon} name="chevron-up" size={size === 'regular' ? 16 : 24} />
+        <Icon className={ExpandIcon} name="chevron-up" size={size === 'regular' ? 16 : 24} />
       </Text>
       <div
-        className={styles.Content}
+        className={Content}
         data-disclosure-padding={padding}
         data-disclosure-height={Boolean(contentMaxHeight)}
       >

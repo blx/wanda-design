@@ -4,7 +4,7 @@ import React from 'react'
 import { Disclosure } from '../disclosure'
 import { Stack, Separator, Text, Title, Snackbar } from '@wonderflow/react-components'
 
-import styles from './props.module.css'
+import { Props as PropsClass, PropName, PropsValue } from './props.module.css'
 
 type PropsProps = {
   open?: boolean;
@@ -18,7 +18,7 @@ export const Props: React.FC<PropsProps> = ({
   ...props
 }) => (
   <Stack
-    className={clsx(styles.Props, className)}
+    className={clsx(PropsClass, className)}
     rowGap={24}
     {...props}
   >
@@ -38,23 +38,23 @@ export const Props: React.FC<PropsProps> = ({
           <Separator />
           {item.description && (
             <Stack direction="row" fill={false} wrap columnGap={16}>
-              <Text as="b" size={14} className={styles.PropName}>Description:</Text>
-              <Text size={14} className={styles.PropsValue}><Markdown>{item.description}</Markdown></Text>
+              <Text as="b" size={14} className={PropName}>Description:</Text>
+              <Text size={14} className={PropsValue}><Markdown>{item.description}</Markdown></Text>
             </Stack>
           )}
 
           {item.type && (
             <Stack direction="row" fill={false} wrap columnGap={16}>
-              <Text as="b" size={14} className={styles.PropName}>Type:</Text>
-              <Text size={14} className={styles.PropsValue}>
+              <Text as="b" size={14} className={PropName}>Type:</Text>
+              <Text size={14} className={PropsValue}>
                 {item.type.map((value: any, index: any) => <Markdown key={value}>{`${index !== 0 ? ', ' : ''}\`${value}\``}</Markdown>)}
               </Text>
             </Stack>
           )}
 
           <Stack direction="row" fill={false} wrap columnGap={16}>
-            <Text as="b" size={14} className={styles.PropName}>Default:</Text>
-            <Text size={14} className={styles.PropsValue}><Markdown>{`\`${item.default || 'null'}\``}</Markdown></Text>
+            <Text as="b" size={14} className={PropName}>Default:</Text>
+            <Text size={14} className={PropsValue}><Markdown>{`\`${item.default || 'null'}\``}</Markdown></Text>
           </Stack>
 
           {item.dangerous && (

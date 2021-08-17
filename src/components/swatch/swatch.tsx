@@ -4,7 +4,7 @@ import React, {
 import { fromString } from 'css-color-converter'
 import { Text, Title, Stack, Button } from '@wonderflow/react-components'
 
-import styles from './swatch.module.css'
+import { Swatch as SwatchClass, Color, CopyColor, Values } from './swatch.module.css'
 
 type SwatchProps = {
   color: string;
@@ -43,11 +43,11 @@ export const Swatch: React.FC<SwatchProps> = ({
   }
 
   return (
-    <Stack rowGap={8} className={styles.Swatch} style={dynamicStyle}>
+    <Stack rowGap={8} className={SwatchClass} style={dynamicStyle}>
       <Stack
         direction="row"
         columnGap={16}
-        className={styles.Color}
+        className={Color}
         verticalAlign="center"
         horizontalAlign="center"
         fill={false}
@@ -56,10 +56,10 @@ export const Swatch: React.FC<SwatchProps> = ({
           ? <Text as="b" weight="bold" size={16}>COPIED</Text>
           : showCopy && (
             <Fragment>
-              <Button type="flat" size="small" className={styles.CopyColor} onClick={copyToClipboard(hexColor)}>
+              <Button type="flat" size="small" className={CopyColor} onClick={copyToClipboard(hexColor)}>
                 <b>COPY HEX</b>
               </Button>
-              <Button type="flat" size="small" className={styles.CopyColor} onClick={copyToClipboard(hslColor)}>
+              <Button type="flat" size="small" className={CopyColor} onClick={copyToClipboard(hslColor)}>
                 <b>COPY HSL</b>
               </Button>
             </Fragment>
@@ -72,7 +72,7 @@ export const Swatch: React.FC<SwatchProps> = ({
         fill={false}
       >
         {name && <Title level="6">{name}</Title>}
-        <Stack className={styles.Values} direction="row" columnGap={4}>
+        <Stack className={Values} direction="row" columnGap={4}>
           <Text size={14}>{hslColor}</Text>
           ｜
           <Text size={14}>{hexColor}</Text>
