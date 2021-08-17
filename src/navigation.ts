@@ -137,6 +137,11 @@ export default [
             path: '/develop/components/textfield',
             label: 'Textfield',
             target: ''
+          },
+          {
+            path: '/develop/components/selection-controls',
+            label: 'Selection controls',
+            target: ''
           }
         ]
       }

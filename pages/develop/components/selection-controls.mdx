@@ -1,0 +1,129 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import {
+  Checkbox,
+  Radio,
+  Toggle,
+  Stack,
+  Text,
+} from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Selection controls"
+    description="Content selection and toggles"
+  >
+    {children}
+  </MdxLayout>
+);
+
+```js
+import { Checkbox, Radio, Toggle } from "@wonderflow/react-components";
+```
+
+With the **selection controls** name we indicate a set of interactive elements that let the user perform a content selection or a toggle.
+
+## Usage
+
+The very basic usge of these components doesn't require any property. By default the elements are unchecked unless you add the standard react property [`defaultChecked`](https://reactjs.org/docs/uncontrolled-components.html#default-values) to them. This make the component checked by default but still controlled.
+
+<LiveArea direction="row">
+  <Checkbox defaultChecked />
+  <Checkbox defaultChecked disabled />
+  <Radio defaultChecked />
+  <Radio defaultChecked disabled />
+  <Toggle defaultChecked />
+  <Toggle defaultChecked disabled />
+</LiveArea>
+
+```jsx
+<Checkbox />
+<Checkbox disabled />
+<Radio />
+<Radio disabled />
+<Toggle />
+<Toggle disabled />
+```
+
+## Sizes
+
+These components come with two sizes. The `big` size is the default one while you can also use the `small` size to render the smaller version.
+
+<LiveArea direction="row">
+  <Checkbox size="small" defaultChecked />
+  <Checkbox size="small" defaultChecked disabled />
+  <Radio size="small" defaultChecked />
+  <Radio size="small" defaultChecked disabled />
+  <Toggle size="small" defaultChecked />
+  <Toggle size="small" defaultChecked disabled />
+</LiveArea>
+
+```jsx
+<Checkbox size="small" />
+<Checkbox size="small" disabled />
+<Radio size="small" />
+<Radio size="small" disabled />
+<Toggle size="small" />
+<Toggle size="small" disabled />
+```
+
+## Label
+
+To add a label to the element you can compose the sub-layout by using other components like the [`Stack`](/develop/components/stack/) and [`Text`](/develop/components/text/). Here an example with an interactive label:
+
+<LiveArea direction="column">
+  <Stack direction="row" columnGap={8}>
+    <Checkbox defaultChecked id="ex1" />
+    <Text as="label" for="ex1">
+      Click me
+    </Text>
+  </Stack>
+
+  <Stack direction="row" columnGap={8}>
+    <Checkbox size="small" defaultChecked id="ex2" />
+    <Text as="label" size={14} for="ex2">
+      Click me
+    </Text>
+  </Stack>
+</LiveArea>
+
+```jsx
+<Stack direction="row" columnGap={8}>
+  <Checkbox defaultChecked id="ex1" />
+  <Text as="label" for="ex1">
+    Click me
+  </Text>
+</Stack>
+```
+
+## Properties
+
+<Props
+  properties={[
+    {
+      name: "disabled",
+      type: ["boolean"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the disabled state",
+    },
+    {
+      name: "size",
+      type: ['"small"', '"big"'],
+      default: '"big"',
+      required: false,
+      dangerous: false,
+      description: "Set the element size",
+    },
+    {
+      name: "onChange",
+      type: ["(ChangeEvent<HTMLInputElement>) => void"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Callback for the change event",
+    },
+  ]}
+/>
