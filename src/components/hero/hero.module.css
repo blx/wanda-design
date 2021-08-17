@@ -1,0 +1,18 @@
+@import '@wonderflow/react-components/core/media.css';
+
+.Hero {
+  min-block-size: 60vh;
+  background-color: hsl(env(--color-primary-100));
+  overflow: hidden;
+  padding: env(--space-32) env(--space-24);
+  color: hsl(env(--color-support-white));
+
+  @media (--from-small) {
+    padding: env(--space-48) env(--space-64);
+  }
+}
+
+
+.Tagline {
+  max-inline-size: 35ch;
+}
