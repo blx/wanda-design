@@ -17,7 +17,7 @@ const ColorList = ({
   onChange
 }: ColorListProps) => {
   return (
-    <Select label={label} defaultValue="placeholder" onChange={onChange}>
+    <Select id={label} label={label} defaultValue="placeholder" onChange={onChange}>
       <option value="placeholder" hidden disabled>
         Pick a color
       </option>
