@@ -1,6 +1,7 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { ColorPalette } from "@/components/color-palette";
 import { Zoomer } from "@/components/zoomer";
+import { ContrastCalc } from "@/components/contrast-calc";
 import { Stack, Snackbar } from "@wonderflow/react-components";
 import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
 
@@ -28,7 +29,7 @@ Wanda provides a full-featured color collection as tokens. Each color is careful
 The support palette is meant to include all the secondary colors which are commonly used across the design but without being part of a color scale.
 
 <Stack direction="row" columnGap={16} rowGap={32} wrap>
-  <ColorPalette colors={tkns.color.support} />
+  <ColorPalette colors={tkns.color.support} id="support" />
 </Stack>
 
 ### Primary
@@ -36,7 +37,7 @@ The support palette is meant to include all the secondary colors which are commo
 The primary palette includes the main and the most used color across the brand and digital products. These colors are ofter combined with the `support-brand` color which is used as accent.
 
 <Stack direction="row" columnGap={16} rowGap={32} wrap>
-  <ColorPalette colors={tkns.color.primary} />
+  <ColorPalette colors={tkns.color.primary} id="primary" />
 </Stack>
 
 ### Literal colors
@@ -97,7 +98,8 @@ The color families in the Wanda palette contain twelve values from 0 to 100, wit
 
 Beyond black and white, the Wanda color palette provides a range of accessible combinations. Subtracting the foreground value from the background value (or vice versa) helps determine whether that color combination meets the WCAG AA contrast ratio success criteria. If the difference between two values is **50 or greater**, the colors are accessible. Anything below a difference of 50 may fail accessibility standards.
 
-![](/design/colors/contrast-ok.svg)
-![](/design/colors/contrast-bad.svg)
+To easily check the contrast ratio you can use this interactive widget.
+
+<ContrastCalc />
 
 [colorbox-url]: https://colorbox.io/?c0=%26p%24s%24%3D11%26p%24h%24st%24%3D220%26p%24h%24e%24%3D220%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.09%26p%24sa%24e%24%3D1%26p%24sa%24r%24%3D0.2%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D0.97%26p%24b%24e%24%3D0.06%26p%24b%24c%24%3Dl%26o%24n%24%3DPrimary%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c1=%26p%24s%24%3D11%26p%24h%24st%24%3D354%26p%24h%24e%24%3D350%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.19%26p%24sa%24e%24%3D1.5%26p%24sa%24r%24%3D0.9%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.12%26p%24b%24e%24%3D0.1%26p%24b%24c%24%3Dl%26o%24n%24%3DSemantic+Danger%26o%24ro%24%3Dccw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c2=%26p%24s%24%3D11%26p%24h%24st%24%3D195%26p%24h%24e%24%3D223%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.16%26p%24sa%24e%24%3D1%26p%24sa%24r%24%3D1.1%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.1%26p%24b%24e%24%3D0.15%26p%24b%24c%24%3Dl%26o%24n%24%3DSemantic+Info%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c3=%26p%24s%24%3D11%26p%24h%24st%24%3D144%26p%24h%24e%24%3D176%26p%24h%24c%24%3Deqi%26p%24sa%24st%24%3D0.16%26p%24sa%24e%24%3D0.97%26p%24sa%24r%24%3D1.3%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.04%26p%24b%24e%24%3D0.07%26p%24b%24c%24%3Dl%26o%24n%24%3DSemantic+Positive%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c4=%26p%24s%24%3D11%26p%24h%24st%24%3D37%26p%24h%24e%24%3D21%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.4%26p%24sa%24e%24%3D1.5%26p%24sa%24r%24%3D0.8%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.15%26p%24b%24e%24%3D0.2%26p%24b%24c%24%3Dl%26o%24n%24%3DSemantic+Warning%26o%24ro%24%3Dccw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c5=%26p%24s%24%3D11%26p%24h%24st%24%3D298%26p%24h%24e%24%3D298%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.14%26p%24sa%24e%24%3D1%26p%24sa%24r%24%3D0.6%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.04%26p%24b%24e%24%3D0.17%26p%24b%24c%24%3Dl%26o%24n%24%3DSupport+Purple%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c6=%26p%24s%24%3D11%26p%24h%24st%24%3D187%26p%24h%24e%24%3D187%26p%24h%24c%24%3Deco%26p%24sa%24st%24%3D0.1%26p%24sa%24e%24%3D1%26p%24sa%24r%24%3D0.8%26p%24sa%24c%24%3Dequo%26p%24b%24st%24%3D1%26p%24b%24e%24%3D0.09%26p%24b%24c%24%3Dl%26o%24n%24%3DSupport+Cyan%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1

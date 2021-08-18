@@ -7,6 +7,7 @@ import clsx from 'clsx'
 type ColorPaletteProps = {
   colors: Record<string, any>;
   title?: string;
+  id?: string;
   threshold?: number;
 }
 
@@ -21,6 +22,7 @@ export const ColorPalette = ({
   colors,
   title,
   threshold = 40,
+  id,
   ...props
 }: ColorPaletteProps) => {
   const [showHex, setShowHex] = useState(false)
@@ -31,8 +33,8 @@ export const ColorPalette = ({
       <Stack direction="row" fill={false} verticalAlign="center" horizontalAlign="space-between">
         <Title as="span" level="5">{title}</Title>
         <Stack direction="row" fill={false} columnGap={8} verticalAlign="middle">
-          <Text as="label" htmlFor={`palete-${title}`} weight="bold" size={14}>{showHex ? 'HEX' : 'HSL'}</Text>
-          <Toggle id={`palete-${title}`} onClick={() => setShowHex(!showHex)} size="small" />
+          <Text as="label" htmlFor={`palette-${title}-${id}`} weight="bold" size={14}>{showHex ? 'HEX' : 'HSL'}</Text>
+          <Toggle id={`palette-${title}-${id}`} onClick={() => setShowHex(!showHex)} size="small" />
         </Stack>
       </Stack>
 
