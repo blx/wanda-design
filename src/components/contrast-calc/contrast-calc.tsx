@@ -9,18 +9,17 @@ import { ContrastCalc as ContrastCalcClass, Preview, Badge } from './contrast-ca
 
 type ColorListProps = {
   label: string;
+  defaultValue?: string;
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
 const ColorList = ({
   label,
-  onChange
+  onChange,
+  defaultValue = 'placeholder'
 }: ColorListProps) => {
   return (
-    <Select id={label} label={label} defaultValue="placeholder" onChange={onChange}>
-      <option value="placeholder" hidden disabled>
-        Pick a color
-      </option>
+    <Select id={label} label={label} onChange={onChange} defaultValue={defaultValue}>
       {Object.keys(tkns.color).map((group: string) => (
         <optgroup key={group} label={group.charAt(0).toUpperCase() + group.slice(1)}>
           {Object.keys(tkns.color[group]).map((color: string) => (
@@ -88,8 +87,8 @@ export const ContrastCalc = () => {
       </Stack>
       <Stack rowGap={32}>
         <Stack direction="row" columnGap={8} rowGap={8} wrap verticalAlign="start">
-          <ColorList onChange={(event) => setBg(event.target.value)} label="Background color" />
-          <ColorList onChange={(event) => setFg(event.target.value)} label="Foreground color" />
+          <ColorList onChange={(event) => setBg(event.target.value)} defaultValue={bg} label="Background color" />
+          <ColorList onChange={(event) => setFg(event.target.value)} defaultValue={fg} label="Foreground color" />
           <Select label="Font size" defaultValue={fs} onChange={(event: ChangeEvent<HTMLSelectElement>) => setFs(event.target.value)}>
             <option value="16">14</option>
             <option value="16">16</option>
