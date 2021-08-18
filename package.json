@@ -59,6 +59,7 @@
     "prism-react-renderer": "1.2.1",
     "prop-types": "15.7.2",
     "re-resizable": "6.9.0",
+    "react-medium-image-zoom": "4.3.4",
     "react-use": "17.2.4",
     "remark-autolink-headings": "6.0.1",
     "remark-slug": "6.1.0",

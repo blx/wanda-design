@@ -19,27 +19,27 @@ export default [
   //     }
   //   ]
   // },
-  // {
-  //   title: 'Design',
-  //   items: [
-  //     {
-  //       path: '/design/brand',
-  //       label: 'Brand',
-  //       target: ''
-  //     },
-  //     {
-  //       label: 'Foundation',
-  //       expandable: true,
-  //       items: [
-  //         {
-  //           path: '/design/foundation/colors',
-  //           label: 'Colors',
-  //           target: ''
-  //         }
-  //       ]
-  //     }
-  //   ]
-  // },
+  {
+    title: 'Design',
+    items: [
+      // {
+      //   path: '/design/brand',
+      //   label: 'Brand',
+      //   target: ''
+      // },
+      {
+        label: 'Foundation',
+        expandable: true,
+        items: [
+          {
+            path: '/design/foundation/colors',
+            label: 'Colors',
+            target: ''
+          }
+        ]
+      }
+    ]
+  },
   {
     title: 'Develop',
     items: [

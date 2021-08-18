@@ -1,7 +1,99 @@
 import { MdxLayout } from "@/components/layouts/mdx";
+import { ColorPalette } from "@/components/color-palette";
+import { Zoomer } from "@/components/zoomer";
+import { Stack, Snackbar } from "@wonderflow/react-components";
+import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
 
 export default ({ children }) => (
-  <MdxLayout title="Colors" description="sample description">
+  <MdxLayout
+    title="Colors"
+    description="The way we evoke reactions and emotions"
+  >
     {children}
   </MdxLayout>
 );
+
+Our color system was designed to establish a flexible range of colors that support our brand, comms, and product teams. Wanderflow products relies on a full ranged color palette which includes ten shades for each color.
+
+<Zoomer>
+  <img loading="lazy" decoding="async" src="/design/colors/colors.webp" />
+</Zoomer>
+
+## Colors
+
+Wanda provides a full-featured color collection as tokens. Each color is carefully defined to match the contrast criteria. You can check all the colors and relative parameters on [ColorBox][colorbox-url].
+
+The support palette is meant to include all the secondary colors which are commonly used across the design but without being part of a color scale.
+
+<Stack direction="row" columnGap={16} rowGap={32} wrap>
+  <ColorPalette colors={tkns.color.support} title="Support" />
+</Stack>
+
+The primary palette includes the main and the most used color across the brand and digital products. These colors are ofter combined with the `support-brand` color which is used as accent.
+
+<Stack direction="row" columnGap={16} rowGap={32} wrap>
+  <ColorPalette colors={tkns.color.primary} title="Primary" />
+</Stack>
+
+### Literal colors
+
+These basic color tokens can be used for multiple purposes and they don't have a specific meaning. For example the [Wanda's light theme](/develop/themes/) uses `red-60` as background for dangerous situations, like the [dangerous Snackbar](/develop/components/snackbar/#types-of-message).
+
+<Stack rowGap={48}>
+  <Stack direction="row" columnGap={24} rowGap={32} wrap>
+    <ColorPalette colors={tkns.color.red} title="Red" />
+    <ColorPalette colors={tkns.color.green} title="Green" />
+    <ColorPalette colors={tkns.color.blue} title="Blue" />
+  </Stack>
+  <Stack direction="row" columnGap={24} rowGap={32} wrap>
+    <ColorPalette colors={tkns.color.purple} title="Purple" />
+    <ColorPalette colors={tkns.color.yellow} title="Yellow" />
+    <ColorPalette colors={tkns.color.cyan} title="Cyan" />
+  </Stack>
+</Stack>
+
+## Themes
+
+Themes serve as an organizational framework for color in Wanda, with each theme based on a specific combination of colors. There is a default “light” theme and a default “dark” theme. The light theme uses `support-white` as background and `primary-70` as global foreground, and the dark theme uses `support-black` as background and `primary-5` as global foreground.
+
+<Stack direction="row" columnGap={24}>
+  <Zoomer>
+    <img loading="lazy" decoding="async" src="/design/colors/light.webp" />
+  </Zoomer>
+  <Zoomer>
+    <img loading="lazy" decoding="async" src="/design/colors/dark.webp" />
+  </Zoomer>
+</Stack>
+
+It's important to use colors from themes whenever possible to keep consistency across products and to allow users to switch the theme based on the situation or system settings.
+
+<Stack direction="row" columnGap={24}>
+  <Zoomer>
+    <img loading="lazy" decoding="async" src="/design/colors/light-ex.webp" />
+  </Zoomer>
+  <Zoomer>
+    <img loading="lazy" decoding="async" src="/design/colors/dark-ex.webp" />
+  </Zoomer>
+</Stack>
+
+<Snackbar type="info" title="Learn more">
+  To learn more about themes and how to use them check the{" "}
+  <a href="/develop/themes/">Themes</a> section.
+</Snackbar>
+
+## Accessibility
+
+Using various forms of contrast is the most important consideration when making user-friendly color and interface choices. Awareness of standards and best practices is the key to accessible color selection.
+
+The color families in the Wanda palette contain twelve values from 0 to 100, with a single half-step of 5. Black text is WCAG AA accessible on colors ranging from 0 to 30 while white text is accessible on colors from 40 to 100.
+
+![](/design/colors/contrast-scale.svg)
+
+### Calculating contrast
+
+Beyond black and white, the Wanda color palette provides a range of accessible combinations. Subtracting the foreground value from the background value (or vice versa) helps determine whether that color combination meets the WCAG AA contrast ratio success criteria. If the difference between two values is **50 or greater**, the colors are accessible. Anything below a difference of 50 may fail accessibility standards.
+
+![](/design/colors/contrast-ok.svg)
+![](/design/colors/contrast-bad.svg)
+
+[colorbox-url]: https://colorbox.io/?c0=%26p%24s%24%3D11%26p%24h%24st%24%3D220%26p%24h%24e%24%3D220%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.09%26p%24sa%24e%24%3D1%26p%24sa%24r%24%3D0.2%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D0.97%26p%24b%24e%24%3D0.06%26p%24b%24c%24%3Dl%26o%24n%24%3DPrimary%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c1=%26p%24s%24%3D11%26p%24h%24st%24%3D354%26p%24h%24e%24%3D350%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.19%26p%24sa%24e%24%3D1.5%26p%24sa%24r%24%3D0.9%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.12%26p%24b%24e%24%3D0.1%26p%24b%24c%24%3Dl%26o%24n%24%3DSemantic+Danger%26o%24ro%24%3Dccw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c2=%26p%24s%24%3D11%26p%24h%24st%24%3D195%26p%24h%24e%24%3D223%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.16%26p%24sa%24e%24%3D1%26p%24sa%24r%24%3D1.1%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.1%26p%24b%24e%24%3D0.15%26p%24b%24c%24%3Dl%26o%24n%24%3DSemantic+Info%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c3=%26p%24s%24%3D11%26p%24h%24st%24%3D144%26p%24h%24e%24%3D176%26p%24h%24c%24%3Deqi%26p%24sa%24st%24%3D0.16%26p%24sa%24e%24%3D0.97%26p%24sa%24r%24%3D1.3%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.04%26p%24b%24e%24%3D0.07%26p%24b%24c%24%3Dl%26o%24n%24%3DSemantic+Positive%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c4=%26p%24s%24%3D11%26p%24h%24st%24%3D37%26p%24h%24e%24%3D21%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.4%26p%24sa%24e%24%3D1.5%26p%24sa%24r%24%3D0.8%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.15%26p%24b%24e%24%3D0.2%26p%24b%24c%24%3Dl%26o%24n%24%3DSemantic+Warning%26o%24ro%24%3Dccw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c5=%26p%24s%24%3D11%26p%24h%24st%24%3D298%26p%24h%24e%24%3D298%26p%24h%24c%24%3Deqo%26p%24sa%24st%24%3D0.14%26p%24sa%24e%24%3D1%26p%24sa%24r%24%3D0.6%26p%24sa%24c%24%3Deqo%26p%24b%24st%24%3D1.04%26p%24b%24e%24%3D0.17%26p%24b%24c%24%3Dl%26o%24n%24%3DSupport+Purple%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1&c6=%26p%24s%24%3D11%26p%24h%24st%24%3D187%26p%24h%24e%24%3D187%26p%24h%24c%24%3Deco%26p%24sa%24st%24%3D0.1%26p%24sa%24e%24%3D1%26p%24sa%24r%24%3D0.8%26p%24sa%24c%24%3Dequo%26p%24b%24st%24%3D1%26p%24b%24e%24%3D0.09%26p%24b%24c%24%3Dl%26o%24n%24%3DSupport+Cyan%26o%24ro%24%3Dcw%26o%24ms%24%3D0%26o%24minorStep%24%3D1
