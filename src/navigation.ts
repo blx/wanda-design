@@ -1,24 +1,24 @@
 export default [
-  // {
-  //   title: 'Get started',
-  //   items: [
-  //     {
-  //       path: '/get-started/introduction',
-  //       label: 'Introduction',
-  //       target: ''
-  //     },
-  //     {
-  //       path: '/get-started/topics',
-  //       label: 'Topics',
-  //       target: ''
-  //     },
-  //     {
-  //       path: '/get-started/accessibility',
-  //       label: 'Accessibility',
-  //       target: ''
-  //     }
-  //   ]
-  // },
+  {
+    title: 'Get started',
+    items: [
+      // {
+      //   path: '/get-started/introduction',
+      //   label: 'Introduction',
+      //   target: ''
+      // },
+      // {
+      //   path: '/get-started/topics',
+      //   label: 'Topics',
+      //   target: ''
+      // },
+      {
+        path: '/get-started/accessibility',
+        label: 'Accessibility',
+        target: ''
+      }
+    ]
+  },
   {
     title: 'Design',
     items: [
