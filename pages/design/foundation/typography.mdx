@@ -1,0 +1,156 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { Stack, Snackbar, Title, Text } from "@wonderflow/react-components";
+import { LiveArea } from "@/components/live-area";
+
+export default ({ children }) => (
+  <MdxLayout title="Typography" description="God is in the kerning">
+    {children}
+  </MdxLayout>
+);
+
+Wanda design system doesn't use custom fonts, instead it relies on the system fonts because we put performance and reactiveness ahead aesthetic. System fonts are made by awesome people around the world and they aim to solve all the issues across languages and readability, by using them our users don't have to wait until the font is downloaded and rendered.
+
+## Typefaces
+
+System fonts grant an immersive experience with our digital products. This means the typeface changes based on the operating system, so the user will have the perception of using a native system application.
+
+[![San Francisco font preview table](/design/typography/sf-table.svg)](https://developer.apple.com/fonts/ "Download San Francisco font")
+
+[![Segoe UI font preview table](/design/typography/segoe-table.svg)](https://docs.microsoft.com/en-us/windows/apps/design/downloads/#fonts "Download Segoe UI font")
+
+[![Ubuntu font preview table](/design/typography/ubuntu-table.svg)](https://design.ubuntu.com/font/ "Download Ubuntu font")
+
+<Snackbar type="info">
+  Click the previews to go to the download page and download the fonts for
+  design purposes.
+</Snackbar>
+
+## Type scale
+
+In general, text elements and typography play a very important role, and represent one of the main ways of conveying information from one point to another. For this reason, typographic aspects should never be underestimated, no matter which is context. In Wanda design system, we have tried to balance the impact of text components with other interface elements.
+
+The type scale is a combination of 12 sizes that are supported by the type system. It contains re-usable categories of text, with an intended application and meaning for each.
+
+### Headings
+
+Headings follow a scale based on a 1.333 factor ([Perfect Fourth](https://type-scale.com/?size=18&scale=1.333&text=A%20Visual%20Type%20Scale&font=Poppins&fontweight=600&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false)) **starting from the basic unit of 18px (1rem, 1em, 112.5%).**
+
+<LiveArea horizontalAlign="start" direction="column" rowGap={32}>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      100px — 5.61rem
+    </Text>
+    <Title as="h1" level="display">
+      Display Title
+    </Title>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      75 px — 4.209rem
+    </Text>
+    <Title as="h1" level="1">
+      H1 Heading
+    </Title>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      56.83px — 3.157rem
+    </Text>
+    <Title as="h2" level="2">
+      H2 Heading
+    </Title>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      42.63px — 2.369rem
+    </Text>
+    <Title as="h3" level="3">
+      H3 Heading
+    </Title>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      31.98px — 1.777rem
+    </Text>
+    <Title as="h4" level="4">
+      H4 Heading
+    </Title>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      23.99px — 1.333rem
+    </Text>
+    <Title as="h5" level="5">
+      H5 Heading
+    </Title>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      18.00px — 1rem
+    </Text>
+    <Title as="h6" level="6">
+      H6 Heading
+    </Title>
+  </Stack>
+</LiveArea>
+
+### Content
+
+Wanda's typography system provides five different sizes for text content. While we suggest to use text sized at least 16px for accessibility concern, sometimes you have to use a smaller text but you should avoid such situations as mush as possible.
+
+<LiveArea horizontalAlign="start" direction="column" rowGap={32}>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      28px — 1.55rem
+    </Text>
+    <Text size={28}>
+      Aenean tempor sem sed lorem ultricies lacinia. Sed sit amet tortor nibh.
+    </Text>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      22px — 1.22rem
+    </Text>
+    <Text size={22}>
+      Aenean tempor sem sed lorem ultricies lacinia. Sed sit amet tortor nibh.
+    </Text>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      18px — 1rem
+    </Text>
+    <Text size={18}>
+      Aenean tempor sem sed lorem ultricies lacinia. Sed sit amet tortor nibh.
+    </Text>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      16px — 0.88rem
+    </Text>
+    <Text size={16}>
+      Aenean tempor sem sed lorem ultricies lacinia. Sed sit amet tortor nibh.
+    </Text>
+  </Stack>
+  <Stack>
+    <Text style={{ color: "var(--dimmed-5)" }} weight="bold" size={16}>
+      14px — 0.77rem
+    </Text>
+    <Text size={14}>
+      Aenean tempor sem sed lorem ultricies lacinia. Sed sit amet tortor nibh.
+    </Text>
+  </Stack>
+</LiveArea>
+
+## Fluid typography
+
+The whole typography system of Wanda is built on top of a dynamic typography size which improve the readability and adapt the text size on smaller devices.
+
+On smaller devices both titles and text content are resized dynamically based on the viewport size by using this formula:
+
+```bash
+slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
+yAxisIntersection = -minWidth * slope + minFontSize
+preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
+
+font-size: clamp(minFontSize, preferredValue, maxFontSize)
+```

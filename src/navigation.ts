@@ -35,6 +35,11 @@ export default [
             path: '/design/foundation/colors',
             label: 'Colors',
             target: ''
+          },
+          {
+            path: '/design/foundation/typography',
+            label: 'Typography',
+            target: ''
           }
         ]
       }
