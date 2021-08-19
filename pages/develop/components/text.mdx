@@ -66,17 +66,14 @@ With `size`, `color` and `weight` properties you can change the visual appearanc
 
 ## Fluid typography
 
-Any `Text` element have a dynamic font size by default and the value is computed by following this formula:
-
-```bash
-slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
-yAxisIntersection = -minWidth * slope + minFontSize
-preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
-
-font-size: clamp(minFontSize, preferredValue, maxFontSize)
-```
+Any `Text` element have a dynamic font size by default and the value is computed by a specific formula described inside the [Typography](/design/foundation/typography) section.
 
 To disable this intrinsic behaviour you can set the `fluid` property to `false` in order to fix the font-size value to the specified value.
+
+<Snackbar type="info" title="Resize your browser window">
+  If you resize the browser window you can check that the first text block is
+  not resized based on the viewport.
+</Snackbar>
 
 <LiveArea>
   <Text size={22} fluid={false}>
@@ -90,11 +87,6 @@ To disable this intrinsic behaviour you can set the `fluid` property to `false` 
     temporibus.
   </Text>
 </LiveArea>
-
-<Snackbar type="info" title="Resize your browser window">
-  If you resize the browser window you can check that the first text block is
-  not resized based on the viewport.
-</Snackbar>
 
 ```jsx
 <Text size={22} fluid={false}>

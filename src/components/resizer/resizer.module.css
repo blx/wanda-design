@@ -3,8 +3,15 @@
 
   position: relative;
   border: 1px solid var(--color);
-  padding: env(--space-24) env(--space-56) env(--space-24) env(--space-32);
   overflow: hidden;
+
+  &[data-resizer-padding='true'] {
+    padding: env(--space-24) env(--space-56) env(--space-24) env(--space-32);
+  }
+
+  & > * {
+    height: 100%;
+  }
 
   & iframe {
     inline-size: 100%;

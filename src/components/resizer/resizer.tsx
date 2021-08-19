@@ -8,6 +8,7 @@ type ResizerProps = {
   height?: number;
   minHeight?: number;
   maxHeight: number;
+  padding?: boolean;
   bounds: 'window' | 'parent' | HTMLElement;
   directions: {
     top: boolean;
@@ -27,6 +28,7 @@ export const Resizer: React.FC<ResizerProps> = ({
   height = 'auto',
   minHeight = 80,
   maxHeight,
+  padding = true,
   bounds = 'window',
   directions = {
     top: false,
@@ -42,6 +44,7 @@ export const Resizer: React.FC<ResizerProps> = ({
   return (
     <Resizable
       className={ResizerClass}
+      data-resizer-padding={padding}
       minHeight={minHeight}
       maxHeight={maxHeight}
       enable={directions}
