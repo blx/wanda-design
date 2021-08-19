@@ -1,6 +1,14 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { Stack, Snackbar, Title, Text } from "@wonderflow/react-components";
+import {
+  Stack,
+  Snackbar,
+  Title,
+  Text,
+  Prose,
+} from "@wonderflow/react-components";
+import { LiveFrame } from "@/components/live-frame";
 import { LiveArea } from "@/components/live-area";
+import { Resizer } from "@/components/resizer";
 
 export default ({ children }) => (
   <MdxLayout title="Typography" description="God is in the kerning">
@@ -154,3 +162,22 @@ preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
 
 font-size: clamp(minFontSize, preferredValue, maxFontSize)
 ```
+
+### Try yourself
+
+<Resizer padding={false} height="300">
+  <LiveArea>
+    <LiveFrame>
+      <Prose>
+        <Title as="h1" level="1">
+          Sample title
+        </Title>
+        <Text size={22}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+          dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
+          numquam temporibus.
+        </Text>
+      </Prose>
+    </LiveFrame>
+  </LiveArea>
+</Resizer>
