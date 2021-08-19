@@ -1,4 +1,4 @@
-import React, { ChangeEvent, CSSProperties, useMemo, useState } from 'react'
+import React, { ChangeEvent, CSSProperties, forwardRef, useEffect, useMemo, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { Stack, Title, Select, Text, Icon } from '@wonderflow/react-components'
 import { fromString } from 'css-color-converter'
@@ -13,13 +13,13 @@ type ColorListProps = {
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const ColorList = ({
+const ColorList = forwardRef(({
   label,
   onChange,
   defaultValue = 'placeholder'
-}: ColorListProps) => {
+}: ColorListProps, ref: any) => {
   return (
-    <Select id={label} label={label} onChange={onChange} defaultValue={defaultValue}>
+    <Select ref={ref} id={label} label={label} onChange={onChange} defaultValue={defaultValue}>
       {Object.keys(tkns.color).map((group: string) => (
         <optgroup key={group} label={group.charAt(0).toUpperCase() + group.slice(1)}>
           {Object.keys(tkns.color[group]).map((color: string) => (
@@ -33,12 +33,16 @@ const ColorList = ({
       ))}
     </Select>
   )
-}
+})
+
+ColorList.displayName = 'ColorList'
 
 export const ContrastCalc = () => {
   const [bg, setBg] = useState('support-black')
   const [fg, setFg] = useState('support-white')
-  const [fs, setFs] = useState('16')
+  const [fs, setFs] = useState('18')
+  const bgRef = useRef<any>(null)
+  const fgRef = useRef<any>(null)
 
   const HexColor = (color: string) => {
     const formattedColor = color.startsWith('hsl') ? color.split(' ').join(', ').replace('/,', '') : color
@@ -66,6 +70,11 @@ export const ContrastCalc = () => {
   const isAAA = useMemo(() => ccc.isLevelAAA(bgColor, fgColor, parseInt(fs)), [fs, ccc, bgColor, fgColor])
   const isValid = useMemo(() => isAA || isAAA, [isAA, isAAA])
 
+  useEffect(() => {
+    setBg(bgRef.current.value)
+    setFg(fgRef.current.value)
+  }, [])
+
   return (
     <Stack
       direction="row"
@@ -87,8 +96,8 @@ export const ContrastCalc = () => {
       </Stack>
       <Stack rowGap={32}>
         <Stack direction="row" columnGap={8} rowGap={8} wrap verticalAlign="start">
-          <ColorList onChange={(event) => setBg(event.target.value)} defaultValue={bg} label="Background color" />
-          <ColorList onChange={(event) => setFg(event.target.value)} defaultValue={fg} label="Foreground color" />
+          <ColorList ref={bgRef} onChange={(event) => setBg(event.target.value)} defaultValue={bg} label="Background color" />
+          <ColorList ref={fgRef} onChange={(event) => setFg(event.target.value)} defaultValue={fg} label="Foreground color" />
           <Select label="Font size" defaultValue={fs} onChange={(event: ChangeEvent<HTMLSelectElement>) => setFs(event.target.value)}>
             <option value="16">14</option>
             <option value="16">16</option>
