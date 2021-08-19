@@ -1,4 +1,4 @@
-import React, { ChangeEvent, CSSProperties, forwardRef, useEffect, useMemo, useRef, useState } from 'react'
+import React, { ChangeEvent, CSSProperties, forwardRef, Ref, useEffect, useMemo, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { Stack, Title, Select, Text, Icon } from '@wonderflow/react-components'
 import { fromString } from 'css-color-converter'
@@ -16,10 +16,11 @@ type ColorListProps = {
 const ColorList = forwardRef(({
   label,
   onChange,
-  defaultValue = 'placeholder'
-}: ColorListProps, ref: any) => {
+  defaultValue = 'placeholder',
+  ...props
+}: ColorListProps, ref: Ref<HTMLSelectElement>) => {
   return (
-    <Select ref={ref} id={label} label={label} onChange={onChange} defaultValue={defaultValue}>
+    <Select ref={ref} id={label} label={label} onChange={onChange} defaultValue={defaultValue} {...props}>
       {Object.keys(tkns.color).map((group: string) => (
         <optgroup key={group} label={group.charAt(0).toUpperCase() + group.slice(1)}>
           {Object.keys(tkns.color[group]).map((color: string) => (
@@ -96,8 +97,8 @@ export const ContrastCalc = () => {
       </Stack>
       <Stack rowGap={32}>
         <Stack direction="row" columnGap={8} rowGap={8} wrap verticalAlign="start">
-          <ColorList ref={bgRef} onChange={(event) => setBg(event.target.value)} defaultValue={bg} label="Background color" />
-          <ColorList ref={fgRef} onChange={(event) => setFg(event.target.value)} defaultValue={fg} label="Foreground color" />
+          <ColorList ref={bgRef} onChange={() => setBg(bgRef.current.value)} defaultValue={bg} label="Background color" />
+          <ColorList ref={fgRef} onChange={() => setFg(fgRef.current.value)} defaultValue={fg} label="Foreground color" />
           <Select label="Font size" defaultValue={fs} onChange={(event: ChangeEvent<HTMLSelectElement>) => setFs(event.target.value)}>
             <option value="16">14</option>
             <option value="16">16</option>
