@@ -31,6 +31,7 @@
 
 .Content {
   flex-grow: 1;
+  background-color: var(--dimmed-1);
 }
 
 .MenuTrigger {

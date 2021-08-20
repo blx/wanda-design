@@ -9,6 +9,7 @@ const withMDX = require('@next/mdx')({
     remarkPlugins: [
       mdxSlug,
       [mdxLink, {
+        behavior: 'append',
         content: {
           type: 'element',
           tagName: 'span',

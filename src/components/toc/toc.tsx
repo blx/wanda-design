@@ -31,7 +31,7 @@ export const ToC: {
   Li: ({ className, text, ...props }) => (
     <li className={clsx(ToCItem, className)} {...props}>
       <Icon name="turn-down-right" size={24} />
-      <Text as="a" size={22} href={`#${slugify(text[1], { lower: true })}`}>{text[1].replace('#', '')}</Text>
+      <Text as="a" size={22} href={`#${slugify(text[0], { lower: true })}`}>{text[0].replace('#', '')}</Text>
     </li>
   )
 }

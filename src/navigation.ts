@@ -22,22 +22,22 @@ export default [
   {
     title: 'Design',
     items: [
-      // {
-      //   path: '/design/brand',
-      //   label: 'Brand',
-      //   target: ''
-      // },
       {
-        label: 'Foundation',
+        path: '/design/brand',
+        label: 'Brand',
+        target: ''
+      },
+      {
+        label: 'Foundations',
         expandable: true,
         items: [
           {
-            path: '/design/foundation/colors',
+            path: '/design/foundations/colors',
             label: 'Colors',
             target: ''
           },
           {
-            path: '/design/foundation/typography',
+            path: '/design/foundations/typography',
             label: 'Typography',
             target: ''
           }
