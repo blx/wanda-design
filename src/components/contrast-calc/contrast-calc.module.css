@@ -9,6 +9,7 @@
   color: var(--fg);
   position: relative;
   border-radius: env(--radius-8);
+  border: 2px solid var(--dimmed-2);
 }
 
 .Badge {

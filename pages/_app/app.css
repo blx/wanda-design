@@ -29,8 +29,8 @@ h6 {
   justify-content: center;
   line-height: 1;
   border-radius: env(--radius-8);
-  background-color: hsl(env(--color-cyan-0));
-  color: hsl(env(--color-cyan-70));
+  background-color: var(--highlight-cyan-background);
+  color: var(--highlight-cyan-foreground);
   padding-bottom: 1px;
 }
 

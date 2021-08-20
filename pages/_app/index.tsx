@@ -4,7 +4,7 @@ import { CodeBlock } from '@/components/code-block'
 import { Title, Text } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 
-import '@wonderflow/react-components/themes/light.css'
+import '@wonderflow/react-components/themes/dark.css'
 import '@wonderflow/react-components/core.css'
 import './app.css'
 import './shame.css'

@@ -1,7 +1,7 @@
 @import '@wonderflow/react-components/core/media.css';
 
 .Hero {
-  min-block-size: 60vh;
+  min-block-size: 100vh;
   background-color: hsl(env(--color-primary-100));
   overflow: hidden;
   padding: env(--space-32) env(--space-24);
@@ -39,4 +39,5 @@
   position: absolute;
   inset: 0;
   opacity: 0.3;
+  mix-blend-mode: color-dodge;
 }

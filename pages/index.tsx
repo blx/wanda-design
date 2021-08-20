@@ -4,9 +4,7 @@ import { Hero } from '@/components/hero'
 
 export const Home = () => {
   return (
-    <ShellLayout header={<Hero />}>
-      Home
-    </ShellLayout>
+    <ShellLayout header={<Hero />} />
   )
 }
 

@@ -53,7 +53,8 @@
 
 .Header {
   background-color: var(--global-background);
-  border-bottom: 1px solid var(--dimmed-2);
+
+  /* border-bottom: 1px solid var(--dimmed-2); */
 
   @nest [data-shell-sticky-header='true'] & {
     position: sticky;
@@ -62,10 +63,12 @@
 }
 
 .ContentArea {
-  padding: env(--space-16) env(--space-24) max(env(--space-88), env(safe-area-inset-bottom));
+  &:not(:empty) {
+    padding: env(--space-16) env(--space-24) max(env(--space-88), env(safe-area-inset-bottom));
 
-  @media (--from-medium) {
-    max-inline-size: 47.77rem;
-    padding: env(--space-48) env(--space-64);
+    @media (--from-medium) {
+      max-inline-size: 47.77rem;
+      padding: env(--space-48) env(--space-64);
+    }
   }
 }
