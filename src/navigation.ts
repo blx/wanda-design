@@ -22,11 +22,11 @@ export default [
   {
     title: 'Design',
     items: [
-      // {
-      //   path: '/design/brand',
-      //   label: 'Brand',
-      //   target: ''
-      // },
+      {
+        path: '/design/brand',
+        label: 'Brand',
+        target: ''
+      },
       {
         label: 'Foundation',
         expandable: true,
