@@ -6,10 +6,15 @@
   display: flex;
   flex-direction: column;
 
+  &[data-toc-has-titles='false'] {
+    display: none;
+  }
+
   @media (--from-extra-large) {
     position: fixed;
     top: env(--space-64);
-    right: env(--space-64);
+    left: calc(100% - 280px);
+    width: 250px;
   }
 }
 
@@ -21,6 +26,10 @@
   align-items: center;
   grid-gap: env(--space-16);
   color: var(--global-interactive-text);
+
+  & svg {
+    flex-shrink: 0;
+  }
 }
 
 .QuickNav.QuickNav {

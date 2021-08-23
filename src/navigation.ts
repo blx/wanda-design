@@ -40,6 +40,11 @@ export default [
             path: '/design/foundations/typography',
             label: 'Typography',
             target: ''
+          },
+          {
+            path: '/design/foundations/iconography',
+            label: 'Iconography',
+            target: ''
           }
         ]
       }

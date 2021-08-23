@@ -17,20 +17,19 @@ export const ToC: {
   Table: React.FC<ToCTableProps>;
   Li: React.FC<ToCItemProps>
 } = {
-  Table: ({ className, content, ...props }) => (
-    <Stack rowGap={16} className={clsx(ToCClass, className)} {...props}>
-      <Title level="6" className={QuickNav}>Quick nav</Title>
-      <Stack as="ul" rowGap={8}>
-        {Children.toArray(content)
-          .filter((item: { props: any }) => /h2/g.test(item.props.mdxType))
-          .map((child: { props: any }) => (
+  Table: ({ className, content, ...props }) => {
+    const titles = Children.toArray(content).filter((item: { props: any }) => /h2/g.test(item.props.mdxType))
+    return (
+      <Stack data-toc-has-titles={titles.length > 0} rowGap={16} className={clsx(ToCClass, className)} {...props}>
+        {(titles.length > 0) && <Title level="6" className={QuickNav}>Quick nav</Title>}
+        <Stack as="ul" rowGap={8}>
+          {titles.map((child: { props: any }) => (
             <ToC.Li key={child.props.children} text={child.props.children} />
-          ))
-      }
+          ))}
+        </Stack>
       </Stack>
-    </Stack>
-
-  ),
+    )
+  },
 
   Li: ({ className, text, ...props }) => (
     <li className={clsx(ToCItem, className)} {...props}>

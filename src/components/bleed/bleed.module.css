@@ -1,0 +1,11 @@
+@import '@wonderflow/react-components/core/media.css';
+
+.Bleed {
+
+  @media (--from-extra-large) {
+    width: 100vw;
+    max-width: var(--max-w, auto);
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}

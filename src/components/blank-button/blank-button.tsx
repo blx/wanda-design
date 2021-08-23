@@ -11,9 +11,9 @@ export const BlankButton = ({
   children,
   className,
   onClick,
-  ...attributes
+  ...props
 }: BlankButtonProps) => (
-  <button onClick={onClick} type="button" className={clsx(BlankButtonClass, className)} {...attributes}>
+  <button onClick={onClick} type="button" className={clsx(BlankButtonClass, className)} {...props}>
     {children}
   </button>
 )
