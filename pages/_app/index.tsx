@@ -17,7 +17,7 @@ const components = {
   h2: (props: any) => <Title as="h2" level="3" {...props} />,
   h3: (props: any) => <Title as="h3" level="4" {...props} />,
   h4: (props: any) => <Title as="h4" level="5" {...props} />,
-  p: Text,
+  p: (props: any) => <Text size={22} {...props} />,
   a: (props: any) => <Link {...props}><a>{props.children}</a></Link>
 }
 

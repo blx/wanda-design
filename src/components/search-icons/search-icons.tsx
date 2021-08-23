@@ -68,6 +68,7 @@ export const SearchIcons = () => {
   return (
     <Stack rowGap={48}>
       <Textfield
+        type="search"
         onChange={handleSearch}
         icon="magnifying-glass"
         iconPosition="left"

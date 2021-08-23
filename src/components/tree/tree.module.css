@@ -1,6 +1,4 @@
 .Tree {
-  font-size: env(--font-size-16);
-
   & ul {
     margin: 0;
     padding: 0;
