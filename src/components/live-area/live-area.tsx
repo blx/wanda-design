@@ -23,7 +23,9 @@ export const LiveArea: React.FC<LiveAreaProps> = ({
     <Stack
       className={clsx(LiveAreaClass)}
       wrap
+      fill={false}
       horizontalAlign="center"
+      verticalAlign="center"
       direction="row"
       columnGap={16}
       rowGap={16}

@@ -1,9 +1,9 @@
 import React, { Children, ReactNode } from 'react'
-import { Icon, Stack, Text } from '@wonderflow/react-components'
+import { Icon, Stack, Text, Title } from '@wonderflow/react-components'
 import slugify from 'slugify'
 import clsx from 'clsx'
 
-import { ToC as ToCClass, ToCItem } from './toc.module.css'
+import { ToC as ToCClass, ToCItem, QuickNav } from './toc.module.css'
 
 type ToCTableProps = {
   content?: ReactNode;
@@ -18,14 +18,18 @@ export const ToC: {
   Li: React.FC<ToCItemProps>
 } = {
   Table: ({ className, content, ...props }) => (
-    <Stack as="ul" rowGap={8} className={clsx(ToCClass, className)} {...props}>
-      {Children.toArray(content)
-        .filter((item: { props: any }) => /h2/g.test(item.props.mdxType))
-        .map((child: { props: any }) => (
-          <ToC.Li key={child.props.children} text={child.props.children} />
-        ))
+    <Stack rowGap={16} className={clsx(ToCClass, className)} {...props}>
+      <Title level="6" className={QuickNav}>Quick nav</Title>
+      <Stack as="ul" rowGap={8}>
+        {Children.toArray(content)
+          .filter((item: { props: any }) => /h2/g.test(item.props.mdxType))
+          .map((child: { props: any }) => (
+            <ToC.Li key={child.props.children} text={child.props.children} />
+          ))
       }
+      </Stack>
     </Stack>
+
   ),
 
   Li: ({ className, text, ...props }) => (

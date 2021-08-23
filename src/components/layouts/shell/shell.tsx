@@ -3,7 +3,7 @@ import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
 import clsx from 'clsx'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Stack, IconButton } from '@wonderflow/react-components'
+import { Stack, IconButton, Container } from '@wonderflow/react-components'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
@@ -65,9 +65,9 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       </aside>
       <Stack as="main" verticalAlign="start" fill={false} className={Content}>
         {header && <header className={Header}>{header}</header>}
-        <div className={ContentArea}>
+        <Container className={ContentArea}>
           {children}
-        </div>
+        </Container>
       </Stack>
     </Stack>
   )

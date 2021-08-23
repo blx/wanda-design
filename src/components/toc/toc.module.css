@@ -1,8 +1,16 @@
+@import '@wonderflow/react-components/core/media.css';
+
 .ToC {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
+
+  @media (--from-extra-large) {
+    position: fixed;
+    top: env(--space-64);
+    right: env(--space-64);
+  }
 }
 
 
@@ -13,4 +21,12 @@
   align-items: center;
   grid-gap: env(--space-16);
   color: var(--global-interactive-text);
+}
+
+.QuickNav.QuickNav {
+  display: none;
+
+  @media (--from-extra-large) {
+    display: unset;
+  }
 }

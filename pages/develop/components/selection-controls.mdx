@@ -75,14 +75,14 @@ To add a label to the element you can compose the sub-layout by using other comp
 <LiveArea direction="column">
   <Stack direction="row" columnGap={8}>
     <Checkbox defaultChecked id="ex1" />
-    <Text as="label" for="ex1">
+    <Text as="label" htmlFor="ex1">
       Click me
     </Text>
   </Stack>
 
   <Stack direction="row" columnGap={8}>
     <Checkbox size="small" defaultChecked id="ex2" />
-    <Text as="label" size={14} for="ex2">
+    <Text as="label" size={14} htmlFor="ex2">
       Click me
     </Text>
   </Stack>
@@ -91,7 +91,7 @@ To add a label to the element you can compose the sub-layout by using other comp
 ```jsx
 <Stack direction="row" columnGap={8}>
   <Checkbox defaultChecked id="ex1" />
-  <Text as="label" for="ex1">
+  <Text as="label" htmlFor="ex1">
     Click me
   </Text>
 </Stack>
