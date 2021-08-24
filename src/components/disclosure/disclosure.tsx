@@ -2,13 +2,14 @@ import React, { CSSProperties, HTMLAttributes, ReactNode, useCallback, useState 
 import clsx from 'clsx'
 import { Disclosure as DisclosureClass, Summary, ExpandIcon, Content } from './disclosure.module.css'
 import { Icon, Text } from '@wonderflow/react-components'
+import { TextProps } from '@wonderflow/react-components/text'
 
 type DisclosureProps = {
   open?: boolean;
   summary: ReactNode;
   padding?: boolean;
   contentMaxHeight?: string;
-  size?: 'big' | 'regular';
+  size?: 'small' | 'regular' | 'big';
   iconPosition?: 'left' | 'right';
 } & HTMLAttributes<HTMLDetailsElement>
 
@@ -38,6 +39,18 @@ export const Disclosure: React.FC<DisclosureProps> = ({
     '--maxHeight': contentMaxHeight
   }
 
+  const sizes = {
+    small: {
+      summary: 16
+    },
+    regular: {
+      summary: 18
+    },
+    big: {
+      summary: 22
+    }
+  }
+
   return (
     <details
       style={{ ...dynamicStyle, ...style }}
@@ -53,7 +66,7 @@ export const Disclosure: React.FC<DisclosureProps> = ({
         onClick={handleOpen()}
         className={Summary}
         fluid={false}
-        size={size === 'regular' ? 16 : 22}
+        size={size ? sizes[size].summary as TextProps['size'] : undefined}
         weight="bold"
       >
         {summary}
