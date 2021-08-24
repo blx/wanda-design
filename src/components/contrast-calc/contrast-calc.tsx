@@ -111,7 +111,7 @@ export const ContrastCalc = () => {
         <Stack horizontalAlign="start" verticalAlign="end" rowGap={24} fill={false}>
           <Stack inline direction="row" columnGap={8} verticalAlign="center" className={Badge}>
             <Text weight="bold" size={28}>{isAAA ? 'AAA' : isAA ? 'AA' : 'FAIL'}</Text>
-            <Icon name={isValid ? 'check' : 'xmark'} size={24} />
+            <Icon name={isValid ? 'check' : 'xmark'} dimension={24} />
           </Stack>
         </Stack>
       </Stack>

@@ -20,38 +20,38 @@ Buttons can be used to communicate and immediately trigger actions a user can ta
 
 ## Usage
 
-The very basic usge of the component doesn't require any property. If you want to use a `regular` and `primary` button you just have to drop the component inside your code. The visual appearance of the button can be changed by using the `type` property.
+The very basic usge of the component doesn't require any property. If you want to use a `regular` and `primary` button you just have to drop the component inside your code. The visual appearance of the button can be changed by using the `kind` property.
 
 <LiveArea direction="row">
   <Button>Click</Button>
-  <Button type="secondary">Click</Button>
-  <Button type="flat">Click</Button>
+  <Button kind="secondary">Click</Button>
+  <Button kind="flat">Click</Button>
   <Button disabled>Click</Button>
 </LiveArea>
 
 ```jsx
 <Button>Click</Button>
-<Button type="secondary">Click</Button>
-<Button type="flat">Click</Button>
+<Button kind="secondary">Click</Button>
+<Button kind="flat">Click</Button>
 <Button disabled>Click</Button>
 ```
 
 ## Sizes
 
-Sometimes you don't have enought space to add a regular button, and in the same way sometimes you need a bigger button to keep the visual hierarchy. For these cases you can use the `size` property to change the size of the button, by choosing from three options: `big`, `regular` (default), `small`:
+Sometimes you don't have enought space to add a regular button, and in the same way sometimes you need a bigger button to keep the visual hierarchy. For these cases you can use the `dimension` property to change the size of the button, by choosing from three options: `big`, `regular` (default), `small`:
 
 <LiveArea direction="row">
-  <Button size="big">Click</Button>
-  <Button type="secondary">Click</Button>
-  <Button size="small" type="flat">
+  <Button dimension="big">Click</Button>
+  <Button kind="secondary">Click</Button>
+  <Button dimension="small" kind="flat">
     Click
   </Button>
 </LiveArea>
 
 ```jsx
-<Button size="big">Click</Button>
-<Button type="secondary">Click</Button>
-<Button size="small" type="flat">Click</Button>
+<Button dimension="big">Click</Button>
+<Button kind="secondary">Click</Button>
+<Button dimension="small" kind="flat">Click</Button>
 ```
 
 ## Buttons with icons
@@ -60,18 +60,18 @@ Buttons can show an icon on the left or right side by using `icon` and `iconPosi
 
 <LiveArea direction="row">
   <Button icon="bell">Click</Button>
-  <Button icon="star" type="secondary">
+  <Button icon="star" kind="secondary">
     Click
   </Button>
-  <Button icon="plus" type="flat">
+  <Button icon="plus" kind="flat">
     Click
   </Button>
 </LiveArea>
 
 ```jsx
 <Button icon="bell">Click</Button>
-<Button size="small" icon="star" type="secondary">Click</Button>
-<Button icon="plus" type="flat">Click</Button>
+<Button dimension="small" icon="star" kind="secondary">Click</Button>
+<Button icon="plus" kind="flat">Click</Button>
 ```
 
 ## Dynamic tag
@@ -95,7 +95,7 @@ If you need a link which must look like a button you can change the element used
 <Props
   properties={[
     {
-      name: "type",
+      name: "kind",
       type: ['"primary"', '"secondary"', '"flat"'],
       default: '"primary"',
       required: false,
@@ -103,20 +103,12 @@ If you need a link which must look like a button you can change the element used
       description: "Set the element visual style",
     },
     {
-      name: "size",
+      name: "dimension",
       type: ['"small"', '"regular"', '"big"'],
       default: '"regular"',
       required: false,
       dangerous: false,
       description: "Set the element size",
-    },
-    {
-      name: "htmlType",
-      type: ['"reset"', '"submit"', '"button"'],
-      default: '"button"',
-      required: false,
-      dangerous: false,
-      description: "Set the value for the `type` attribute",
     },
     {
       name: "fullWidth",

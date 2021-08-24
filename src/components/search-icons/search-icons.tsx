@@ -10,7 +10,7 @@ import { Bleed } from '@/components/bleed'
 
 type IconTileProps = {
   icon: IconNames;
-  size: IconProps['size'];
+  size: IconProps['dimension'];
 }
 
 const IconTile: React.FC<IconTileProps> = ({ icon, size }) => {
@@ -37,7 +37,7 @@ const IconTile: React.FC<IconTileProps> = ({ icon, size }) => {
       rowGap={24}
     >
       <Stack horizontalAlign="center" rowGap={16} fill={false}>
-        <Icon name={icon} size={size} />
+        <Icon name={icon} dimension={size} />
         <Text size={14} weight="bold">{icon}</Text>
       </Stack>
       {(state.value && copied) && <Text size={14} weight="bold" className={Label}>COPIED</Text>}
@@ -72,9 +72,9 @@ export const SearchIcons = () => {
         onChange={handleSearch}
         icon="magnifying-glass"
         iconPosition="left"
-        size="big"
         data-search-icons-searched={isReady()}
         placeholder="Search icon names"
+        dimension="big"
       />
       <Bleed maxWidth="90ch">
         <div className={Grid}>

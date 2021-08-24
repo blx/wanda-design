@@ -53,7 +53,7 @@ By default the Title component just renders a `span` element with the visual sty
 
 You can notice how the visual appearance of the title is decoupled from its html tag, this way you can keep the headings structure while using different styles. For example you can render an `h2` element with the `as` property, while using the style for an `h5` by defining the `level` property to `5`.
 
-<Snackbar type="warning" title="About semantic">
+<Snackbar kind="warning" title="About semantic">
   It's important to use the correct tag and the headings structure in order to
   keep the content accessible to screen readers and assistive technologies in
   general.
@@ -98,7 +98,7 @@ Any `Title` element have a dynamic font size by default and the value is compute
 
 To disable this intrinsic behaviour you can set the `fluid` property to `false` in order to fix the font-size value to the specified value.
 
-<Snackbar type="info" title="Resize your browser window">
+<Snackbar kind="info" title="Resize your browser window">
   If you resize the browser window you can check that the first text block is
   not resized based on the viewport.
 </Snackbar>

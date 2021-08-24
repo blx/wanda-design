@@ -59,7 +59,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       {...props}
     >
       <Meta />
-      <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} size="big" className={MenuTrigger} />
+      <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} dimension="big" className={MenuTrigger} />
       <aside className={Aside} ref={scrollerRef}>
         <Sidebar />
       </aside>

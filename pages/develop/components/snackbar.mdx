@@ -35,29 +35,29 @@ This component is used to show inline or floating alerts, but it never stops the
 
 ## Types of message
 
-By default the Snackbar uses neutral colors to provide additional informations without alarming the user. With the `type` property you can change the severity of the message and convey a meaning with the messagge.
+By default the Snackbar uses neutral colors to provide additional informations without alarming the user. With the `kind` property you can change the severity of the message and convey a meaning with the messagge.
 
 <LiveArea fill>
-  <Snackbar title="Attention" type="warning">
+  <Snackbar title="Attention" kind="warning">
     The Relevance section uses only Feedback with that can be analysed with NLP
     and have a score. <a href="#">Learn more</a>
   </Snackbar>
-  <Snackbar title="Did you know?" type="info">
+  <Snackbar title="Did you know?" kind="info">
     The Relevance section uses only Feedback with that can be analysed with NLP
     and have a score. <a href="#">Learn more</a>
   </Snackbar>
-  <Snackbar title="Good!" type="positive">
+  <Snackbar title="Good!" kind="positive">
     The Relevance section uses only Feedback with that can be analysed with NLP
     and have a score. <a href="#">Learn more</a>
   </Snackbar>
-  <Snackbar title="Ooops!" type="danger">
+  <Snackbar title="Ooops!" kind="danger">
     The Relevance section uses only Feedback with that can be analysed with NLP
     and have a score. <a href="#">Learn more</a>
   </Snackbar>
 </LiveArea>
 
 ```jsx
-<Snackbar title="Attention" type="warning">
+<Snackbar title="Attention" kind="warning">
   The Relevance section uses only Feedback with that can be analysed with NLP
   and have a score. <a href="#">Learn more</a>
 </Snackbar>
@@ -92,7 +92,7 @@ By default the Snackbar uses neutral colors to provide additional informations w
       description: "Add a shadow for the floating notifications",
     },
     {
-      name: "type",
+      name: "kind",
       type: ['"info"', '"warning"', '"neutral"', '"positive"', '"danger"'],
       default: '"neutral"',
       required: false,

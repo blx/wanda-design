@@ -20,36 +20,36 @@ Buttons can be used to communicate and immediately trigger actions a user can ta
 
 ## Usage
 
-The very basic usge of the component doesn't require any property. If you want to use a `regular` and `primary` button you just have to drop the component inside your code. The visual appearance of the button can be changed by using the `type` property.
+The very basic usge of the component doesn't require any property. If you want to use a `regular` and `primary` button you just have to drop the component inside your code. The visual appearance of the button can be changed by using the `kind` property.
 
 <LiveArea direction="row">
   <IconButton icon="plus" />
-  <IconButton icon="bell" type="secondary" />
-  <IconButton icon="message" type="flat" />
+  <IconButton icon="bell" kind="secondary" />
+  <IconButton icon="message" kind="flat" />
   <IconButton icon="play" disabled />
 </LiveArea>
 
 ```jsx
 <IconButton icon="plus" />
-<IconButton icon="bell" type="secondary" />
-<IconButton icon="message" type="flat" />
+<IconButton icon="bell" kind="secondary" />
+<IconButton icon="message" kind="flat" />
 <IconButton icon="play" disabled />
 ```
 
 ## Sizes
 
-Sometimes you don't have enought space to add a regular button, and in the same way sometimes you need a bigger button to keep the visual hierarchy. For these cases you can use the `size` property to change the size of the button, by choosing from three options: `big`, `regular` (default), `small`:
+Sometimes you don't have enought space to add a regular button, and in the same way sometimes you need a bigger button to keep the visual hierarchy. For these cases you can use the `dimension` property to change the size of the button, by choosing from three options: `big`, `regular` (default), `small`:
 
 <LiveArea direction="row">
-  <IconButton size="big" icon="plus" />
-  <IconButton icon="bell" type="secondary" />
-  <IconButton size="small" icon="message" type="flat" />
+  <IconButton dimension="big" icon="plus" />
+  <IconButton icon="bell" kind="secondary" />
+  <IconButton dimension="small" icon="message" kind="flat" />
 </LiveArea>
 
 ```jsx
-<IconButton size="big" icon="plus" />
-<IconButton icon="bell" type="secondary" />
-<IconButton size="small" icon="message" type="flat" />
+<IconButton dimension="big" icon="plus" />
+<IconButton icon="bell" kind="secondary" />
+<IconButton dimension="small" icon="message" kind="flat" />
 ```
 
 ## Dynamic tag
@@ -69,7 +69,7 @@ If you need a link which must look like a button you can change the element used
 <Props
   properties={[
     {
-      name: "type",
+      name: "kind",
       type: ['"primary"', '"secondary"', '"flat"'],
       default: '"primary"',
       required: false,
@@ -77,7 +77,7 @@ If you need a link which must look like a button you can change the element used
       description: "Set the element visual style",
     },
     {
-      name: "size",
+      name: "dimension",
       type: ['"small"', '"regular"', '"big"'],
       default: '"regular"',
       required: false,

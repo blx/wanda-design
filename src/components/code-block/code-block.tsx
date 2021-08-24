@@ -35,8 +35,8 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
         <div className={clsx(CodeBlockClass)}>
           <Button
             className={Action}
-            size="small"
-            type="flat"
+            dimension="small"
+            kind="flat"
             onClick={copyContent()}
           >
             Copy
