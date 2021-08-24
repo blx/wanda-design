@@ -63,3 +63,59 @@
 .ContainerEx[data-container-padding='false'] {
   box-shadow: none;
 }
+
+/* stylelint-disable selector-class-pattern */
+
+/* Main dropdown wrapper */
+.algolia-autocomplete .ds-dropdown-menu {
+  width: 500px;
+}
+
+.algolia-autocomplete .ds-dropdown-menu [class^='ds-dataset-'],
+.algolia-autocomplete .algolia-docsearch-suggestion,
+.algolia-autocomplete .ds-dropdown-menu::before {
+  background-color: var(--dimmed-2);
+  border: none;
+}
+
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion.suggestion-layout-simple,
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion:not(.suggestion-layout-simple) .algolia-docsearch-suggestion--content {
+  background-color: var(--dimmed-3);
+}
+
+/* Main category (eg. Getting Started) */
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+  border-bottom-color: var(--dimmed-3);
+  color: var(--global-foreground);
+  font-weight: 600;
+}
+
+.algolia-autocomplete .algolia-docsearch-suggestion--content::before {
+  background-color: var(--dimmed-3);
+}
+
+/* Category (eg. Downloads) */
+.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+  color: var(--dimmed-6);
+}
+
+/* Title (eg. Bootstrap CDN) */
+.algolia-autocomplete .algolia-docsearch-suggestion--title {
+  font-weight: bold;
+  color: var(--global-foreground);
+}
+
+/* Description description (eg. Bootstrap currently works...) */
+.algolia-autocomplete .algolia-docsearch-suggestion--text {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* Highlighted text */
+.algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+  color: var(--global-interactive-text);
+}
+
+.algolia-docsearch-footer {
+  display: none;
+}

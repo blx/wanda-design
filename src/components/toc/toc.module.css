@@ -12,7 +12,7 @@
 
   @media (--from-extra-large) {
     position: fixed;
-    top: env(--space-64);
+    top: env(--space-104);
     left: calc(100% - 280px);
     width: 250px;
   }

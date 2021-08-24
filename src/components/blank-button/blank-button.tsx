@@ -1,11 +1,11 @@
 import clsx from 'clsx'
-import React, { HTMLAttributes } from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 
 import { BlankButton as BlankButtonClass } from './blank-button.module.css'
 
 type BlankButtonProps = {
   onClick?: () => void;
-} & HTMLAttributes<HTMLButtonElement>
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
 export const BlankButton = ({
   children,

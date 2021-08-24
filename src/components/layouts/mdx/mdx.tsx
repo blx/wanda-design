@@ -6,6 +6,7 @@ import { ToC } from '@/components/toc'
 
 import { MdxLayout as Mdx } from './mdx.module.css'
 import { DocHead, DocHeadProps } from '@/components/doc-head'
+import { Toolbar } from '@/components/toolbar'
 
 export const MdxLayout: React.FC<DocHeadProps & PropsWithClass> = ({
   children,
@@ -14,7 +15,14 @@ export const MdxLayout: React.FC<DocHeadProps & PropsWithClass> = ({
   description,
   ...props
 }) => (
-  <ShellLayout className={Mdx} {...props}>
+  <ShellLayout
+    className={Mdx}
+    stickyHeader
+    header={(
+      <Toolbar />
+      )}
+    {...props}
+  >
     <Meta title={`${title} - Wanda Design System`} description={description} />
     <Stack rowGap={48}>
       <DocHead title={title} description={description} />

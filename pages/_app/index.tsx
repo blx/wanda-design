@@ -4,11 +4,11 @@ import { CodeBlock } from '@/components/code-block'
 import { Title, Text } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 
+import Link from 'next/link'
 import '@wonderflow/react-components/themes/dark.css'
 import '@wonderflow/react-components/core.css'
 import './app.css'
 import './shame.css'
-import Link from 'next/link'
 
 /* eslint-disable react/display-name, react/destructuring-assignment */
 const components = {
