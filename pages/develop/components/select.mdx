@@ -83,7 +83,7 @@ This component is highly customizable, for example you can set a different icon 
     label="Label"
     id="demo1"
     icon="compass"
-    size="small"
+    dimension="small"
     style={{ width: 200 }}
   >
     <option value="placeholder" hidden selected disabled>
@@ -96,7 +96,7 @@ This component is highly customizable, for example you can set a different icon 
 </LiveArea>
 
 ```jsx
-<Select label="Label" id="demo1" icon="compass" size="small">
+<Select label="Label" id="demo1" icon="compass" dimension="small">
   <option value="placeholder" hidden selected disabled>
     Pick an option
   </option>
@@ -116,7 +116,7 @@ This component is highly customizable, for example you can set a different icon 
 As the native `select` element, this component can be rendered as multiple select to enable multiple selection:
 
 <LiveArea>
-  <Select type="multiple" style={{ width: 200 }}>
+  <Select kind="multiple" style={{ width: 200 }}>
     <option value="1">Option 1</option>
     <option value="2">Option 2</option>
     <option value="3">Option 3</option>
@@ -126,7 +126,7 @@ As the native `select` element, this component can be rendered as multiple selec
 </LiveArea>
 
 ```jsx
-<Select type="multiple">
+<Select kind="multiple">
   <option value="3">Option 3</option>
   <option value="4">Option 4</option>
   <option value="5">Option 5</option>
@@ -155,7 +155,7 @@ As the native `select` element, this component can be rendered as multiple selec
       description: "Set the label associated with the element",
     },
     {
-      name: "type",
+      name: "kind",
       type: ['"single"', '"multiple"'],
       default: '"single"',
       required: false,
@@ -163,7 +163,7 @@ As the native `select` element, this component can be rendered as multiple selec
       description: "Enable multiple selection",
     },
     {
-      name: "size",
+      name: "dimension",
       type: ['"small"', '"regular"', '"big"'],
       default: '"regular"',
       required: false,

@@ -21,7 +21,7 @@ With the `Icon` component you can add an icon from [Wanda's iconography](https:/
 
 ## Usage
 
-Unless specificed with the `size` property the component will render a `16px` icon by default.
+Unless specificed with the `dimension` property the component will render a `16px` icon by default.
 
 <LiveArea>
   <Icon name="bell" />
@@ -37,20 +37,20 @@ Unless specificed with the `size` property the component will render a `16px` ic
 
 ## Sizes
 
-By specifying the `size` property you change the size of the renderd icon, the svg will automagically match the correct style (solid or outline) based on the size.
+By specifying the `dimension` property you change the size of the renderd icon, the svg will automagically match the correct style (solid or outline) based on the size.
 
 More precisely, for sizes equal and lower than `16px` the icon style used is **solid**, while for icons sized `24px` or more the **outline** style is automatically used to increase the readability of the icon.
 
 <LiveArea>
-  <Icon size={16} name="eye" />
-  <Icon size={24} name="eye" />
-  <Icon size={40} name="eye" />
+  <Icon dimension={16} name="eye" />
+  <Icon dimension={24} name="eye" />
+  <Icon dimension={40} name="eye" />
 </LiveArea>
 
 ```jsx
-<Icon size={16} name="eye" />
-<Icon size={24} name="eye" />
-<Icon size={40} name="eye" />
+<Icon dimension={16} name="eye" />
+<Icon dimension={24} name="eye" />
+<Icon dimension={40} name="eye" />
 ```
 
 ## Icon color
@@ -61,12 +61,12 @@ Since they are rendered as `SVG` elements inside the page, **if you need**, you 
 
 <LiveArea>
   <Icon
-    size={32}
+    dimension={32}
     fill={`hsl(${tkns.color.blue[50]})`}
     name="circle-exclamation"
   />
-  <Icon size={32} fill="var(--cta-default)" name="circle-check" />
-  <Icon size={32} fill={`hsl(${tkns.color.purple[30]})`} name="compass" />
+  <Icon dimension={32} fill="var(--cta-default)" name="circle-check" />
+  <Icon dimension={32} fill={`hsl(${tkns.color.purple[30]})`} name="compass" />
 </LiveArea>
 
 ```jsx
@@ -88,7 +88,7 @@ Since they are rendered as `SVG` elements inside the page, **if you need**, you 
       description: "Set the icon to render based on the name",
     },
     {
-      name: "size",
+      name: "dimension",
       type: ["14", "16", "24", "32", "40", "48", "56"],
       default: "16",
       required: false,

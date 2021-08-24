@@ -21,7 +21,7 @@ export const DownloadTile = ({
       <Text as="span" weight="bold" className={Content}>
         <ClampText rows={1}>{children}</ClampText>
       </Text>
-      <Icon name="arrow-down-to-bracket" size={24} className={IconBullet} />
+      <Icon name="arrow-down-to-bracket" dimension={24} className={IconBullet} />
     </Stack>
   )
 }

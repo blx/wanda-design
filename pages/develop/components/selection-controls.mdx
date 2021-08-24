@@ -51,21 +51,21 @@ The very basic usge of these components doesn't require any property. By default
 These components come with two sizes. The `big` size is the default one while you can also use the `small` size to render the smaller version.
 
 <LiveArea direction="row">
-  <Checkbox size="small" defaultChecked />
-  <Checkbox size="small" defaultChecked disabled />
-  <Radio size="small" defaultChecked />
-  <Radio size="small" defaultChecked disabled />
-  <Toggle size="small" defaultChecked />
-  <Toggle size="small" defaultChecked disabled />
+  <Checkbox dimension="small" defaultChecked />
+  <Checkbox dimension="small" defaultChecked disabled />
+  <Radio dimension="small" defaultChecked />
+  <Radio dimension="small" defaultChecked disabled />
+  <Toggle dimension="small" defaultChecked />
+  <Toggle dimension="small" defaultChecked disabled />
 </LiveArea>
 
 ```jsx
-<Checkbox size="small" />
-<Checkbox size="small" disabled />
-<Radio size="small" />
-<Radio size="small" disabled />
-<Toggle size="small" />
-<Toggle size="small" disabled />
+<Checkbox dimension="small" />
+<Checkbox dimension="small" disabled />
+<Radio dimension="small" />
+<Radio dimension="small" disabled />
+<Toggle dimension="small" />
+<Toggle dimension="small" disabled />
 ```
 
 ## Label
@@ -81,8 +81,8 @@ To add a label to the element you can compose the sub-layout by using other comp
   </Stack>
 
   <Stack direction="row" columnGap={8}>
-    <Checkbox size="small" defaultChecked id="ex2" />
-    <Text as="label" size={14} htmlFor="ex2">
+    <Checkbox dimension="small" defaultChecked id="ex2" />
+    <Text as="label" dimension={14} htmlFor="ex2">
       Click me
     </Text>
   </Stack>
@@ -110,7 +110,7 @@ To add a label to the element you can compose the sub-layout by using other comp
       description: "Set the disabled state",
     },
     {
-      name: "size",
+      name: "dimension",
       type: ['"small"', '"big"'],
       default: '"big"',
       required: false,

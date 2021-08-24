@@ -89,19 +89,19 @@ Since Wanda uses HTML native elements where possible there are many different in
 
 ## Sizes and icons
 
-Like other components, the size of thr `Textfield` can be controlled with the `size` property. If needed you can also add an icon to convey meaning.
+Like other components, the size of thr `Textfield` can be controlled with the `dimension` property. If needed you can also add an icon to convey meaning.
 
 <LiveArea>
   <Stack verticalAlign="end" direction="row" columnGap={8}>
-    <Textfield type="date" size="big" icon="calendar" label="Label" />
-    <Button size="big">Confirm</Button>
+    <Textfield type="date" dimension="big" icon="calendar" label="Label" />
+    <Button dimension="big">Confirm</Button>
   </Stack>
 </LiveArea>
 
 ```jsx
 <Stack verticalAlign="end" direction="row" columnGap={8}>
-  <Textfield type="date" size="big" icon="calendar" label="Label" />
-  <Button size="big">Confirm</Button>
+  <Textfield type="date" dimension="big" icon="calendar" label="Label" />
+  <Button dimension="big">Confirm</Button>
 </Stack>
 ```
 
@@ -112,11 +112,11 @@ The input `invalid` property can be used to provide visual feedback about the va
 Don't use this visual feedback for errors generated after the form submissions, but instead trigger the validation when the user move outside the field (like blur event or click outside).
 
 <LiveArea>
-  <Textfield invalid size="big" icon="user" type="text" label="Label" />
+  <Textfield invalid dimension="big" icon="user" type="text" label="Label" />
 </LiveArea>
 
 ```jsx
-<Textfield invalid size="big" icon="user" type="text" label="Label" />
+<Textfield invalid dimension="big" icon="user" type="text" label="Label" />
 ```
 
 ## Multiline text
@@ -152,14 +152,6 @@ By using the `textarea` property you can render a `textarea` element which allow
       description: "Add a label to the field. Requires the ID attribute.",
     },
     {
-      name: "htmlSize",
-      type: ["number"],
-      default: "",
-      required: false,
-      dangerous: false,
-      description: "Set the value for the `size` attribute",
-    },
-    {
       name: "textarea",
       type: ["boolean"],
       default: "",
@@ -168,7 +160,7 @@ By using the `textarea` property you can render a `textarea` element which allow
       description: "Convert the field into multiline textarea",
     },
     {
-      name: "size",
+      name: "dimension",
       type: ['"small"', '"regular"', '"big"'],
       default: '"regular"',
       required: false,

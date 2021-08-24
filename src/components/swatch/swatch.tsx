@@ -56,10 +56,10 @@ export const Swatch: React.FC<SwatchProps> = ({
           ? <Text as="b" weight="bold" size={16}>COPIED</Text>
           : showCopy && (
             <Fragment>
-              <Button type="flat" size="small" className={CopyColor} onClick={copyToClipboard(hexColor)}>
+              <Button kind="flat" dimension="small" className={CopyColor} onClick={copyToClipboard(hexColor)}>
                 <b>COPY HEX</b>
               </Button>
-              <Button type="flat" size="small" className={CopyColor} onClick={copyToClipboard(hslColor)}>
+              <Button kind="flat" dimension="small" className={CopyColor} onClick={copyToClipboard(hslColor)}>
                 <b>COPY HSL</b>
               </Button>
             </Fragment>

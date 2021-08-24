@@ -2,7 +2,6 @@
 
 .CodeBlock {
   position: relative;
-  font-size: 0.9em;
   font-family: env(--font-family-mono);
   white-space: pre;
 
@@ -15,6 +14,7 @@
   overflow: auto;
   border-radius: env(--radius-8);
   white-space: pre-wrap;
+  font-size: env(--font-size-18);
   padding: 28px env(--space-24) env(--space-24);
 }
 

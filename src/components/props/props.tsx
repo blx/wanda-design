@@ -58,7 +58,7 @@ export const Props: React.FC<PropsProps> = ({
           </Stack>
 
           {item.dangerous && (
-            <Snackbar type="warning">
+            <Snackbar kind="warning">
               Using this prop is dangerous and may leads to some type validation
               issue.
             </Snackbar>

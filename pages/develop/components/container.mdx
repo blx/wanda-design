@@ -18,7 +18,7 @@ The `Container` component is a common wrapper that follows the Wanda rules about
 
 ## Usage
 
-Unless specificed with the `size` property the container will fill the available space.
+Unless specificed with the `dimension` property the container will fill the available space.
 
 <Resizer>
   <LiveArea>
@@ -32,14 +32,14 @@ Unless specificed with the `size` property the container will fill the available
 
 ## Sizes
 
-When you need a thinner or wider column size you can use the `size` property to change the size of the container, by choosing from three options: `large`, `medium`, `full` (default):
+When you need a thinner or wider column size you can use the `dimension` property to change the size of the container, by choosing from three options: `large`, `medium`, `full` (default):
 
 <Resizer>
   <LiveArea direction="row">
-    <Container className="ContainerEx" size="medium">
+    <Container className="ContainerEx" dimension="medium">
       ...
     </Container>
-    <Container className="ContainerEx" size="large">
+    <Container className="ContainerEx" dimension="large">
       ...
     </Container>
     <Container className="ContainerEx">...</Container>
@@ -47,8 +47,8 @@ When you need a thinner or wider column size you can use the `size` property to 
 </Resizer>
 
 ```jsx
-<Container size="medium">...</Container>
-<Container size="large">...</Container>
+<Container dimension="medium">...</Container>
+<Container dimension="large">...</Container>
 <Container>...</Container>
 ```
 
@@ -89,7 +89,7 @@ If you need to change the element rendered by the `<Container>` from `<div>` to 
 <Props
   properties={[
     {
-      name: "size",
+      name: "dimension",
       type: ['"full"', '"medium"', '"large"'],
       default: '"full"',
       required: false,

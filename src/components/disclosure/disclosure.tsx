@@ -70,7 +70,7 @@ export const Disclosure: React.FC<DisclosureProps> = ({
         weight="bold"
       >
         {summary}
-        <Icon className={ExpandIcon} name="chevron-up" size={size === 'regular' ? 16 : 24} />
+        <Icon className={ExpandIcon} name="chevron-up" dimension={size === 'regular' ? 16 : 24} />
       </Text>
       <div
         className={Content}
