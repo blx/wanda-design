@@ -2,7 +2,7 @@ import { MdxLayout } from "@/components/layouts/mdx";
 import { Zoomer } from "@/components/zoomer";
 import { Tile } from "@/components/tile";
 import { TileGrid } from "@/components/tile-grid";
-import { Stack } from "@wonderflow/react-components";
+import { Stack, Text } from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout title="Brand" description="Wonderflow's digital identity">
@@ -94,7 +94,7 @@ Icons are versions of the mark logo. The stroke is thicker in order to keep read
     href="/assets/logo/full-logo.zip"
     download
   >
-    Full Logo
+    <Text weight="bold">Full Logo</Text>
   </Tile>
   <Tile
     icon="arrow-down-to-bracket"
@@ -102,7 +102,7 @@ Icons are versions of the mark logo. The stroke is thicker in order to keep read
     href="/assets/logo/mark-logo.zip"
     download
   >
-    Mark logo
+    <Text weight="bold">Mark logo</Text>
   </Tile>
   <Tile
     icon="arrow-down-to-bracket"
@@ -110,6 +110,6 @@ Icons are versions of the mark logo. The stroke is thicker in order to keep read
     href="/assets/logo/icons.zip"
     download
   >
-    Icons
+    <Text weight="bold">Icons</Text>
   </Tile>
 </TileGrid>

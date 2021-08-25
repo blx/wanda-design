@@ -24,9 +24,9 @@ export const Tile = forwardRef(({
 }, forwardedRef) => {
   return (
     <Stack ref={forwardedRef} className={clsx(TileClass, className)} {...props}>
-      <Text as="span" weight="bold" className={Content}>
-        <ClampText rows={1}>{children}</ClampText>
-      </Text>
+      <Stack rowGap={32}>
+        {children}
+      </Stack>
       {icon && <Icon name={icon} dimension={24} className={IconBullet} />}
     </Stack>
   )

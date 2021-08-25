@@ -1,15 +1,25 @@
 .Tile {
   display: block;
-  block-size: env(--space-152);
-  background-color: var(--dimmed-2);
-  padding: env(--space-16);
+  min-block-size: env(--space-152);
+
+  /* background-color: var(--dimmed-2); */
+  padding: env(--space-24);
   min-inline-size: env(--space-168);
-  inline-size: 33%;
   position: relative;
   border-radius: env(--radius-4);
+  background-color: var(--dimmed-2);
+
+  @supports (backdrop-filter: blur(1px)) {
+    backdrop-filter: blur(62px);
+    background-color: var(--global-vibrancy-background);
+  }
 
   &:is(:hover, :focus) {
     background-color: var(--dimmed-3);
+
+    @supports (backdrop-filter: blur(1px)) {
+      background-color: var(--global-vibrancy-background-hover);
+    }
   }
 }
 

@@ -38,15 +38,15 @@ By default the Text component just renders a `p` element with the default font s
 </Text>
 ```
 
-With `size`, `color` and `weight` properties you can change the visual appearance of the element, keeping it consistent with the design system guidelines:
+With `size`, `sentiment`, `dimmed` and `weight` properties you can change the visual appearance of the element, keeping it consistent with the design system guidelines:
 
 <LiveArea>
-  <Text size={22}>
+  <Text size={22} dimmed={6}>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
     tempore quas labore officiis praesentium. Porro sed dolorem, numquam
     temporibus.
   </Text>
-  <Text size={14} color="positive">
+  <Text size={14} sentiment="positive">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
     tempore quas labore officiis praesentium. Porro sed dolorem, numquam
     temporibus.
@@ -107,7 +107,15 @@ To disable this intrinsic behaviour you can set the `fluid` property to `false` 
       description: "Set the text font-size",
     },
     {
-      name: "color",
+      name: "dimmed",
+      type: ["4", "5", "6", "7"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the text color to match dimmed color themes",
+    },
+    {
+      name: "sentiment",
       type: ["positive", "informative", "danger", "warning"],
       default: "",
       required: false,

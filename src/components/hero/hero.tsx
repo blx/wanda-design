@@ -22,46 +22,56 @@ export const Hero = () => {
       <Stack rowGap={80} className={Content}>
         <div>
           <Title level="display">Wanda</Title>
-          <Text size={28}>
+          <Text size={28} maxWidth="50ch">
             Wanda is Wonderflow’s open-source design system built for digital products and experiences.
           </Text>
         </div>
-        <Stack wrap direction="row" columnGap={8} rowGap={24}>
-          <Tile as="a" href="/design/foundations/colors/">
-            <Title as="h2" level="4">
-              <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
-                <Stack>
-                  <Text size={16} color="positive">Start</Text>
-                  Designing
+        <Stack wrap direction="row" columnGap={32} rowGap={32}>
+          <Link href="/design/foundations/colors/" passHref>
+            <Tile as="a">
+              <Title as="h2" level="4">
+                <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
+                  <Stack>
+                    <Text size={16} sentiment="positive">Start</Text>
+                    Design
+                  </Stack>
+                  <Icon name="arrow-right" dimension={24} />
                 </Stack>
-                <Icon name="arrow-right" dimension={24} />
-              </Stack>
-            </Title>
-          </Tile>
+              </Title>
+              <Text dimmed={6} maxWidth="30ch">Learn the foundations ow Wanda design system and how to design digital products.</Text>
+            </Tile>
+          </Link>
 
-          <Tile as="a" href="/develop/installation/">
-            <Title as="h2" level="4">
-              <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
-                <Stack>
-                  <Text size={16} color="positive">Start</Text>
-                  Developing
+          <Link href="/develop/installation/" passHref>
+            <Tile as="a">
+              <Title as="h2" level="4">
+                <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
+                  <Stack>
+                    <Text size={16} sentiment="warning">Start</Text>
+                    Developing
+                  </Stack>
+                  <Icon name="arrow-right" dimension={24} />
                 </Stack>
-                <Icon name="arrow-right" dimension={24} />
-              </Stack>
-            </Title>
-          </Tile>
+              </Title>
+              <Text dimmed={6} maxWidth="30ch">Learn how to install and use the Wanda design system packages to build digital products.</Text>
+            </Tile>
+          </Link>
 
-          <Tile as="a" href="/develop/components/button//">
-            <Title as="h2" level="4">
-              <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
-                <Stack>
-                  <Text size={16} color="positive">Start from</Text>
-                  Components
+          <Link href="/develop/components/button/" passHref>
+            <Tile as="a">
+              <Title as="h2" level="4">
+                <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
+                  <Stack>
+                    <Text size={16} sentiment="danger">Start</Text>
+                    Components
+                  </Stack>
+                  <Icon name="arrow-right" dimension={24} />
                 </Stack>
-                <Icon name="arrow-right" dimension={24} />
-              </Stack>
-            </Title>
-          </Tile>
+              </Title>
+              <Text dimmed={6} maxWidth="30ch">Check all the available ready to use UI components and learn how to use them inside your digital products.</Text>
+            </Tile>
+          </Link>
+
         </Stack>
       </Stack>
     </Stack>
