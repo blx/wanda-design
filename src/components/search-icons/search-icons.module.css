@@ -4,6 +4,14 @@
   grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
 }
 
+.ToolBar {
+  position: sticky;
+  top: env(--space-56);
+  padding: env(--space-24) 0 env(--space-48);
+  z-index: 1;
+  background: linear-gradient(to bottom, var(--dimmed-1) 60%, transparent);
+}
+
 .IconTile {
   --bg: var(--dimmed-2);
 
@@ -22,6 +30,11 @@
   &:focus-visible {
     --bg: var(--dimmed-3);
   }
+}
+
+.IconPreview {
+  width: env(--space-24);
+  height: env(--space-24);
 }
 
 .Label {

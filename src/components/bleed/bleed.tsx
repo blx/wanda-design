@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import React, { CSSProperties, HTMLAttributes } from 'react'
 import { Bleed as BleedClass } from './bleed.module.css'
 
@@ -9,6 +10,7 @@ export const Bleed: React.FC<BleedProps> = ({
   children,
   maxWidth,
   style,
+  className,
   ...props
 }) => {
   const dynamicStyle: CSSProperties = {
@@ -16,7 +18,7 @@ export const Bleed: React.FC<BleedProps> = ({
   }
 
   return (
-    <div style={{ ...dynamicStyle, ...style }} className={BleedClass} {...props}>
+    <div style={{ ...dynamicStyle, ...style }} className={clsx(BleedClass, className)} {...props}>
       {children}
     </div>
   )

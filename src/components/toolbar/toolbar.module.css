@@ -1,10 +1,10 @@
 .Toolbar {
   padding: env(--space-8) env(--space-24);
   color: var(--global-vibrancy-foreground);
-  backdrop-filter: blur(62px);
   background-color: var(--global-background);
 
   @supports (backdrop-filter: blur(1px)) {
+    backdrop-filter: blur(62px);
     background-color: hsl(env(--color-support-black) / 80%);
   }
 }
