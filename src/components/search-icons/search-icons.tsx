@@ -75,28 +75,30 @@ export const SearchIcons = () => {
 
   return (
     <Stack rowGap={48}>
-      <Stack direction="row" verticalAlign="center" horizontalAlign="center" wrap columnGap={24} rowGap={16}>
-        <Textfield
-          ref={fieldRef}
-          type="search"
-          onChange={handleSearch}
-          icon="magnifying-glass"
-          iconPosition="left"
-          data-search-icons-searched={isReady()}
-          placeholder="Search icon names"
-          dimension="big"
-        />
-        <Stack direction="row" fill={false} columnGap={24} inline>
-          <Stack direction="row" columnGap={8}>
-            <Radio onChange={() => setIconSize(16)} dimension="small" id="SolidStyle" name="iconstyle" value="solid" defaultChecked />
-            <Text as="label" htmlFor="SolidStyle"><b>Solid</b></Text>
-          </Stack>
-          <Stack direction="row" columnGap={8}>
-            <Radio onChange={() => setIconSize(24)} dimension="small" id="OutlineStyle" name="iconstyle" value="outline" />
-            <Text as="label" htmlFor="OutlineStyle"><b>Outline</b></Text>
+      <Bleed maxWidth="90ch" className={ToolBar}>
+        <Stack direction="row" verticalAlign="center" horizontalAlign="center" wrap columnGap={24} rowGap={16}>
+          <Textfield
+            ref={fieldRef}
+            type="search"
+            onChange={handleSearch}
+            icon="magnifying-glass"
+            iconPosition="left"
+            data-search-icons-searched={isReady()}
+            placeholder="Search icon names"
+            dimension="big"
+          />
+          <Stack direction="row" fill={false} columnGap={24} inline>
+            <Stack direction="row" columnGap={8}>
+              <Radio onChange={() => setIconSize(16)} dimension="small" id="SolidStyle" name="iconstyle" value="solid" defaultChecked />
+              <Text as="label" htmlFor="SolidStyle"><b>Solid</b></Text>
+            </Stack>
+            <Stack direction="row" columnGap={8}>
+              <Radio onChange={() => setIconSize(24)} dimension="small" id="OutlineStyle" name="iconstyle" value="outline" />
+              <Text as="label" htmlFor="OutlineStyle"><b>Outline</b></Text>
+            </Stack>
           </Stack>
         </Stack>
-      </Stack>
+      </Bleed>
       <Bleed maxWidth="90ch">
         { filteredIcons.length === 0
           ? (
