@@ -4,6 +4,8 @@ import { CodeBlock } from '@/components/code-block'
 import { Title, Text } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
+import { useMedia } from 'react-use'
+import Head from 'next/head'
 
 import Link from 'next/link'
 import '@wonderflow/react-components/themes/dark.css'
@@ -30,6 +32,7 @@ const Providers = ({ children }: { children: ReactNode }) => (
 
 const App = ({ Component, pageProps }: any) => {
   const router = useRouter()
+  const isDark = useMedia('(prefers-color-scheme: dark)')
 
   useEffect(() => {
     router.events.on('routeChangeStart', () => { document.documentElement.dataset.htmlSmooth = 'false' })
@@ -43,6 +46,10 @@ const App = ({ Component, pageProps }: any) => {
 
   return (
     <Providers>
+      <Head>
+        {/* <meta name="theme-color" content={isDark ? '#000000' : '#ffffff'} /> */}
+        <meta name="theme-color" content="#000000" />
+      </Head>
       <NextScript src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
       <Component {...pageProps} />
     </Providers>

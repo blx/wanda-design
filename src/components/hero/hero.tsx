@@ -1,6 +1,7 @@
 import { Icon, Stack, Text, Title } from '@wonderflow/react-components'
 import React from 'react'
 import { Tile } from '@/components/tile'
+import { Search } from '@/components/search'
 import Link from 'next/link'
 import { Hero as HeroClass, Video, Content } from './hero.module.css'
 
@@ -19,13 +20,14 @@ export const Hero = () => {
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
-      <Stack rowGap={80} className={Content}>
-        <div>
+      <Stack rowGap={160} className={Content}>
+        <Stack rowGap={32}>
           <Title level="display">Wanda</Title>
           <Text size={28} maxWidth="50ch">
             Wanda is Wonderflow’s open-source design system built for digital products and experiences.
           </Text>
-        </div>
+          <Search size={50} dimension="big" />
+        </Stack>
         <Stack wrap direction="row" columnGap={32} rowGap={32}>
           <Link href="/design/foundations/colors/" passHref>
             <Tile as="a">

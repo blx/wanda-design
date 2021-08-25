@@ -3,13 +3,16 @@ import { Textfield } from '@wonderflow/react-components'
 import { TextfieldProps } from '@wonderflow/react-components/textfield'
 import Head from 'next/head'
 
-type SearchProps = TextfieldProps & {}
+type SearchProps = TextfieldProps & {
+  size?: number;
+}
 
 declare const window: any
 
 export const Search = ({
   className,
   dimension = 'regular',
+  size = 30,
   ...props
 }: SearchProps) => {
   useEffect(() => {
@@ -32,7 +35,7 @@ export const Search = ({
       <Textfield
         className={className}
         id="site-search"
-        size={30}
+        size={size}
         dimension={dimension}
         icon="magnifying-glass"
         iconPosition="left"
