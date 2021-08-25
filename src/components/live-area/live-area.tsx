@@ -5,9 +5,9 @@ import { Stack } from '@wonderflow/react-components'
 import { LiveArea as LiveAreaClass } from './live-area.module.css'
 import { StackProps } from '@wonderflow/react-components/stack'
 
-type LiveAreaProps = {
+type LiveAreaProps = PropsWithClass & StackProps & {
   maxHeight?: string;
-} & StackProps
+}
 
 export const LiveArea: React.FC<LiveAreaProps> = ({
   children,
