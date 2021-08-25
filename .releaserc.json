@@ -4,6 +4,13 @@
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/github",
+    "@semantic-release/npm",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "npx replace-json-property package.json version ${nextRelease.version}"
+      }
+    ],
     "@semantic-release/git"
   ]
 }
