@@ -6,7 +6,7 @@ import { IconNames } from '@wonderflow/react-components/icons/types'
 import { useDebounce, useCopyToClipboard } from 'react-use'
 import { BlankButton } from '@/components/blank-button'
 import { Bleed } from '@/components/bleed'
-import { IconTile as IconTileClass, Grid, Label, IconPreview, ToolBar } from './search-icons.module.css'
+import { SearchIcons as SearchIconsClass, IconTile as IconTileClass, Grid, Label, IconPreview, ToolBar } from './search-icons.module.css'
 import { TokensTypes } from '@wonderflow/tokens/platforms/web/types'
 
 type IconTileProps = {
@@ -74,7 +74,7 @@ export const SearchIcons = () => {
   }, [])
 
   return (
-    <Stack rowGap={48}>
+    <Stack rowGap={48} className={SearchIconsClass}>
       <Bleed maxWidth="90ch" className={ToolBar}>
         <Stack direction="row" verticalAlign="center" horizontalAlign="center" wrap columnGap={24} rowGap={16}>
           <Textfield

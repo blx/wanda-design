@@ -31,7 +31,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
         icon="github"
         target="_blank"
         rel="noopner noreferrer"
-        kind="secondary"
+        kind="flat"
         aria-label="Github link to the source code"
       />
       {children}
