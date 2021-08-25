@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     border-radius: env(--radius-4);
+    z-index: 0;
   }
 }
 

@@ -3,6 +3,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
 import { Title, Text } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
+import NextScript from 'next/script'
 
 import Link from 'next/link'
 import '@wonderflow/react-components/themes/dark.css'
@@ -42,6 +43,7 @@ const App = ({ Component, pageProps }: any) => {
 
   return (
     <Providers>
+      <NextScript src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
       <Component {...pageProps} />
     </Providers>
   )
