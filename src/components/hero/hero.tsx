@@ -70,7 +70,7 @@ export const Hero = () => {
                 </Stack>
                 <Icon name="arrow-right" dimension={24} />
               </Stack>
-              <Text dimmed={7} maxWidth="30ch">Check all the available ready to use UI components and learn how to use them inside your digital products.</Text>
+              <Text dimmed={7} maxWidth="30ch">Check all the available and ready to use UI components and learn how to use them inside your digital products.</Text>
             </Tile>
           </Link>
 

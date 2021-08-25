@@ -4,7 +4,7 @@ import { CodeBlock } from '@/components/code-block'
 import { Title, Text } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
-import { useMedia } from 'react-use'
+// import { useMedia } from 'react-use'
 import Head from 'next/head'
 
 import Link from 'next/link'
@@ -32,7 +32,7 @@ const Providers = ({ children }: { children: ReactNode }) => (
 
 const App = ({ Component, pageProps }: any) => {
   const router = useRouter()
-  const isDark = useMedia('(prefers-color-scheme: dark)')
+  // const isDark = useMedia('(prefers-color-scheme: dark)')
 
   useEffect(() => {
     router.events.on('routeChangeStart', () => { document.documentElement.dataset.htmlSmooth = 'false' })
