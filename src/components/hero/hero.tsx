@@ -33,7 +33,7 @@ export const Hero = () => {
             <Tile as="a">
               <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
                 <Stack>
-                  <Text size={16} dimmed={6} weight="bold">Learn about</Text>
+                  <Text size={16} dimmed={6} weight="bold">Learn</Text>
                   <Title as="h2" level="4">
                     <Text as="span">Accessibility</Text>
                   </Title>
@@ -78,7 +78,7 @@ export const Hero = () => {
             <Tile as="a">
               <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
                 <Stack>
-                  <Text size={16} dimmed={6} weight="bold">Check</Text>
+                  <Text size={16} dimmed={6} weight="bold">Use</Text>
                   <Title as="h2" level="4">
                     <Text as="span" sentiment="danger">Components</Text>
                   </Title>
