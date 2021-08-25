@@ -29,7 +29,7 @@ export const Hero = () => {
           <Search size={50} dimension="big" />
         </Stack>
         <Stack wrap direction="row" columnGap={32} rowGap={32}>
-          <Link href="/design/foundations/colors/" passHref>
+          <Link href="/get-started/accessibility/" passHref>
             <Tile as="a">
               <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
                 <Stack>
@@ -50,7 +50,7 @@ export const Hero = () => {
                 <Stack>
                   <Text size={16} dimmed={6} weight="bold">Start</Text>
                   <Title as="h2" level="4">
-                    <Text as="span" sentiment="positive">Design</Text>
+                    <Text as="span" sentiment="positive">Designing</Text>
                   </Title>
                 </Stack>
                 <Icon name="arrow-right" dimension={24} />
@@ -78,7 +78,7 @@ export const Hero = () => {
             <Tile as="a">
               <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
                 <Stack>
-                  <Text size={16} dimmed={6} weight="bold">Start</Text>
+                  <Text size={16} dimmed={6} weight="bold">Check</Text>
                   <Title as="h2" level="4">
                     <Text as="span" sentiment="danger">Components</Text>
                   </Title>
