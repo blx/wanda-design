@@ -11,6 +11,8 @@
 
   @media (--from-small) {
     padding: env(--space-96);
+  }
+  @media (--from-extra-large) {
     padding-left: 20rem;
   }
 
