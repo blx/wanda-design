@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo, useState } from 'react'
-import { Icon, Radio, Stack, Text, Textfield } from '@wonderflow/react-components'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Icon, Radio, Stack, Text, Textfield, Title } from '@wonderflow/react-components'
 import { IconProps } from '@wonderflow/react-components/icon'
 import IconsList from '@wonderflow/react-components/icons/structure.json'
 import { IconNames } from '@wonderflow/react-components/icons/types'
@@ -47,6 +47,7 @@ const IconTile: React.FC<IconTileProps> = ({ icon, size }) => {
 }
 
 export const SearchIcons = () => {
+  const fieldRef = useRef<HTMLInputElement>(null)
   const [searchTerm, setSearchTerm] = useState<string>('')
   const [iconSize, setIconSize] = useState<TokensTypes['icon']['size']>(16)
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('')
@@ -67,11 +68,17 @@ export const SearchIcons = () => {
     []
   )
 
+  useEffect(() => {
+    const currentValue = fieldRef?.current?.value
+    if (currentValue) setSearchTerm(currentValue)
+  }, [])
+
   return (
     <Stack rowGap={48}>
       <Bleed maxWidth="90ch" className={ToolBar}>
         <Stack direction="row" verticalAlign="center" horizontalAlign="center" wrap columnGap={24} rowGap={16}>
           <Textfield
+            ref={fieldRef}
             type="search"
             onChange={handleSearch}
             icon="magnifying-glass"
@@ -93,11 +100,19 @@ export const SearchIcons = () => {
         </Stack>
       </Bleed>
       <Bleed maxWidth="90ch">
-        <div className={Grid}>
-          {filteredIcons.map((icon: IconNames) => (
-            <IconTile key={icon + '16'} icon={icon} size={iconSize} />
-          ))}
-        </div>
+        { filteredIcons.length === 0
+          ? (
+            <Stack horizontalAlign="center" verticalAlign="center" rowGap={16}>
+              <Title as="h2" level="5">Nothing to show</Title>
+              <Text color="informative">Make sure you entered the correct name.</Text>
+            </Stack>
+            )
+          : (
+            <div className={Grid}>
+              {filteredIcons.map((icon: IconNames) => <IconTile key={icon + '16'} icon={icon} size={iconSize} />)}
+            </div>
+            )
+          }
       </Bleed>
     </Stack>
   )
