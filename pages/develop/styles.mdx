@@ -1,5 +1,6 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { CodeBlock } from "@/components/code-block";
+import { LiveArea } from "@/components/live-area";
 import { Stack } from "@wonderflow/react-components";
 import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
 
@@ -71,7 +72,7 @@ export const CardStyles = {
   placeItems: "center",
 };
 
-<Stack direction="row" columnGap={24}>
+<LiveArea>
   <div style={CardStyles} data-elevation="1">
     Z1
   </div>
@@ -84,7 +85,7 @@ export const CardStyles = {
   <div style={CardStyles} data-elevation="4">
     Z4
   </div>
-</Stack>
+</LiveArea>
 
 ```html
 <div data-elevation="1">Z1</div>
@@ -95,11 +96,11 @@ export const CardStyles = {
 
 ### Interactive elevation
 
-<Stack fill={false} horizontalAlign="center" direction="row" columnGap={24}>
+<LiveArea>
   <div style={CardStyles} data-elevation="1" data-elevation-hover="3">
     Z1 to Z3
   </div>
-</Stack>
+</LiveArea>
 
 ```html
 <div data-elevation="1" data-elevation-hover="3">Z1 to Z3</div>
