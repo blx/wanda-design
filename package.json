@@ -1,7 +1,7 @@
 {
   "name": "@wonderflow/design",
   "description": "The Wonderflow Design System website.",
-  "version": "0.0.0",
+  "version": "1.18.0",
   "private": true,
   "author": "Wonderflow",
   "license": "MIT",
