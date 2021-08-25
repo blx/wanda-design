@@ -1,4 +1,4 @@
-.DownloadTile {
+.Tile {
   display: block;
   block-size: env(--space-152);
   background-color: var(--dimmed-2);

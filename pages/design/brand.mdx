@@ -1,6 +1,6 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { Zoomer } from "@/components/zoomer";
-import { DownloadTile } from "@/components/download-tile";
+import { Tile } from "@/components/tile";
 import { TileGrid } from "@/components/tile-grid";
 import { Stack } from "@wonderflow/react-components";
 
@@ -88,13 +88,13 @@ Icons are versions of the mark logo. The stroke is thicker in order to keep read
 ## Resources
 
 <TileGrid>
-  <DownloadTile href="/assets/logo/full-logo.zip" download>
+  <Tile as="a" href="/assets/logo/full-logo.zip" download>
     Full Logo
-  </DownloadTile>
-  <DownloadTile href="/assets/logo/mark-logo.zip" download>
+  </Tile>
+  <Tile as="a" href="/assets/logo/mark-logo.zip" download>
     Mark logo
-  </DownloadTile>
-  <DownloadTile href="/assets/logo/icons.zip" download>
+  </Tile>
+  <Tile as="a" href="/assets/logo/icons.zip" download>
     Icons
-  </DownloadTile>
+  </Tile>
 </TileGrid>
