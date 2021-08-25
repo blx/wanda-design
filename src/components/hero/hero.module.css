@@ -17,7 +17,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(var(--dimmed-3) 0.9px, transparent 0.9px);
+    background-image: radial-gradient(var(--dimmed-4) 0.9px, transparent 0.9px);
     background-size: 29px 29px;
     pointer-events: none;
   }
@@ -26,7 +26,6 @@
 .Content {
   position: relative;
   z-index: 1;
-  max-inline-size: 55ch;
 }
 
 .Video {

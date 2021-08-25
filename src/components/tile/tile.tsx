@@ -3,9 +3,11 @@ import { Text, ClampText, Stack, Icon } from '@wonderflow/react-components'
 import clsx from 'clsx'
 import type * as Polymorphic from '@radix-ui/react-polymorphic'
 import { Tile as TileClass, Content, IconBullet } from './tile.module.css'
+import { IconNames } from '@wonderflow/react-components/icons/types'
 
 type TileProps = {
   children: ReactNode;
+  icon?: IconNames;
 }
 
 type PolymorphicTile = Polymorphic.ForwardRefComponent<
@@ -17,6 +19,7 @@ type PolymorphicTile = Polymorphic.ForwardRefComponent<
 export const Tile = forwardRef(({
   children,
   className,
+  icon,
   ...props
 }, forwardedRef) => {
   return (
@@ -24,7 +27,7 @@ export const Tile = forwardRef(({
       <Text as="span" weight="bold" className={Content}>
         <ClampText rows={1}>{children}</ClampText>
       </Text>
-      <Icon name="arrow-down-to-bracket" dimension={24} className={IconBullet} />
+      {icon && <Icon name={icon} dimension={24} className={IconBullet} />}
     </Stack>
   )
 }) as PolymorphicTile
