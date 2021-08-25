@@ -24,6 +24,7 @@ export const Search = ({
         dimension={dimension}
         icon="magnifying-glass"
         iconPosition="left"
+        type="search"
         placeholder="Search content across the website..."
         {...props}
       />
