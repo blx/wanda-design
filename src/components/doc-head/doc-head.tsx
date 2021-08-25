@@ -14,7 +14,7 @@ export const DocHead: React.FC<DocHeadProps> = ({
   return (
     <Stack rowGap={16} {...props}>
       <Title as="h1" level="1">{title}</Title>
-      <Text size={28}>{description}</Text>
+      <Text size={28} dimmed={6}>{description}</Text>
     </Stack>
   )
 }
