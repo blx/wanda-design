@@ -10,7 +10,8 @@
   z-index: 0;
 
   @media (--from-small) {
-    padding: env(--space-96) env(--space-96);
+    padding: env(--space-96);
+    padding-left: 20rem;
   }
 
   &::after {

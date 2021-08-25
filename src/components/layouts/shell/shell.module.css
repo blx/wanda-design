@@ -16,12 +16,15 @@
   padding-bottom: env(--space-104);
   z-index: 2;
 
-  @media (--from-small) {
+  @media (--from-large) {
     border-right: 1px solid var(--dimmed-2);
     inline-size: 15.55rem;
     block-size: 100vh;
     position: sticky;
     display: block;
+  }
+  @media (--from-extra-large) {
+    position: fixed;
   }
 
   @nest [data-shell-collapsed='false'] & {
