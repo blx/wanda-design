@@ -33,6 +33,21 @@ export const Hero = () => {
             <Tile as="a">
               <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
                 <Stack>
+                  <Text size={16} dimmed={6} weight="bold">Learn about</Text>
+                  <Title as="h2" level="4">
+                    <Text as="span">Accessibility</Text>
+                  </Title>
+                </Stack>
+                <Icon name="arrow-right" dimension={24} />
+              </Stack>
+              <Text dimmed={7} maxWidth="30ch">Learn how to design accessible digital products by taking care of everyone.</Text>
+            </Tile>
+          </Link>
+
+          <Link href="/design/foundations/colors/" passHref>
+            <Tile as="a">
+              <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
+                <Stack>
                   <Text size={16} dimmed={6} weight="bold">Start</Text>
                   <Title as="h2" level="4">
                     <Text as="span" sentiment="positive">Design</Text>
