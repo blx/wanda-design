@@ -7,6 +7,7 @@ import { ToC } from '@/components/toc'
 import { MdxLayout as Mdx } from './mdx.module.css'
 import { DocHead, DocHeadProps } from '@/components/doc-head'
 import { Toolbar } from '@/components/toolbar'
+import { Footer } from '@/components/footer'
 
 export const MdxLayout: React.FC<DocHeadProps & PropsWithClass> = ({
   children,
@@ -27,9 +28,12 @@ export const MdxLayout: React.FC<DocHeadProps & PropsWithClass> = ({
     <Stack rowGap={48}>
       <DocHead title={title} description={description} />
       <ToC.Table content={children} />
-      <Prose>
-        {children}
-      </Prose>
+      <Stack rowGap={168}>
+        <Prose>
+          {children}
+        </Prose>
+        <Footer />
+      </Stack>
     </Stack>
   </ShellLayout>
 )

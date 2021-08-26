@@ -14,7 +14,8 @@
   top: env(--space-56);
   padding: env(--space-24) 0 env(--space-48);
   z-index: 1;
-  background: linear-gradient(to bottom, var(--dimmed-1) 60%, transparent);
+  background-color: var(--dimmed-1);
+  mask-image: linear-gradient(to bottom, var(--dimmed-1) 60%, transparent);
 }
 
 .IconTile {

@@ -1,12 +1,11 @@
 import clsx from 'clsx'
 import React from 'react'
 import Zoom from 'react-medium-image-zoom'
+import { UncontrolledProps } from 'react-medium-image-zoom/dist/cjs/Uncontrolled'
 import 'react-medium-image-zoom/dist/styles.css'
 import { Zoomer as ZoomerClass } from './zoomer.module.css'
 
-type ZoomerProps = {
-  zoomMargin?: number;
-}
+type ZoomerProps = UncontrolledProps
 
 export const Zoomer: React.FC<ZoomerProps> = ({
   children,
