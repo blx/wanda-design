@@ -32,7 +32,6 @@
   }
 
   @nest details & a {
-    color: var(--dimmed-6);
     font-weight: 400;
   }
 

@@ -1,0 +1,6 @@
+.Pill {
+  color: var(--dimmed-6);
+  background-color: var(--dimmed-2);
+  padding: 0 env(--space-8) env(--space-2);
+  border-radius: 3rem;
+}

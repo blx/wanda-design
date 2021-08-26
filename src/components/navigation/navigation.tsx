@@ -1,6 +1,7 @@
 import React, { Fragment, useCallback, useRef } from 'react'
 import { Tree } from '@/components/tree'
-import { Separator, Stack } from '@wonderflow/react-components'
+import { Pill } from '@/components/pill'
+import { Separator, Stack, Text } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
@@ -39,9 +40,20 @@ export const Navigation = ({ data }: NavigationProps) => {
                     {link.items
                       ? link.items.map(subItem => (
                         <Tree.Li key={subItem.path}>
-                          <Link href={subItem.path}>
-                            <a aria-current={includesPath(subItem.path) ? 'page' : undefined}>{subItem.label}</a>
-                          </Link>
+                          {subItem.wip
+                            ? (
+                              <Text as="a" dimmed={5}>
+                                <Stack as="span" direction="row" columnGap={8} inline verticalAlign="center">
+                                  {subItem.label}
+                                  <Pill>soon</Pill>
+                                </Stack>
+                              </Text>
+                              )
+                            : (
+                              <Link href={subItem.path}>
+                                <a aria-current={includesPath(subItem.path) ? 'page' : undefined}>{subItem.label}</a>
+                              </Link>
+                              )}
                         </Tree.Li>
                       ))
                       : (

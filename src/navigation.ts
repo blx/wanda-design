@@ -15,7 +15,8 @@ export default [
       {
         path: '/get-started/accessibility',
         label: 'Accessibility',
-        target: ''
+        target: '',
+        wip: false
       }
     ]
   },
@@ -25,7 +26,8 @@ export default [
       {
         path: '/design/brand',
         label: 'Brand',
-        target: ''
+        target: '',
+        wip: false
       },
       {
         label: 'Foundations',
@@ -34,17 +36,32 @@ export default [
           {
             path: '/design/foundations/colors',
             label: 'Colors',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/design/foundations/typography',
             label: 'Typography',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/design/foundations/iconography',
             label: 'Iconography',
-            target: ''
+            target: '',
+            wip: false
+          },
+          {
+            path: '/design/foundations/motion',
+            label: 'Motion',
+            target: '',
+            wip: true
+          },
+          {
+            path: '/design/foundations/elevations',
+            label: 'Elevations',
+            target: '',
+            wip: true
           }
         ]
       }
@@ -56,22 +73,26 @@ export default [
       {
         path: '/develop/installation',
         label: 'Installation',
-        target: ''
+        target: '',
+        wip: false
       },
       {
         path: '/develop/design-tokens',
         label: 'Design tokens',
-        target: ''
+        target: '',
+        wip: false
       },
       {
         path: '/develop/styles',
         label: 'Styles',
-        target: ''
+        target: '',
+        wip: false
       },
       {
         path: '/develop/themes',
         label: 'Themes',
-        target: ''
+        target: '',
+        wip: false
       }
     ]
   },
@@ -86,72 +107,86 @@ export default [
           {
             path: '/develop/components/button',
             label: 'Button',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/icon-button',
             label: 'Icon button',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/clamp-text',
             label: 'Clamp text',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/container',
             label: 'Container',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/icon',
             label: 'Icon',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/prose',
             label: 'Prose',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/select',
             label: 'Select',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/separator',
             label: 'Separator',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/snackbar',
             label: 'Snackbar',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/stack',
             label: 'Stack',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/text',
             label: 'Text',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/title',
             label: 'Title',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/textfield',
             label: 'Textfield',
-            target: ''
+            target: '',
+            wip: false
           },
           {
             path: '/develop/components/selection-controls',
             label: 'Selection controls',
-            target: ''
+            target: '',
+            wip: false
           }
         ]
       }

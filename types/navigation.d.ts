@@ -4,6 +4,7 @@ type NavigationItem = {
   label: string;
   target?: string;
   expandable?: boolean;
+  wip?: boolean;
   items?: NavigationItem[];
 }
 
