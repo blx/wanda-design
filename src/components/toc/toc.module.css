@@ -13,8 +13,8 @@
   @media (--from-extra-large) {
     position: fixed;
     top: env(--space-104);
-    left: calc(100% - 280px);
-    width: 250px;
+    left: calc(100% - 300px);
+    width: 270px;
   }
 }
 
