@@ -20,7 +20,7 @@ export const Tree: {
 } = {
   Group: ({ children, title, ...props }) => (
     <Stack rowGap={16} verticalAlign="start" className={TreeClass} {...props}>
-      {title && <Text size={14} className={Title}>{title}</Text>}
+      {title && <Text size={14} dimmed={5} className={Title}>{title}</Text>}
       <Stack as="ul" rowGap={4}>
         {children}
       </Stack>
