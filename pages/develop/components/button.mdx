@@ -1,96 +1,52 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
+import { Checklist } from "@/components/checklist";
 import { Button } from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Button"
     description="A button is a box area or text that communicates and triggers user actions when clicked."
+    showMeta
+    features={[
+      "Keyboard accessible",
+      "Focusable even when disabled",
+      "Can contain icons",
+      "Multiple styles and sizes",
+      "Themes ready",
+    ]}
+    links={[
+      {
+        label: "ARIA design pattern",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#button",
+      },
+      {
+        label: "ARIA authoring",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#button",
+      },
+    ]}
+    hero={
+      <LiveArea direction="row">
+        <Button>Button</Button>
+      </LiveArea>
+    }
   >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Button } from "@wonderflow/react-components";
+
+export default () => {
+  return <Button>Click</Button>;
+};
 ```
 
-Buttons can be used to communicate and immediately trigger actions a user can take in an application, like submitting a form, canceling a process, or creating a new object. Buttons can also be used to take a user to a new location, like another page inside of a web application, or an external site such as help or documentation.
-
-## Usage
-
-The very basic usge of the component doesn't require any property. If you want to use a `regular` and `primary` button you just have to drop the component inside your code. The visual appearance of the button can be changed by using the `kind` property.
-
-<LiveArea direction="row">
-  <Button>Click</Button>
-  <Button kind="secondary">Click</Button>
-  <Button kind="flat">Click</Button>
-  <Button disabled>Click</Button>
-</LiveArea>
-
-```jsx
-<Button>Click</Button>
-<Button kind="secondary">Click</Button>
-<Button kind="flat">Click</Button>
-<Button disabled>Click</Button>
-```
-
-## Sizes
-
-Sometimes you don't have enought space to add a regular button, and in the same way sometimes you need a bigger button to keep the visual hierarchy. For these cases you can use the `dimension` property to change the size of the button, by choosing from three options: `big`, `regular` (default), `small`:
-
-<LiveArea direction="row">
-  <Button dimension="big">Click</Button>
-  <Button kind="secondary">Click</Button>
-  <Button dimension="small" kind="flat">
-    Click
-  </Button>
-</LiveArea>
-
-```jsx
-<Button dimension="big">Click</Button>
-<Button kind="secondary">Click</Button>
-<Button dimension="small" kind="flat">Click</Button>
-```
-
-## Buttons with icons
-
-Buttons can show an icon on the left or right side by using `icon` and `iconPosition` properties.
-
-<LiveArea direction="row">
-  <Button icon="bell">Click</Button>
-  <Button icon="star" kind="secondary">
-    Click
-  </Button>
-  <Button icon="plus" kind="flat">
-    Click
-  </Button>
-</LiveArea>
-
-```jsx
-<Button icon="bell">Click</Button>
-<Button dimension="small" icon="star" kind="secondary">Click</Button>
-<Button icon="plus" kind="flat">Click</Button>
-```
-
-## Dynamic tag
-
-If you need a link which must look like a button you can change the element used by the `<Button>` from `<button>` to `<a>` by using the `as` property. In the following example the button will render a link element as wrapper.
-
-<LiveArea direction="row">
-  <Button as="a" href="https://design.wonderflow.ai">
-    Open web page
-  </Button>
-</LiveArea>
-
-```jsx
-<Button as="a" href="https://design.wonderflow.ai">
-  Open web page
-</Button>
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -152,11 +108,31 @@ If you need a link which must look like a button you can change the element used
     },
     {
       name: "as",
-      type: ["PolymorphicPropsWithRef"],
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"button"',
       required: false,
-      dangerous: true,
-      description: "Set the component outer html tag",
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+Adheres to the [`button` role requirements](https://www.w3.org/TR/wai-aria-1.2/#button).
+
+#### Keyboard interactions
+
+<Props
+  properties={[
+    {
+      name: "tab",
+      description: "Move focus on the element or outside",
+    },
+    {
+      name: "enter",
+      description: "Trigger the component action",
     },
   ]}
 />

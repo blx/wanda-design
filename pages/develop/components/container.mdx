@@ -1,90 +1,40 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Resizer } from "@/components/resizer";
 import { Container } from "@wonderflow/react-components";
 
 export default ({ children }) => (
-  <MdxLayout title="Container" description="Who contains the content">
+  <MdxLayout
+    title="Container"
+    description="Who contains the content"
+    showMeta
+    features={[
+      "Auto centering",
+      "Predefined sizes",
+      "Auto adjust paddings",
+      "Fluid by default",
+    ]}
+    hero={
+      <LiveArea>
+        <Container dimension="large" className="ContainerEx"></Container>
+      </LiveArea>
+    }
+  >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Container } from "@wonderflow/react-components";
+
+export default () => {
+  return <Container>...</Container>;
+};
 ```
 
-The `Container` component is a common wrapper that follows the Wanda rules about page grids. It automatically centers the content, sets the max column size, and adds the required padding.
-
-## Usage
-
-Unless specificed with the `dimension` property the container will fill the available space.
-
-<Resizer>
-  <LiveArea>
-    <Container className="ContainerEx"></Container>
-  </LiveArea>
-</Resizer>
-
-```jsx
-<Container>...</Container>
-```
-
-## Sizes
-
-When you need a thinner or wider column size you can use the `dimension` property to change the size of the container, by choosing from three options: `large`, `medium`, `full` (default):
-
-<Resizer>
-  <LiveArea direction="row">
-    <Container className="ContainerEx" dimension="medium">
-      ...
-    </Container>
-    <Container className="ContainerEx" dimension="large">
-      ...
-    </Container>
-    <Container className="ContainerEx">...</Container>
-  </LiveArea>
-</Resizer>
-
-```jsx
-<Container dimension="medium">...</Container>
-<Container dimension="large">...</Container>
-<Container>...</Container>
-```
-
-## Removing padding
-
-While the padding is automagically reduced on smaller viewports, this component has a boolean `padding` property which let you to remove the padding completely.
-
-<Resizer>
-  <LiveArea direction="row">
-    <Container padding={false} className="ContainerEx">
-      ...
-    </Container>
-  </LiveArea>
-</Resizer>
-
-```jsx
-<Container padding={false}>...</Container>
-```
-
-## Dynamic tag
-
-If you need to change the element rendered by the `<Container>` from `<div>` to something else you can use the `as` property.
-
-<Resizer>
-  <LiveArea direction="row">
-    <Container as="section" className="ContainerEx">
-      ...
-    </Container>
-  </LiveArea>
-</Resizer>
-
-```jsx
-<Container as="section">...</Container>
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -106,11 +56,12 @@ If you need to change the element rendered by the `<Container>` from `<div>` to 
     },
     {
       name: "as",
-      type: ["PolymorphicPropsWithoutRef"],
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"div"',
       required: false,
-      dangerous: true,
-      description: "Set the component outer html tag",
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component.",
     },
   ]}
 />

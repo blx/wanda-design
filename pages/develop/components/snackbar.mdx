@@ -4,66 +4,50 @@ import { Props } from "@/components/props";
 import { Snackbar } from "@wonderflow/react-components";
 
 export default ({ children }) => (
-  <MdxLayout title="Snackbar" description="Highlight prominent messages">
+  <MdxLayout
+    title="Snackbar"
+    description="Highlight prominent messages"
+    showMeta
+    features={[
+      "Keyboard accessible",
+      "Customizable icon",
+      "Multiple levels of severity",
+      "Themes ready",
+    ]}
+    links={[
+      {
+        label: "ARIA design pattern",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#alert",
+      },
+      {
+        label: "ARIA authoring",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#alert",
+      },
+    ]}
+    hero={
+      <LiveArea fill>
+        <Snackbar>
+          The Relevance section uses only Feedback with that can be analysed
+          with NLP and have a score. <a href="#">Learn more</a>
+        </Snackbar>
+      </LiveArea>
+    }
+  >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Snackbar } from "@wonderflow/react-components";
+
+export default () => {
+  return <Snackbar>...</Snackbar>;
+};
 ```
 
-A Snackbar is a notification that provides brief information to the user without blocking their workflow.
-
-## Usage
-
-This component is used to show inline or floating alerts, but it never stops the user workflow.
-
-<LiveArea fill>
-  <Snackbar>
-    The Relevance section uses only Feedback with that can be analysed with NLP
-    and have a score. <a href="#">Learn more</a>
-  </Snackbar>
-</LiveArea>
-
-```jsx
-<Snackbar>
-  The Relevance section uses only Feedback with that can be analysed with NLP
-  and have a score. <a href="#">Learn more</a>
-</Snackbar>
-```
-
-## Types of message
-
-By default the Snackbar uses neutral colors to provide additional informations without alarming the user. With the `kind` property you can change the severity of the message and convey a meaning with the messagge.
-
-<LiveArea fill>
-  <Snackbar title="Attention" kind="warning">
-    The Relevance section uses only Feedback with that can be analysed with NLP
-    and have a score. <a href="#">Learn more</a>
-  </Snackbar>
-  <Snackbar title="Did you know?" kind="info">
-    The Relevance section uses only Feedback with that can be analysed with NLP
-    and have a score. <a href="#">Learn more</a>
-  </Snackbar>
-  <Snackbar title="Good!" kind="positive">
-    The Relevance section uses only Feedback with that can be analysed with NLP
-    and have a score. <a href="#">Learn more</a>
-  </Snackbar>
-  <Snackbar title="Ooops!" kind="danger">
-    The Relevance section uses only Feedback with that can be analysed with NLP
-    and have a score. <a href="#">Learn more</a>
-  </Snackbar>
-</LiveArea>
-
-```jsx
-<Snackbar title="Attention" kind="warning">
-  The Relevance section uses only Feedback with that can be analysed with NLP
-  and have a score. <a href="#">Learn more</a>
-</Snackbar>
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -89,7 +73,7 @@ By default the Snackbar uses neutral colors to provide additional informations w
       default: "",
       required: false,
       dangerous: false,
-      description: "Add a shadow for the floating notifications",
+      description: "Add a shadow for floating notifications",
     },
     {
       name: "kind",
@@ -101,11 +85,29 @@ By default the Snackbar uses neutral colors to provide additional informations w
     },
     {
       name: "as",
-      type: ["PolymorphicPropsWithoutRef"],
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"div"',
       required: false,
-      dangerous: true,
-      description: "Set the component outer html tag",
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+Adheres to the [`alert` role requirements](https://www.w3.org/TR/wai-aria-1.2/#alert).
+
+The `Snackbar` component uses the `role="alert"` by default with inplicits `aria-live="assertive"` and `aria-atomic="true"` attributes. Add those to change the default values.
+
+#### Keyboard interactions
+
+<Props
+  properties={[
+    {
+      name: "tab",
+      description: "Move focus on the first focusable element inside",
     },
   ]}
 />

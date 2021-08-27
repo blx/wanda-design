@@ -1,100 +1,63 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Stack, Button, Select, Snackbar } from "@wonderflow/react-components";
+import { Stack, Button, Select } from "@wonderflow/react-components";
 
 export default ({ children }) => (
-  <MdxLayout title="Stack" description="Elements placing and spacing made easy">
+  <MdxLayout
+    title="Stack"
+    description="Elements placing and spacing made easy"
+    showMeta
+    features={[
+      "Content placement made easy",
+      "Flex based",
+      "Fully controllable",
+      "Nestable",
+    ]}
+    hero={
+      <LiveArea fill>
+        <Stack
+          columnGap={8}
+          direction="row"
+          horizontalAlign="center"
+          fill={false}
+        >
+          <Select>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </Select>
+          <Button>Confirm</Button>
+        </Stack>
+      </LiveArea>
+    }
+  >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Stack } from "@wonderflow/react-components";
+
+export default () => {
+  return (
+    <Stack
+      columnGap={8}
+      direction="row"
+      horizontalAlign="center"
+      fill={false}
+      wrap
+    >
+      <Select>...</Select>
+      <Button>Confirm</Button>
+    </Stack>
+  );
+};
 ```
 
-The `Stack` is a utility component that helps with the box modeling and layouts. Based on flexbox it allows content to be spaced and positioned along a single axis.
-
-## Usage
-
-If you need to place or add space between elements this component comes with handy props that make your life easier. Check this example:
-
-<LiveArea fill>
-  <Stack columnGap={8} direction="row" fill={false}>
-    <Select>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </Select>
-    <Button>Confirm</Button>
-  </Stack>
-</LiveArea>
-
-```jsx
-<Stack columnGap={8} direction="row" fill={false}>
-  <Select>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </Select>
-  <Button>Confirm</Button>
-</Stack>
-```
-
-You can change the vertical and horizontal alignment too. Here is the same example code as above but with the alignment properties:
-
-<LiveArea fill direction="column" horizontalAlign="unset">
-  <Stack horizontalAlign="start" columnGap={8} direction="row" fill={false}>
-    <Select>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </Select>
-    <Button>Confirm</Button>
-  </Stack>
-  <Stack horizontalAlign="end" columnGap={8} direction="row" fill={false}>
-    <Select>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </Select>
-    <Button>Confirm</Button>
-  </Stack>
-</LiveArea>
-
-```jsx
-<Stack horizontalAlign="start" columnGap={8} direction="row" fill={false}>
-  <Select>...</Select>
-  <Button>Confirm</Button>
-</Stack>
-
-<Stack horizontalAlign="end" columnGap={8} direction="row" fill={false}>
-  <Select>...</Select>
-  <Button>Confirm</Button>
-</Stack>
-```
-
-## Inline
-
-The Stack component by default is rendered as `flex` element, so it will fill all the available space. If you want to disable this behaviour you can use the `inline` boolean prop to make it as `inline-flex` and prevent the grow:
-
-<LiveArea fill horizontalAlign="unset">
-  <Stack inline columnGap={8} direction="row" fill={false}>
-    <Select>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </Select>
-    <Button>Confirm</Button>
-  </Stack>
-</LiveArea>
-
-<Snackbar kind="info" title="Remember">
-  If you nest multiple Stack components make sure to properly set the alignment
-  because flex properties are inherited by children.
-</Snackbar>
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -167,11 +130,12 @@ The Stack component by default is rendered as `flex` element, so it will fill al
     },
     {
       name: "as",
-      type: ["PolymorphicPropsWithoutRef"],
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"div"',
       required: false,
-      dangerous: true,
-      description: "Set the component outer html tag",
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component.",
     },
   ]}
 />

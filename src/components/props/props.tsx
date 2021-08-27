@@ -27,35 +27,35 @@ export const Props: React.FC<PropsProps> = ({
         key={Math.random()}
         open
         size="big"
+        expandable={false}
         summary={(
           <Stack direction="row" fill={false} verticalAlign="center" columnGap={8}>
-            <Title level="5"><Markdown>{`\`${item.name}\``}</Markdown></Title>
+            <Title level="6"><Markdown>{`\`${item.name}\``}</Markdown></Title>
             {item.required && <small><Markdown>`required`</Markdown></small>}
           </Stack>
         )}
       >
-        <Stack rowGap={16}>
+        <Stack rowGap={8}>
           <Separator />
-          {item.description && (
-            <Stack direction="row" fill={false} wrap columnGap={16}>
-              <Text as="b" size={14} className={PropName}>Description:</Text>
-              <Text size={14} className={PropsValue}><Markdown>{item.description}</Markdown></Text>
-            </Stack>
-          )}
-
           {item.type && (
-            <Stack direction="row" fill={false} wrap columnGap={16}>
-              <Text as="b" size={14} className={PropName}>Type:</Text>
-              <Text size={14} className={PropsValue}>
+            <Stack direction="row" fill={false} wrap columnGap={16} rowGap={8}>
+              <Text as="b" size={16} className={PropName}>Type:</Text>
+              <Text size={16} className={PropsValue}>
                 {item.type.map((value: any, index: any) => <Markdown key={value}>{`${index !== 0 ? ', ' : ''}\`${value}\``}</Markdown>)}
               </Text>
             </Stack>
           )}
 
-          <Stack direction="row" fill={false} wrap columnGap={16}>
-            <Text as="b" size={14} className={PropName}>Default:</Text>
-            <Text size={14} className={PropsValue}><Markdown>{`\`${item.default || 'null'}\``}</Markdown></Text>
-          </Stack>
+          {item.default && (
+            <Stack direction="row" fill={false} wrap columnGap={16} rowGap={8}>
+              <Text as="b" size={16} className={PropName}>Default:</Text>
+              <Text size={16} className={PropsValue}><Markdown>{`\`${item.default || 'null'}\``}</Markdown></Text>
+            </Stack>
+          )}
+
+          {item.description && (
+            <Text size={16} className={PropsValue}><Markdown>{item.description}</Markdown></Text>
+          )}
 
           {item.dangerous && (
             <Snackbar kind="warning">

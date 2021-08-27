@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, Separator, Stack, Text, Title } from '@wonderflow/react-components'
+import { IconButton, Button, Separator, Stack, Text, Title } from '@wonderflow/react-components'
 
 export const Footer = () => {
   return (
-    <Stack rowGap={96}>
+    <Stack as="footer" rowGap={96}>
       <Stack direction="row" columnGap={88} rowGap={88} wrap>
 
         <Stack rowGap={24} fill={false} horizontalAlign="start">
@@ -18,34 +18,55 @@ export const Footer = () => {
             href="https://github.com/wonderflow-bv/design"
             kind="secondary"
             dimension="big"
+            icon="github"
           >
             Contribute on GitHub
           </Button>
         </Stack>
 
-        <Stack rowGap={24}>
+        <Stack rowGap={24} fill={false}>
           <Title level="4">Keep in touch</Title>
-          <Stack rowGap={16} horizontalAlign="start" fill={false}>
-            <Button
+          <Stack rowGap={16} horizontalAlign="start" fill={false} direction="row">
+            <IconButton
               as="a"
+              target="_blank"
               rel="noopener noreferrer"
               href="https://www.linkedin.com/company/wonderflow"
               kind="flat"
               dimension="big"
               icon="linkedin"
-            >
-              Follow us on Linkedin
-            </Button>
-            <Button
+              aria-label="Follow us on Linkedin"
+            />
+            <IconButton
               as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/wonderflow"
+              kind="flat"
+              dimension="big"
+              icon="twitter"
+              aria-label="Follow us on Twitter"
+            />
+            <IconButton
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/wonderflow-bv"
+              kind="flat"
+              dimension="big"
+              icon="github"
+              aria-label="Follow us on Github"
+            />
+            <IconButton
+              as="a"
+              target="_blank"
               rel="noopener noreferrer"
               href="https://wonderflow.ai"
               kind="flat"
               dimension="big"
               icon="compass"
-            >
-              Visit Wonderflow Website
-            </Button>
+              aria-label="Visit Wonderflow Website"
+            />
           </Stack>
         </Stack>
       </Stack>

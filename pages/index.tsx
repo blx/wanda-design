@@ -4,7 +4,7 @@ import { Hero } from '@/components/hero'
 
 export const Home = () => {
   return (
-    <ShellLayout header={<Hero />} />
+    <ShellLayout showFooter={false} header={<Hero />} />
   )
 }
 

@@ -1,122 +1,41 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Title, Snackbar } from "@wonderflow/react-components";
+import { Title } from "@wonderflow/react-components";
 
 export default ({ children }) => (
-  <MdxLayout title="Title" description="Dynamic and fluid titles with control">
+  <MdxLayout
+    title="Title"
+    description="Dynamic and fluid titles with control"
+    showMeta
+    features={[
+      "Dynamic HTML tag",
+      "Fully customizzable",
+      "Responsive text",
+      "Decoupled size and semantic",
+      "Themes ready",
+    ]}
+    hero={
+      <LiveArea>
+        <Title level="3">Title</Title>
+      </LiveArea>
+    }
+  >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Title } from "@wonderflow/react-components";
+
+export default () => {
+  return <Title>Title</Title>;
+};
 ```
 
-With the `Title` component you can add title using the style from the Wanda typography. You can change the level of the title and the `line-height`.
-
-## Usage
-
-By default the Title component just renders a `span` element with the visual style of `h1`.
-
-<LiveArea direction="column" horizontalAlign="start">
-  <Title as="h1" level="1">
-    Semantic H1
-  </Title>
-  <Title as="h2" level="2">
-    Semantic H2
-  </Title>
-  <Title as="h3" level="3">
-    Semantic H3
-  </Title>
-  <Title as="h4" level="4">
-    Semantic H4
-  </Title>
-  <Title as="h5" level="5">
-    Semantic H5
-  </Title>
-  <Title as="h6" level="6">
-    Semantic H6
-  </Title>
-</LiveArea>
-
-```jsx
-<Title as="h1" level="1">Semantic H1</Title>
-<Title as="h2" level="2">Semantic H2</Title>
-<Title as="h3" level="3">Semantic H3</Title>
-<Title as="h4" level="4">Semantic H4</Title>
-<Title as="h5" level="5">Semantic H5</Title>
-<Title as="h6" level="6">Semantic H6</Title>
-```
-
-## Style and semantic
-
-You can notice how the visual appearance of the title is decoupled from its html tag, this way you can keep the headings structure while using different styles. For example you can render an `h2` element with the `as` property, while using the style for an `h5` by defining the `level` property to `5`.
-
-<Snackbar kind="warning" title="About semantic">
-  It's important to use the correct tag and the headings structure in order to
-  keep the content accessible to screen readers and assistive technologies in
-  general.
-</Snackbar>
-
-Here is an example with different parameters: the fake h4 and h5 titles get semantically rendered as an h2 and h3, while stylistically they are an h4 and h5
-
-<LiveArea direction="column" horizontalAlign="start">
-  <Title as="h1" level="1">
-    Real H1 Title
-  </Title>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis autem quis qui
-  nam excepturi libero laudantium rerum earum illo illum, quisquam iure aperiam ipsam
-  corporis inventore voluptas dignissimos obcaecati modi!
-
-<Title as="h2" level="4">
-  Fake H4 title
-</Title>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis autem quis qui nam
-excepturi libero laudantium rerum earum illo illum, quisquam iure aperiam ipsam corporis
-inventore voluptas dignissimos obcaecati modi!
-
-  <Title as="h3" level="5">
-    Fake H5 title
-  </Title>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis autem quis
-  qui nam excepturi libero laudantium rerum earum illo illum, quisquam iure
-  aperiam ipsam corporis inventore voluptas dignissimos obcaecati modi!
-</LiveArea>
-
-```html
-<h1>Real H1 Title</h1>
-...
-<h2>Fake H4 title</h2>
-...
-<h3>Fake H5 title</h3>
-```
-
-## Fluid typography
-
-Any `Title` element have a dynamic font size by default and the value is computed by a specific formula described inside the [Typography](/design/foundations/typography) section.
-
-To disable this intrinsic behaviour you can set the `fluid` property to `false` in order to fix the font-size value to the specified value.
-
-<Snackbar kind="info" title="Resize your browser window">
-  If you resize the browser window you can check that the first text block is
-  not resized based on the viewport.
-</Snackbar>
-
-<LiveArea horizontalAlign="start" direction="column">
-  <Title level="2">Fluid title</Title>
-  <Title level="2" fluid={false}>
-    Static title
-  </Title>
-</LiveArea>
-
-```jsx
-<Title level="2" fluid={false}>
-  Static title
-</Title>
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -146,11 +65,18 @@ To disable this intrinsic behaviour you can set the `fluid` property to `false` 
     },
     {
       name: "as",
-      type: ["PolymorphicPropsWithoutRef"],
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"span"',
       required: false,
-      dangerous: true,
-      description: "Set the component outer html tag",
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component.",
     },
   ]}
 />
+
+## Accessibility
+
+The `Title` component is rendered as `span` by default. Make sure to define the correct heading tag when semantic is required to make the content navigable and accessible with AT.
+
+Read more about how to [manage headings and accessibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#accessibility_concerns).

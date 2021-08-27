@@ -2,80 +2,41 @@ import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
 import { Icon } from "@wonderflow/react-components";
-import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
 
 export default ({ children }) => (
   <MdxLayout
     title="Icon"
     description="Graphic elements that quickly and concisely convey information to the user."
+    showMeta
+    features={[
+      "Scalable vector graphic",
+      "Fully stylizable",
+      "Multiple visual styles",
+      "Auto adjust style based on rendering size",
+    ]}
+    hero={
+      <LiveArea>
+        <Icon name="bell" dimension={32} />
+        <Icon name="plus" dimension={32} />
+        <Icon name="message" dimension={32} />
+      </LiveArea>
+    }
   >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Icon } from "@wonderflow/react-components";
+
+export default () => {
+  return <Icon name="bell">;
+};
 ```
 
-With the `Icon` component you can add an icon from [Wanda's iconography](https://www.figma.com/file/XC4DQmLbGC0O2fcgML6JWi/00-%E2%80%94-UI-Inventory?node-id=171%3A1759) by just passing the name of the icon.
-
-## Usage
-
-Unless specificed with the `dimension` property the component will render a `16px` icon by default.
-
-<LiveArea>
-  <Icon name="bell" />
-  <Icon name="message" />
-  <Icon name="plus" />
-</LiveArea>
-
-```jsx
-<Icon name="bell" />
-<Icon name="message" />
-<Icon name="plus" />
-```
-
-## Sizes
-
-By specifying the `dimension` property you change the size of the renderd icon, the svg will automagically match the correct style (solid or outline) based on the size.
-
-More precisely, for sizes equal and lower than `16px` the icon style used is **solid**, while for icons sized `24px` or more the **outline** style is automatically used to increase the readability of the icon.
-
-<LiveArea>
-  <Icon dimension={16} name="eye" />
-  <Icon dimension={24} name="eye" />
-  <Icon dimension={40} name="eye" />
-</LiveArea>
-
-```jsx
-<Icon dimension={16} name="eye" />
-<Icon dimension={24} name="eye" />
-<Icon dimension={40} name="eye" />
-```
-
-## Icon color
-
-Icons use the `currentColor` css keyword to inherit the color from the element they are placed within, which is the `global-foreground` by default.
-
-Since they are rendered as `SVG` elements inside the page, **if you need**, you can add any valid svg attribute to the element, like `fill`:
-
-<LiveArea>
-  <Icon
-    dimension={32}
-    fill={`hsl(${tkns.color.blue[50]})`}
-    name="circle-exclamation"
-  />
-  <Icon dimension={32} fill="var(--cta-default)" name="circle-check" />
-  <Icon dimension={32} fill={`hsl(${tkns.color.purple[30]})`} name="compass" />
-</LiveArea>
-
-```jsx
-<Icon fill={`hsl(${tkns.color.blue[50]})`} name="circle-exclamation" />
-<Icon fill="var(--cta-default)" name="circle-check" />
-<Icon fill={`hsl(${tkns.color.purple[30]})`} name="compass" />
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -97,3 +58,7 @@ Since they are rendered as `SVG` elements inside the page, **if you need**, you 
     },
   ]}
 />
+
+## Accessibility
+
+Svg are considered as images. If they are coupled with a text you have to hide them to AT by using the `aria-hidden` attribute.

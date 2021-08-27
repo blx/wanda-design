@@ -56,12 +56,6 @@ export default [
             label: 'Motion',
             target: '',
             wip: true
-          },
-          {
-            path: '/design/foundations/elevations',
-            label: 'Elevations',
-            target: '',
-            wip: true
           }
         ]
       }

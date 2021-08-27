@@ -8,7 +8,7 @@ type BleedProps = {
 
 export const Bleed: React.FC<BleedProps> = ({
   children,
-  maxWidth,
+  maxWidth = '85ch',
   style,
   className,
   ...props

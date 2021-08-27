@@ -1,140 +1,78 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Select, Snackbar } from "@wonderflow/react-components";
+import { Select } from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Select"
     description="The simplest way to pick an option from the list"
+    showMeta
+    features={[
+      "Keyboard accessible",
+      "Customizable icon",
+      "Multiple styles and sizes",
+      "Themes ready",
+    ]}
+    links={[
+      {
+        label: "ARIA design pattern",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#select",
+      },
+      {
+        label: "ARIA authoring",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox",
+      },
+    ]}
+    hero={
+      <LiveArea>
+        <Select defaultValue="placeholder" style={{ maxInlineSize: "30ch" }}>
+          <option value="placeholder" hidden disabled>
+            Pick an option
+          </option>
+          <optgroup label="Option Group One">
+            <option value="1">
+              This is a very long option selected which is truncated
+            </option>
+            <option value="2">Option 2</option>
+          </optgroup>
+          <optgroup label="Option Group Two">
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+          </optgroup>
+        </Select>
+      </LiveArea>
+    }
   >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Select } from "@wonderflow/react-components";
-```
 
-The `Select` component is a native html elements which let the user pick an option from a predefined list. This component can be also used outside forms.
-
-## Usage
-
-This component must have children in order to be valid. You can compose the list by using the native `option` od `optgroup` elements, and all the global html attributes.
-
-<LiveArea>
-  <Select style={{ width: 200 }}>
-    <option value="placeholder" hidden selected disabled>
-      Pick an option
-    </option>
-    <optgroup label="Option Group One">
-      <option value="1">
-        This is a very long option selected which is truncated
+export default () => {
+  return (
+    <Select defaultValue="placeholder">
+      <option value="placeholder" hidden disabled>
+        Pick an option
       </option>
+      <option value="1">Option 1</option>
       <option value="2">Option 2</option>
-    </optgroup>
-    <optgroup label="Option Group Two">
-      <option value="3">Option 3</option>
-      <option value="4">Option 4</option>
-      <option value="5">Option 5</option>
-    </optgroup>
-  </Select>
-  <Select disabled style={{ width: 200 }}>
-    <option value="placeholder" hidden selected disabled>
-      Pick an option
-    </option>
-    <optgroup label="Option Group One">
-      <option value="1">
-        This is a very long option selected which is truncated
-      </option>
-      <option value="2">Option 2</option>
-    </optgroup>
-    <optgroup label="Option Group Two">
-      <option value="3">Option 3</option>
-      <option value="4">Option 4</option>
-      <option value="5">Option 5</option>
-    </optgroup>
-  </Select>
-</LiveArea>
-
-```jsx
-<Select>
-  <option value="placeholder" hidden selected disabled>
-    Pick an option
-  </option>
-  <optgroup label="Option Group">
-    <option value="3">Option 1</option>
-    <option value="4">Option 2</option>
-    <option value="5">Option 3</option>
-  </optgroup>
-</Select>
-
-<Select disabled>
-  ...
-</Select>
+      <optgroup label="Option Group Two">
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+        <option value="5">Option 5</option>
+      </optgroup>
+    </Select>
+  );
+};
 ```
 
-## Custom icon and size
-
-This component is highly customizable, for example you can set a different icon or size.
-
-<LiveArea>
-  <Select
-    label="Label"
-    id="demo1"
-    icon="compass"
-    dimension="small"
-    style={{ width: 200 }}
-  >
-    <option value="placeholder" hidden selected disabled>
-      Pick an option
-    </option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </Select>
-</LiveArea>
-
-```jsx
-<Select label="Label" id="demo1" icon="compass" dimension="small">
-  <option value="placeholder" hidden selected disabled>
-    Pick an option
-  </option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3</option>
-</Select>
-```
-
-<Snackbar title="About custom icon">
-  Even if you can change the icon, we strongly recommend to avoid it to keep the
-  component recognizable by the user.
-</Snackbar>
-
-## Multiple
-
-As the native `select` element, this component can be rendered as multiple select to enable multiple selection:
-
-<LiveArea>
-  <Select kind="multiple" style={{ width: 200 }}>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-    <option value="4">Option 4</option>
-    <option value="5">Option 5</option>
-  </Select>
-</LiveArea>
-
-```jsx
-<Select kind="multiple">
-  <option value="3">Option 3</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="5">Option 5</option>
-</Select>
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -185,6 +123,25 @@ As the native `select` element, this component can be rendered as multiple selec
       required: false,
       dangerous: false,
       description: "Callback for the change event",
+    },
+  ]}
+/>
+
+## Accessibility
+
+Adheres to the [`select` role requirements](https://www.w3.org/TR/wai-aria-1.2/#select).
+
+#### Keyboard interactions
+
+<Props
+  properties={[
+    {
+      name: "tab",
+      description: "Move focus on the element or outside",
+    },
+    {
+      name: "space",
+      description: "Open the listbox",
     },
   ]}
 />

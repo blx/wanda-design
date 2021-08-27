@@ -1,34 +1,43 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Separator, Snackbar } from "@wonderflow/react-components";
+import { Separator } from "@wonderflow/react-components";
 
 export default ({ children }) => (
-  <MdxLayout title="Separator" description="Visual separation of content">
+  <MdxLayout
+    title="Separator"
+    description="Visual separation of content"
+    showMeta
+    features={["Fill the available space by default", "Themes ready"]}
+    links={[
+      {
+        label: "ARIA design pattern",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#separator",
+      },
+    ]}
+    hero={
+      <LiveArea fill>
+        <Separator />
+      </LiveArea>
+    }
+  >
     {children}
   </MdxLayout>
 );
 
-```js
-import { Separator } from "@wonderflow/react-components";
-```
-
-The separator component is a simple horizontal rule which defines the end of a content section and the start of a new one.
-
-## Usage
-
-The component doens't have any property and you can just drop it inside your code.
-
-<LiveArea fill>
-  <Separator />
-</LiveArea>
+## Anatomy
 
 ```jsx
-<Separator />
+import { Separator } from "@wonderflow/react-components";
+
+export default () => {
+  return <Separator />;
+};
 ```
 
-<Snackbar kind="info">
-  The separator renders a <b>hr</b> element. If you are just adding visual
-  separation and not a content-related separation you must add{" "}
-  <b>aria-hidden</b> attribute.
-</Snackbar>
+## Accessibility
+
+Adheres to the [`separator` role requirements](https://www.w3.org/TR/wai-aria-1.2/#separator).
+
+The separator renders a **hr** element. If you are just adding visual
+separation and not a content-related separation you must add **aria-hidden** attribute.

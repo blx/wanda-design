@@ -11,6 +11,7 @@ type DisclosureProps = {
   contentMaxHeight?: string;
   size?: 'small' | 'regular' | 'big';
   iconPosition?: 'left' | 'right';
+  expandable?: boolean;
 } & HTMLAttributes<HTMLDetailsElement>
 
 export const Disclosure: React.FC<DisclosureProps> = ({
@@ -22,6 +23,7 @@ export const Disclosure: React.FC<DisclosureProps> = ({
   contentMaxHeight,
   size = 'regular',
   iconPosition = 'right',
+  expandable = true,
   style,
   ...props
 }) => {
@@ -30,9 +32,9 @@ export const Disclosure: React.FC<DisclosureProps> = ({
   const handleOpen = useCallback(
     () => (event: any) => {
       event.preventDefault()
-      setIsOpen(!isOpen)
+      expandable && setIsOpen(!isOpen)
     },
-    [isOpen]
+    [isOpen, expandable]
   )
 
   const dynamicStyle: CSSProperties = {
@@ -57,6 +59,7 @@ export const Disclosure: React.FC<DisclosureProps> = ({
       className={clsx(DisclosureClass, className)}
       data-disclosure-icon-position={iconPosition}
       data-disclosure-size={size}
+      data-disclosure-expandable={expandable}
       aria-expanded={isOpen ? 'true' : 'false'}
       open={isOpen}
       {...props}
@@ -66,11 +69,12 @@ export const Disclosure: React.FC<DisclosureProps> = ({
         onClick={handleOpen()}
         className={Summary}
         fluid={false}
+        tabIndex={!expandable ? -1 : undefined}
         size={size ? sizes[size].summary as TextProps['size'] : undefined}
         weight="bold"
       >
         {summary}
-        <Icon className={ExpandIcon} name="chevron-up" dimension={size === 'regular' ? 16 : 24} />
+        {expandable && <Icon className={ExpandIcon} name="chevron-up" dimension={size === 'regular' ? 16 : 24} />}
       </Text>
       <div
         className={Content}

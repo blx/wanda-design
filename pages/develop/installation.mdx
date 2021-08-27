@@ -20,7 +20,7 @@ While some of the developing tools like [PostCSS](https://postcss.org/) are mand
 Wanda's development core elements are formed by [tokens](/develop/design-tokens/), [react-components](https://github.com/wonderflow-bv/react-components) and the [shared configurations](https://github.com/wonderflow-bv/config/). **These packages are required.**
 
 ```bash
-npm install @wonderflow/tokens @wonderflow/react-components
+npm install @wonderflow/react-components
 npm install -D @wonderflow/config
 ```
 
@@ -39,6 +39,21 @@ The first thing to do is configuring Postcss, so inside your local **postcss.con
 ```js
 const { postcssConfig } = require("@wonderflow/config");
 module.exports = postcssConfig;
+```
+
+### Using with custom plugins
+
+If you're alread using custom postcss plugins you can merge them with the ones required by Wanda. If you declare a plugin which is already used by Wanda you'll overwrite it.
+
+```js
+const { postcssConfig } = require("@wonderflow/config");
+
+module.exports = {
+  plugins: {
+    ...postcssConfig.plugins,
+    tailwindcss: {},
+  },
+};
 ```
 
 Then inside your app js entry point you have to import two required css files, one is the core styles and other is the theme file which contains all the theme keys used by components and that you can have to use inside your custom css.

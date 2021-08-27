@@ -3,21 +3,24 @@ import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
 import clsx from 'clsx'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Stack, IconButton, Container } from '@wonderflow/react-components'
+import { Stack, IconButton, Container, Separator } from '@wonderflow/react-components'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
 import { Shell, MenuTrigger, Aside, Content, Header, ContentArea } from './shell.module.css'
+import { Footer } from '@/components/footer'
 
 type ShellLayoutProps = {
   header?: ReactNode;
   stickyHeader?: boolean;
+  showFooter?: boolean;
 } & PropsWithClass
 
 export const ShellLayout: React.FC<ShellLayoutProps> = ({
   children,
   header,
   stickyHeader = false,
+  showFooter = true,
   className,
   ...props
 }) => {
@@ -63,11 +66,19 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       <aside className={Aside} ref={scrollerRef}>
         <Sidebar />
       </aside>
-      <Stack as="main" verticalAlign="start" fill={false} className={Content}>
+      <Stack as="main" rowGap={80} verticalAlign="start" fill={false} className={Content}>
         {header && <header className={Header}>{header}</header>}
         <Container className={ContentArea}>
           {children}
         </Container>
+        {showFooter && (
+        <>
+          <Separator />
+          <Container className={ContentArea}>
+            <Footer />
+          </Container>
+        </>
+        )}
       </Stack>
     </Stack>
   )

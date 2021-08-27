@@ -1,70 +1,50 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { IconButton, Snackbar } from "@wonderflow/react-components";
+import { IconButton } from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Icon button"
     description="When the action a button invoke is so clear that needs no words, just an icon"
+    showMeta
+    features={[
+      "Keyboard accessible",
+      "Focusable even when disabled",
+      "Multiple styles and sizes",
+      "Themes ready",
+    ]}
+    links={[
+      {
+        label: "ARIA design pattern",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#button",
+      },
+      {
+        label: "ARIA authoring",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#button",
+      },
+    ]}
+    hero={
+      <LiveArea direction="row">
+        <IconButton icon="plus" />
+      </LiveArea>
+    }
   >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { IconButton } from "@wonderflow/react-components";
+
+export default () => {
+  return <IconButton icon="plus">Click</IconButton>;
+};
 ```
 
-Buttons can be used to communicate and immediately trigger actions a user can take in an application, like submitting a form, canceling a process, or creating a new object. Buttons can also be used to take a user to a new location, like another page inside of a web application, or an external site such as help or documentation.
-
-## Usage
-
-The very basic usge of the component doesn't require any property. If you want to use a `regular` and `primary` button you just have to drop the component inside your code. The visual appearance of the button can be changed by using the `kind` property.
-
-<LiveArea direction="row">
-  <IconButton icon="plus" />
-  <IconButton icon="bell" kind="secondary" />
-  <IconButton icon="message" kind="flat" />
-  <IconButton icon="play" disabled />
-</LiveArea>
-
-```jsx
-<IconButton icon="plus" />
-<IconButton icon="bell" kind="secondary" />
-<IconButton icon="message" kind="flat" />
-<IconButton icon="play" disabled />
-```
-
-## Sizes
-
-Sometimes you don't have enought space to add a regular button, and in the same way sometimes you need a bigger button to keep the visual hierarchy. For these cases you can use the `dimension` property to change the size of the button, by choosing from three options: `big`, `regular` (default), `small`:
-
-<LiveArea direction="row">
-  <IconButton dimension="big" icon="plus" />
-  <IconButton icon="bell" kind="secondary" />
-  <IconButton dimension="small" icon="message" kind="flat" />
-</LiveArea>
-
-```jsx
-<IconButton dimension="big" icon="plus" />
-<IconButton icon="bell" kind="secondary" />
-<IconButton dimension="small" icon="message" kind="flat" />
-```
-
-## Dynamic tag
-
-If you need a link which must look like a button you can change the element used by the `<IconButton>` from `<button>` to `<a>` by using the `as` property. In the following example the button will render a link element as wrapper.
-
-<LiveArea direction="row">
-  <IconButton icon="bell" as="a" href="https://design.wonderflow.ai" />
-</LiveArea>
-
-```jsx
-<IconButton as="a" href="https://design.wonderflow.ai" />
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -110,11 +90,31 @@ If you need a link which must look like a button you can change the element used
     },
     {
       name: "as",
-      type: ["PolymorphicPropsWithRef"],
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"button"',
       required: false,
-      dangerous: true,
-      description: "Set the component outer html tag",
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+Adheres to the [`button` role requirements](https://www.w3.org/TR/wai-aria-1.2/#button). This component always requires the `aria-label` or `aria-labelledby` attributes to describe the action.
+
+#### Keyboard interactions
+
+<Props
+  properties={[
+    {
+      name: "tab",
+      description: "Move focus on the element or outside",
+    },
+    {
+      name: "enter",
+      description: "Trigger the component action",
     },
   ]}
 />

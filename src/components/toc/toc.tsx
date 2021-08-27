@@ -20,7 +20,13 @@ export const ToC: {
   Table: ({ className, content, ...props }) => {
     const titles = Children.toArray(content).filter((item: { props: any }) => /h2/g.test(item.props.mdxType))
     return (
-      <Stack data-toc-has-titles={titles.length > 0} rowGap={16} className={clsx(ToCClass, className)} {...props}>
+      <Stack
+        data-toc-has-titles={titles.length > 0}
+        rowGap={16}
+        inline
+        className={clsx(ToCClass, className)}
+        {...props}
+      >
         {(titles.length > 0) && <Title level="6" className={QuickNav}>Quick nav</Title>}
         <Stack as="ul" rowGap={8}>
           {titles.map((child: { props: any }) => (

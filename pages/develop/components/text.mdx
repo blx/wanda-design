@@ -1,100 +1,44 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Text, Snackbar } from "@wonderflow/react-components";
+import { Text } from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Text"
     description="Dynamic and fluid typography with control"
+    showMeta
+    features={[
+      "Dynamic HTML tag",
+      "Fully customizzable",
+      "Responsive text",
+      "Themes ready",
+    ]}
+    hero={
+      <LiveArea>
+        <Text>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+          dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
+          numquam temporibus.
+        </Text>
+      </LiveArea>
+    }
   >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Text } from "@wonderflow/react-components";
+
+export default () => {
+  return <Text>Click</Text>;
+};
 ```
 
-With the `Text` component you can add elements using the style from the Wanda typography like size, colors, weight and the fluid typography.
-
-## Usage
-
-By default the Text component just renders a `p` element with the default font size, which is `1rem` (18px).
-
-<LiveArea>
-  <Text>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
-    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
-    temporibus.
-  </Text>
-</LiveArea>
-
-```jsx
-<Text>
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
-  tempore quas labore officiis praesentium. Porro sed dolorem, numquam
-  temporibus.
-</Text>
-```
-
-With `size`, `sentiment`, `dimmed` and `weight` properties you can change the visual appearance of the element, keeping it consistent with the design system guidelines:
-
-<LiveArea>
-  <Text size={22} dimmed={6}>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
-    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
-    temporibus.
-  </Text>
-  <Text size={14} sentiment="positive">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
-    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
-    temporibus.
-  </Text>
-  <Text size={16} weight="bold">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
-    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
-    temporibus.
-  </Text>
-</LiveArea>
-
-```jsx
-<Text size={22}>...</Text>
-<Text size={14} color="positive">...</Text>
-<Text size={16} weight="bold">...</Text>
-```
-
-## Fluid typography
-
-Any `Text` element have a dynamic font size by default and the value is computed by a specific formula described inside the [Typography](/design/foundations/typography) section.
-
-To disable this intrinsic behaviour you can set the `fluid` property to `false` in order to fix the font-size value to the specified value.
-
-<Snackbar kind="info" title="Resize your browser window">
-  If you resize the browser window you can check that the first text block is
-  not resized based on the viewport.
-</Snackbar>
-
-<LiveArea>
-  <Text size={22} fluid={false}>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
-    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
-    temporibus.
-  </Text>
-  <Text size={22}>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dolores,
-    tempore quas labore officiis praesentium. Porro sed dolorem, numquam
-    temporibus.
-  </Text>
-</LiveArea>
-
-```jsx
-<Text size={22} fluid={false}>
-  ...
-</Text>
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -141,11 +85,12 @@ To disable this intrinsic behaviour you can set the `fluid` property to `false` 
     },
     {
       name: "as",
-      type: ["PolymorphicPropsWithoutRef"],
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"p"',
       required: false,
-      dangerous: true,
-      description: "Set the component outer html tag",
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component.",
     },
   ]}
 />

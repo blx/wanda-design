@@ -23,7 +23,7 @@
     position: sticky;
     display: block;
   }
-  @media (--from-extra-large) {
+  @media (width >= 140em) {
     position: fixed;
   }
 
@@ -68,7 +68,10 @@
 }
 
 .ContentArea {
+  display: none;
+
   &:not(:empty) {
+    display: initial;
     padding: env(--space-16) env(--space-24) max(env(--space-88), env(safe-area-inset-bottom));
 
     @media (--from-medium) {

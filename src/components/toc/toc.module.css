@@ -10,11 +10,11 @@
     display: none;
   }
 
-  @media (--from-extra-large) {
+  @media (width >= 120em) {
     position: fixed;
     top: env(--space-104);
     left: calc(100% - 300px);
-    width: 270px;
+    max-inline-size: 270px;
   }
 }
 
@@ -35,7 +35,7 @@
 .QuickNav.QuickNav {
   display: none;
 
-  @media (--from-extra-large) {
+  @media (width >= 120em) {
     display: unset;
   }
 }

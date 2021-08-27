@@ -75,7 +75,7 @@ export const SearchIcons = () => {
 
   return (
     <Stack rowGap={48} className={SearchIconsClass}>
-      <Bleed maxWidth="90ch" className={ToolBar}>
+      <Bleed className={ToolBar}>
         <Stack direction="row" verticalAlign="center" horizontalAlign="center" wrap columnGap={24} rowGap={16}>
           <Textfield
             ref={fieldRef}
@@ -99,7 +99,7 @@ export const SearchIcons = () => {
           </Stack>
         </Stack>
       </Bleed>
-      <Bleed maxWidth="90ch">
+      <Bleed>
         { filteredIcons.length === 0
           ? (
             <Stack horizontalAlign="center" verticalAlign="center" rowGap={16}>

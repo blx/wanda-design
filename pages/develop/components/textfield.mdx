@@ -9,129 +9,61 @@ import {
 } from "@wonderflow/react-components";
 
 export default ({ children }) => (
-  <MdxLayout title="Textfield" description="Input areas for data entry">
+  <MdxLayout
+    title="Textfield"
+    description="Text inputs enable the user to interact with and input content and data."
+    showMeta
+    features={[
+      "Keyboard accessible",
+      "Can contain icons",
+      "Multiple sizes",
+      "Value format validation",
+      "Can be rendered as textarea",
+      "Themes ready",
+    ]}
+    links={[
+      {
+        label: "ARIA design pattern",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#button",
+      },
+      {
+        label: "ARIA authoring",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#button",
+      },
+    ]}
+    hero={
+      <LiveArea direction="row">
+        <Textfield
+          type="text"
+          id="filled"
+          label="Filled"
+          defaultValue="Prefilled value"
+        />
+      </LiveArea>
+    }
+  >
     {children}
   </MdxLayout>
 );
 
-```js
+## Anatomy
+
+```jsx
 import { Textfield } from "@wonderflow/react-components";
+
+export default () => {
+  return (
+    <Textfield
+      type="text"
+      id="filled"
+      label="Filled"
+      defaultValue="Prefilled value"
+    />
+  );
+};
 ```
 
-The `Textfield` component is a dynamic input field that reacts to entered data, providing a basic content format validation feedback and custom icons.
-
-## Usage
-
-By default, the Textfield component just renders an `input` element without any type declared. To define a field of type `text` you need then to specify the `type="text"` attribute.
-
-<LiveArea>
-  <Textfield
-    type="text"
-    id="filled"
-    label="Filled"
-    defaultValue="Prefilled value"
-  />
-</LiveArea>
-
-```jsx
-<Textfield
-  type="text"
-  id="demo1"
-  label="Label"
-  defaultValue="Prefilled value"
-/>
-```
-
-Since Wanda uses HTML native elements where possible there are many different input types you can use, most of them are handled by the platform so you don't need to care about positioning, scroll, overflow, OS themes, high contrast, etc. Here is a list of the available types:
-
-<LiveArea direction="column" horizontalAlign="start">
-  <Textfield type="text" label="Label" defaultValue="Prefilled value" />
-  <Textfield
-    type="text"
-    label="Read only"
-    defaultValue="Prefilled value"
-    readOnly
-  />
-  <Textfield
-    type="text"
-    label="Empty disbled"
-    placeholder="Placeholder"
-    disabled
-  />
-  <Textfield
-    type="text"
-    label="Filled disabled"
-    defaultValue="Prefilled value"
-    disabled
-  />
-  <Textfield type="number" label="Type number" defaultValue={100} />
-  <Textfield type="search" label="Type search" />
-  <Textfield type="date" label="Type date" />
-  <Textfield type="time" label="Type time" />
-  <Textfield type="month" label="Type month" />
-  <Textfield type="week" label="Type week" />
-  <Textfield type="datetime-local" label="Type datetime-local" />
-</LiveArea>
-
-```jsx
-<Textfield type="text" label="Label" defaultValue="Prefilled value" />
-<Textfield type="text" label="Read only" defaultValue="Prefilled value" readOnly />
-<Textfield type="text" label="Empty disbled" placeholder="Placeholder" disabled />
-<Textfield type="text" label="Filled disabled" defaultValue="Prefilled value" disabled />
-<Textfield type="number" label="Type number" defaultValue={100} />
-<Textfield type="search" label="Type search" />
-<Textfield type="date" label="Type date" />
-<Textfield type="time" label="Type time" />
-<Textfield type="month" label="Type month" />
-<Textfield type="week" label="Type week" />
-<Textfield type="datetime-local" label="Type datetime-local" />
-```
-
-## Sizes and icons
-
-Like other components, the size of thr `Textfield` can be controlled with the `dimension` property. If needed you can also add an icon to convey meaning.
-
-<LiveArea>
-  <Stack verticalAlign="end" direction="row" columnGap={8}>
-    <Textfield type="date" dimension="big" icon="calendar" label="Label" />
-    <Button dimension="big">Confirm</Button>
-  </Stack>
-</LiveArea>
-
-```jsx
-<Stack verticalAlign="end" direction="row" columnGap={8}>
-  <Textfield type="date" dimension="big" icon="calendar" label="Label" />
-  <Button dimension="big">Confirm</Button>
-</Stack>
-```
-
-## Data validation
-
-The input `invalid` property can be used to provide visual feedback about the validation of entered data. This feedback is meant to be used only when the data doesn't match a specific format required by the field.
-
-Don't use this visual feedback for errors generated after the form submissions, but instead trigger the validation when the user move outside the field (like blur event or click outside).
-
-<LiveArea>
-  <Textfield invalid dimension="big" icon="user" type="text" label="Label" />
-</LiveArea>
-
-```jsx
-<Textfield invalid dimension="big" icon="user" type="text" label="Label" />
-```
-
-## Multiline text
-
-By using the `textarea` property you can render a `textarea` element which allows multiline text instead of single-line.
-
-<LiveArea>
-  <Textfield textarea defaultValue="Prefilled value" />
-</LiveArea>
-
-```jsx
-<Textfield textarea defaultValue="Prefilled value" />
-```
-
-## Properties
+## API Reference
 
 <Props
   properties={[
@@ -206,6 +138,21 @@ By using the `textarea` property you can render a `textarea` element which allow
       required: false,
       dangerous: false,
       description: "Callback for the change event",
+    },
+  ]}
+/>
+
+## Accessibility
+
+The `Textfield` component requires an associated `label` element and `id` to describes the field. You can use the `label` and `id` properties or add a custom external `label`.
+
+#### Keyboard interactions
+
+<Props
+  properties={[
+    {
+      name: "tab",
+      description: "Move focus on the element or outside",
     },
   ]}
 />

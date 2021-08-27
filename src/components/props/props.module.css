@@ -4,7 +4,7 @@
 
 .PropName {
   display: block;
-  inline-size: 120px;
+  inline-size: 80px;
 }
 
 .PropsValue {
@@ -12,8 +12,8 @@
   list-style: none;
 
   & code {
-    background-color: var(--highlight-gray-background);
-    color: var(--highlight-gray-foreground);
+    background-color: var(--dimmed-2);
+    color: var(--dimmed-6);
   }
 }
 
