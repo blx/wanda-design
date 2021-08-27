@@ -42,7 +42,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
             Copy
           </Button>
 
-          <div className={clsx(Code, className)} style={{ ...style }}>
+          <pre className={clsx(Code, className)} style={{ ...style }}>
             <div ref={CodeRef}>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line, key: i })}>
@@ -52,7 +52,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
                 </div>
               ))}
             </div>
-          </div>
+          </pre>
         </div>
       )}
     </Highlight>
