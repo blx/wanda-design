@@ -66,19 +66,21 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       <aside className={Aside} ref={scrollerRef}>
         <Sidebar />
       </aside>
-      <Stack as="main" rowGap={80} verticalAlign="start" fill={false} className={Content}>
+      <Stack as="main" verticalAlign="start" fill={false} className={Content}>
         {header && <header className={Header}>{header}</header>}
-        <Container className={ContentArea}>
-          {children}
-        </Container>
-        {showFooter && (
-        <>
-          <Separator />
+        <Stack rowGap={80} verticalAlign="start" fill={false}>
           <Container className={ContentArea}>
-            <Footer />
+            {children}
           </Container>
-        </>
-        )}
+          {showFooter && (
+            <>
+              <Separator />
+              <Container className={ContentArea}>
+                <Footer />
+              </Container>
+            </>
+          )}
+        </Stack>
       </Stack>
     </Stack>
   )

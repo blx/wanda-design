@@ -21,7 +21,7 @@ export const Hero = () => {
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
       <Stack rowGap={160} className={Content}>
-        <Stack rowGap={32}>
+        <Stack rowGap={32} horizontalAlign="start" inline>
           <Title level="display">Wanda</Title>
           <Text size={28} maxWidth="50ch">
             Wanda is Wonderflow’s open-source design system built for digital products and experiences.
