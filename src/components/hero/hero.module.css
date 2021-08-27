@@ -9,10 +9,10 @@
   position: relative;
   z-index: 0;
 
-  @media (--from-small) {
+  @media (--from-large) {
     padding: env(--space-96);
   }
-  @media (--from-extra-large) {
+  @media (width >= 140em) {
     padding-left: 20rem;
   }
 
