@@ -15,6 +15,7 @@ import './shame.css'
 
 /* eslint-disable react/display-name, react/destructuring-assignment */
 const components = {
+  pre: (props: any) => <div {...props} />,
   code: CodeBlock,
   h1: (props: any) => <Title as="h1" level="2" {...props} />,
   h2: (props: any) => <Title as="h2" level="3" {...props} />,
