@@ -1,13 +1,9 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import {
-  Stack,
-  Snackbar,
-  Title,
-  Text,
-  Prose,
-} from "@wonderflow/react-components";
+import { Stack, Title, Text, Prose } from "@wonderflow/react-components";
 import { LiveFrame } from "@/components/live-frame";
 import { LiveArea } from "@/components/live-area";
+import { TileGrid } from "@/components/tile-grid";
+import { Tile } from "@/components/tile";
 import { Resizer } from "@/components/resizer";
 
 export default ({ children }) => (
@@ -22,16 +18,11 @@ Wanda design system doesn't use custom fonts, instead it relies on the system fo
 
 System fonts grant an immersive experience with our digital products. This means the typeface changes based on the operating system, so the user will have the perception of using a native system application.
 
-[![San Francisco font preview table](/design/typography/sf-table.svg)](https://developer.apple.com/fonts/ "Download San Francisco font")
+![San Francisco font preview table](/design/typography/sf-table.svg)
 
-[![Segoe UI font preview table](/design/typography/segoe-table.svg)](https://docs.microsoft.com/en-us/windows/apps/design/downloads/#fonts "Download Segoe UI font")
+![Segoe UI font preview table](/design/typography/segoe-table.svg)
 
-[![Ubuntu font preview table](/design/typography/ubuntu-table.svg)](https://design.ubuntu.com/font/ "Download Ubuntu font")
-
-<Snackbar kind="info">
-  Click the previews to go to the download page and download the fonts for
-  design purposes.
-</Snackbar>
+![Ubuntu font preview table](/design/typography/ubuntu-table.svg)
 
 ## Type scale
 
@@ -181,3 +172,35 @@ font-size: clamp(minFontSize, preferredValue, maxFontSize)
     </LiveFrame>
   </LiveArea>
 </Resizer>
+
+## Resources
+
+<TileGrid>
+  <Tile
+    icon="arrow-up-right"
+    as="a"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://developer.apple.com/fonts/"
+  >
+    <Text weight="bold">San Francisco font</Text>
+  </Tile>
+  <Tile
+    icon="arrow-up-right"
+    as="a"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://docs.microsoft.com/en-us/windows/apps/design/downloads/#fonts"
+  >
+    <Text weight="bold">Segoe UI font</Text>
+  </Tile>
+  <Tile
+    icon="arrow-up-right"
+    as="a"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://design.ubuntu.com/font/"
+  >
+    <Text weight="bold">Ubuntu font</Text>
+  </Tile>
+</TileGrid>
