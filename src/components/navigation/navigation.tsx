@@ -57,7 +57,7 @@ export const Navigation = ({ data }: NavigationProps) => {
                         </Tree.Li>
                       ))
                       : (
-                        <Tree.Li key={link.path}>
+                        <Tree.Li>
                           <Link href={link.path}>
                             <a aria-current={includesPath(link.path) ? 'page' : undefined}>{link.label}</a>
                           </Link>
