@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import slugify from 'slugify'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
-import { Button, Prose, Stack, Title } from '@wonderflow/react-components'
+import { Button, Icon, Prose, Stack, Title } from '@wonderflow/react-components'
 import { ToC } from '@/components/toc'
 import { DocHead, DocHeadProps } from '@/components/doc-head'
 import { Toolbar } from '@/components/toolbar'
@@ -84,7 +84,9 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
                     Features
                   </Title>
                   <Checklist.List>
-                    {features.map(feat => <Checklist.Li key={feat}>{feat}</Checklist.Li>)}
+                    {features.map(feat => (
+                      <Checklist.Li key={feat}>{feat}</Checklist.Li>
+                    ))}
                   </Checklist.List>
                 </Stack>
                 )}
@@ -94,29 +96,44 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
                     Links
                   </Title>
                   <Stack horizontalAlign="start" rowGap={8} className={Links}>
-                    <a
+                    <Stack
+                      as="a"
+                      direction="row"
+                      verticalAlign="center"
+                      columnGap={4}
                       href={`https://github.com/wonderflow-bv/react-components/tree/main/src/${slugName}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       View source
-                    </a>
-                    <a
+                      <Icon name="arrow-up-right" dimension={14} />
+                    </Stack>
+                    <Stack
+                      as="a"
+                      direction="row"
+                      verticalAlign="center"
+                      columnGap={4}
                       href="https://github.com/wonderflow-bv/react-components/issues/new/choose"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Report an issue
-                    </a>
+                      <Icon name="arrow-up-right" dimension={14} />
+                    </Stack>
                     {links && links.map(link => (
-                      <a
+                      <Stack
+                        direction="row"
+                        verticalAlign="center"
+                        columnGap={4}
+                        as="a"
                         key={link.url}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {link.label}
-                      </a>
+                        <Icon name="arrow-up-right" dimension={14} />
+                      </Stack>
                     ))}
                   </Stack>
 
