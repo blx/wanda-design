@@ -3,19 +3,19 @@ import { MdxLayout } from "@/components/layouts/mdx";
 export default ({ children }) => (
   <MdxLayout
     title="Accessibility"
-    description="Wanda follows the WAI-ARIA authoring practices guidelines and are tested in a wide selection of modern browsers and commonly used assistive technologies."
+    description="Wanda follows the WAI-ARIA auth. practices guidelines and are tested in a wide selection of modern browsers and commonly used assistive technologies."
   >
     {children}
   </MdxLayout>
 );
 
-We take care of many of the difficult implementation details related to accessibility, including aria and role attributes, focus management, and keyboard navigation. That means that users should be able to use our components as-is in most contexts and rely on functionality to follow the expected accessibility design patterns.
+We take care of many of the difficult implementation details related to accessibility, including aria and role attributes, focus management, and keyboard navigation. That means that users should be able to use our components as-is in most contexts and rely on functionality to follow the expected accessibility designs.
 
 ## WAI-ARIA
 
 [WAI-ARIA](https://www.w3.org/TR/wai-aria-1.2/), published and maintained by the W3C, specifies the semantics for many common UI patterns that show up in Wanda's components. This is designed to provide meaning for controls that aren't built using elements provided by the browser. For example, if you use a `div` instead of a `button` element to create a button, there are attributes you need to add to the div in order to convey that it's a button for screen readers or voice recognition tools, and this is why should use a `button` in these situations.
 
-In addition to semantics, there are behaviors that are expected from different types of components. A `button` element is going to respond to certain interactions in ways that a `div` will not, so it's up to the developer to reimplement those interactions with JavaScript. The [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices-1.2/) provide additional guidance for implementing behaviors for various controls that come with Wanda's components.
+In addition to semantics, there are behaviors that are expected from different types of components. A `button` element is going to respond to certain interactions in ways that a `div` will not, so it's up to the developer to reimplement those interactions with JavaScript. The [WAI-ARIA auth. practices](https://www.w3.org/TR/wai-aria-practices-1.2/) provide additional guidance for implementing behaviors for various controls that come with Wanda's components.
 
 ## Accessible labels
 
@@ -25,7 +25,7 @@ Where possible, Wanda's components include abstractions to make labelling our co
 
 ## Keyboard navigation
 
-Many complex components, like `Tabs` and `Dialog`, come with expectations from users on how to interact with their content using a keyboard or other non-mouse input modalities. Wanda's components provide basic keyboard support in accordance with the [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices-1.2/).
+Many complex components, like `Tabs` and `Dialog`, come with expectations from users on how to interact with their content using a keyboard or other non-mouse input modalities. Wanda's components provide basic keyboard support in accordance with the [WAI-ARIA auth. practices](https://www.w3.org/TR/wai-aria-practices-1.2/).
 
 ## Focus management
 

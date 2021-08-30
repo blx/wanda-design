@@ -96,44 +96,35 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
                     Links
                   </Title>
                   <Stack horizontalAlign="start" rowGap={8} className={Links}>
-                    <Stack
-                      as="a"
-                      direction="row"
-                      verticalAlign="center"
-                      columnGap={4}
+                    <a
                       href={`https://github.com/wonderflow-bv/react-components/tree/main/src/${slugName}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       View source
+                      {' '}
                       <Icon name="arrow-up-right" dimension={14} />
-                    </Stack>
-                    <Stack
-                      as="a"
-                      direction="row"
-                      verticalAlign="center"
-                      columnGap={4}
+                    </a>
+                    <a
                       href="https://github.com/wonderflow-bv/react-components/issues/new/choose"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Report an issue
+                      {' '}
                       <Icon name="arrow-up-right" dimension={14} />
-                    </Stack>
+                    </a>
                     {links && links.map(link => (
-                      <Stack
-                        direction="row"
-                        verticalAlign="center"
-                        columnGap={4}
-                        as="a"
+                      <a
                         key={link.url}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {link.label}
+                        {' '}
                         <Icon name="arrow-up-right" dimension={14} />
-                      </Stack>
+                      </a>
                     ))}
                   </Stack>
 
