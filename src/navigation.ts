@@ -52,11 +52,17 @@ export default [
             wip: false
           },
           {
-            path: '/design/foundations/motion',
-            label: 'Motion',
+            path: '/design/foundations/elevations',
+            label: 'Elevations',
             target: '',
             wip: true
           }
+          // {
+          //   path: '/design/foundations/motion',
+          //   label: 'Motion',
+          //   target: '',
+          //   wip: true
+          // }
         ]
       }
     ]
