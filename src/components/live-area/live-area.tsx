@@ -21,7 +21,7 @@ export const LiveArea: React.FC<LiveAreaProps> = ({
   const ref = useRef(null)
   const { docX, docY, posX, posY } = useMouse(ref)
 
-  const hoverCoordinates = (docValue: number = 0, elValue: number = 0) => ((docValue - elValue) - 200).toFixed(2)
+  const hoverCoordinates = (docValue: number = 0, elValue: number = 0) => ((docValue - elValue) - 300).toFixed(2)
 
   const dynamicStyle: CSSProperties = {
     '--maxHeight': maxHeight,

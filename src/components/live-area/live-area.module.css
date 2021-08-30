@@ -26,14 +26,14 @@
       border-radius: 100%;
       content: '';
       display: block;
-      block-size: 400px;
-      inline-size: 400px;
-      top: var(--hoverY, -400px);
-      left: var(--hoverX, -400px);
+      block-size: 600px;
+      inline-size: 600px;
+      top: var(--hoverY, -600px);
+      left: var(--hoverX, -600px);
       position: absolute;
       mix-blend-mode: soft-light;
       filter: blur(60px);
-      opacity: 0.2;
+      opacity: 0.1;
       z-index: -1;
       transition: transform env(--duration-200) ease-out;
     }
