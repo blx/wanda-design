@@ -3,11 +3,11 @@ import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
 import clsx from 'clsx'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Stack, IconButton, Container, Separator } from '@wonderflow/react-components'
+import { Stack, IconButton, Container, Separator, ThemeSwitch } from '@wonderflow/react-components'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
-import { Shell, MenuTrigger, Aside, Content, Header, ContentArea, SkipToContent } from './shell.module.css'
+import { Shell, MenuTrigger, Aside, Content, Header, ContentArea, SkipToContent, AsideFooter } from './shell.module.css'
 import { Footer } from '@/components/footer'
 
 type ShellLayoutProps = {
@@ -64,9 +64,21 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       <a href="#content-quicklink" className={SkipToContent}>Skip to main content</a>
       <Meta />
       <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} dimension="big" className={MenuTrigger} />
-      <aside className={Aside} ref={scrollerRef}>
+
+      <Stack
+        rowGap={48}
+        as="aside"
+        verticalAlign="space-between"
+        fill={false}
+        className={Aside}
+        ref={scrollerRef}
+      >
         <Sidebar />
-      </aside>
+        <Stack className={AsideFooter}>
+          <ThemeSwitch />
+        </Stack>
+      </Stack>
+
       <Stack as="main" verticalAlign="start" fill={false} className={Content}>
         {header && <header className={Header}>{header}</header>}
         <Stack id="content-quicklink" rowGap={80} verticalAlign="start" fill={false}>

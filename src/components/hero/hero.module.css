@@ -2,7 +2,7 @@
 
 .Hero {
   min-block-size: 100vh;
-  background-color: hsl(env(--color-primary-100));
+  background-color: var(--dimmed-1);
   overflow: hidden;
   padding: env(--space-32) env(--space-24) max(env(--space-96), env(safe-area-inset-bottom));
   color: var(--global-foreground);

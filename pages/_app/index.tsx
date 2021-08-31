@@ -1,14 +1,13 @@
 import React, { ReactNode, useEffect } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
-import { Title, Text } from '@wonderflow/react-components'
+import { Title, Text, ThemeProvider, useThemeContext } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
-// import { useMedia } from 'react-use'
 import Head from 'next/head'
 
 import Link from 'next/link'
-import '@wonderflow/react-components/themes/dark.css'
+import '@wonderflow/react-components/themes.css'
 import '@wonderflow/react-components/core.css'
 import './app.css'
 import './shame.css'
@@ -27,13 +26,15 @@ const components = {
 
 const Providers = ({ children }: { children: ReactNode }) => (
   <MDXProvider components={components}>
-    {children}
+    <ThemeProvider theme="auto" persistState>
+      {children}
+    </ThemeProvider>
   </MDXProvider>
 )
 
 const App = ({ Component, pageProps }: any) => {
   const router = useRouter()
-  // const isDark = useMedia('(prefers-color-scheme: dark)')
+  const { theme } = useThemeContext()
 
   useEffect(() => {
     router.events.on('routeChangeStart', () => { document.documentElement.dataset.htmlSmooth = 'false' })
@@ -48,7 +49,7 @@ const App = ({ Component, pageProps }: any) => {
   return (
     <Providers>
       <Head>
-        {/* <meta name="theme-color" content={isDark ? '#000000' : '#ffffff'} /> */}
+        <meta name="theme-color" content={theme === 'dark' ? '#000000' : undefined} />
         <meta name="theme-color" content="#000000" />
       </Head>
       <NextScript src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />

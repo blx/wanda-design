@@ -12,7 +12,7 @@ declare const window: any
 export const Search = ({
   className,
   dimension = 'regular',
-  size = 30,
+  size = 20,
   ...props
 }: SearchProps) => {
   useEffect(() => {

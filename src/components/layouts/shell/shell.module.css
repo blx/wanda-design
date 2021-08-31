@@ -21,15 +21,20 @@
     inline-size: 15.55rem;
     block-size: 100vh;
     position: sticky;
-    display: block;
+    display: flex;
+    padding-bottom: env(--space-32);
   }
   @media (width >= 140em) {
     position: fixed;
   }
 
   @nest [data-shell-collapsed='false'] & {
-    display: block;
+    display: flex;
   }
+}
+
+.AsideFooter {
+  padding: 0 env(--space-24);
 }
 
 .Content {
