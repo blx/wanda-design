@@ -7,7 +7,7 @@ import { Stack, IconButton, Container, Separator } from '@wonderflow/react-compo
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
-import { Shell, MenuTrigger, Aside, Content, Header, ContentArea } from './shell.module.css'
+import { Shell, MenuTrigger, Aside, Content, Header, ContentArea, SkipToContent } from './shell.module.css'
 import { Footer } from '@/components/footer'
 
 type ShellLayoutProps = {
@@ -61,6 +61,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       className={clsx(Shell, className)}
       {...props}
     >
+      <a href="#content-quicklink" className={SkipToContent}>Skip to main content</a>
       <Meta />
       <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} dimension="big" className={MenuTrigger} />
       <aside className={Aside} ref={scrollerRef}>
@@ -68,7 +69,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       </aside>
       <Stack as="main" verticalAlign="start" fill={false} className={Content}>
         {header && <header className={Header}>{header}</header>}
-        <Stack rowGap={80} verticalAlign="start" fill={false}>
+        <Stack id="content-quicklink" rowGap={80} verticalAlign="start" fill={false}>
           <Container className={ContentArea}>
             {children}
           </Container>

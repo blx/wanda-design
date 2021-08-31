@@ -80,3 +80,37 @@
     }
   }
 }
+
+.SkipToContent {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  visibility: inherit;
+  white-space: nowrap;
+  width: 1px;
+
+  &:focus {
+    clip: auto;
+    align-items: center;
+    background-color: var(--dimmed-2);
+    border: 1px solid var(--dimmed-3);
+    display: flex;
+    height: env(--space-56);
+    left: 0;
+    outline: none;
+    padding: 0 env(--space-16);
+    top: 0;
+    width: auto;
+    z-index: 4;
+
+    @supports (backdrop-filter: blur(1px)) {
+      backdrop-filter: blur(62px);
+      background-color: var(--global-vibrancy-background);
+    }
+  }
+}
+
