@@ -1,8 +1,6 @@
 .Tile {
   display: block;
   min-block-size: env(--space-152);
-
-  /* background-color: var(--dimmed-2); */
   padding: env(--space-24);
   min-inline-size: env(--space-168);
   position: relative;

@@ -66,7 +66,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} dimension="big" className={MenuTrigger} />
 
       <Stack
-        rowGap={48}
+        rowGap={88}
         as="aside"
         verticalAlign="space-between"
         fill={false}
