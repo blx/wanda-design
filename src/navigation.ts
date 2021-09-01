@@ -1,15 +1,10 @@
 export default [
   {
-    title: 'Get started',
+    title: 'Overview',
     items: [
       // {
       //   path: '/get-started/introduction',
       //   label: 'Introduction',
-      //   target: ''
-      // },
-      // {
-      //   path: '/get-started/topics',
-      //   label: 'Topics',
       //   target: ''
       // },
       {
@@ -64,6 +59,12 @@ export default [
           //   wip: true
           // }
         ]
+      },
+      {
+        path: '/design/themes',
+        label: 'Themes',
+        target: '',
+        wip: false
       }
     ]
   },
@@ -89,8 +90,8 @@ export default [
         wip: false
       },
       {
-        path: '/develop/themes',
-        label: 'Themes',
+        path: '/develop/using-themes',
+        label: 'Using themes',
         target: '',
         wip: false
       }
@@ -107,12 +108,6 @@ export default [
           {
             path: '/develop/components/button',
             label: 'Button',
-            target: '',
-            wip: false
-          },
-          {
-            path: '/develop/components/icon-button',
-            label: 'Icon button',
             target: '',
             wip: false
           },
@@ -135,6 +130,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/icon-button',
+            label: 'Icon button',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/prose',
             label: 'Prose',
             target: '',
@@ -143,6 +144,12 @@ export default [
           {
             path: '/develop/components/select',
             label: 'Select',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/develop/components/selection-controls',
+            label: 'Selection controls',
             target: '',
             wip: false
           },
@@ -171,20 +178,20 @@ export default [
             wip: false
           },
           {
-            path: '/develop/components/title',
-            label: 'Title',
-            target: '',
-            wip: false
-          },
-          {
             path: '/develop/components/textfield',
             label: 'Textfield',
             target: '',
             wip: false
           },
           {
-            path: '/develop/components/selection-controls',
-            label: 'Selection controls',
+            path: '/develop/components/theme-switch',
+            label: 'Theme switch',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/develop/components/title',
+            label: 'Title',
             target: '',
             wip: false
           }

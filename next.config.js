@@ -34,6 +34,14 @@ module.exports = withPlugins([
   ],
   [withTranspileModules]
 ], {
+  async rewrites () {
+    return [
+      {
+        source: '/develop/themes/',
+        destination: '/develop/using-themes/'
+      }
+    ]
+  },
   distDir: 'build',
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx']

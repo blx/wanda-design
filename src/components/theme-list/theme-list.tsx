@@ -30,7 +30,7 @@ export const ThemeList: React.FC<ThemeListProps> = ({
       {
         themeKeys.map((item, i) => (
           <Fragment key={item}>
-            {i !== 0 && <Separator />}
+            {i !== 0 && <Separator aria-hidden="true" />}
             <Stack rowGap={24}>
               <Title level="5">
                 {item.charAt(0).toUpperCase() + item.slice(1)}

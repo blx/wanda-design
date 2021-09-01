@@ -1,0 +1,60 @@
+import { useState } from "react";
+import { MdxLayout } from "@/components/layouts/mdx";
+import { ThemeList } from "@/components/theme-list";
+import lightTheme from "@wonderflow/react-components/themes/light.json";
+import darkTheme from "@wonderflow/react-components/themes/dark.json";
+import { Stack, Radio, Text, Separator } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout title="Themes" description="Color schemes for scalability">
+    {children}
+  </MdxLayout>
+);
+
+Wanda introduces a well-proven theme system which help designers and developer building a product.
+
+A theme is a set of predefined `key ↔ color` combinations to be used whenever possible in order keep consistency, accessibility and dynamicity.
+
+## Available theme
+
+Here you can check the theme keys for all the available themes from Wanda. These themes are shared as library on Figma and as `css/json` from the [components library](/develop/using-themes/).
+
+export const ThemesSwitcher = () => {
+  const [theme, setTheme] = useState(lightTheme);
+  return (
+    <Stack rowGap={32}>
+      <Separator aria-hidden="true" />
+      <Stack direction="row" fill={false} columnGap={24} inline>
+        <Stack verticalAlign="center" direction="row" columnGap={8}>
+          <Radio
+            dimension="small"
+            id="LightTheme"
+            onChange={() => setTheme(lightTheme)}
+            name="chooseTheme"
+            value="LightTheme"
+            defaultChecked
+          />
+          <Text as="label" htmlFor="LightTheme">
+            <b>Light</b>
+          </Text>
+        </Stack>
+        <Stack verticalAlign="center" direction="row" columnGap={8}>
+          <Radio
+            dimension="small"
+            id="DarkTheme"
+            onChange={() => setTheme(darkTheme)}
+            name="chooseTheme"
+            value="DarkTheme"
+          />
+          <Text as="label" htmlFor="DarkTheme">
+            <b>Dark</b>
+          </Text>
+        </Stack>
+      </Stack>
+      <Separator aria-hidden="true" />
+      <ThemeList theme={theme} />
+    </Stack>
+  );
+};
+
+<ThemesSwitcher />

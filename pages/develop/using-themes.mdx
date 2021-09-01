@@ -1,0 +1,75 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { Snackbar } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Using themes"
+    description="Plug n'play colors for your product"
+  >
+    {children}
+  </MdxLayout>
+);
+
+Themes are a set of predefined keys which should be used whenever the color should be dynamic based on the current active theme. They are used to customize component styles to fit the specific aesthetic of a brand or product.
+Wanda provides two themes, `light` and `dark`.
+
+## Single theme apps
+
+If you're planning to design your app by using a single theme, you only need to include a single-file theme within you application, just choose one from the available themes.
+
+A theme is activated by importing the relative `css` file inside your project. Once you include the file all the theme keys will be available as custom properties, eg. `var(--global-foreground)`.
+
+```js
+import "@wonderflow/react-components/themes/light.css";
+```
+
+If needed, you can also import the `json` format of the theme and use the theme keys inside javascript:
+
+```js
+import LightTheme from "@wonderflow/react-components/themes/light.json";
+
+export default () => (
+  <div style={{ color: LightTheme["dimmed-5"] }}>I'm dimmed</div>
+);
+```
+
+<Snackbar kind="warning" title="Keep in mind">
+  json themes are only meant to be used inside javascript, you still need to
+  import the css version to enable the theme.
+</Snackbar>
+
+## Multiple themes
+
+The previous section shows how to use a single theme inside your digital product. Howhever, if you are going to introduce both `light` and `dark` themes and use the [`theme-switch`](/develop/components/theme-switch/) component you have to include a different `css` file inside your application, instead of the specific one.
+
+```js
+import "@wonderflow/react-components/themes.css";
+```
+
+This file contains both the `light` and `dark` themes which are activated based on specific contidions, by using the following structure:
+
+```css
+:root,
+[data-theme="light"] {
+  /* light theme values */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* dark theme values */
+  }
+}
+
+[data-theme="dark"],
+:root[data-theme="dark"] {
+  /* dark theme values */
+}
+```
+
+### How it works
+
+- **light**: activated when user choose the `light` option
+- **dark**: activated when the user choose the `dark` option
+- **light/dark**: automatically activated based on the user's system preferences when `system` option is chose
+
+See more about how to implement the Wanda's theming system [here](/develop/components/theme-switch/).

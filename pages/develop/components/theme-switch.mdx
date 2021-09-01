@@ -1,0 +1,103 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { ThemeSwitch } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Theme Switch"
+    description="A way to force the dark side"
+    showMeta
+    showPlayground
+    features={[
+      "Keyboard accessible",
+      "Automatic detects current theme",
+      "Adapts to system preference",
+    ]}
+    links={[
+      {
+        label: "ARIA design",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#select",
+      },
+      {
+        label: "ARIA auth.",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox",
+      },
+    ]}
+    hero={
+      <LiveArea direction="row" horizontalAlign="center" fill={false}>
+        <ThemeSwitch />
+      </LiveArea>
+    }
+  >
+    {children}
+  </MdxLayout>
+);
+
+## Anatomy
+
+The `ThemeSwitch` should be placed inside the provider `ThemeProvider` which is commonly placed inside the `App` file, warpping the whole application.
+
+You can use `theme` and `setTheme` from `useThemeContext` to get the current active theme and change it.
+
+```jsx
+// Required CSS containing the themes variables
+import "@wonderflow/react-components/themes.css";
+
+import { ThemeSwitch, ThemeProvider } from "@wonderflow/react-components";
+
+export default () => (
+  <ThemeProvider theme="auto">
+    <ThemeSwitch />
+  </ThemeProvider>
+);
+```
+
+## API Reference
+
+### useThemeContext
+
+<Props
+  properties={[
+    {
+      name: "theme",
+      type: ['"light"', '"dark"', '"auto"', "undefined"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Returns the current active theme",
+    },
+    {
+      name: "setTheme",
+      type: ["React.Dispatch<React.SetStateAction<ThemeType>>"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the theme value to one of the accepted values",
+    },
+  ]}
+/>
+
+### ThemeProvider
+
+<Props
+  properties={[
+    {
+      name: "theme",
+      type: ['"light"', '"dark"', '"auto"', "undefined"],
+      default: '"auto"',
+      required: false,
+      dangerous: false,
+      description: "Set the initial theme",
+    },
+    {
+      name: "persistState",
+      type: ["boolean"],
+      default: "true",
+      required: false,
+      dangerous: false,
+      description:
+        "Save the current theme to local storage to persist across navigation",
+    },
+  ]}
+/>

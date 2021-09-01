@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
-import { Title, Text, ThemeProvider, useThemeContext } from '@wonderflow/react-components'
+import { Title, Text, ThemeProvider, useThemeContext, Separator } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
 import Head from 'next/head'
@@ -21,7 +21,8 @@ const components = {
   h3: (props: any) => <Title as="h3" level="4" {...props} />,
   h4: (props: any) => <Title as="h4" level="5" {...props} />,
   p: (props: any) => <Text size={22} {...props} />,
-  a: (props: any) => <Link {...props}><a>{props.children}</a></Link>
+  a: (props: any) => <Link {...props}><a>{props.children}</a></Link>,
+  hr: Separator
 }
 
 const Providers = ({ children }: { children: ReactNode }) => (
@@ -50,9 +51,8 @@ const App = ({ Component, pageProps }: any) => {
     <Providers>
       <Head>
         <meta name="theme-color" content={theme === 'dark' ? '#000000' : undefined} />
-        <meta name="theme-color" content="#000000" />
       </Head>
-      <NextScript src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
+      <NextScript id="docsearch-core" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
       <Component {...pageProps} />
     </Providers>
   )
