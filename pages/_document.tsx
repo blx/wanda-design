@@ -6,7 +6,7 @@ import React from 'react'
 export default class MyDocument extends Document {
   render () {
     return (
-      <Html lang="en" data-html-smooth="true">
+      <Html lang="en" data-html-smooth="true" data-theme="auto">
         <Head />
         <body>
           <Main />
