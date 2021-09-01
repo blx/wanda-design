@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Frame, { FrameContextConsumer } from 'react-frame-component'
-import { ThemeProvider, useThemeContext } from '@wonderflow/react-components'
+import { useThemeContext } from '@wonderflow/react-components'
 
 export const LiveFrame: React.FC = ({
   children,
@@ -17,9 +17,8 @@ export const LiveFrame: React.FC = ({
       loading="lazy"
       {...props}
     >
-      <ThemeProvider>
-        <FrameContextConsumer>
-          {
+      <FrameContextConsumer>
+        {
             ({ document }: { document: any }) => {
               pageHead.map(
                 item => (
@@ -33,8 +32,7 @@ export const LiveFrame: React.FC = ({
               return children
             }
           }
-        </FrameContextConsumer>
-      </ThemeProvider>
+      </FrameContextConsumer>
     </Frame>
   )
 }
