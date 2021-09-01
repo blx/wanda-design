@@ -32,7 +32,7 @@
 }
 
 .Video {
-  filter: saturate(0.5) hue-rotate(333deg);
+  filter: saturate(2) hue-rotate(333deg);
   min-block-size: 100%;
   min-inline-size: 100%;
   display: block;
@@ -40,6 +40,5 @@
   object-position: center;
   position: absolute;
   inset: 0;
-  opacity: 0.3;
-  mix-blend-mode: color-dodge;
+  opacity: 0.05;
 }
