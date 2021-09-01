@@ -26,7 +26,7 @@ const components = {
 
 const Providers = ({ children }: { children: ReactNode }) => (
   <MDXProvider components={components}>
-    <ThemeProvider theme="auto" persistState>
+    <ThemeProvider theme="auto">
       {children}
     </ThemeProvider>
   </MDXProvider>
