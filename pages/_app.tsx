@@ -9,8 +9,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import '@wonderflow/react-components/themes.css'
 import '@wonderflow/react-components/core.css'
-import './app.css'
-import './shame.css'
+import '../src/styles/app.css'
+import '../src/styles/shame.css'
 
 /* eslint-disable react/display-name, react/destructuring-assignment */
 const components = {
