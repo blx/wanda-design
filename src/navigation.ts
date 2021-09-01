@@ -1,12 +1,12 @@
 export default [
   {
-    title: 'Overview',
+    title: 'Get started',
     items: [
-      // {
-      //   path: '/get-started/introduction',
-      //   label: 'Introduction',
-      //   target: ''
-      // },
+      {
+        path: '/get-started/introduction',
+        label: 'Introduction',
+        target: ''
+      },
       {
         path: '/get-started/accessibility',
         label: 'Accessibility',

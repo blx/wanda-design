@@ -3,11 +3,11 @@ import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
 import clsx from 'clsx'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Stack, IconButton, Container, Separator, ThemeSwitch } from '@wonderflow/react-components'
+import { Stack, IconButton, Container, Separator } from '@wonderflow/react-components'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
-import { Shell, MenuTrigger, Aside, Content, Header, ContentArea, SkipToContent, AsideFooter } from './shell.module.css'
+import { Shell, MenuTrigger, Aside, Content, Header, ContentArea, SkipToContent } from './shell.module.css'
 import { Footer } from '@/components/footer'
 
 type ShellLayoutProps = {
@@ -74,9 +74,6 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
         ref={scrollerRef}
       >
         <Sidebar />
-        <Stack className={AsideFooter}>
-          <ThemeSwitch />
-        </Stack>
       </Stack>
 
       <Stack as="main" verticalAlign="start" fill={false} className={Content}>

@@ -1,7 +1,7 @@
 @import '@wonderflow/react-components/core/media.css';
 
 .Hero {
-  min-block-size: 100vh;
+  min-block-size: calc(100vh - 57px);
   background-color: var(--dimmed-1);
   overflow: hidden;
   padding: env(--space-32) env(--space-24) max(env(--space-96), env(safe-area-inset-bottom));

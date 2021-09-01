@@ -1,7 +1,6 @@
 import { Icon, Stack, Text, Title } from '@wonderflow/react-components'
 import React from 'react'
 import { Tile } from '@/components/tile'
-import { Search } from '@/components/search'
 import Link from 'next/link'
 import { Hero as HeroClass, Video, Content } from './hero.module.css'
 
@@ -26,7 +25,6 @@ export const Hero = () => {
           <Text size={28} maxWidth="50ch">
             Wanda is Wonderflow’s open-source design system built for digital products and experiences.
           </Text>
-          <Search size={50} dimension="big" />
         </Stack>
         <Stack wrap direction="row" columnGap={32} rowGap={32}>
           <Link href="/get-started/accessibility/" passHref>

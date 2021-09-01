@@ -15,7 +15,7 @@ Wanda introduces a well-proven theme system which help designers and developer b
 
 A theme is a set of predefined `key ↔ color` combinations to be used whenever possible in order keep consistency, accessibility and dynamicity.
 
-## Available theme
+## Available themes
 
 Here you can check the theme keys for all the available themes from Wanda. These themes are shared as library on Figma and as `css/json` from the [components library](/develop/using-themes/).
 
@@ -24,7 +24,13 @@ export const ThemesSwitcher = () => {
   return (
     <Stack rowGap={32}>
       <Separator aria-hidden="true" />
-      <Stack direction="row" fill={false} columnGap={24} inline>
+      <Stack
+        direction="row"
+        horizontalAlign="center"
+        fill={false}
+        columnGap={24}
+        inline
+      >
         <Stack verticalAlign="center" direction="row" columnGap={8}>
           <Radio
             dimension="small"

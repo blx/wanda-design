@@ -24,17 +24,13 @@
     display: flex;
     padding-bottom: env(--space-32);
   }
-  @media (width >= 140em) {
+  @media (width >= 120em) {
     position: fixed;
   }
 
   @nest [data-shell-collapsed='false'] & {
     display: flex;
   }
-}
-
-.AsideFooter {
-  padding: 0 env(--space-24);
 }
 
 .Content {
