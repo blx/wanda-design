@@ -1,0 +1,77 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { Elevator } from "@wonderflow/react-components";
+import { Card } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Elevator"
+    description="Elevate you elements across the z axis"
+    showMeta
+    showPlayground
+    features={[
+      "It doesn't generate any wrapper",
+      "Follows Wanda elevations styles",
+      "Elevation can change on hover",
+    ]}
+    hero={
+      <LiveArea>
+        <Elevator resting={1} hover={4}>
+          <Card>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+            dolores, tempore quas labore officiis praesentium. Porro sed
+            dolorem, numquam temporibus.
+          </Card>
+        </Elevator>
+      </LiveArea>
+    }
+  >
+    {children}
+  </MdxLayout>
+);
+
+## Anatomy
+
+```jsx
+import { Elevator, Card } from "@wonderflow/react-components";
+
+export default () => {
+  return (
+    <Elevator resting={1} hover={4}>
+      <Card>Lorem ipsum dolor sit.</Card>
+    </Elevator>
+  );
+};
+```
+
+## API Reference
+
+<Props
+  properties={[
+    {
+      name: "resting",
+      type: ["1", "2", "3", "4"],
+      default: "",
+      required: true,
+      dangerous: false,
+      description: "Set the elevation while resting",
+    },
+    {
+      name: "hover",
+      type: ["1", "2", "3", "4"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the elevation while hovering",
+    },
+    {
+      name: "children",
+      type: ["ReactElement"],
+      default: "",
+      required: true,
+      dangerous: false,
+      description: "The content to elevate. Only one child is accepted.",
+    },
+  ]}
+/>

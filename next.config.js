@@ -39,6 +39,10 @@ module.exports = withPlugins([
       {
         source: '/develop/themes/',
         destination: '/develop/using-themes/'
+      },
+      {
+        source: '/develop/styles/',
+        destination: '/develop/global-styles/'
       }
     ]
   },

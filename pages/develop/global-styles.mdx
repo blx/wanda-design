@@ -1,0 +1,65 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { CodeBlock } from "@/components/code-block";
+import { LiveArea } from "@/components/live-area";
+import { Stack } from "@wonderflow/react-components";
+import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
+
+export default ({ children }) => (
+  <MdxLayout title="Global styles" description="Global styles on the rescue">
+    {children}
+  </MdxLayout>
+);
+
+Core styles are what you need to write your custom css. They include custom properties, custom media queries and utilities.
+
+## Media queries
+
+Inside the core style, we provide a set of breakpoints which you can use while building components and applications. To use them you have to import the relative file:
+
+```css
+@import "@wonderflow/react-components/core/media.css";
+```
+
+Here the complete list of the available custom media queries you can use:
+
+### Viewport
+
+```css
+@media (--from-extra-small);
+/* min-width: 30em => 480px */
+
+@media (--from-small);
+/* (min-width: 48em) => 768px */
+
+@media (--from-medium);
+/* (min-width: 60em) => 960px */
+
+@media (--from-large);
+/* (min-width: 80em) => 1280px */
+
+@media (--from-extra-large);
+/* (min-width: 100em) => 1600px */
+```
+
+### Orientation
+
+```css
+@media (--portrait);
+/* (orientation: portrait) */
+
+@media (--landscape);
+/* (orientation: portrait) */
+```
+
+### System preferences
+
+```css
+@media (--dark-scheme);
+/* (prefers-color-scheme: dark) */
+
+@media (--light-scheme);
+/* (prefers-color-scheme: light) */
+
+@media (--allow-motion);
+/* (prefers-reduced-motion: no-preference) */
+```

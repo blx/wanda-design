@@ -84,8 +84,8 @@ export default [
         wip: false
       },
       {
-        path: '/develop/styles',
-        label: 'Styles',
+        path: '/develop/global-styles',
+        label: 'Global styles',
         target: '',
         wip: false
       },
@@ -112,6 +112,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/card',
+            label: 'Card',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/clamp-text',
             label: 'Clamp text',
             target: '',
@@ -120,6 +126,12 @@ export default [
           {
             path: '/develop/components/container',
             label: 'Container',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/develop/components/elevator',
+            label: 'Elevator',
             target: '',
             wip: false
           },
