@@ -12,7 +12,7 @@
   @media (--from-large) {
     padding: env(--space-96);
   }
-  @media (width >= 140em) {
+  @media (width >= 120em) {
     padding-left: 20rem;
   }
 
