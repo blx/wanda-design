@@ -39,12 +39,12 @@ export const ThemesSwitcher = () => {
                 <Radio
                   dimension="small"
                   id={uid("light")}
-                  onChange={() => setTheme("light")}
+                  onChange={() => setTheme(lightTheme)}
                   name="chooseTheme"
                   value="LightTheme"
                   defaultChecked
                 />
-                <Text as="label" htmlFor={uid(lightTheme)}>
+                <Text as="label" htmlFor={uid("light")}>
                   <b>Light</b>
                 </Text>
               </Stack>
