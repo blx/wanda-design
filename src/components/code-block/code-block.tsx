@@ -35,7 +35,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
         }) => (
           <>
             <Stack direction="row" fill={false} horizontalAlign="space-between" verticalAlign="center" className={Toolbar}>
-              {language && <Text fluid={false} size={14} dimmed={6}>{language}</Text>}
+              {language && <Text fluid={false} size={14}>{language}</Text>}
               <Button
                 className={Action}
                 dimension="small"

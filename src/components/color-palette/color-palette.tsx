@@ -34,7 +34,7 @@ export const ColorPalette = ({
         <Title as="span" level="5">{title}</Title>
         <Stack direction="row" fill={false} columnGap={8} verticalAlign="middle">
           <Text as="label" htmlFor={`palette-${title}-${id}`} weight="bold" size={14}>{showHex ? 'HEX' : 'HSL'}</Text>
-          <Toggle id={`palette-${title}-${id}`} onClick={() => setShowHex(!showHex)} dimension="small" />
+          <Toggle id={`palette-${title || ''}-${id}`} onClick={() => setShowHex(!showHex)} dimension="small" />
         </Stack>
       </Stack>
 
