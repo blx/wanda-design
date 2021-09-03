@@ -184,6 +184,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/star-meter',
+            label: 'Star meter',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/text',
             label: 'Text',
             target: '',
