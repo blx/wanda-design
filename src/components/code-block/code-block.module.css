@@ -16,12 +16,19 @@
   border-radius: env(--radius-8);
   white-space: pre-wrap;
   font-size: env(--font-size-18);
-  padding: 28px env(--space-24) env(--space-24);
+  padding: env(--space-64) env(--space-24) env(--space-24);
+}
+
+.Toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: env(--space-8) env(--space-8);
+  background-color: var(--dimmed-3);
+  border-radius: env(--radius-8) env(--radius-8) 0 0;
 }
 
 .Action.Action {
-  position: absolute;
-  top: env(--space-8);
-  right: env(--space-8);
   color: hsl(env(--color-support-white));
 }
