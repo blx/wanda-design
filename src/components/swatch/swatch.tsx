@@ -2,7 +2,7 @@ import React, {
   useState, CSSProperties, useCallback, Fragment
 } from 'react'
 import { fromString } from 'css-color-converter'
-import { Text, Title, Stack, Button } from '@wonderflow/react-components'
+import { Text, Stack, Button } from '@wonderflow/react-components'
 
 import { Swatch as SwatchClass, Color, CopyColor, Values } from './swatch.module.css'
 
@@ -66,15 +66,14 @@ export const Swatch: React.FC<SwatchProps> = ({
           )}
       </Stack>
       <Stack
-        rowGap={4}
+        rowGap={16}
         verticalAlign="center"
         horizontalAlign="start"
         fill={false}
       >
-        {name && <Title level="6">{name}</Title>}
-        <Stack className={Values} direction="row" columnGap={4}>
+        {name && <Text size={16} weight="bold">{name}</Text>}
+        <Stack className={Values} columnGap={4}>
           <Text size={14}>{hslColor}</Text>
-          ｜
           <Text size={14}>{hexColor}</Text>
         </Stack>
       </Stack>

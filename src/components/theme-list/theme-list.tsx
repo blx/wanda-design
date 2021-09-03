@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import { Swatch } from '@/components/swatch'
 import { Stack, Title, Separator } from '@wonderflow/react-components'
 
+import { Grid } from './theme-list.module.css'
+
 type ThemeListProps = {
   theme: Record<string, string>
 }
@@ -37,7 +39,7 @@ export const ThemeList: React.FC<ThemeListProps> = ({
                 {' '}
                 colors
               </Title>
-              <Stack rowGap={32} wrap>
+              <div className={Grid}>
                 {Object.keys(groupedData[item]).map(color => (
                   <Swatch
                     showCopy={false}
@@ -46,7 +48,7 @@ export const ThemeList: React.FC<ThemeListProps> = ({
                     name={color}
                   />
                 ))}
-              </Stack>
+              </div>
             </Stack>
           </Fragment>
         ))
