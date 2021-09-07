@@ -121,6 +121,22 @@ export default () => {
         "Set the horizontal alignment for children. Any align-items or justify-content value is accepted",
     },
     {
+      name: "verticalPadding",
+      type: ["TokensTypes['space']"],
+      default: "0",
+      required: false,
+      dangerous: false,
+      description: "Set the vertical padding",
+    },
+    {
+      name: "horizontalPadding",
+      type: ["TokensTypes['space']"],
+      default: "0",
+      required: false,
+      dangerous: false,
+      description: "Set the horizontal padding",
+    },
+    {
       name: "direction",
       type: ['"row"', '"column"'],
       default: '"column"',
