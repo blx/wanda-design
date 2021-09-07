@@ -4,7 +4,7 @@ import { IconButton, Button, Separator, Stack, Text, Title } from '@wonderflow/r
 export const Footer = () => {
   return (
     <Stack as="footer" rowGap={96}>
-      <Stack direction="row" columnGap={88} rowGap={88} wrap>
+      <Stack direction="row" columnGap={32} rowGap={88} wrap>
 
         <Stack rowGap={24} fill={false} horizontalAlign="start">
           <Title level="4">Open Source</Title>
