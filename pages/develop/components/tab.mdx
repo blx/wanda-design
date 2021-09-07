@@ -1,25 +1,77 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Icon } from "@wonderflow/react-components";
+import {
+  Tab,
+  Textfield,
+  Card,
+  Button,
+  Elevator,
+  Stack,
+} from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Tab"
-    description="A set of layered sections of content—known as tab panels—that are displayed one at a time."
+    description="A set of layered sections of content — known as tab panels — that are displayed one at a time."
     showMeta
     showPlayground
     features={[
-      "Scalable vector graphic",
-      "Fully stylizable",
-      "Multiple visual styles",
-      "Auto adjust style based on rendering size",
+      "Keyboard accessible",
+      "Supports automatic activation",
+      "Themes ready",
+    ]}
+    links={[
+      {
+        label: "ARIA design",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#tab",
+      },
+      {
+        label: "ARIA auth.",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel",
+      },
     ]}
     hero={
       <LiveArea>
-        <Icon name="bell" dimension={32} />
-        <Icon name="plus" dimension={32} />
-        <Icon name="message" dimension={32} />
+        <Elevator resting={1}>
+          <Card padding={false}>
+            <Tab.Root>
+              <Tab.List>
+                <Tab.Item>Sign-up</Tab.Item>
+                <Tab.Item>Login</Tab.Item>
+              </Tab.List>
+              <Tab.Panel>
+                <Card>
+                  <Stack rowGap={24}>
+                    <Textfield label="Name" type="text" />
+                    <Textfield label="E-Mail" type="email" />
+                    <Textfield
+                      label="Password"
+                      type="password"
+                      autoComplete="new-password"
+                      id="new-password"
+                    />
+                    <Button>Submit</Button>
+                  </Stack>
+                </Card>
+              </Tab.Panel>
+              <Tab.Panel>
+                <Card>
+                  <Stack rowGap={24}>
+                    <Textfield label="E-Mail" type="email" />
+                    <Textfield
+                      label="Password"
+                      type="password"
+                      autoComplete="new-password"
+                      id="new-password"
+                    />
+                    <Button>Submit</Button>
+                  </Stack>
+                </Card>
+              </Tab.Panel>
+            </Tab.Root>
+          </Card>
+        </Elevator>
       </LiveArea>
     }
   >
@@ -30,36 +82,97 @@ export default ({ children }) => (
 ## Anatomy
 
 ```jsx
-import { Icon } from "@wonderflow/react-components";
+import { Tab } from "@wonderflow/react-components";
 
 export default () => {
-  return <Icon name="bell">;
+  return (
+    <Tab.Root>
+      <Tab.List>
+        <Tab.Item>Tab item 1</Tab.Item>
+        <Tab.Item>Tab item 2</Tab.Item>
+      </Tab.List>
+      <Tab.Panel>Tab panel 1</Tab.Panel>
+      <Tab.Panel>Tab panel 2</Tab.Panel>
+    </Tab.Root>
+  );
 };
 ```
 
 ## API Reference
 
+#### Tab.Root
+
+Contains all the tabs component parts.
+
 <Props
   properties={[
     {
-      name: "name",
-      type: ["IconNames"],
+      name: "state",
+      type: ["[number, React.Dispatch<React.SetStateAction<number>>]"],
       default: "",
-      required: true,
-      dangerous: false,
-      description: "Set the icon to render based on the name",
-    },
-    {
-      name: "dimension",
-      type: ["14", "16", "24", "32", "40", "48", "56"],
-      default: "16",
       required: false,
       dangerous: false,
-      description: "Set the icon size",
+      description: "Set the initial active tab",
+    },
+    {
+      name: "onChange",
+      type: ["(index: number) => void"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description:
+        "Callback for the tab change event. Returns the current tab index",
+    },
+  ]}
+/>
+
+#### Tab.Item
+
+The button that activates its associated content.
+
+<Props
+  properties={[
+    {
+      name: "as",
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
+      default: '"button"',
+      required: false,
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component",
     },
   ]}
 />
 
 ## Accessibility
 
-Svg are considered as images. If they are coupled with a text you have to hide them to AT by using the `aria-hidden` attribute.
+Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel).
+
+#### Attributes
+
+Consumer need to add the required attributes to fully match the ARIA authoring specification.
+
+- Each `Tab.Item` must have the `id` attribute, and the `aria-controls` attribute pointing to the `id` assigned to the controlled panel.
+- Eact `Tab.Panel` must have the `id` attribute (to which the `aria-controls` attribute on the `Tab.Item` refers), and the attribute `aria-labeleldby` pointing to the id assigned to the respective `Tab.Item`.
+
+#### Keyboard interactions
+
+<Props
+  properties={[
+    {
+      name: "tab",
+      description:
+        "When focus moves onto the tabs, focuses the active trigger. When a trigger is focused, moves focus to the active content",
+    },
+    {
+      name: "ArrowRight",
+      description:
+        "Moves focus to the next trigger and activates its associated content",
+    },
+    {
+      name: "ArrowLeft",
+      description:
+        "Moves focus to the previous trigger and activates its associated content",
+    },
+  ]}
+/>
