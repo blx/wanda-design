@@ -190,6 +190,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/tab',
+            label: 'Tab',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/text',
             label: 'Text',
             target: '',

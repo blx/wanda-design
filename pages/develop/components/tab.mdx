@@ -1,0 +1,65 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { Icon } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Tab"
+    description="A set of layered sections of content—known as tab panels—that are displayed one at a time."
+    showMeta
+    showPlayground
+    features={[
+      "Scalable vector graphic",
+      "Fully stylizable",
+      "Multiple visual styles",
+      "Auto adjust style based on rendering size",
+    ]}
+    hero={
+      <LiveArea>
+        <Icon name="bell" dimension={32} />
+        <Icon name="plus" dimension={32} />
+        <Icon name="message" dimension={32} />
+      </LiveArea>
+    }
+  >
+    {children}
+  </MdxLayout>
+);
+
+## Anatomy
+
+```jsx
+import { Icon } from "@wonderflow/react-components";
+
+export default () => {
+  return <Icon name="bell">;
+};
+```
+
+## API Reference
+
+<Props
+  properties={[
+    {
+      name: "name",
+      type: ["IconNames"],
+      default: "",
+      required: true,
+      dangerous: false,
+      description: "Set the icon to render based on the name",
+    },
+    {
+      name: "dimension",
+      type: ["14", "16", "24", "32", "40", "48", "56"],
+      default: "16",
+      required: false,
+      dangerous: false,
+      description: "Set the icon size",
+    },
+  ]}
+/>
+
+## Accessibility
+
+Svg are considered as images. If they are coupled with a text you have to hide them to AT by using the `aria-hidden` attribute.
