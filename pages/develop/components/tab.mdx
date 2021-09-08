@@ -36,11 +36,7 @@ export default ({ children }) => (
         <Elevator resting={1}>
           <Card padding={false}>
             <Tab.Root>
-              <Tab.List>
-                <Tab.Item>Sign-up</Tab.Item>
-                <Tab.Item>Login</Tab.Item>
-              </Tab.List>
-              <Tab.Panel>
+              <Tab.Panel label="Sign-up">
                 <Card>
                   <Stack rowGap={24}>
                     <Textfield label="Name" type="text" />
@@ -55,7 +51,7 @@ export default ({ children }) => (
                   </Stack>
                 </Card>
               </Tab.Panel>
-              <Tab.Panel>
+              <Tab.Panel label="Login">
                 <Card>
                   <Stack rowGap={24}>
                     <Textfield label="E-Mail" type="email" />
@@ -87,12 +83,8 @@ import { Tab } from "@wonderflow/react-components";
 export default () => {
   return (
     <Tab.Root>
-      <Tab.List>
-        <Tab.Item>Tab item 1</Tab.Item>
-        <Tab.Item>Tab item 2</Tab.Item>
-      </Tab.List>
-      <Tab.Panel>Tab panel 1</Tab.Panel>
-      <Tab.Panel>Tab panel 2</Tab.Panel>
+      <Tab.Panel label="Tab item 1">Tab panel 1</Tab.Panel>
+      <Tab.Panel label="Tab item 2">Tab panel 2</Tab.Panel>
     </Tab.Root>
   );
 };
@@ -126,20 +118,19 @@ Contains all the tabs component parts.
   ]}
 />
 
-#### Tab.Item
+#### Tab.Panel
 
-The button that activates its associated content.
+Contains the content associated with each trigger.
 
 <Props
   properties={[
     {
-      name: "as",
-      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
-      default: '"button"',
+      name: "label",
+      type: ["ReactNode"],
+      default: "",
       required: false,
       dangerous: false,
-      description:
-        "Set the component to a different HTML tag or custom component",
+      description: "Define the tab name associated with the content",
     },
   ]}
 />
@@ -147,13 +138,6 @@ The button that activates its associated content.
 ## Accessibility
 
 Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel).
-
-#### Attributes
-
-Consumer need to add the required attributes to fully match the ARIA authoring specification.
-
-- Each `Tab.Item` must have the `id` attribute, and the `aria-controls` attribute pointing to the `id` assigned to the controlled panel.
-- Eact `Tab.Panel` must have the `id` attribute (to which the `aria-controls` attribute on the `Tab.Item` refers), and the attribute `aria-labeleldby` pointing to the id assigned to the respective `Tab.Item`.
 
 #### Keyboard interactions
 

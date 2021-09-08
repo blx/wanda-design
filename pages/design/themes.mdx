@@ -3,8 +3,13 @@ import { MdxLayout } from "@/components/layouts/mdx";
 import { ThemeList } from "@/components/theme-list";
 import lightTheme from "@wonderflow/react-components/themes/light.json";
 import darkTheme from "@wonderflow/react-components/themes/dark.json";
-import { Stack, Radio, Text, Separator } from "@wonderflow/react-components";
-import { UIDReset, UIDConsumer } from "react-uid";
+import {
+  Stack,
+  Radio,
+  Text,
+  Separator,
+  Tab,
+} from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout title="Themes" description="Color schemes for scalability">
@@ -20,54 +25,11 @@ A theme is a set of predefined `key ↔ color` combinations to be used whenever 
 
 Here you can check the theme keys for all the available themes from Wanda. These themes are shared as library on Figma and as `css/json` from the [components library](/develop/using-themes/).
 
-export const ThemesSwitcher = () => {
-  const [theme, setTheme] = useState(lightTheme);
-  return (
-    <UIDReset>
-      <UIDConsumer>
-        {(id, uid) => (
-          <Stack rowGap={32}>
-            <Separator aria-hidden="true" />
-            <Stack
-              direction="row"
-              horizontalAlign="center"
-              fill={false}
-              columnGap={24}
-              inline
-            >
-              <Stack verticalAlign="center" direction="row" columnGap={8}>
-                <Radio
-                  dimension="small"
-                  id={uid("light")}
-                  onChange={() => setTheme(lightTheme)}
-                  name="chooseTheme"
-                  value="LightTheme"
-                  defaultChecked
-                />
-                <Text as="label" htmlFor={uid("light")}>
-                  <b>Light</b>
-                </Text>
-              </Stack>
-              <Stack verticalAlign="center" direction="row" columnGap={8}>
-                <Radio
-                  dimension="small"
-                  id={uid("dark")}
-                  onChange={() => setTheme(darkTheme)}
-                  name="chooseTheme"
-                  value="DarkTheme"
-                />
-                <Text as="label" htmlFor={uid("dark")}>
-                  <b>Dark</b>
-                </Text>
-              </Stack>
-            </Stack>
-            <Separator aria-hidden="true" />
-            <ThemeList theme={theme} />
-          </Stack>
-        )}
-      </UIDConsumer>
-    </UIDReset>
-  );
-};
-
-<ThemesSwitcher />
+<Tab.Root>
+  <Tab.Panel label="Light">
+    <ThemeList theme={lightTheme} />
+  </Tab.Panel>
+  <Tab.Panel label="Dark">
+    <ThemeList theme={darkTheme} />
+  </Tab.Panel>
+</Tab.Root>

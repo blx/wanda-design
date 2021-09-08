@@ -90,10 +90,28 @@ export default [
         wip: false
       },
       {
+        path: '/develop/ssr',
+        label: 'Server sider rendering',
+        target: '',
+        wip: false
+      },
+      {
         path: '/develop/using-themes',
         label: 'Using themes',
         target: '',
         wip: false
+      },
+      {
+        label: 'Utilities',
+        expandable: true,
+        items: [
+          {
+            path: '/develop/utilities/id-provider',
+            label: 'Id Provider',
+            target: '',
+            wip: false
+          }
+        ]
       }
     ]
   },
