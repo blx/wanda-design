@@ -9,6 +9,11 @@
   @media (--from-small) {
     font-size: 1em;
   }
+
+  &[data-code-block-has-highlight='true'] [data-code-block-highlight='false'] {
+    opacity: 0.5;
+    filter: saturate(0);
+  }
 }
 
 .Code {

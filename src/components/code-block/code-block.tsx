@@ -2,6 +2,7 @@
 import { Button, Text, Stack } from '@wonderflow/react-components'
 import clsx from 'clsx'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
+import rangeParser from 'parse-numeric-range'
 import React, { useCallback, useRef } from 'react'
 import { useCopyToClipboard } from 'react-use'
 
@@ -10,10 +11,12 @@ import theme from './wonder-theme'
 
 type CodeBlockProps = {
   children: any;
+  highlight?: string;
 } & PropsWithClass
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({
   children,
+  highlight,
   className
 }) => {
   const language = className?.replace(/language-/, '') as Language
@@ -28,7 +31,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   )
 
   return (
-    <div className={clsx(CodeBlockClass)}>
+    <div className={clsx(CodeBlockClass)} data-code-block-has-highlight={Boolean(highlight)}>
       <Highlight {...defaultProps} theme={theme} code={children.trim()} language={language}>
         {({
           className, style, tokens, getLineProps, getTokenProps
@@ -49,7 +52,11 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
             <pre className={clsx(Code, className)} style={{ ...style }}>
               <div ref={CodeRef}>
                 {tokens.map((line, i) => (
-                  <div key={i} {...getLineProps({ line, key: i })}>
+                  <div
+                    key={i}
+                    data-code-block-highlight={highlight && rangeParser(highlight).includes(i + 1)}
+                    {...getLineProps({ line, key: i })}
+                  >
                     {line.map((token, key) => (
                       <span key={key} {...getTokenProps({ token, key })} />
                     ))}
