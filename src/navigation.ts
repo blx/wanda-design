@@ -166,6 +166,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/list',
+            label: 'List',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/prose',
             label: 'Prose',
             target: '',
