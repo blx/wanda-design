@@ -148,6 +148,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/disclosure',
+            label: 'Disclosure',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/elevator',
             label: 'Elevator',
             target: '',
