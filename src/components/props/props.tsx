@@ -1,8 +1,7 @@
 import clsx from 'clsx'
 import Markdown from 'markdown-to-jsx'
 import React from 'react'
-import { Disclosure } from '../disclosure'
-import { Stack, Separator, Text, Title, Snackbar } from '@wonderflow/react-components'
+import { Stack, Separator, Text, Title, Snackbar, Disclosure } from '@wonderflow/react-components'
 
 import { Props as PropsClass, PropName, PropsValue } from './props.module.css'
 
@@ -26,7 +25,8 @@ export const Props: React.FC<PropsProps> = ({
       <Disclosure
         key={Math.random()}
         open
-        size="big"
+        dimension="big"
+        padding={false}
         expandable={false}
         summary={(
           <Stack direction="row" fill={false} verticalAlign="center" columnGap={8}>
