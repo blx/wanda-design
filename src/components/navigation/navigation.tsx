@@ -42,7 +42,7 @@ export const Navigation = ({ data }: NavigationProps) => {
                         <Tree.Li key={subItem.path}>
                           {subItem.wip
                             ? (
-                              <Text as="a" dimmed={5}>
+                              <Text as="a" size={16} dimmed={5}>
                                 <Stack as="span" direction="row" columnGap={8} inline verticalAlign="center">
                                   {subItem.label}
                                   <Pill>soon</Pill>
