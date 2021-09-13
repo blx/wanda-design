@@ -1,7 +1,6 @@
 import React, { ReactNode, Fragment } from 'react'
-import { Stack, Text } from '@wonderflow/react-components'
+import { Stack, Text, Disclosure } from '@wonderflow/react-components'
 import { Tree as TreeClass, Title, Li } from './tree.module.css'
-import { Disclosure } from '../disclosure'
 
 type TreeGroupProps = {
   title?: ReactNode;
@@ -34,6 +33,7 @@ export const Tree: {
           <Disclosure
             padding={false}
             open={open}
+            iconPosition="right"
             summary={summary}
             {...props}
           >
