@@ -33,6 +33,7 @@ export const Tree: {
           <Disclosure
             padding={false}
             open={open}
+            dimension="small"
             iconPosition="right"
             summary={<Text size={16}>{summary}</Text>}
             {...props}
