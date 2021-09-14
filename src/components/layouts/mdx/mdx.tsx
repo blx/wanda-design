@@ -16,6 +16,7 @@ type MdxLayoutProps = DocHeadProps & PropsWithClass & {
   features?: string[];
   links?: Record<string, any>[];
   showMeta?: boolean;
+  showLinks?: boolean;
   showPlayground?: boolean;
 }
 
@@ -27,6 +28,7 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
   features,
   links,
   hero,
+  showLinks = true,
   showPlayground = false,
   showMeta = false,
   ...props
@@ -90,6 +92,7 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
               </Stack>
               )}
 
+              {showLinks && (
               <Stack rowGap={24} horizontalAlign="start" fill={false}>
                 <Title as="h2" level="5">
                   Links
@@ -126,8 +129,8 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
                     </a>
                   ))}
                 </Stack>
-
               </Stack>
+              )}
             </Stack>
             )}
           </Stack>
