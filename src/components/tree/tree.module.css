@@ -23,7 +23,7 @@
 }
 
 .Li {
-  & > a {
+  & > :is(a, span) {
     padding: 0 env(--space-24);
     background: none;
     font-weight: 600;
@@ -32,7 +32,7 @@
     color: var(--global-foreground);
   }
 
-  @nest details & a {
+  @nest details & :is(a, span) {
     font-weight: 400;
   }
 
