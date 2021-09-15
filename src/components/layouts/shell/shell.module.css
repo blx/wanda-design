@@ -15,6 +15,23 @@
   overscroll-behavior: contain;
   padding-bottom: env(--space-104);
   z-index: 2;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 6px;
+    border: 3px solid transparent;
+  }
 
   @media (--from-large) {
     border-right: 1px solid var(--dimmed-2);

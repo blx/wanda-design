@@ -7,12 +7,14 @@ import { LiveArea as LiveAreaClass } from './live-area.module.css'
 import { StackProps } from '@wonderflow/react-components/stack'
 
 type LiveAreaProps = PropsWithClass & StackProps & {
+  minHeight?: string;
   maxHeight?: string;
   live?: boolean;
 }
 
 export const LiveArea: React.FC<LiveAreaProps> = ({
   children,
+  minHeight = '200px',
   maxHeight,
   style,
   live = true,
@@ -24,6 +26,7 @@ export const LiveArea: React.FC<LiveAreaProps> = ({
   const hoverCoordinates = (docValue: number = 0, elValue: number = 0) => ((docValue - elValue) - 300).toFixed(2)
 
   const dynamicStyle: CSSProperties = {
+    '--minHeight': minHeight,
     '--maxHeight': maxHeight,
     '--hoverX': `${hoverCoordinates(docX, posX)}px`,
     '--hoverY': `${hoverCoordinates(docY, posY)}px`
