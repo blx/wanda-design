@@ -52,12 +52,6 @@ export default [
             target: '',
             wip: true
           }
-          // {
-          //   path: '/design/foundations/motion',
-          //   label: 'Motion',
-          //   target: '',
-          //   wip: true
-          // }
         ]
       },
       {
@@ -184,6 +178,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/modal',
+            label: 'Modal',
+            target: '',
+            wip: true
+          },
+          {
             path: '/develop/components/prose',
             label: 'Prose',
             target: '',
@@ -254,6 +254,18 @@ export default [
             label: 'Title',
             target: '',
             wip: false
+          },
+          {
+            path: '/develop/components/tooltip',
+            label: 'Tooltip',
+            target: '',
+            wip: true
+          },
+          {
+            path: '/develop/components/toggle-button',
+            label: 'Toggle button',
+            target: '',
+            wip: true
           }
         ]
       }
