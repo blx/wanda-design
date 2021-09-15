@@ -154,6 +154,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/dropdown',
+            label: 'Dropdown',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/elevator',
             label: 'Elevator',
             target: '',

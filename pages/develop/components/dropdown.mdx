@@ -1,0 +1,231 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import { Dropdown, Button, Separator } from "@wonderflow/react-components";
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Dropdown"
+    description="Elevate you elements across the z axis"
+    showMeta
+    showPlayground
+    features={[
+      "Keyboard accessible",
+      "Focus is fully managed",
+      "Multiple sizes",
+      "Supports custom element as dropdown",
+      "Custom icons and icon position",
+      "Auto placement based on viewport boundaries",
+      "Themes ready",
+    ]}
+    links={[
+      {
+        label: "ARIA authoring",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton",
+      },
+    ]}
+    hero={
+      <LiveArea minHeight="400px">
+        <Dropdown
+          placement="bottom-start"
+          trigger={<Button kind="flat">Open dropdown</Button>}
+        >
+          <Dropdown.Menu>
+            <Dropdown.Item icon="user">Item option 1</Dropdown.Item>
+            <Dropdown.Item icon="comment">Item option 2</Dropdown.Item>
+            <Separator />
+            <Dropdown.Item icon="right-from-bracket">
+              Item option 3
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </LiveArea>
+    }
+  >
+    {children}
+  </MdxLayout>
+);
+
+## Anatomy
+
+```jsx highlight=1,5-11
+import { Dropdown, Button } from "@wonderflow/react-components";
+
+export default () => {
+  return (
+    <Dropdown trigger={<Button>Open dropdown</Button>}>
+      <Dropdown.Menu>
+        <Dropdown.Item>Item option 1</Dropdown.Item>
+        <Dropdown.Item>Item option 2</Dropdown.Item>
+        <Dropdown.Item>Item option 3</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+};
+```
+
+## API Reference
+
+#### Dropdown
+
+<Props
+  properties={[
+    {
+      name: "trigger",
+      type: ["ReactNode"],
+      default: "",
+      required: true,
+      dangerous: false,
+      description: "Set the element that triggers the dropdown",
+    },
+    {
+      name: "offset",
+      type: ["number"],
+      default: "8",
+      required: false,
+      dangerous: false,
+      description: "Set the gap between the trigger and the popup",
+    },
+    {
+      name: "placement",
+      type: [
+        "auto",
+        "auto-start",
+        "auto-end",
+        "top",
+        "bottom",
+        "right",
+        "left",
+        "top-start",
+        "top-end",
+        "bottom-start",
+        "bottom-end",
+        "right-start",
+        "right-end",
+        "left-start",
+        "left-end",
+      ],
+      default: "auto",
+      required: false,
+      dangerous: false,
+      description:
+        "Set the placement logic. Auto means the popup is placed based on the available space inside the viewport.",
+    },
+  ]}
+/>
+
+#### Dropdown.Item
+
+<Props
+  properties={[
+    {
+      name: "icon",
+      type: ["IconNames"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set the element that triggers the dropdown",
+    },
+    {
+      name: "dimension",
+      type: ["small", "regular"],
+      default: '"regular"',
+      required: false,
+      dangerous: false,
+      description: "Set the element size",
+    },
+    {
+      name: "onClick",
+      type: ["() => void"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Callback for the click event",
+    },
+    {
+      name: "iconPosition",
+      type: ["left", "right"],
+      default: '"left"',
+      required: false,
+      dangerous: false,
+      description: "Set where to place the icon inside the item",
+    },
+    {
+      name: "as",
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
+      default: '"button"',
+      required: false,
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component",
+    },
+  ]}
+/>
+
+## Accessibility
+
+Adheres to the [`menu button` role requirements](https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton).
+
+The `Dropdown` component accepts custom elements as children. This means that you can show your component as dropodown when the trigger is activated. Said that, if you're using custom elements you have to follow all the ARIA requirements and introduce the required behaviours, like focus handling (eg. using the autofocus attribute) and keyboard navigation with the [roving tabindex](https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex). There is also a [react package](https://www.npmjs.com/package/react-roving-tabindex) to easily handle this.
+
+#### Example
+
+<LiveArea>
+  <Dropdown trigger={<Button>Open dropdown</Button>}>
+    <>
+      <p>Custom element</p>
+      <Button autoFocus dimension="small" kind="flat">
+        Another button
+      </Button>
+    </>
+  </Dropdown>
+</LiveArea>
+
+```jsx
+import { Dropdown, Button } from "@wonderflow/react-components";
+
+export default () => {
+  return (
+    <Dropdown trigger={<Button>Open dropdown</Button>}>
+      <>
+        <p>Custom element</p>
+        <Button autoFocus dimension="small" kind="flat">
+          Another button
+        </Button>
+      </>
+    </Dropdown>
+  );
+};
+```
+
+#### Keyboard interactions
+
+<Props
+  properties={[
+    {
+      name: "tab",
+      description:
+        "Move focus on the trigger if closed. If opened move the focus inside the menu. If the a menu item is focused, move the focus outside and close the dropdown.",
+    },
+    {
+      name: "enter",
+      description: "Open the menu and set the focus on the first element",
+    },
+    {
+      name: "space",
+      description: "Open the menu and set the focus on the first element",
+    },
+    {
+      name: "esc",
+      description: "Close the dropdown",
+    },
+    {
+      name: "ArrowUp",
+      description: "Move the focus on the previous menu item",
+    },
+    {
+      name: "ArrowDown",
+      description: "Move the focus on the next menu item",
+    },
+  ]}
+/>
