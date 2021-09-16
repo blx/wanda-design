@@ -4,6 +4,7 @@ import { CodeBlock } from '@/components/code-block'
 import { Title, Text, ThemeProvider, useThemeContext, Separator, IdProvider } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
+import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
 
 import Link from 'next/link'
@@ -55,7 +56,13 @@ const App = ({ Component, pageProps }: any) => {
         <meta name="theme-color" content={theme === 'dark' ? '#000000' : undefined} />
       </Head>
       <NextScript id="docsearch-core" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
-      <Component {...pageProps} />
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} />
+      </AnimatePresence>
     </Providers>
   )
 }

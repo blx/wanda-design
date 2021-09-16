@@ -9,12 +9,19 @@ import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
 import { Shell, MenuTrigger, Aside, Content, Header, ContentArea, SkipToContent } from './shell.module.css'
 import { Footer } from '@/components/footer'
+import { motion } from 'framer-motion'
 
 type ShellLayoutProps = {
   header?: ReactNode;
   stickyHeader?: boolean;
   showFooter?: boolean;
 } & PropsWithClass
+
+const variants = {
+  hidden: { opacity: 0 },
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+}
 
 export const ShellLayout: React.FC<ShellLayoutProps> = ({
   children,
@@ -78,19 +85,27 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
 
       <Stack as="main" verticalAlign="start" fill={false} className={Content}>
         {header && <header className={Header}>{header}</header>}
-        <Stack id="content-quicklink" rowGap={80} verticalAlign="start" fill={false}>
-          <Container className={ContentArea}>
-            {children}
-          </Container>
-          {showFooter && (
-            <>
-              <Separator />
-              <Container className={ContentArea}>
-                <Footer />
-              </Container>
-            </>
-          )}
-        </Stack>
+        <motion.div
+          initial="hidden"
+          animate="enter"
+          exit="exit"
+          variants={variants}
+          transition={{ duration: 0.2, type: 'tween' }}
+        >
+          <Stack id="content-quicklink" rowGap={80} verticalAlign="start" fill={false}>
+            <Container className={ContentArea}>
+              {children}
+            </Container>
+            {showFooter && (
+              <>
+                <Separator />
+                <Container className={ContentArea}>
+                  <Footer />
+                </Container>
+              </>
+            )}
+          </Stack>
+        </motion.div>
       </Stack>
     </Stack>
   )
