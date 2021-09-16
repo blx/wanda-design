@@ -3,7 +3,7 @@ import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
 import clsx from 'clsx'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Stack, IconButton, Container, Separator } from '@wonderflow/react-components'
+import { Stack, IconButton, Container, Separator, Elevator } from '@wonderflow/react-components'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 import { useMedia } from 'react-use'
 import { useRouter } from 'next/router'
@@ -63,7 +63,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
     >
       <a href="#content-quicklink" className={SkipToContent}>Skip to main content</a>
       <Meta />
-      <IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} dimension="big" className={MenuTrigger} />
+      <Elevator resting={3}><IconButton onClick={() => handleSidebar()} icon={collapsed ? 'bars' : 'xmark'} dimension="big" className={MenuTrigger} /></Elevator>
 
       <Stack
         rowGap={88}
