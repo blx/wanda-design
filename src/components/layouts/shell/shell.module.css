@@ -15,9 +15,6 @@
   overscroll-behavior: contain;
   padding-bottom: env(--space-104);
   z-index: 2;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  scrollbar-color: transparent transparent;
 
   @media (--from-large) {
     border-right: 1px solid var(--dimmed-2);
