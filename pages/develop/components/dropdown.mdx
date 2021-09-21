@@ -127,6 +127,14 @@ export default () => {
       description: "Set the element that triggers the dropdown",
     },
     {
+      name: "description",
+      type: ["ReactNode"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Add a rich description tooltip to the item",
+    },
+    {
       name: "dimension",
       type: ["small", "regular"],
       default: '"regular"',
