@@ -41,7 +41,7 @@ export const Navigation = ({ data }: NavigationProps) => {
             )}
       </Tree.Li>
     )),
-    []
+    [navigationLink]
   )
 
   const renderGroup = useCallback(
