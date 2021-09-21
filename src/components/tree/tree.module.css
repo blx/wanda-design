@@ -13,7 +13,7 @@
 
   & details ul {
     padding-left: env(--space-24);
-    margin-top: env(--space-8);
+    margin: env(--space-8) 0 env(--space-16);
   }
 }
 

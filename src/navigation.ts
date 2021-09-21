@@ -265,7 +265,7 @@ export default [
             path: '/develop/components/tooltip',
             label: 'Tooltip',
             target: '',
-            wip: true
+            wip: false
           },
           {
             path: '/develop/components/toggle-button',
