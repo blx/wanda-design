@@ -136,6 +136,12 @@ export default [
             wip: false
           },
           {
+            path: '/develop/components/chip',
+            label: 'Chip',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/clamp-text',
             label: 'Clamp text',
             target: '',
@@ -266,12 +272,6 @@ export default [
             label: 'Tooltip',
             target: '',
             wip: false
-          },
-          {
-            path: '/develop/components/toggle-button',
-            label: 'Toggle button',
-            target: '',
-            wip: true
           }
         ]
       }
