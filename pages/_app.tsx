@@ -53,7 +53,7 @@ const App = ({ Component, pageProps }: any) => {
   return (
     <Providers>
       <Head>
-        <meta name="theme-color" content={theme === 'dark' ? '#000000' : undefined} />
+        <meta name="theme-color" content={theme === 'dark' ? '#000000' : '#fff'} />
       </Head>
       <NextScript id="docsearch-core" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
       <AnimatePresence
