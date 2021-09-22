@@ -5,7 +5,7 @@
   min-inline-size: env(--space-168);
   position: relative;
   border-radius: env(--radius-4);
-  background-color: var(--dimmed-2);
+  background-color: var(--dimmed-1);
 
   @supports (backdrop-filter: blur(1px)) {
     backdrop-filter: blur(62px);
@@ -13,7 +13,7 @@
   }
 
   &:is(:hover, :focus) {
-    background-color: var(--dimmed-3);
+    background-color: var(--dimmed-2);
 
     @supports (backdrop-filter: blur(1px)) {
       background-color: var(--global-vibrancy-background-hover);

@@ -10,9 +10,9 @@
   border-radius: env(--radius-4);
   color: hsl(env(--color-support-white));
   background:
-    var(--dimmed-1)
+    var(--dimmed-0)
     repeating-conic-gradient(
-      var(--dimmed-2) 0% 25%,
+      var(--dimmed-1) 0% 25%,
       transparent 0% 50%
     )
     50% / 23.5px 23.5px;

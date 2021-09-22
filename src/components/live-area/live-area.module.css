@@ -2,7 +2,7 @@
 
 .LiveArea {
   border-radius: env(--radius-8);
-  background-image: radial-gradient(var(--dimmed-3) 0.9px, var(--dimmed-1) 0.9px);
+  background-image: radial-gradient(var(--dimmed-2) 0.9px, var(--dimmed-0) 0.9px);
   background-size: 18px 18px;
   min-block-size: var(--minHeight);
   max-block-size: var(--maxHeight);

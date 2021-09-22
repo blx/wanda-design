@@ -1,5 +1,5 @@
 .Resizer {
-  --color: var(--dimmed-2);
+  --color: var(--dimmed-1);
 
   position: relative;
   border: 1px solid var(--color);
@@ -20,7 +20,7 @@
   }
 
   &:hover {
-    --color: var(--dimmed-3);
+    --color: var(--dimmed-2);
   }
 }
 

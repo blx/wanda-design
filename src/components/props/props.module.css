@@ -12,7 +12,7 @@
   list-style: none;
 
   & code {
-    background-color: var(--dimmed-2);
+    background-color: var(--dimmed-1);
     color: var(--dimmed-6);
   }
 }

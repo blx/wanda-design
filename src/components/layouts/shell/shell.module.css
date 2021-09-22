@@ -17,7 +17,7 @@
   z-index: 2;
 
   @media (--from-large) {
-    border-right: 1px solid var(--dimmed-2);
+    border-right: 1px solid var(--dimmed-1);
     inline-size: 15.55rem;
     block-size: 100vh;
     position: sticky;
@@ -35,7 +35,7 @@
 
 .Content {
   flex-grow: 1;
-  background-color: var(--dimmed-1);
+  background-color: var(--dimmed-0);
   min-height: 100vh;
 }
 
@@ -52,7 +52,7 @@
 
 .Header {
 
-  /* border-bottom: 1px solid var(--dimmed-2); */
+  /* border-bottom: 1px solid var(--dimmed-1); */
 
   @nest [data-shell-sticky-header='true'] & {
     position: sticky;
@@ -90,8 +90,8 @@
   &:focus {
     clip: auto;
     align-items: center;
-    background-color: var(--dimmed-2);
-    border: 1px solid var(--dimmed-3);
+    background-color: var(--dimmed-1);
+    border: 1px solid var(--dimmed-2);
     display: flex;
     height: env(--space-56);
     left: 0;
