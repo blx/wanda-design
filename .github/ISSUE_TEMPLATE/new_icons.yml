@@ -14,6 +14,10 @@ body:
     attributes:
       label: Component name
       description: "We need to add a new icons to represent these purposes/actions/topics:"
+      value: |
+        - User
+        - People
+        - Etc.."
     validations:
       required: true
   - type: textarea
@@ -21,7 +25,6 @@ body:
     attributes:
       label: Icons proposal
       description: Search the icon to propose here https://fontawesome.com/v6.0/icons and provide the name.
-      value: ""
     validations:
       required: false
   - type: checkboxes
