@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react'
 import { Stack, Title, Text, Toggle } from '@wonderflow/react-components'
 import { ColorPalette as ColoPaletteClass, Drop, White, ColorValue } from './color-palette.module.css'
 import { fromString } from 'css-color-converter'
+import { useUIDSeed } from 'react-uid'
 import clsx from 'clsx'
 
 type ColorPaletteProps = {
@@ -25,6 +26,7 @@ export const ColorPalette = ({
   id,
   ...props
 }: ColorPaletteProps) => {
+  const uid = useUIDSeed()
   const [showHex, setShowHex] = useState(false)
   const colorArray = useMemo(() => Object.keys(colors), [colors])
 
@@ -33,8 +35,8 @@ export const ColorPalette = ({
       <Stack direction="row" fill={false} verticalAlign="center" horizontalAlign="space-between">
         <Title as="span" level="5">{title}</Title>
         <Stack direction="row" fill={false} columnGap={8} verticalAlign="middle">
-          <Text as="label" htmlFor={`palette-${title}-${id}`} weight="bold" size={14}>{showHex ? 'HEX' : 'HSL'}</Text>
-          <Toggle id={`palette-${title || ''}-${id}`} onClick={() => setShowHex(!showHex)} dimension="small" />
+          <Text as="label" htmlFor={uid('palette-color-format')} weight="bold" size={14}>{showHex ? 'HEX' : 'HSL'}</Text>
+          <Toggle id={uid('palette-color-format')} onClick={() => setShowHex(!showHex)} dimension="small" />
         </Stack>
       </Stack>
 
