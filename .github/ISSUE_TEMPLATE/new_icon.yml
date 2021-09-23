@@ -9,26 +9,21 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this new icons request!
-  - type: input
-    id: component-name
+  - type: textarea
+    id: icons-list
     attributes:
       label: Component name
-      description: Suggest a name or representation for the component you're asking for
+      description: "We need to add a new icons to represent these purposes/actions/topics:"
     validations:
       required: true
   - type: textarea
-    id: component-description
+    id: icons-proposal
     attributes:
-      label: Description and use cases
-      description: Describe the component you're asking for and add references if any
-      value: "Add a `[component name]` component that ..."
+      label: Icons proposal
+      description: Search the icon to propose here https://fontawesome.com/v6.0/icons and provide the name.
+      value: ""
     validations:
-      required: true
-  - type: textarea
-    id: component-specs
-    attributes:
-      label: Specifications
-      description: If you want add specifications and requirements for this component
+      required: false
   - type: checkboxes
     id: terms
     attributes:
