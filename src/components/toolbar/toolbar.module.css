@@ -2,5 +2,5 @@
   padding: env(--space-8) env(--space-24);
   color: var(--global-vibrancy-foreground);
   background-color: var(--dimmed-0);
-  border-bottom: 1px solid var(--dimmed-2);
+  border-bottom: 1px solid var(--dimmed-1);
 }

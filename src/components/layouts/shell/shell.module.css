@@ -17,7 +17,7 @@
   z-index: 2;
 
   @media (--from-large) {
-    border-right: 1px solid var(--dimmed-2);
+    border-right: 1px solid var(--dimmed-1);
     inline-size: 15.55rem;
     block-size: 100vh;
     position: sticky;
