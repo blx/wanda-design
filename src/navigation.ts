@@ -65,6 +65,18 @@ export default [
         label: 'Themes',
         target: '',
         wip: false
+      },
+      {
+        label: 'Recipes',
+        expandable: true,
+        items: [
+          {
+            path: '/design/recipes/buttons',
+            label: 'Buttons',
+            target: '',
+            wip: false
+          }
+        ]
       }
     ]
   },

@@ -48,7 +48,7 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
       <Stack rowGap={48}>
         <DocHead title={title} description={description} />
         <ToC.Table content={children} />
-        <Stack rowGap={168}>
+        <Stack rowGap={88}>
           <Stack rowGap={48}>
             {hero && (
             <Bleed className={Hero}>

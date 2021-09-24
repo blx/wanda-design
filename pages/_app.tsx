@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
-import { Title, Text, ThemeProvider, useThemeContext, Separator, IdProvider } from '@wonderflow/react-components'
+import { Title, Text, ThemeProvider, Separator, IdProvider } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
 import { AnimatePresence } from 'framer-motion'
@@ -38,7 +38,6 @@ const Providers = ({ children }: { children: ReactNode }) => (
 
 const App = ({ Component, pageProps }: any) => {
   const router = useRouter()
-  const { theme } = useThemeContext()
 
   useEffect(() => {
     router.events.on('routeChangeStart', () => { document.documentElement.dataset.htmlSmooth = 'false' })
@@ -53,7 +52,7 @@ const App = ({ Component, pageProps }: any) => {
   return (
     <Providers>
       <Head>
-        <meta name="theme-color" content={theme === 'dark' ? '#000000' : '#fff'} />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <NextScript id="docsearch-core" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
       <AnimatePresence
