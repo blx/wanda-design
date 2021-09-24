@@ -1,3 +1,10 @@
+## [1.37.1](https://github.com/wonderflow-bv/design/compare/v1.37.0...v1.37.1) (2021-09-24)
+
+
+### Bug Fixes
+
+* shell borders ([e340a8a](https://github.com/wonderflow-bv/design/commit/e340a8abed96426cd49a019b01c05a1226b34ccf))
+
 # [1.37.0](https://github.com/wonderflow-bv/design/compare/v1.36.0...v1.37.0) (2021-09-24)
 
 
