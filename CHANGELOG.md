@@ -1,3 +1,10 @@
+## [1.37.5](https://github.com/wonderflow-bv/design/compare/v1.37.4...v1.37.5) (2021-09-27)
+
+
+### Bug Fixes
+
+* themes bg ([f87aa99](https://github.com/wonderflow-bv/design/commit/f87aa99c4e21aac9d092e01c45e190f214320aea))
+
 ## [1.37.4](https://github.com/wonderflow-bv/design/compare/v1.37.3...v1.37.4) (2021-09-27)
 
 
