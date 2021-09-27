@@ -1,3 +1,10 @@
+## [1.37.6](https://github.com/wonderflow-bv/design/compare/v1.37.5...v1.37.6) (2021-09-27)
+
+
+### Bug Fixes
+
+* tentative fix themes flashing ([41d9282](https://github.com/wonderflow-bv/design/commit/41d92828ab99431d0cbee8006494cb0f4b98f54f))
+
 ## [1.37.5](https://github.com/wonderflow-bv/design/compare/v1.37.4...v1.37.5) (2021-09-27)
 
 
