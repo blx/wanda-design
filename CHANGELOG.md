@@ -1,3 +1,11 @@
+## [1.37.3](https://github.com/wonderflow-bv/design/compare/v1.37.2...v1.37.3) (2021-09-27)
+
+
+### Bug Fixes
+
+* update theme context and add progress loading ([e87b3d3](https://github.com/wonderflow-bv/design/commit/e87b3d3fe7a2ee0e184c3edd4a81f81c37757663))
+* update theme switch doc and add custom component ([b0653d0](https://github.com/wonderflow-bv/design/commit/b0653d0cd19799c67aedb955986214a11f99a7dd))
+
 ## [1.37.2](https://github.com/wonderflow-bv/design/compare/v1.37.1...v1.37.2) (2021-09-27)
 
 
