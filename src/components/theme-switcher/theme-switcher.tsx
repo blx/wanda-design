@@ -6,6 +6,6 @@ export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <ThemeSwitch onChange={({ currentTarget }) => setTheme(currentTarget.value)} currentTheme={theme} />
+    <ThemeSwitch onChange={({ currentTarget }) => setTheme(currentTarget.value)} value={theme} currentTheme={theme} />
   )
 }

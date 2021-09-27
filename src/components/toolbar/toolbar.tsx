@@ -2,8 +2,10 @@ import React, { HTMLAttributes } from 'react'
 import clsx from 'clsx'
 import { Toolbar as ToolbarClass } from './toolbar.module.css'
 import { Search } from '@/components/search'
-import { ThemeSwitcher } from '@/components/theme-switcher'
 import { IconButton, Stack } from '@wonderflow/react-components'
+import dynamic from 'next/dynamic'
+
+const DynThemeSwitcher = dynamic(import('@/components/theme-switcher').then(m => m.ThemeSwitcher), { ssr: false })
 
 type ToolbarProps = {
   showSearch?: boolean;
@@ -25,7 +27,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
       className={clsx(ToolbarClass, className)}
       {...props}
     >
-      <ThemeSwitcher />
+      <DynThemeSwitcher />
       {showSearch && <Search />}
       <IconButton
         as="a"

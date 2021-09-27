@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
 import { Title, Text, Separator, IdProvider } from '@wonderflow/react-components'
@@ -40,7 +40,6 @@ const Providers = ({ children }: { children: ReactNode }) => (
 
 const App = ({ Component, pageProps }: any) => {
   const router = useRouter()
-  const [mounted, setMounted] = useState(false)
 
   const setScrollSmooth = (value: string) => {
     document.documentElement.dataset.htmlSmooth = value
@@ -58,10 +57,6 @@ const App = ({ Component, pageProps }: any) => {
     }
   }, [router])
 
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
-
   return (
     <Providers>
       <Head>
@@ -74,6 +69,9 @@ const App = ({ Component, pageProps }: any) => {
         stopDelayMs={200}
         height={2}
         showOnShallow
+        options={{
+          showSpinner: false
+        }}
       />
       <AnimatePresence
         exitBeforeEnter
