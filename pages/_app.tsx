@@ -66,7 +66,7 @@ const App = ({ Component, pageProps }: any) => {
       <NextNprogress
         color="var(--cta-default)"
         startPosition={0.3}
-        stopDelayMs={200}
+        stopDelayMs={100}
         height={2}
         showOnShallow
         options={{
