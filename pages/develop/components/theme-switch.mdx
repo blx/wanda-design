@@ -1,8 +1,19 @@
+import { useState } from "react";
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { ThemeSwitcher } from "@/components/theme-switcher";
+import { ThemeSwitch } from "@wonderflow/react-components";
 import { useTheme } from "next-themes";
+
+export const CustomSwitcher = () => {
+  const [fakeTheme, setFakeTheme] = useState(null);
+  return (
+    <ThemeSwitch
+      currentTheme={fakeTheme}
+      onChange={({ currentTarget }) => setFakeTheme(currentTarget.value)}
+    />
+  );
+};
 
 export default ({ children }) => (
   <MdxLayout
@@ -27,7 +38,7 @@ export default ({ children }) => (
     ]}
     hero={
       <LiveArea direction="row" horizontalAlign="center" fill={false}>
-        <ThemeSwitcher />
+        <CustomSwitcher />
       </LiveArea>
     }
   >
@@ -39,14 +50,23 @@ export default ({ children }) => (
 
 The `ThemeSwitch` is a stateless component which provides the UI to change the theme inside your application. If you want to use it, you have to pair it with a theme provider — which commonly wraps the whole application — and pass the theme to `ThemeSwitch` from the context provider through the `currentTheme` property.
 
-The `onChange` property allows you to change the theme on value change.
+The `onChange` property allows you to change the theme on value change. This component is made for basic usage with only light/dark/system themes. If you want to add more themes, you have to build your own component.
 
-```jsx highlight=2,3,5
+```tsx highlight=2,3,6,9-12
 // CSS containing the themes variables
 import "@wonderflow/react-components/themes.css";
 import { ThemeSwitch } from "@wonderflow/react-components";
 
-export default () => <ThemeSwitch currentTheme="system" />;
+export default () => {
+  const [theme, setTheme] = useTheme();
+
+  return (
+    <ThemeSwitch
+      onChange={({ currentTarget }) => setTheme(currentTarget.value)}
+      currentTheme={theme}
+    />
+  );
+};
 ```
 
 ## API Reference

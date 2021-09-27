@@ -3,7 +3,6 @@
 .CodeBlock {
   position: relative;
   font-family: env(--font-family-mono);
-  white-space: pre;
   margin: env(--space-32) 0;
 
   @media (--from-small) {
@@ -20,7 +19,6 @@
 .Code {
   overflow: auto;
   border-radius: env(--radius-8);
-  white-space: pre-wrap;
   font-size: env(--font-size-18);
   padding: env(--space-64) env(--space-24) env(--space-24);
 }
