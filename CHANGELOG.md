@@ -1,3 +1,11 @@
+## [1.37.2](https://github.com/wonderflow-bv/design/compare/v1.37.1...v1.37.2) (2021-09-27)
+
+
+### Bug Fixes
+
+* fixed typo liek this ([f0eca6b](https://github.com/wonderflow-bv/design/commit/f0eca6b6b009d0f62b49a8bce7b2bfb5b6d97974))
+* update deps ([49d5b70](https://github.com/wonderflow-bv/design/commit/49d5b70bc8126f7fdeca42a5276039835e8e1bde))
+
 ## [1.37.1](https://github.com/wonderflow-bv/design/compare/v1.37.0...v1.37.1) (2021-09-24)
 
 
