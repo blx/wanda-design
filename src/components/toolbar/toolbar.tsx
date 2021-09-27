@@ -2,7 +2,8 @@ import React, { HTMLAttributes } from 'react'
 import clsx from 'clsx'
 import { Toolbar as ToolbarClass } from './toolbar.module.css'
 import { Search } from '@/components/search'
-import { IconButton, Stack, ThemeSwitch } from '@wonderflow/react-components'
+import { ThemeSwitcher } from '@/components/theme-switcher'
+import { IconButton, Stack } from '@wonderflow/react-components'
 
 type ToolbarProps = {
   showSearch?: boolean;
@@ -24,7 +25,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
       className={clsx(ToolbarClass, className)}
       {...props}
     >
-      <ThemeSwitch />
+      <ThemeSwitcher />
       {showSearch && <Search />}
       <IconButton
         as="a"

@@ -1,7 +1,8 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { ThemeSwitch } from "@wonderflow/react-components";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { useTheme } from "next-themes";
 
 export default ({ children }) => (
   <MdxLayout
@@ -11,8 +12,8 @@ export default ({ children }) => (
     showPlayground
     features={[
       "Keyboard accessible",
-      "Automatic detects current theme",
-      "Adapts to system preference",
+      "Option to set theme based on the system",
+      "Themes ready",
     ]}
     links={[
       {
@@ -26,7 +27,7 @@ export default ({ children }) => (
     ]}
     hero={
       <LiveArea direction="row" horizontalAlign="center" fill={false}>
-        <ThemeSwitch />
+        <ThemeSwitcher />
       </LiveArea>
     }
   >
@@ -36,68 +37,56 @@ export default ({ children }) => (
 
 ## Anatomy
 
-The `ThemeSwitch` should be placed inside the provider `ThemeProvider` which is commonly placed inside the `App` file, wrapping the whole application.
+The `ThemeSwitch` is a stateless component which provides the UI to change the theme inside your application. If you want to use it, you have to pair it with a theme provider — which commonly wraps the whole application — and pass the theme to `ThemeSwitch` from the context provider through the `currentTheme` property.
 
-You can use `theme` and `setTheme` from `useThemeContext` to get the current active theme and change it.
+The `onChange` property allows you to change the theme on value change.
 
-```jsx highlight=2,4,7-9
-// Required CSS containing the themes variables
+```jsx highlight=2,3,5
+// CSS containing the themes variables
 import "@wonderflow/react-components/themes.css";
+import { ThemeSwitch } from "@wonderflow/react-components";
 
-import { ThemeSwitch, ThemeProvider } from "@wonderflow/react-components";
-
-export default () => (
-  <ThemeProvider theme="auto">
-    <ThemeSwitch />
-  </ThemeProvider>
-);
+export default () => <ThemeSwitch currentTheme="system" />;
 ```
 
 ## API Reference
 
-### useThemeContext
-
 <Props
   properties={[
     {
-      name: "theme",
-      type: ['"light"', '"dark"', '"auto"', "undefined"],
-      default: "",
+      name: "currentTheme",
+      type: ["string"],
+      default: '"system"',
       required: false,
       dangerous: false,
-      description: "Returns the current active theme",
+      description: "Set the icon and the initial value",
     },
     {
-      name: "setTheme",
-      type: ["React.Dispatch<React.SetStateAction<ThemeType>>"],
+      name: "onChange",
+      type: ["SelectProps['onChange']"],
       default: "",
-      required: false,
+      required: true,
       dangerous: false,
-      description: "Set the theme value to one of the accepted values",
+      description: "Callback for the change event",
     },
   ]}
 />
 
-### ThemeProvider
+## Accessibility
+
+Adheres to the [`select` role requirements](https://www.w3.org/TR/wai-aria-1.2/#select).
+
+#### Keyboard interactions
 
 <Props
   properties={[
     {
-      name: "theme",
-      type: ['"light"', '"dark"', '"auto"', "undefined"],
-      default: '"auto"',
-      required: false,
-      dangerous: false,
-      description: "Set the initial theme",
+      name: "tab",
+      description: "Move focus on the element or outside",
     },
     {
-      name: "persistState",
-      type: ["boolean"],
-      default: "true",
-      required: false,
-      dangerous: false,
-      description:
-        "Save the current theme to local storage to persist across navigation",
+      name: "space",
+      description: "Open the listbox",
     },
   ]}
 />

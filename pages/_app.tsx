@@ -1,7 +1,8 @@
 import React, { ReactNode, useEffect } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
-import { Title, Text, ThemeProvider, Separator, IdProvider } from '@wonderflow/react-components'
+import { Title, Text, Separator, IdProvider } from '@wonderflow/react-components'
+import { ThemeProvider } from 'next-themes'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
 import { AnimatePresence } from 'framer-motion'
@@ -28,7 +29,7 @@ const components = {
 
 const Providers = ({ children }: { children: ReactNode }) => (
   <MDXProvider components={components}>
-    <ThemeProvider theme="auto">
+    <ThemeProvider defaultTheme="system" disableTransitionOnChange>
       <IdProvider>
         {children}
       </IdProvider>
