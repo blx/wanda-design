@@ -39,13 +39,17 @@ const Providers = ({ children }: { children: ReactNode }) => (
 const App = ({ Component, pageProps }: any) => {
   const router = useRouter()
 
+  const setScrollSmooth = (value: string) => {
+    document.documentElement.dataset.htmlSmooth = value
+  }
+
   useEffect(() => {
-    router.events.on('routeChangeStart', () => { document.documentElement.dataset.htmlSmooth = 'false' })
-    router.events.on('routeChangeComplete', () => { document.documentElement.dataset.htmlSmooth = 'true' })
+    router.events.on('routeChangeStart', () => { setScrollSmooth('false') })
+    router.events.on('routeChangeComplete', () => { setScrollSmooth('true') })
 
     return () => {
-      router.events.off('routeChangeStart', () => { document.documentElement.dataset.htmlSmooth = 'false' })
-      router.events.off('routeChangeComplete', () => { document.documentElement.dataset.htmlSmooth = 'true' })
+      router.events.off('routeChangeStart', () => { setScrollSmooth('false') })
+      router.events.off('routeChangeComplete', () => { setScrollSmooth('true') })
     }
   }, [router])
 
