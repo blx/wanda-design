@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Frame, { FrameContextConsumer } from 'react-frame-component'
-import { useThemeContext } from '@wonderflow/react-components'
+import { useTheme } from 'next-themes'
 
 export const LiveFrame: React.FC = ({
   children,
   ...props
 }) => {
   const [pageHead] = useState(typeof document !== 'undefined' ? [...document.head.children as any] : [])
-  const { theme } = useThemeContext()
+  const { theme } = useTheme()
 
   return (
     <Frame

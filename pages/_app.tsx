@@ -3,6 +3,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
 import { Title, Text, Separator, IdProvider } from '@wonderflow/react-components'
 import { ThemeProvider } from 'next-themes'
+import NextNprogress from 'nextjs-progressbar'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
 import { AnimatePresence } from 'framer-motion'
@@ -11,8 +12,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import '@wonderflow/react-components/themes.css'
 import '@wonderflow/react-components/core.css'
-import '../src/styles/app.css'
-import '../src/styles/shame.css'
+import '@/styles/app.css'
+import '@/styles/shame.css'
 
 /* eslint-disable react/display-name, react/destructuring-assignment */
 const components = {
@@ -47,10 +48,12 @@ const App = ({ Component, pageProps }: any) => {
   useEffect(() => {
     router.events.on('routeChangeStart', () => { setScrollSmooth('false') })
     router.events.on('routeChangeComplete', () => { setScrollSmooth('true') })
+    router.events.on('routeChangeError', () => { setScrollSmooth('true') })
 
     return () => {
       router.events.off('routeChangeStart', () => { setScrollSmooth('false') })
       router.events.off('routeChangeComplete', () => { setScrollSmooth('true') })
+      router.events.off('routeChangeError', () => { setScrollSmooth('true') })
     }
   }, [router])
 
@@ -60,6 +63,13 @@ const App = ({ Component, pageProps }: any) => {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <NextScript id="docsearch-core" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
+      <NextNprogress
+        color="var(--cta-default)"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={2}
+        showOnShallow
+      />
       <AnimatePresence
         exitBeforeEnter
         initial={false}
