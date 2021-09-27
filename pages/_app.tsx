@@ -40,7 +40,7 @@ const Providers = ({ children }: { children: ReactNode }) => (
 
 const App = ({ Component, pageProps }: any) => {
   const router = useRouter()
-  // const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const setScrollSmooth = (value: string) => {
     document.documentElement.dataset.htmlSmooth = value
@@ -58,9 +58,9 @@ const App = ({ Component, pageProps }: any) => {
     }
   }, [router])
 
-  // useEffect(() => setMounted(true), [])
+  useEffect(() => setMounted(true), [])
 
-  // if (!mounted) return null
+  if (!mounted) return null
 
   return (
     <Providers>
