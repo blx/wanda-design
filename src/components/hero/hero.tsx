@@ -51,7 +51,7 @@ export const Hero = () => {
                     <Text as="span" sentiment="positive">Designing</Text>
                   </Title>
                 </Stack>
-                <Icon name="arrow-right" dimension={24} />
+                <Icon name="arrow-right" fill="var(--highlight-green-foreground)" dimension={24} />
               </Stack>
               <Text dimmed={7} maxWidth="30ch">Learn the foundations ow Wanda design system and how to design digital products.</Text>
             </Tile>
@@ -66,7 +66,7 @@ export const Hero = () => {
                     <Text as="span" sentiment="warning">Developing</Text>
                   </Title>
                 </Stack>
-                <Icon name="arrow-right" dimension={24} />
+                <Icon name="arrow-right" fill="var(--highlight-yellow-foreground)" dimension={24} />
               </Stack>
               <Text dimmed={7} maxWidth="30ch">Learn how to install and use the Wanda design system packages to build digital products.</Text>
             </Tile>
@@ -81,7 +81,7 @@ export const Hero = () => {
                     <Text as="span" sentiment="danger">Components</Text>
                   </Title>
                 </Stack>
-                <Icon name="arrow-right" dimension={24} />
+                <Icon name="arrow-right" fill="var(--highlight-red-foreground)" dimension={24} />
               </Stack>
               <Text dimmed={7} maxWidth="30ch">Check all the available and ready to use UI components and learn how to use them inside your digital products.</Text>
             </Tile>
