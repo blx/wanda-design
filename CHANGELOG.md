@@ -1,3 +1,12 @@
+## [1.37.13](https://github.com/wonderflow-bv/design/compare/v1.37.12...v1.37.13) (2021-09-28)
+
+
+### Bug Fixes
+
+* make images adaptive to theme ([be8d90e](https://github.com/wonderflow-bv/design/commit/be8d90eb506ac3958dc3c2443e0fdd7da90c6575))
+* update tab doc ([cf5b691](https://github.com/wonderflow-bv/design/commit/cf5b691979cde88a69ffe387297ff26d32fa8d7d))
+* various typos ([91584d9](https://github.com/wonderflow-bv/design/commit/91584d93587fa94c9c8abbc272c4307356ba4661))
+
 ## [1.37.12](https://github.com/wonderflow-bv/design/compare/v1.37.11...v1.37.12) (2021-09-28)
 
 
