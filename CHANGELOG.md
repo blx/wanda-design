@@ -1,3 +1,10 @@
+## [1.37.9](https://github.com/wonderflow-bv/design/compare/v1.37.8...v1.37.9) (2021-09-28)
+
+
+### Bug Fixes
+
+* trying next 11.0 ([51264d6](https://github.com/wonderflow-bv/design/commit/51264d68fc1dc0e875ed08cdf8f57af288d7fe7d))
+
 ## [1.37.8](https://github.com/wonderflow-bv/design/compare/v1.37.7...v1.37.8) (2021-09-28)
 
 
