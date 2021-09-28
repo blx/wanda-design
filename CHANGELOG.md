@@ -1,3 +1,11 @@
+## [1.37.12](https://github.com/wonderflow-bv/design/compare/v1.37.11...v1.37.12) (2021-09-28)
+
+
+### Bug Fixes
+
+* update deps ([aa17513](https://github.com/wonderflow-bv/design/commit/aa17513935fe4df5822917a449d3e50c119a5311))
+* update style for hero cards ([67ceb15](https://github.com/wonderflow-bv/design/commit/67ceb153efebffca2bef8281e760820e66e9387e))
+
 ## [1.37.11](https://github.com/wonderflow-bv/design/compare/v1.37.10...v1.37.11) (2021-09-28)
 
 
