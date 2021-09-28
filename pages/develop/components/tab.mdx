@@ -36,7 +36,7 @@ export default ({ children }) => (
         <Elevator resting={1}>
           <Card padding={false}>
             <Tab.Root>
-              <Tab.Panel label="Sign-up">
+              <Tab.Panel icon="check" label="Sign-up">
                 <Card>
                   <Stack rowGap={24}>
                     <Textfield label="Name" type="text" />
@@ -51,7 +51,7 @@ export default ({ children }) => (
                   </Stack>
                 </Card>
               </Tab.Panel>
-              <Tab.Panel label="Login">
+              <Tab.Panel icon="envelope" label="Login">
                 <Card>
                   <Stack rowGap={24}>
                     <Textfield label="E-Mail" type="email" />
