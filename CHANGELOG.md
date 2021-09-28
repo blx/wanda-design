@@ -1,3 +1,10 @@
+## [1.37.10](https://github.com/wonderflow-bv/design/compare/v1.37.9...v1.37.10) (2021-09-28)
+
+
+### Bug Fixes
+
+* update deps ([02d1901](https://github.com/wonderflow-bv/design/commit/02d19013dcb8c3f7a4028ba68772375ef5a92b6f))
+
 ## [1.37.9](https://github.com/wonderflow-bv/design/compare/v1.37.8...v1.37.9) (2021-09-28)
 
 
