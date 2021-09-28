@@ -1,3 +1,10 @@
+## [1.37.8](https://github.com/wonderflow-bv/design/compare/v1.37.7...v1.37.8) (2021-09-28)
+
+
+### Bug Fixes
+
+* change to resolved theme ([8410675](https://github.com/wonderflow-bv/design/commit/8410675d2021b98a016ff60c6d3e382839298c50))
+
 ## [1.37.7](https://github.com/wonderflow-bv/design/compare/v1.37.6...v1.37.7) (2021-09-27)
 
 
