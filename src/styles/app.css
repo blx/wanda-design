@@ -53,5 +53,14 @@ h6 {
 
 img {
   border-radius: env(--radius-4);
+  max-width: 100%;
+}
+
+img[width] {
+  width: auto;
+}
+
+img[width][height] {
+  height: auto;
 }
 

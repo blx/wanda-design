@@ -3,6 +3,7 @@ import { ColorPalette } from "@/components/color-palette";
 import { Zoomer } from "@/components/zoomer";
 import { ContrastCalc } from "@/components/contrast-calc";
 import { Stack, Snackbar } from "@wonderflow/react-components";
+import { ThemedImg } from "@/components/themed-img";
 import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
 
 export default ({ children }) => (
@@ -21,7 +22,7 @@ Our color system was designed to establish a flexible range of colors that suppo
 Wanda provides a full-featured color collection as tokens. Each color is carefully defined to match the contrast criteria. You can check all the colors and relative parameters on [ColorBox][colorbox-url].
 
 <Zoomer>
-  <img loading="lazy" decoding="async" src="/design/colors/colors.webp" />
+  <ThemedImg src="/design/colors/colors.png" />
 </Zoomer>
 
 ### Support
