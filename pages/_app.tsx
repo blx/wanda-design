@@ -63,11 +63,6 @@ const App = ({ Component, pageProps }: any) => {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <NextScript id="docsearch-core" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
-      <NextScript id="get-saved-theme" strategy="beforeInteractive">
-        {`
-          const currentTheme = localStorage.getItem('theme'); document.documentElement.dataset.theme = currentTheme || 'system';
-        `}
-      </NextScript>
       <NextNprogress
         color="var(--cta-default)"
         startPosition={0.3}
