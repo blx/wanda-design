@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Icon, Radio, Stack, Text, Textfield, Title, IconNames } from '@wonderflow/react-components'
-import { IconProps } from '@wonderflow/react-components/icon'
+import { Icon, Radio, Stack, Text, Textfield, Title, IconNames, IconProps } from '@wonderflow/react-components'
 import IconsList from '@wonderflow/react-components/icons/structure.json'
 import { useDebounce, useCopyToClipboard } from 'react-use'
 import { BlankButton } from '@/components/blank-button'
