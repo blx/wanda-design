@@ -1,0 +1,204 @@
+import { useState } from "react";
+import { MdxLayout } from "@/components/layouts/mdx";
+import { LiveArea } from "@/components/live-area";
+import { Props } from "@/components/props";
+import dynamic from "next/dynamic";
+import {
+  Modal,
+  Button,
+  Stack,
+  Text,
+  Snackbar,
+} from "@wonderflow/react-components";
+
+export const DynPortal = dynamic(
+  import("@/components/portal").then((m) => m.Portal),
+  { ssr: false }
+);
+
+export const ModalDemo = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setVisible(true)}>Show Modal</Button>
+      <DynPortal>
+        <Modal
+          key="default-modal"
+          visible={visible}
+          onClose={() => setVisible(false)}
+        >
+          <Modal.Content title="Account deletion">
+            <Stack
+              fill={false}
+              horizontalAlign="center"
+              rowGap={32}
+              horizontalPadding={24}
+              verticalPadding={24}
+            >
+              <Text>Do you really want to delete this account?</Text>
+              <Stack direction="row" columnGap={8}>
+                <Button onClick={() => setVisible(false)} kind="flat">
+                  No
+                </Button>
+                <Button onClick={() => setVisible(false)}>Confirm</Button>
+              </Stack>
+            </Stack>
+          </Modal.Content>
+        </Modal>
+      </DynPortal>
+    </>
+  );
+};
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Modal"
+    description="A window overlaid on either the primary window, rendering the content underneath inert."
+    showMeta
+    showPlayground
+    features={[
+      "Keyboard accessible",
+      "Focus is automatically trapped when modal",
+      "Can be controlled or uncontrolled",
+      "Manages screen reader announcements with Title",
+      "Themes ready",
+    ]}
+    links={[
+      {
+        label: "ARIA design",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#dialog",
+      },
+      {
+        label: "ARIA authoring",
+        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#dialog_modal",
+      },
+    ]}
+    hero={
+      <LiveArea>
+        <ModalDemo />
+      </LiveArea>
+    }
+  >
+    {children}
+  </MdxLayout>
+);
+
+## Anatomy
+
+```tsx highlight=1,4,7-9
+import { Modal } from "@wonderflow/react-components";
+
+export default () => {
+  const [visible, setVisible] = useState<boolean>(false);
+
+  return (
+    <Modal visible={visible} title="Modal title">
+      <Modal.Content>....</Modal.Content>
+    </Modal>
+  );
+};
+```
+
+### Custom content
+
+If you want to use the `Modal` component to show custom elements instead of the `Modal.Content` (which renders the card), you can pass an element inside it.
+
+```tsx highlight=1,4,7-9
+import { Modal } from "@wonderflow/react-components";
+
+export default () => {
+  const [visible, setVisible] = useState<boolean>(false);
+
+  return (
+    <Modal visible={visible} title="Modal title">
+      <div>My custom content wrapper</div>
+    </Modal>
+  );
+};
+```
+
+<Snackbar kind="warning">
+  It's important to consider that by passing custom content you have to handle
+  the overflow, size, position and accessibility by yourself.
+</Snackbar>
+
+## API Reference
+
+### Modal
+
+<Props
+  properties={[
+    {
+      name: "visible",
+      type: ['"boolean"'],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Set the visibility and render of the modal",
+    },
+    {
+      name: "overlayColor",
+      type: ["light", "dark", "auto"],
+      default: '"dark"',
+      required: false,
+      dangerous: false,
+      description: "Set the backdrop overlay color",
+    },
+    {
+      name: "onClose",
+      type: ["() => void"],
+      default: "",
+      required: true,
+      dangerous: false,
+      description:
+        "Callback to close the modal. This is used on the overlay and the close button if Modal.Content is used.",
+    },
+    {
+      name: "closeOnClickOutside",
+      type: ["boolean"],
+      default: "true",
+      required: false,
+      dangerous: false,
+      description: "Run onClose callback when clicking the backdrop layer",
+    },
+  ]}
+/>
+
+### Modal.Content
+
+<Props
+  properties={[
+    {
+      name: "title",
+      type: ['"ReactNode"'],
+      default: "",
+      required: true,
+      dangerous: false,
+      description: "The modal title which labels the modal to AT",
+    },
+  ]}
+/>
+
+## Accessibility
+
+Adheres to the [`dialog` role requirements](https://www.w3.org/TR/wai-aria-1.2/#dialog).
+
+### Keyboard interactions
+
+<Props
+  properties={[
+    {
+      name: "tab",
+      description: "Moves focus to the next focusable element inside the modal",
+    },
+    {
+      name: "shif + tab",
+      description:
+        "Moves focus to the previous focusable element inside the modal",
+    },
+    {
+      name: "esc",
+      description: "Close the modal and move the focus on the trigger element",
+    },
+  ]}
+/>

@@ -11,7 +11,7 @@
 
   &[data-code-block-has-highlight='true'] [data-code-block-highlight='false'] {
     opacity: 0.5;
-    filter: saturate(0.5);
+    filter: saturate(0);
     user-select: none;
   }
 }

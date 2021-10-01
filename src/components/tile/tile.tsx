@@ -1,9 +1,8 @@
 import React, { forwardRef, ReactNode } from 'react'
-import { Stack, Icon } from '@wonderflow/react-components'
+import { Stack, Icon, IconNames } from '@wonderflow/react-components'
 import clsx from 'clsx'
 import type * as Polymorphic from '@radix-ui/react-polymorphic'
 import { Tile as TileClass, IconBullet } from './tile.module.css'
-import { IconNames } from '@wonderflow/react-components/icons/types'
 
 type TileProps = {
   children: ReactNode;
