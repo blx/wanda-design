@@ -1,3 +1,17 @@
+# [1.38.0](https://github.com/wonderflow-bv/design/compare/v1.37.13...v1.38.0) (2021-10-01)
+
+
+### Bug Fixes
+
+* add banner to iconography ([7a70d78](https://github.com/wonderflow-bv/design/commit/7a70d7843f122443cfaafa2a5cddaf617c520361))
+* **elevator:** update props values ([9ae4593](https://github.com/wonderflow-bv/design/commit/9ae4593613b2ac3598e7f32b22ff9da0878dde26))
+* update titles levels in components ([d65e4f5](https://github.com/wonderflow-bv/design/commit/d65e4f544efc01a6be384051e89bb0604d6f0e8a))
+
+
+### Features
+
+* add modal doc ([dfe75a0](https://github.com/wonderflow-bv/design/commit/dfe75a075756efd8c51de0f050735edf2446976c))
+
 ## [1.37.13](https://github.com/wonderflow-bv/design/compare/v1.37.12...v1.37.13) (2021-09-28)
 
 
