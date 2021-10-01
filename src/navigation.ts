@@ -205,7 +205,7 @@ export default [
             path: '/develop/components/modal',
             label: 'Modal',
             target: '',
-            wip: true
+            wip: false
           },
           {
             path: '/develop/components/prose',
