@@ -128,6 +128,12 @@ export default [
             label: 'Presence',
             target: '',
             wip: false
+          },
+          {
+            path: '/develop/utilities/polymorphic',
+            label: 'Polymorphic',
+            target: '',
+            wip: false
           }
         ]
       }
