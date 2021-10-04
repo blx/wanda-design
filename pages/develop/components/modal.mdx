@@ -99,6 +99,28 @@ export default () => {
 };
 ```
 
+### Dynamic mounting
+
+In some situations you need to dynamically mount the `Modal` component based on a condition, instead of using the `visible` property. In these cases, you need to wrap the `Modal` and the `condition` inside the `Presence` provider in order to keep the exiting animation.
+
+```tsx highlight=1,4,7-13
+import { Modal, Presence } from "@wonderflow/react-components";
+
+export default () => {
+  const [visible, setVisible] = useState<boolean>(false);
+
+  return (
+    <Presence>
+      {visible && (
+        <Modal title="Modal title">
+          <Modal.Content>....</Modal.Content>
+        </Modal>
+      )}
+    </Presence>
+  );
+};
+```
+
 ### Custom content
 
 If you want to use the `Modal` component to show custom elements instead of the `Modal.Content` (which renders the card), you can pass an element inside it.

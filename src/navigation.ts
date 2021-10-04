@@ -122,6 +122,12 @@ export default [
             label: 'Id Provider',
             target: '',
             wip: false
+          },
+          {
+            path: '/develop/utilities/presence',
+            label: 'Presence',
+            target: '',
+            wip: false
           }
         ]
       }
