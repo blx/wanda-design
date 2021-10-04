@@ -1,5 +1,6 @@
 import React, { Children, cloneElement, ReactElement } from 'react'
-import { Icon, IconNames } from '@wonderflow/react-components'
+import { Icon } from '@wonderflow/react-components'
+import { IconNames } from '@wonderflow/react-components/icons/types'
 
 import { Checklist as ChecklistClass, Li, Bullet } from './checklist.module.css'
 import clsx from 'clsx'

@@ -1,7 +1,6 @@
 import React, { forwardRef, ReactNode } from 'react'
-import type * as Polymorphic from '@radix-ui/react-polymorphic'
 import { Banner as BannerClass } from './banner.module.css'
-import { Stack, Title } from '@wonderflow/react-components'
+import { Stack, Title, Polymorphic } from '@wonderflow/react-components'
 
 type BannerProps = {
   title: string;

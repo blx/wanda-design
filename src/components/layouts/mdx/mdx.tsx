@@ -2,14 +2,14 @@ import React, { ReactNode } from 'react'
 import slugify from 'slugify'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
-import { IconButton, Icon, Prose, Stack, Title } from '@wonderflow/react-components'
+import { IconButton, Icon, Prose, Stack, Title, List } from '@wonderflow/react-components'
 import { ToC } from '@/components/toc'
 import { DocHead, DocHeadProps } from '@/components/doc-head'
 import { Toolbar } from '@/components/toolbar'
 import { Bleed } from '@/components/bleed'
-import { Checklist } from '@/components/checklist'
 
 import { MdxLayout as Mdx, Links, Hero, Action } from './mdx.module.css'
+import Markdown from 'markdown-to-jsx'
 
 type MdxLayoutProps = DocHeadProps & PropsWithClass & {
   hero?: ReactNode;
@@ -84,11 +84,11 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
                 <Title as="h2" level="5">
                   Features
                 </Title>
-                <Checklist.List>
+                <List marker="check" markerColor="var(--highlight-green-foreground)">
                   {features.map(feat => (
-                    <Checklist.Li key={feat}>{feat}</Checklist.Li>
+                    <li key={feat}><Markdown>{feat}</Markdown></li>
                   ))}
-                </Checklist.List>
+                </List>
               </Stack>
               )}
 

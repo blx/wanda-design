@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Icon, Radio, Stack, Text, Textfield, Title, IconNames, IconProps } from '@wonderflow/react-components'
+import { Icon, Radio, Stack, Text, Textfield, Title, IconProps } from '@wonderflow/react-components'
 import IconsList from '@wonderflow/react-components/icons/structure.json'
 import { useDebounce, useCopyToClipboard } from 'react-use'
 import { BlankButton } from '@/components/blank-button'
 import { Bleed } from '@/components/bleed'
 import { SearchIcons as SearchIconsClass, IconTile as IconTileClass, Grid, Label, IconPreview, ToolBar } from './search-icons.module.css'
 import { TokensTypes } from '@wonderflow/tokens/platforms/web/types'
+import { IconNames } from '@wonderflow/react-components/icons/types'
 
 type IconTileProps = {
   icon: IconNames;
