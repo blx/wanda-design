@@ -1,3 +1,15 @@
+# [1.41.0](https://github.com/wonderflow-bv/design/compare/v1.40.0...v1.41.0) (2021-10-05)
+
+
+### Bug Fixes
+
+* **search:** add overflow containment ([544bbc9](https://github.com/wonderflow-bv/design/commit/544bbc9ec9f399af2e6b0b10f7a4735f2c80ec23))
+
+
+### Features
+
+* add search keydinding ([bb8d44b](https://github.com/wonderflow-bv/design/commit/bb8d44be742941da248a0b85572d9cbca004c6c5))
+
 # [1.40.0](https://github.com/wonderflow-bv/design/compare/v1.39.2...v1.40.0) (2021-10-05)
 
 
