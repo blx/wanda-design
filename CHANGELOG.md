@@ -1,3 +1,11 @@
+## [1.41.1](https://github.com/wonderflow-bv/design/compare/v1.41.0...v1.41.1) (2021-10-05)
+
+
+### Bug Fixes
+
+* **navigation:** disable fluid typo for wip items ([1e0745e](https://github.com/wonderflow-bv/design/commit/1e0745e415b3a7c793105e60ab32da26d1a65bbc))
+* update search ([2ff58d6](https://github.com/wonderflow-bv/design/commit/2ff58d69e4214d37bfb97b93df9df3e9073cf5fd))
+
 # [1.41.0](https://github.com/wonderflow-bv/design/compare/v1.40.0...v1.41.0) (2021-10-05)
 
 
