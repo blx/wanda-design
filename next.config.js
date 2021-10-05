@@ -14,7 +14,7 @@ const withMDX = require('@next/mdx')({
           type: 'element',
           tagName: 'span',
           properties: { className: ['HeadingAnchor'] },
-          children: [{ type: 'text', value: '#' }]
+          children: [{ type: 'text', value: '' }]
         }
       }]
     ]

@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, useCallback, useState } from 'react'
 import clsx from 'clsx'
-import { Toolbar as ToolbarClass } from './toolbar.module.css'
-import { IconButton, Stack, Modal } from '@wonderflow/react-components'
+import { Toolbar as ToolbarClass, SearchLabel } from './toolbar.module.css'
+import { IconButton, Stack, Modal, Button } from '@wonderflow/react-components'
 import { SearchModal } from '@/components/search-modal'
 import { useEvent } from 'react-use'
 
@@ -53,8 +53,11 @@ export const Toolbar: React.FC<ToolbarProps> = ({
     >
       {showSearch && (
         <>
-          <kbd>CMD + K</kbd>
-          <IconButton onClick={() => setShowModal(true)} kind="flat" icon="magnifying-glass" />
+          <Button onClick={() => setShowModal(true)} kind="flat" icon="magnifying-glass">
+            <span className={SearchLabel}>Quick search anything...</span>
+            {' '}
+            ⌘ K
+          </Button>
         </>
       )}
       <IconButton

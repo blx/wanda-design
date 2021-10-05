@@ -85,6 +85,7 @@ export const SearchIcons = () => {
             data-search-icons-searched={isReady()}
             placeholder="Search icon names"
             dimension="big"
+            autoFocus
           />
           <Stack direction="row" fill={false} columnGap={24} inline>
             <Stack verticalAlign="center" direction="row" columnGap={8}>

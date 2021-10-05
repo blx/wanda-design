@@ -40,6 +40,11 @@ h6 {
     background-color: var(--highlight-cyan-background);
     color: var(--highlight-cyan-foreground);
     padding-bottom: 1px;
+
+    &::before {
+      content: '#';
+      display: inline-block;
+    }
   }
 
   &:hover,
