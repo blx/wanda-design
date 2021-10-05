@@ -1,3 +1,10 @@
+# [1.40.0](https://github.com/wonderflow-bv/design/compare/v1.39.2...v1.40.0) (2021-10-05)
+
+
+### Features
+
+* update search ([70da486](https://github.com/wonderflow-bv/design/commit/70da486fbf3cc7153617c170b7d70055750d212f))
+
 ## [1.39.2](https://github.com/wonderflow-bv/design/compare/v1.39.1...v1.39.2) (2021-10-05)
 
 
