@@ -1,8 +1,9 @@
-import React, { HTMLAttributes, useState } from 'react'
+import React, { HTMLAttributes, useCallback, useState } from 'react'
 import clsx from 'clsx'
 import { Toolbar as ToolbarClass } from './toolbar.module.css'
 import { IconButton, Stack, Modal } from '@wonderflow/react-components'
 import { SearchModal } from '@/components/search-modal'
+import { useEvent } from 'react-use'
 
 import dynamic from 'next/dynamic'
 
@@ -27,6 +28,19 @@ export const Toolbar: React.FC<ToolbarProps> = ({
   ...props
 }) => {
   const [showModal, setShowModal] = useState<boolean>(false)
+
+  const onKeyDown = useCallback(
+    (event) => {
+      if (event.key === 'k' && (event.ctrlKey || event.metaKey)) {
+        event.stopPropagation()
+        event.preventDefault()
+        setShowModal(true)
+      }
+    }, []
+  )
+
+  useEvent('keydown', onKeyDown)
+
   return (
     <Stack
       direction="row"
