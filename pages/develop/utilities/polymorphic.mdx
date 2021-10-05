@@ -37,7 +37,7 @@ const ElementType = "button";
 type ButtonProps = {};
 
 /* Set the default HTMLELement type */
-type PolymorphicBox = Polymorphic.ForwardRefComponent<
+type PolymorphicButton = Polymorphic.ForwardRefComponent<
   typeof ElementType,
   ButtonProps
 >;
@@ -47,10 +47,10 @@ type PolymorphicBox = Polymorphic.ForwardRefComponent<
  * it a <button> element as default
  */
 const Button = forwardRef(
-  ({ as: Wrapper = ElementType, ...props }, forwardedRef) => (
-    <Wrapper ref={forwardedRef} {...props} />
+  ({ as: Component = ElementType, ...props }, forwardedRef) => (
+    <Component ref={forwardedRef} {...props} />
   )
-) as PolymorphicBox;
+) as PolymorphicButton;
 ```
 
 Once created, you can now import and use the `Button` component as following:
