@@ -110,7 +110,7 @@
   border-radius: env(--radius-8);
   display: flex !important;
   align-items: center !important;
-  justify-content: start !important;
+  justify-content: flex-start !important;
   flex-direction: column !important;
 
   &::before {
