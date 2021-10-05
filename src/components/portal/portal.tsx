@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 export type PortalProps = {
-  children: Node,
+  children: ReactNode,
   root?: HTMLElement
 }
 

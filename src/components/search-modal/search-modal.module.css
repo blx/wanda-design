@@ -1,0 +1,14 @@
+@import '@wonderflow/react-components/core/media.css';
+
+.SearchModal {
+  padding: env(--space-24);
+  max-inline-size: 70ch;
+
+  @media (--from-extra-small) {
+    max-inline-size: 100ch;
+  }
+}
+
+.Links {
+  min-height: 40vh;
+}

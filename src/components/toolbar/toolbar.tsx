@@ -1,11 +1,20 @@
-import React, { HTMLAttributes } from 'react'
+import React, { HTMLAttributes, useState } from 'react'
 import clsx from 'clsx'
 import { Toolbar as ToolbarClass } from './toolbar.module.css'
-import { Search } from '@/components/search'
-import { IconButton, Stack } from '@wonderflow/react-components'
+import { IconButton, Stack, Modal } from '@wonderflow/react-components'
+import { SearchModal } from '@/components/search-modal'
+
 import dynamic from 'next/dynamic'
 
-const DynThemeSwitcher = dynamic(import('@/components/theme-switcher').then(m => m.ThemeSwitcher), { ssr: false })
+const DynThemeSwitcher = dynamic(
+  import('@/components/theme-switcher').then(m => m.ThemeSwitcher),
+  { ssr: false }
+)
+
+const DynPortal = dynamic(
+  import('@/components/portal').then(m => m.Portal),
+  { ssr: false }
+)
 
 type ToolbarProps = {
   showSearch?: boolean;
@@ -17,18 +26,18 @@ export const Toolbar: React.FC<ToolbarProps> = ({
   showSearch = true,
   ...props
 }) => {
+  const [showModal, setShowModal] = useState<boolean>(false)
   return (
     <Stack
       direction="row"
       fill={false}
-      columnGap={16}
+      columnGap={8}
       horizontalAlign="end"
       verticalAlign="center"
       className={clsx(ToolbarClass, className)}
       {...props}
     >
-      <DynThemeSwitcher />
-      {showSearch && <Search />}
+      {showSearch && <IconButton onClick={() => setShowModal(true)} kind="flat" icon="magnifying-glass" />}
       <IconButton
         as="a"
         href="https://github.com/wonderflow-bv/design"
@@ -38,7 +47,13 @@ export const Toolbar: React.FC<ToolbarProps> = ({
         kind="flat"
         aria-label="Github link to the source code"
       />
+      <DynThemeSwitcher />
       {children}
+      <DynPortal>
+        <Modal overlayColor="auto" onClose={() => setShowModal(false)} visible={showModal}>
+          <SearchModal />
+        </Modal>
+      </DynPortal>
     </Stack>
   )
 }

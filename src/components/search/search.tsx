@@ -11,8 +11,8 @@ declare const window: any
 
 export const Search = ({
   className,
-  dimension = 'regular',
-  size = 20,
+  dimension = 'big',
+  size,
   ...props
 }: SearchProps) => {
   useEffect(() => {
@@ -21,7 +21,7 @@ export const Search = ({
         apiKey: '9e6d8175d4b610a1441417e9a1d8ceda',
         indexName: 'wonderflow',
         inputSelector: '#site-search',
-        debug: false
+        debug: true
       })
     } else {
       console.warn('Search has failed to load DocSearch')
