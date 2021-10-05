@@ -51,7 +51,12 @@ export const Toolbar: React.FC<ToolbarProps> = ({
       className={clsx(ToolbarClass, className)}
       {...props}
     >
-      {showSearch && <IconButton onClick={() => setShowModal(true)} kind="flat" icon="magnifying-glass" />}
+      {showSearch && (
+        <>
+          <kbd>CMD + K</kbd>
+          <IconButton onClick={() => setShowModal(true)} kind="flat" icon="magnifying-glass" />
+        </>
+      )}
       <IconButton
         as="a"
         href="https://github.com/wonderflow-bv/design"
