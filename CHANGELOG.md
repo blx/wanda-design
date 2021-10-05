@@ -1,3 +1,16 @@
+# [1.39.0](https://github.com/wonderflow-bv/design/compare/v1.38.0...v1.39.0) (2021-10-05)
+
+
+### Bug Fixes
+
+* update types ([845cc57](https://github.com/wonderflow-bv/design/commit/845cc57effc8a1fe72e814e218e469ea021a78fd))
+
+
+### Features
+
+* add polymorphic page ([46853dc](https://github.com/wonderflow-bv/design/commit/46853dc77270cde1c86eb4f18d2c492e96d43a63))
+* add Presence doc ([667b40b](https://github.com/wonderflow-bv/design/commit/667b40b13d581589fb16f1a207bd2517a61db577))
+
 # [1.38.0](https://github.com/wonderflow-bv/design/compare/v1.37.13...v1.38.0) (2021-10-01)
 
 
