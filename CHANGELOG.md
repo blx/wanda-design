@@ -1,3 +1,10 @@
+## [1.39.2](https://github.com/wonderflow-bv/design/compare/v1.39.1...v1.39.2) (2021-10-05)
+
+
+### Bug Fixes
+
+* **polymorphic:** update doc ([6215f9c](https://github.com/wonderflow-bv/design/commit/6215f9cf3ce8f3086fe32d2f9cabbfec0230e752))
+
 ## [1.39.1](https://github.com/wonderflow-bv/design/compare/v1.39.0...v1.39.1) (2021-10-05)
 
 
