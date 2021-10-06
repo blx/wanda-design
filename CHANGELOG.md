@@ -1,3 +1,11 @@
+## [1.41.2](https://github.com/wonderflow-bv/design/compare/v1.41.1...v1.41.2) (2021-10-06)
+
+
+### Bug Fixes
+
+* **modal:** update modal doc ([74cf32e](https://github.com/wonderflow-bv/design/commit/74cf32efadda915858f06469fc9fef38af097150))
+* **presence:** update doc ([e7cca6c](https://github.com/wonderflow-bv/design/commit/e7cca6c7c6d2a328a058ca7f0e241620e2964195))
+
 ## [1.41.1](https://github.com/wonderflow-bv/design/compare/v1.41.0...v1.41.1) (2021-10-05)
 
 
