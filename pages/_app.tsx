@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
-import { Title, Text, Separator, IdProvider } from '@wonderflow/react-components'
+import { Title, Text, Separator, IdProvider, List } from '@wonderflow/react-components'
 import { ThemeProvider } from 'next-themes'
 import NextNprogress from 'nextjs-progressbar'
 import { useRouter } from 'next/router'
@@ -25,6 +25,8 @@ const components = {
   h4: (props: any) => <Title as="h4" level="5" {...props} />,
   p: (props: any) => <Text size={22} {...props} />,
   a: (props: any) => <Link {...props}><a>{props.children}</a></Link>,
+  ul: (props: any) => <List markerColor="var(--dimmed-5)" {...props}>{props.children}</List>,
+  ol: (props: any) => <List as="ol" {...props}>{props.children}</List>,
   hr: Separator
 }
 
