@@ -69,7 +69,7 @@
     padding: env(--space-16) env(--space-24) max(env(--space-88), env(safe-area-inset-bottom));
 
     @media (--from-medium) {
-      max-inline-size: 80ch;
+      max-inline-size: 85ch;
       padding: env(--space-48) env(--space-64);
     }
   }
