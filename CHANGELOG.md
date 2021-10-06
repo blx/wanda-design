@@ -1,3 +1,15 @@
+# [1.42.0](https://github.com/wonderflow-bv/design/compare/v1.41.2...v1.42.0) (2021-10-06)
+
+
+### Bug Fixes
+
+* **ssr:** clean doc ([b823887](https://github.com/wonderflow-bv/design/commit/b823887f0cdc9527a3f64e9a6ea4b462ebd8c014))
+
+
+### Features
+
+* add Forms recipe ([3f7df2d](https://github.com/wonderflow-bv/design/commit/3f7df2dfa93cf87c095a0a06af3e1e3c6d349942))
+
 ## [1.41.2](https://github.com/wonderflow-bv/design/compare/v1.41.1...v1.41.2) (2021-10-06)
 
 
