@@ -1,3 +1,10 @@
+## [1.42.1](https://github.com/wonderflow-bv/design/compare/v1.42.0...v1.42.1) (2021-10-06)
+
+
+### Bug Fixes
+
+* increase content column size ([462b925](https://github.com/wonderflow-bv/design/commit/462b9251a86fd2b3bc1bbaccee2b920d21d687e3))
+
 # [1.42.0](https://github.com/wonderflow-bv/design/compare/v1.41.2...v1.42.0) (2021-10-06)
 
 
