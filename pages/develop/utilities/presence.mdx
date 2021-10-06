@@ -1,4 +1,6 @@
 import { MdxLayout } from "@/components/layouts/mdx";
+import { Snackbar } from "@wonderflow/react-components";
+import Markdown from "markdown-to-jsx";
 
 export default ({ children }) => (
   <MdxLayout
@@ -25,6 +27,14 @@ export default () => (
   <Presence initial={false}>{visible && ...}</Presence>
 );
 ```
+
+<Snackbar kind="info">
+  <Markdown>
+    `Presence` is a wrapper of framer-motion's `AnimatePresence` which you can
+    use in specific case without installing it. If you're already using
+    `framer-motion` in you project you can use `AnimatePresence` directly.
+  </Markdown>
+</Snackbar>
 
 ## API Reference
 
