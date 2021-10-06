@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
@@ -16,7 +16,7 @@ export const DynPortal = dynamic(
   { ssr: false }
 );
 
-export const ModalDemo = () => {
+export const ModalDemo = memo(() => {
   const [visible, setVisible] = useState(false);
   return (
     <>
@@ -37,7 +37,7 @@ export const ModalDemo = () => {
             >
               <Text>Do you really want to delete this account?</Text>
               <Stack direction="row" columnGap={8}>
-                <Button onClick={() => setVisible(false)} sekind="flat">
+                <Button onClick={() => setVisible(false)} kind="flat">
                   No
                 </Button>
                 <Button onClick={() => setVisible(false)}>Confirm</Button>
@@ -48,7 +48,7 @@ export const ModalDemo = () => {
       </DynPortal>
     </>
   );
-};
+});
 
 export default ({ children }) => (
   <MdxLayout
