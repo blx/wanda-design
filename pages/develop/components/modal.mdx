@@ -37,7 +37,7 @@ export const ModalDemo = () => {
             >
               <Text>Do you really want to delete this account?</Text>
               <Stack direction="row" columnGap={8}>
-                <Button onClick={() => setVisible(false)} kind="flat">
+                <Button onClick={() => setVisible(false)} sekind="flat">
                   No
                 </Button>
                 <Button onClick={() => setVisible(false)}>Confirm</Button>
@@ -103,17 +103,19 @@ export default () => {
 
 In some situations you need to dynamically mount the `Modal` component based on a condition, instead of using the `visible` property. In these cases, you need to wrap the `Modal` and the `condition` inside the `Presence` provider in order to keep the exiting animation.
 
-```tsx highlight=1,4,7-13
-import { Modal, Presence } from "@wonderflow/react-components";
+```tsx highlight=1,4,5,8-15
+import { Modal, useModalContext, Presence } from "@wonderflow/react-components";
 
 export default () => {
   const [visible, setVisible] = useState<boolean>(false);
+  const { titleId, onClose } = useModalContext();
 
   return (
     <Presence>
       {visible && (
         <Modal title="Modal title">
-          <Modal.Content>....</Modal.Content>
+          <p id={titleId}>Modal title</p>
+          <button onClick={onClose}>Close modal</button>
         </Modal>
       )}
     </Presence>
@@ -197,6 +199,31 @@ export default () => {
       required: true,
       dangerous: false,
       description: "The modal title which labels the modal to AT",
+    },
+  ]}
+/>
+
+### useModalContext
+
+<Props
+  properties={[
+    {
+      name: "titleId",
+      type: ["string"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description:
+        "The auto generated id to assign to the modal title to give it an accessbility name",
+    },
+    {
+      name: "onClose",
+      type: ["() => void"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description:
+        "The callback passed to the Modal and available inside the Modal content.",
     },
   ]}
 />
