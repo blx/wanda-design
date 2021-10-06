@@ -75,6 +75,18 @@ export default [
             label: 'Buttons',
             target: '',
             wip: false
+          },
+          {
+            path: '/design/recipes/forms',
+            label: 'Forms',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/design/recipes/modals',
+            label: 'Modals',
+            target: '',
+            wip: true
           }
         ]
       }
