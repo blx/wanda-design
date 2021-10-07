@@ -4,7 +4,8 @@ import { IconNames } from '@wonderflow/react-components/icons/types'
 import { Select } from '@wonderflow/react-components'
 
 export const ThemeSwitcher = () => {
-  const { resolvedTheme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
+  const currentTheme = theme || 'system'
 
   const icon = {
     light: 'sun-bright' as IconNames,
@@ -16,9 +17,9 @@ export const ThemeSwitcher = () => {
     <Select
       dimension="small"
       onChange={({ currentTarget }) => setTheme(currentTarget.value)}
-      value={resolvedTheme}
-      icon={resolvedTheme === 'system' ? icon.system : icon[resolvedTheme || 'system']}
-      defaultValue={resolvedTheme}
+      value={currentTheme}
+      icon={currentTheme === 'system' ? icon.system : icon[currentTheme]}
+      defaultValue={currentTheme}
       aria-label="Change color scheme"
     >
       <option value="light">Light</option>
