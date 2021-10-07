@@ -38,15 +38,15 @@ export default () => (
   import the css version to enable the theme.
 </Snackbar>
 
-## Multiple themes
+## Light and dark themes
 
-The previous section shows how to use a single theme inside your digital product. Howhever, if you are going to introduce both `light` and `dark` themes and use the [`theme-switch`](/develop/components/theme-switch/) component you have to include a different `css` file inside your application, instead of the specific one.
+The previous section shows how to use a single theme inside your digital product. Howhever, if you are going to introduce both `light` and `dark` you have to include a different `css` file inside your application, instead of the specific one.
 
 ```js
 import "@wonderflow/react-components/themes.css";
 ```
 
-This file contains both the `light` and `dark` themes which are activated based on the `data-theme` attribute applied on the `html` tag:
+This file contains both the `light` and `dark` themes which are activated based on the `data-theme` attribute:
 
 ```css
 :root,
@@ -66,10 +66,34 @@ This file contains both the `light` and `dark` themes which are activated based 
 }
 ```
 
-### How it works
+The above CSS works this way:
 
-- **light**: activated when user choose the `light` option
-- **dark**: activated when the user choose the `dark` option
-- **light/dark**: automatically activated based on the user's system preferences when `system` option is chose
+- **light**: activated when `data-theme` is set to `light`
+- **dark**: activated when `data-theme` is set to `dark`
+- **light/dark**: automatically activated based on the user's system preferences when `data-theme` is not **"light"** or **"dark"**, or when there is not the attribute at all and the `theme.css` is included.
 
-See more about how to implement the Wanda's theming system [here](/develop/components/theme-switch/).
+## Theme switching
+
+To switch between light and dark theme you just have to add the `data-theme` attribute to the document root, or, you can add it on any element on the page, everything inside the element with the attribute will use the theme declared.
+
+Taking this example:
+
+```html
+<!DOCTYPE html>
+<!--
+Everything that is not "light" or "dark"
+will use the system preferences.
+The document will use the light or dark theme
+based on the system preference.
+-->
+<html data-theme="auto">
+  <body>
+    <div>I'm light</div>
+
+    <!-- Everything inside .Hero will use the dark theme -->
+    <div class="Hero" data-theme="dark">I'm dark</div>
+  </body>
+</html>
+```
+
+Providing the UI pattern to switch the theme, and handling the attribute application, is up to the consumer.
