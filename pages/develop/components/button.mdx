@@ -4,6 +4,12 @@ import { Props } from "@/components/props";
 import { Checklist } from "@/components/checklist";
 import { Button } from "@wonderflow/react-components";
 
+import dynamic from "next/dynamic";
+export const DynLiveCode = dynamic(
+  import("@/components/live-code").then((m) => m.LiveCode),
+  { ssr: false }
+);
+
 export default ({ children }) => (
   <MdxLayout
     title="Button"
@@ -28,9 +34,11 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea direction="row">
-        <Button>Button</Button>
-      </LiveArea>
+      <DynLiveCode
+        liveAreaProps={{ direction: "row" }}
+        scope={{ Button }}
+        code={`<Button>Button</Button>`}
+      />
     }
   >
     {children}

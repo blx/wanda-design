@@ -6,7 +6,7 @@ import { useMouse } from 'react-use'
 import { LiveArea as LiveAreaClass } from './live-area.module.css'
 import { StackProps } from '@wonderflow/react-components/stack'
 
-type LiveAreaProps = PropsWithClass & StackProps & {
+export type LiveAreaProps = PropsWithClass & StackProps & {
   minHeight?: string;
   maxHeight?: string;
   live?: boolean;
