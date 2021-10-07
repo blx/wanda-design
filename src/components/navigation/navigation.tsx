@@ -1,7 +1,6 @@
-import React, { Fragment, useCallback, useMemo } from 'react'
+import React, { Fragment, ReactNode, useCallback, useMemo } from 'react'
 import { Tree } from '@/components/tree'
-import { Pill } from '@/components/pill'
-import { Separator, Stack, Text } from '@wonderflow/react-components'
+import { Separator, Stack, Text, Chip } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
@@ -18,7 +17,18 @@ export const Navigation = ({ data }: NavigationProps) => {
   )
 
   const navigationLink = useCallback(
-    (url: string, label: string) => <a aria-current={includesPath(url) ? 'page' : undefined}>{label}</a>,
+    (url: string, children: ReactNode, deprecated?: boolean) => (
+      <Stack
+        as="a"
+        direction="row"
+        verticalAlign="end"
+        columnGap={8}
+        aria-current={includesPath(url) ? 'page' : undefined}
+      >
+        {children}
+        {deprecated && <Chip color="yellow" dimension="small">deprecated</Chip>}
+      </Stack>
+    ),
     [includesPath]
   )
 
@@ -30,15 +40,16 @@ export const Navigation = ({ data }: NavigationProps) => {
             <Text as="span" size={16} dimmed={5} fluid={false}>
               <Stack as="span" direction="row" columnGap={8} inline verticalAlign="center">
                 {subItem.label}
-                <Pill>soon</Pill>
+                <Chip dimension="small">soon</Chip>
               </Stack>
             </Text>
             )
           : (
             <Link href={subItem.path}>
-              {navigationLink(subItem.path, subItem.label)}
+              {navigationLink(subItem.path, subItem.label, subItem.deprecated)}
             </Link>
-            )}
+            )
+          }
       </Tree.Li>
     )),
     [navigationLink]

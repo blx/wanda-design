@@ -18,7 +18,7 @@
 
   @media (--from-large) {
     border-right: 1px solid var(--dimmed-1);
-    inline-size: 15.55rem;
+    inline-size: 16.55rem;
     block-size: 100vh;
     position: sticky;
     display: flex;

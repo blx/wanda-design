@@ -25,11 +25,23 @@
 .Li {
   & > :is(a, span) {
     padding: 0 env(--space-24);
+    outline-offset: -2px;
+    font-weight: 600;
+
+    /*
     background: none;
     font-weight: 600;
     display: block;
     outline-offset: -2px;
-    color: var(--global-foreground);
+    color: var(--global-foreground); */
+  }
+
+  & > :is(a) {
+    cursor: pointer;
+
+    &:hover:not([aria-current='page']) {
+      color: var(--dimmed-6);
+    }
   }
 
   @nest details & :is(a, span) {

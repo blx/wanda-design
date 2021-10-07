@@ -6,6 +6,7 @@ type NavigationItem = {
   expandable?: boolean;
   wip?: boolean;
   items?: NavigationItem[];
+  deprecated?: boolean;
 }
 
 type NavigationGroup = {
