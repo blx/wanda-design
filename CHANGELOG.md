@@ -1,3 +1,10 @@
+## [1.43.2](https://github.com/wonderflow-bv/design/compare/v1.43.1...v1.43.2) (2021-10-07)
+
+
+### Bug Fixes
+
+* update themes section ([74a8776](https://github.com/wonderflow-bv/design/commit/74a8776da54b0b15b15e3d40437023e8827bee2a))
+
 ## [1.43.1](https://github.com/wonderflow-bv/design/compare/v1.43.0...v1.43.1) (2021-10-07)
 
 
