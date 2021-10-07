@@ -1,3 +1,10 @@
+## [1.43.1](https://github.com/wonderflow-bv/design/compare/v1.43.0...v1.43.1) (2021-10-07)
+
+
+### Bug Fixes
+
+* **theme-switcher:** fix values ([630b5a4](https://github.com/wonderflow-bv/design/commit/630b5a4bed7cd8660ce5cf45aeb52ef96c29c536))
+
 # [1.43.0](https://github.com/wonderflow-bv/design/compare/v1.42.1...v1.43.0) (2021-10-07)
 
 
