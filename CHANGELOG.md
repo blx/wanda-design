@@ -1,3 +1,15 @@
+# [1.43.0](https://github.com/wonderflow-bv/design/compare/v1.42.1...v1.43.0) (2021-10-07)
+
+
+### Bug Fixes
+
+* update navigation ([98d3c2d](https://github.com/wonderflow-bv/design/commit/98d3c2d5147f6ced3f8cb78ae87e5ef7d5618606))
+
+
+### Features
+
+* add deprecation ([13a4b00](https://github.com/wonderflow-bv/design/commit/13a4b00e6bf00c230e4934fcbd172095dcc10e86))
+
 ## [1.42.1](https://github.com/wonderflow-bv/design/compare/v1.42.0...v1.42.1) (2021-10-06)
 
 
