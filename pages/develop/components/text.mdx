@@ -85,6 +85,24 @@ export default () => {
       description: "Set the responsive font-size",
     },
     {
+      name: "maxWidth",
+      type: ["string"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description:
+        "Set the max width of the line. Accepts all units (protip: use ch)",
+    },
+    {
+      name: "textAlign",
+      type: ["start", "center", "end"],
+      default: "start",
+      required: false,
+      dangerous: false,
+      description:
+        "Set the text alignment. Consistent even on different writing direction (e.g. rtl)",
+    },
+    {
       name: "as",
       type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"p"',
