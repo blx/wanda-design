@@ -12,6 +12,7 @@ import { MdxLayout as Mdx, Links, Hero, Action } from './mdx.module.css'
 import Markdown from 'markdown-to-jsx'
 
 type MdxLayoutProps = DocHeadProps & PropsWithClass & {
+  tags?: ReactNode;
   hero?: ReactNode;
   features?: string[];
   links?: Record<string, any>[];
@@ -31,6 +32,7 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
   showLinks = true,
   showPlayground = false,
   showMeta = false,
+  tags,
   ...props
 }) => {
   const slugName = slugify(title, { lower: true })
@@ -46,7 +48,9 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
     >
       <Meta title={`${title} - Wanda Design System`} description={description} />
       <Stack rowGap={48}>
-        <DocHead title={title} description={description} />
+        <DocHead title={title} description={description}>
+          {tags}
+        </DocHead>
         <ToC.Table content={children} />
         <Stack rowGap={88}>
           <Stack rowGap={48}>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MdxLayout } from "@/components/layouts/mdx";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { ThemeSwitch } from "@wonderflow/react-components";
+import { ThemeSwitch, Chip } from "@wonderflow/react-components";
 import { useTheme } from "next-themes";
 
 export const CustomSwitcher = () => {
@@ -36,6 +36,7 @@ export default ({ children }) => (
         url: "https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox",
       },
     ]}
+    tags={<Chip color="yellow">Deprecated</Chip>}
     hero={
       <LiveArea direction="row" horizontalAlign="center" fill={false}>
         <CustomSwitcher />
