@@ -1,3 +1,15 @@
+# [1.44.0](https://github.com/wonderflow-bv/design/compare/v1.43.2...v1.44.0) (2021-10-07)
+
+
+### Bug Fixes
+
+* add rel to icons banner ([521ee92](https://github.com/wonderflow-bv/design/commit/521ee92cc3750a3d766befda642278809a80b3f7))
+
+
+### Features
+
+* add text align ([#157](https://github.com/wonderflow-bv/design/issues/157)) ([31cd8e0](https://github.com/wonderflow-bv/design/commit/31cd8e0deca0baa7ce278c68c6ef3c6cb2c42cb0))
+
 ## [1.43.2](https://github.com/wonderflow-bv/design/compare/v1.43.1...v1.43.2) (2021-10-07)
 
 
