@@ -1,3 +1,15 @@
+# [1.45.0](https://github.com/wonderflow-bv/design/compare/v1.44.0...v1.45.0) (2021-10-08)
+
+
+### Bug Fixes
+
+* **theme-switcher:** remove defaultValue prop ([ad980df](https://github.com/wonderflow-bv/design/commit/ad980df2c01a1cce0794d18479df0f54813d81a8))
+
+
+### Features
+
+* add Live code preview ([b18f161](https://github.com/wonderflow-bv/design/commit/b18f1610de03283bcb77ad2a6b95798f73cff2d5))
+
 # [1.44.0](https://github.com/wonderflow-bv/design/compare/v1.43.2...v1.44.0) (2021-10-07)
 
 
