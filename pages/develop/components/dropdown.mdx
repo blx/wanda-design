@@ -1,14 +1,28 @@
 import { MdxLayout } from "@/components/layouts/mdx";
+import { Playground } from "@/components/playground";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
-import { Dropdown, Button, Separator } from "@wonderflow/react-components";
+import * as Components from "@wonderflow/react-components";
+
+export const example = `<Dropdown
+  placement="bottom-start"
+  trigger={<Button kind="flat">Open dropdown</Button>}
+>
+  <Dropdown.Menu>
+    <Dropdown.Item icon="user">Item option 1</Dropdown.Item>
+    <Dropdown.Item icon="comment">Item option 2</Dropdown.Item>
+    <Separator />
+    <Dropdown.Item icon="right-from-bracket">
+      Item option 3
+    </Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Dropdown"
     description="Add extra actions to elements"
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Focus is fully managed",
@@ -25,21 +39,11 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea minHeight="400px">
-        <Dropdown
-          placement="bottom-start"
-          trigger={<Button kind="flat">Open dropdown</Button>}
-        >
-          <Dropdown.Menu>
-            <Dropdown.Item icon="user">Item option 1</Dropdown.Item>
-            <Dropdown.Item icon="comment">Item option 2</Dropdown.Item>
-            <Separator />
-            <Dropdown.Item icon="right-from-bracket">
-              Item option 3
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </LiveArea>
+      <Playground
+        scope={{ ...Components }}
+        liveAreaProps={{ minHeight: "400px" }}
+        code={example}
+      />
     }
   >
     {children}
@@ -178,33 +182,16 @@ The `Dropdown` component accepts custom elements as children. This means that yo
 
 ### Example
 
-<LiveArea>
-  <Dropdown trigger={<Button>Open dropdown</Button>}>
-    <>
-      <p>Custom element</p>
-      <Button autoFocus dimension="small" kind="flat">
-        Another button
-      </Button>
-    </>
-  </Dropdown>
-</LiveArea>
+export const exampleCustom = `<Dropdown trigger={<Button>Open dropdown</Button>}>
+  <>
+    <p>Custom element</p>
+    <Button autoFocus dimension="small" kind="flat">
+      Another button
+    </Button>
+  </>
+</Dropdown>`;
 
-```tsx
-import { Dropdown, Button } from "@wonderflow/react-components";
-
-export default () => {
-  return (
-    <Dropdown trigger={<Button>Open dropdown</Button>}>
-      <>
-        <p>Custom element</p>
-        <Button autoFocus dimension="small" kind="flat">
-          Another button
-        </Button>
-      </>
-    </Dropdown>
-  );
-};
-```
+<Playground scope={{ ...Components }} code={exampleCustom} />
 
 ### Keyboard interactions
 

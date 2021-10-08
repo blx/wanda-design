@@ -1,22 +1,16 @@
-import { memo, useState } from "react";
+import { useState } from "react";
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import dynamic from "next/dynamic";
-import {
-  Modal,
-  Button,
-  Stack,
-  Text,
-  Snackbar,
-} from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
 
 export const DynPortal = dynamic(
   import("@/components/portal").then((m) => m.Portal),
   { ssr: false }
 );
 
-export const ModalDemo = memo(() => {
+export const example = `() => {
   const [visible, setVisible] = useState(false);
   return (
     <>
@@ -48,14 +42,13 @@ export const ModalDemo = memo(() => {
       </DynPortal>
     </>
   );
-});
+}`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Modal"
     description="A window overlaid on either the primary window, rendering the content underneath inert."
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Focus is automatically trapped when modal",
@@ -74,9 +67,10 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea>
-        <ModalDemo />
-      </LiveArea>
+      <Playground
+        scope={{ ...components, useState, DynPortal }}
+        code={example}
+      />
     }
   >
     {children}

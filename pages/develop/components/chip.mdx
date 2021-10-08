@@ -1,29 +1,22 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Chip } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Chip color="blue" interactive>Chip text</Chip>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Chip"
     description="Dismissable tag elements"
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Multiple styles and sizes",
       "Dismissable",
       "Themes ready",
     ]}
-    hero={
-      <LiveArea>
-        <Chip>Chip text</Chip>
-        <Chip color="blue" interactive>
-          Chip text
-        </Chip>
-        <Chip color="yellow">Chip text</Chip>
-      </LiveArea>
-    }
+    hero={<Playground scope={{ ...components }} code={example} />}
   >
     {children}
   </MdxLayout>

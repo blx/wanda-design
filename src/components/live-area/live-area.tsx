@@ -14,6 +14,7 @@ export type LiveAreaProps = PropsWithClass & StackProps & {
 
 export const LiveArea: React.FC<LiveAreaProps> = ({
   children,
+  className,
   minHeight = '200px',
   maxHeight,
   style,
@@ -35,7 +36,7 @@ export const LiveArea: React.FC<LiveAreaProps> = ({
   return (
     <Stack
       ref={ref}
-      className={clsx(LiveAreaClass)}
+      className={clsx(LiveAreaClass, className)}
       wrap
       fill={false}
       horizontalAlign="center"

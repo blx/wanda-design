@@ -1,14 +1,15 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Title } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Title as="h3" level="3">Title</Title>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Title"
     description="Dynamic and fluid titles with control"
     showMeta
-    showPlayground
     features={[
       "Dynamic HTML tag",
       "Fully customizzable",
@@ -16,11 +17,7 @@ export default ({ children }) => (
       "Decoupled size and semantic",
       "Themes ready",
     ]}
-    hero={
-      <LiveArea>
-        <Title level="3">Title</Title>
-      </LiveArea>
-    }
+    hero={<Playground scope={{ ...components }} code={example} />}
   >
     {children}
   </MdxLayout>

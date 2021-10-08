@@ -1,21 +1,49 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import {
-  Tab,
-  Textfield,
-  Card,
-  Button,
-  Elevator,
-  Stack,
-} from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Elevator resting={1}>
+  <Card padding={false}>
+    <Tab.Root>
+      <Tab.Panel icon="check" label="Sign-up">
+        <Card>
+          <Stack rowGap={24}>
+            <Textfield label="Name" type="text" />
+            <Textfield label="E-Mail" type="email" />
+            <Textfield
+              label="Password"
+              type="password"
+              autoComplete="new-password"
+              id="new-password"
+            />
+            <Button>Submit</Button>
+          </Stack>
+        </Card>
+      </Tab.Panel>
+      <Tab.Panel icon="envelope" label="Login">
+        <Card>
+          <Stack rowGap={24}>
+            <Textfield label="E-Mail" type="email" />
+            <Textfield
+              label="Password"
+              type="password"
+              autoComplete="new-password"
+              id="new-password"
+            />
+            <Button>Submit</Button>
+          </Stack>
+        </Card>
+      </Tab.Panel>
+    </Tab.Root>
+  </Card>
+</Elevator>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Tab"
     description="A set of layered sections of content — known as tab panels — that are displayed one at a time."
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Supports automatic activation",
@@ -31,45 +59,7 @@ export default ({ children }) => (
         url: "https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel",
       },
     ]}
-    hero={
-      <LiveArea>
-        <Elevator resting={1}>
-          <Card padding={false}>
-            <Tab.Root>
-              <Tab.Panel icon="check" label="Sign-up">
-                <Card>
-                  <Stack rowGap={24}>
-                    <Textfield label="Name" type="text" />
-                    <Textfield label="E-Mail" type="email" />
-                    <Textfield
-                      label="Password"
-                      type="password"
-                      autoComplete="new-password"
-                      id="new-password"
-                    />
-                    <Button>Submit</Button>
-                  </Stack>
-                </Card>
-              </Tab.Panel>
-              <Tab.Panel icon="envelope" label="Login">
-                <Card>
-                  <Stack rowGap={24}>
-                    <Textfield label="E-Mail" type="email" />
-                    <Textfield
-                      label="Password"
-                      type="password"
-                      autoComplete="new-password"
-                      id="new-password"
-                    />
-                    <Button>Submit</Button>
-                  </Stack>
-                </Card>
-              </Tab.Panel>
-            </Tab.Root>
-          </Card>
-        </Elevator>
-      </LiveArea>
-    }
+    hero={<Playground scope={{ ...components }} code={example} />}
   >
     {children}
   </MdxLayout>

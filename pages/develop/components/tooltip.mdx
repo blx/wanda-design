@@ -1,14 +1,17 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Tooltip } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Tooltip trigger={<span>Hover me</span>}>
+  This is an extended description.
+</Tooltip>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Tooltip"
     description="A popup that displays information related to an element."
     showMeta
-    showPlayground
     features={[
       "Opens when the trigger is focused or hovered.",
       "Closes when the trigger is activated or when pressing escape.",
@@ -25,11 +28,11 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea direction="row">
-        <Tooltip trigger={<span tabIndex={0}>Hover me</span>}>
-          This is an extended description.
-        </Tooltip>
-      </LiveArea>
+      <Playground
+        liveAreaProps={{ direction: "row" }}
+        scope={{ ...components }}
+        code={example}
+      />
     }
   >
     {children}

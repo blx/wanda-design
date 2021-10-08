@@ -1,21 +1,14 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import { Checklist } from "@/components/checklist";
-import { Button } from "@wonderflow/react-components";
-
-import dynamic from "next/dynamic";
-export const DynLiveCode = dynamic(
-  import("@/components/live-code").then((m) => m.LiveCode),
-  { ssr: false }
-);
+import * as components from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Button"
     description="A button is a box area or text that communicates and triggers user actions when clicked."
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Focusable even when disabled",
@@ -34,9 +27,9 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <DynLiveCode
+      <Playground
         liveAreaProps={{ direction: "row" }}
-        scope={{ Button }}
+        scope={{ ...components }}
         code={`<Button>Button</Button>`}
       />
     }

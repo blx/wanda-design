@@ -1,14 +1,13 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { StarMeter } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Star meter"
     description="Visual representation of a star rating."
     showMeta
-    showPlayground
     features={[
       "Dynamic rounding",
       "Custom label",
@@ -27,9 +26,10 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea>
-        <StarMeter value={3.58} />
-      </LiveArea>
+      <Playground
+        scope={{ ...components }}
+        code={`<StarMeter value={3.58} />`}
+      />
     }
   >
     {children}

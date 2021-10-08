@@ -1,14 +1,23 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { ClampText } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<ClampText rows={3}>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis autem
+  quis qui nam excepturi libero laudantium rerum earum illo illum,
+  quisquam iure aperiam ipsam corporis inventore voluptas dignissimos
+  obcaecati modi! Voluptate nesciunt quibusdam sit? Nobis possimus harum
+  laboriosam iste facilis quas. Minus quod corporis recusandae assumenda
+  nobis architecto deleniti obcaecati ad, ipsam pariatur facere odit
+  possimus voluptatibus nostrum? Magnam, eum.
+</ClampText>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Clamp Text"
     description="Multiline text truncation"
     showMeta
-    showPlayground
     features={[
       "Multiple line truncation",
       "Text is fully selectable",
@@ -16,17 +25,15 @@ export default ({ children }) => (
       "Text is readable by AT",
     ]}
     hero={
-      <LiveArea direction="row" horizontalAlign="center" fill={false}>
-        <ClampText rows={3}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis autem
-          quis qui nam excepturi libero laudantium rerum earum illo illum,
-          quisquam iure aperiam ipsam corporis inventore voluptas dignissimos
-          obcaecati modi! Voluptate nesciunt quibusdam sit? Nobis possimus harum
-          laboriosam iste facilis quas. Minus quod corporis recusandae assumenda
-          nobis architecto deleniti obcaecati ad, ipsam pariatur facere odit
-          possimus voluptatibus nostrum? Magnam, eum.
-        </ClampText>
-      </LiveArea>
+      <Playground
+        liveAreaProps={{
+          direction: "row",
+          horizontalAlign: "center",
+          fill: false,
+        }}
+        scope={{ ...components }}
+        code={example}
+      />
     }
   >
     {children}
