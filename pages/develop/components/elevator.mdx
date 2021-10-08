@@ -1,31 +1,27 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Elevator } from "@wonderflow/react-components";
-import { Card } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Elevator resting={1} hover={4}>
+  <Card>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+    dolores, tempore quas labore officiis praesentium. Porro sed
+    dolorem, numquam temporibus.
+  </Card>
+</Elevator>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Elevator"
     description="Elevate you elements across the z axis"
     showMeta
-    showPlayground
     features={[
       "It doesn't generate any wrapper",
       "Follows Wanda elevations styles",
       "Elevation can change on hover",
     ]}
-    hero={
-      <LiveArea>
-        <Elevator resting={1} hover={4}>
-          <Card>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-            dolores, tempore quas labore officiis praesentium. Porro sed
-            dolorem, numquam temporibus.
-          </Card>
-        </Elevator>
-      </LiveArea>
-    }
+    hero={<Playground scope={{ ...components }} code={example} />}
   >
     {children}
   </MdxLayout>

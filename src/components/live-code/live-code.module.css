@@ -1,0 +1,31 @@
+.LiveCode {
+  position: relative;
+}
+
+.Editor {
+  border-radius: env(--radius-8);
+  font-size: env(--font-size-18);
+  margin-top: env(--space-8);
+
+  & > * {
+
+    /* stylelint-disable-next-line declaration-no-important */
+    padding: env(--space-24) !important;
+  }
+
+  & *::-moz-selection {
+    background-color: var(--dimmed-3);
+    text-shadow: none;
+  }
+
+  & *::selection {
+    background-color: var(--dimmed-3);
+    text-shadow: none;
+  }
+}
+
+.Toolbar {
+  position: absolute;
+  top: env(--space-8);
+  right: env(--space-8);
+}

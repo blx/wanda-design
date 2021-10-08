@@ -1,19 +1,19 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import {
-  Textfield,
-  Snackbar,
-  Button,
-  Stack,
-} from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Textfield
+  type="text"
+  label="Label"
+  defaultValue="Prefilled value"
+/>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Textfield"
     description="Text inputs enable the user to interact with and input content and data."
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Can contain icons",
@@ -33,14 +33,11 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea direction="row">
-        <Textfield
-          type="text"
-          id="filled"
-          label="Label"
-          defaultValue="Prefilled value"
-        />
-      </LiveArea>
+      <Playground
+        liveAreaProps={{ direction: "row" }}
+        scope={{ ...components }}
+        code={example}
+      />
     }
   >
     {children}
@@ -54,12 +51,7 @@ import { Textfield } from "@wonderflow/react-components";
 
 export default () => {
   return (
-    <Textfield
-      type="text"
-      id="filled"
-      label="Filled"
-      defaultValue="Prefilled value"
-    />
+    <Textfield type="text" label="Filled" defaultValue="Prefilled value" />
   );
 };
 ```

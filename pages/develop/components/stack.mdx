@@ -1,14 +1,27 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Stack, Button, Select } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Stack
+  columnGap={8}
+  direction="row"
+  horizontalAlign="center"
+  fill={false}
+>
+  <Select>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </Select>
+  <Button>Confirm</Button>
+</Stack>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Stack"
     description="Elements placing and spacing made easy"
     showMeta
-    showPlayground
     features={[
       "Content placement made easy",
       "Flex based",
@@ -16,21 +29,11 @@ export default ({ children }) => (
       "Nestable",
     ]}
     hero={
-      <LiveArea fill>
-        <Stack
-          columnGap={8}
-          direction="row"
-          horizontalAlign="center"
-          fill={false}
-        >
-          <Select>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </Select>
-          <Button>Confirm</Button>
-        </Stack>
-      </LiveArea>
+      <Playground
+        liveAreaProps={{ fill: true }}
+        scope={{ ...components }}
+        code={example}
+      />
     }
   >
     {children}

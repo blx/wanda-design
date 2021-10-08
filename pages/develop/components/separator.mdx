@@ -1,14 +1,13 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Separator } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Separator"
     description="Visual separation of content"
     showMeta
-    showPlayground
     features={["Fill the available space by default", "Themes ready"]}
     links={[
       {
@@ -17,9 +16,11 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea fill>
-        <Separator />
-      </LiveArea>
+      <Playground
+        liveAreaProps={{ fill: true }}
+        scope={{ ...components }}
+        code={`<Separator />`}
+      />
     }
   >
     {children}

@@ -1,14 +1,30 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Select } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Select defaultValue="placeholder" style={{ maxInlineSize: "30ch" }}>
+  <option value="placeholder" hidden disabled>
+    Pick an option
+  </option>
+  <optgroup label="Option Group One">
+    <option value="1">
+      This is a very long option selected which is truncated
+    </option>
+    <option value="2">Option 2</option>
+  </optgroup>
+  <optgroup label="Option Group Two">
+    <option value="3">Option 3</option>
+    <option value="4">Option 4</option>
+    <option value="5">Option 5</option>
+  </optgroup>
+</Select>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Select"
     description="The simplest way to pick an option from the list"
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Customizable icon",
@@ -25,26 +41,7 @@ export default ({ children }) => (
         url: "https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox",
       },
     ]}
-    hero={
-      <LiveArea>
-        <Select defaultValue="placeholder" style={{ maxInlineSize: "30ch" }}>
-          <option value="placeholder" hidden disabled>
-            Pick an option
-          </option>
-          <optgroup label="Option Group One">
-            <option value="1">
-              This is a very long option selected which is truncated
-            </option>
-            <option value="2">Option 2</option>
-          </optgroup>
-          <optgroup label="Option Group Two">
-            <option value="3">Option 3</option>
-            <option value="4">Option 4</option>
-            <option value="5">Option 5</option>
-          </optgroup>
-        </Select>
-      </LiveArea>
-    }
+    hero={<Playground scope={{ ...components }} code={example} />}
   >
     {children}
   </MdxLayout>

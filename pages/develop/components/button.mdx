@@ -1,15 +1,14 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import { Checklist } from "@/components/checklist";
-import { Button } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Button"
     description="A button is a box area or text that communicates and triggers user actions when clicked."
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Focusable even when disabled",
@@ -28,9 +27,11 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea direction="row">
-        <Button>Button</Button>
-      </LiveArea>
+      <Playground
+        liveAreaProps={{ direction: "row" }}
+        scope={{ ...components }}
+        code={`<Button>Button</Button>`}
+      />
     }
   >
     {children}

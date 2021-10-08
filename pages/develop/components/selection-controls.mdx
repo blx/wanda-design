@@ -1,14 +1,20 @@
+import { Fragment } from "react";
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Checkbox, Radio, Toggle, Text } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<>
+  <Checkbox defaultChecked />
+  <Radio defaultChecked />
+  <Toggle defaultChecked />
+</>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Selection controls"
     description="Content selection and toggles"
     showMeta
-    showPlayground
     features={["Keyboard accessible", "Multiple sizes", "Themes ready"]}
     links={[
       {
@@ -29,11 +35,13 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea direction="row">
-        <Checkbox defaultChecked />
-        <Radio defaultChecked />
-        <Toggle defaultChecked />
-      </LiveArea>
+      <Playground
+        liveAreaProps={{
+          direction: "row",
+        }}
+        scope={{ ...components }}
+        code={example}
+      />
     }
   >
     {children}

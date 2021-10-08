@@ -1,13 +1,12 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { IconButton } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
     title="Icon button"
     description="When the action a button invoke is so clear that needs no words, just an icon"
-    showPlayground
     showMeta
     features={[
       "Keyboard accessible",
@@ -26,9 +25,11 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea direction="row">
-        <IconButton icon="bell" />
-      </LiveArea>
+      <Playground
+        liveAreaProps={{ direction: "row" }}
+        scope={{ ...components }}
+        code={`<IconButton icon="bell" />`}
+      />
     }
   >
     {children}

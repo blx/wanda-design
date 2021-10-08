@@ -1,27 +1,22 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Icon } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Icon name="message" dimension={32} />`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Icon"
     description="Graphic elements that quickly and concisely convey information to the user."
     showMeta
-    showPlayground
     features={[
       "Scalable vector graphic",
       "Fully stylizable",
       "Multiple visual styles",
       "Auto adjust style based on rendering size",
     ]}
-    hero={
-      <LiveArea>
-        <Icon name="bell" dimension={32} />
-        <Icon name="plus" dimension={32} />
-        <Icon name="message" dimension={32} />
-      </LiveArea>
-    }
+    hero={<Playground scope={{ ...components }} code={example} />}
   >
     {children}
   </MdxLayout>

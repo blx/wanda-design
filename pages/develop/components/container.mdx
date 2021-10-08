@@ -1,14 +1,15 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Container } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Container dimension="large" className="ContainerEx"></Container>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Container"
     description="Who contains the content"
     showMeta
-    showPlayground
     features={[
       "Auto centering",
       "Predefined sizes",
@@ -16,9 +17,11 @@ export default ({ children }) => (
       "Fluid by default",
     ]}
     hero={
-      <LiveArea>
-        <Container dimension="large" className="ContainerEx"></Container>
-      </LiveArea>
+      <Playground
+        liveAreaProps={{ fill: true }}
+        scope={{ ...components }}
+        code={example}
+      />
     }
   >
     {children}

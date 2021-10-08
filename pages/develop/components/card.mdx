@@ -1,24 +1,21 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Card } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Card>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+  dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
+  numquam temporibus.
+</Card>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Card"
     description="Wrap your content with style"
     showMeta
-    showPlayground
     features={["Highly customizable", "Multiple slots", "Polymorphic"]}
-    hero={
-      <LiveArea>
-        <Card>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-          dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
-          numquam temporibus.
-        </Card>
-      </LiveArea>
-    }
+    hero={<Playground scope={{ ...components }} code={example} />}
   >
     {children}
   </MdxLayout>

@@ -1,14 +1,23 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Disclosure, Text } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Disclosure summary="Click to expand">
+  <Text maxWidth="60ch" dimmed={6}>
+    Cow ricotta hard cheese. Port-salut dolcelatte pecorino who moved my
+    cheese cheddar feta mozzarella camembert de normandie. Fondue fondue
+    cheese triangles cauliflower cheese lancashire edam croque monsieur
+    blue castello. Pecorino danish fontina ricotta cheddar emmental
+    pepper jack.
+  </Text>
+</Disclosure>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Disclosure"
     description="Interactive element to control the visiblity of content."
     showMeta
-    showPlayground
     features={[
       "Keyboard accessible",
       "Customizable icon position",
@@ -22,17 +31,14 @@ export default ({ children }) => (
       },
     ]}
     hero={
-      <LiveArea fill horizontalAlign="center">
-        <Disclosure summary="Click to expand">
-          <Text maxWidth="60ch" dimmed={6}>
-            Cow ricotta hard cheese. Port-salut dolcelatte pecorino who moved my
-            cheese cheddar feta mozzarella camembert de normandie. Fondue fondue
-            cheese triangles cauliflower cheese lancashire edam croque monsieur
-            blue castello. Pecorino danish fontina ricotta cheddar emmental
-            pepper jack.
-          </Text>
-        </Disclosure>
-      </LiveArea>
+      <Playground
+        liveAreaProps={{
+          horizontalAlign: "center",
+          fill: true,
+        }}
+        scope={{ ...components }}
+        code={example}
+      />
     }
   >
     {children}

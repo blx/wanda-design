@@ -1,30 +1,33 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Prose, Text, Title } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Prose>
+  <Title as="h1" level="4">
+    Title
+  </Title>
+  <Text>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+    dolores, tempore quas labore officiis praesentium.
+  </Text>
+</Prose>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Prose"
     description="Vertical rhythm for text content"
     showMeta
-    showPlayground
     features={[
       "Auto space titles and text content",
       "Useful for pages with many text elements",
     ]}
     hero={
-      <LiveArea maxHeight="50vh">
-        <Prose>
-          <Title as="h1" level="4">
-            Title
-          </Title>
-          <Text>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-            dolores, tempore quas labore officiis praesentium.
-          </Text>
-        </Prose>
-      </LiveArea>
+      <Playground
+        liveAreaProps={{ maxHeight: "50vh" }}
+        scope={{ ...components }}
+        code={example}
+      />
     }
   >
     {children}

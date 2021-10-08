@@ -21,6 +21,18 @@
   border-radius: env(--radius-8);
   font-size: env(--font-size-18);
   padding: env(--space-64) env(--space-24) env(--space-24);
+
+  & *::-moz-selection {
+    background-color: var(--dimmed-3);
+    color: inherit;
+    text-shadow: none;
+  }
+
+  & *::selection {
+    background-color: var(--dimmed-3);
+    color: inherit;
+    text-shadow: none;
+  }
 }
 
 .Toolbar {
@@ -29,7 +41,6 @@
   left: 0;
   right: 0;
   padding: env(--space-8) env(--space-8);
-  background-color: hsl(env(--color-primary-80));
   border-radius: env(--radius-8) env(--radius-8) 0 0;
   color: hsl(env(--color-primary-20));
 }

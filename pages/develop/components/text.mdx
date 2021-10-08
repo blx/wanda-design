@@ -1,29 +1,26 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { LiveArea } from "@/components/live-area";
+import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import { Text } from "@wonderflow/react-components";
+import * as components from "@wonderflow/react-components";
+
+export const example = `<Text>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+  dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
+  numquam temporibus.
+</Text>`;
 
 export default ({ children }) => (
   <MdxLayout
     title="Text"
     description="Dynamic and fluid typography with control"
     showMeta
-    showPlayground
     features={[
       "Dynamic HTML tag",
       "Fully customizzable",
       "Responsive text",
       "Themes ready",
     ]}
-    hero={
-      <LiveArea>
-        <Text>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-          dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
-          numquam temporibus.
-        </Text>
-      </LiveArea>
-    }
+    hero={<Playground scope={{ ...components }} code={example} />}
   >
     {children}
   </MdxLayout>
@@ -53,7 +50,7 @@ export default () => {
     },
     {
       name: "dimmed",
-      type: ["4", "5", "6", "7"],
+      type: ["5", "6", "7"],
       default: "",
       required: false,
       dangerous: false,

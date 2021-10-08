@@ -19,7 +19,6 @@ export const ThemeSwitcher = () => {
       onChange={({ currentTarget }) => setTheme(currentTarget.value)}
       value={currentTheme}
       icon={currentTheme === 'system' ? icon.system : icon[currentTheme]}
-      defaultValue={currentTheme}
       aria-label="Change color scheme"
     >
       <option value="light">Light</option>
