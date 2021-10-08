@@ -12,10 +12,9 @@ export type PlaygroundProps = LiveCodeProps & {}
 export const Playground = ({
   liveAreaProps,
   ...props
-}: PlaygroundProps) => {
-  return (
-    <>
-      <DynLiveCode liveAreaProps={liveAreaProps} {...props} />
-    </>
-  )
-}
+}: PlaygroundProps) => (
+  <DynLiveCode
+    liveAreaProps={liveAreaProps}
+    {...props}
+  />
+)
