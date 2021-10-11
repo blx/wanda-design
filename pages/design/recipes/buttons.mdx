@@ -103,3 +103,35 @@ Use **active** verbs or **nouns** with sentence-style capitalization. Generally,
   <HintCard isBad image="/design/recipes/buttons/content-2-dont.png" />
   <HintCard image="/design/recipes/buttons/content-2-do.png" />
 </Stack>
+
+### Button vs Links
+
+When designing, a recurrent question which pops up is: _'Should I use a link or a button component? Is it the same?'_
+
+There are two aspect to considering when working with buttons and links. The first one is the "appearance" of the element, the second one is the action associated with the element (use cases). These two factors can help while choosing between buttons and links.
+
+If you need to add a link that navigates to another page, then you should use a textual link or a link that looks like a button.
+
+If you need to trigger an action inside the current page, like a javascript action or to update the user interface, then you must use the button appearance plus the HTML `button` element.
+
+When an Assistive Technology (AT) encounters a link, the AT announces where the link leads. When an AT encounters a button, it just say that it's a button.
+
+Even if the button appearance can be applied to links between pages, we recommend to use textual link whenever possibile, and rely on the button style if the text link doesn't fit the requirements.
+
+<ThemedImg
+  alt="A table which sums up the different use case when to use link vs button"
+  src="/design/recipes/buttons/button-vs-link.png"
+/>
+
+```jsx
+// Triggers action on the same page
+<Button>Click</Button>;
+
+// Navigate to another page
+<Button as="a" href="...">
+  Go to...
+</Button>;
+
+// Navigate to another page
+<a href="...">Go to...</a>;
+```
