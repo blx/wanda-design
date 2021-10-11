@@ -1,3 +1,10 @@
+## [1.45.1](https://github.com/wonderflow-bv/design/compare/v1.45.0...v1.45.1) (2021-10-11)
+
+
+### Bug Fixes
+
+* add live code debounce ([0349366](https://github.com/wonderflow-bv/design/commit/034936637b6ee6af43cfd351a71e90a555e67bfa))
+
 # [1.45.0](https://github.com/wonderflow-bv/design/compare/v1.44.0...v1.45.0) (2021-10-08)
 
 
