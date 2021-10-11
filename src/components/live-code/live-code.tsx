@@ -6,6 +6,7 @@ import { LiveCode as LiveCodeClass, Editor, Toolbar } from './live-code.module.c
 import { IconButton, Tooltip, Stack, Dropdown, Snackbar, Text } from '@wonderflow/react-components'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useUIDSeed } from 'react-uid'
+import { useDebounce } from 'react-use'
 
 type LiveCodeComponentProps = {
   onEdit?: any;
@@ -92,10 +93,20 @@ export const LiveCode = ({
   language = 'jsx',
   liveAreaProps
 }: LiveCodeProps) => {
-  const [liveCode, setLiveCode] = useState(code)
+  const [liveCode, setLiveCode] = useState<string | undefined>(code)
+  const [debouncedLiveCode, setDebouncedLiveCode] = useState<string | undefined>(code)
+
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useDebounce(
+    () => {
+      setDebouncedLiveCode(liveCode)
+    },
+    350,
+    [liveCode]
+  )
 
   return (
-    <LiveProvider language={language} theme={theme} scope={scope} code={liveCode}>
+    <LiveProvider language={language} theme={theme} scope={scope} code={debouncedLiveCode}>
       <LiveComponent onRestore={() => setLiveCode(code)} onEdit={setLiveCode} liveAreaProps={liveAreaProps} />
     </LiveProvider>
   )
