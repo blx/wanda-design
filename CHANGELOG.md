@@ -1,3 +1,11 @@
+## [1.45.2](https://github.com/wonderflow-bv/design/compare/v1.45.1...v1.45.2) (2021-10-11)
+
+
+### Bug Fixes
+
+* **button-recipe:** button vs link ([#159](https://github.com/wonderflow-bv/design/issues/159)) ([3dc69e7](https://github.com/wonderflow-bv/design/commit/3dc69e73cf1476212ecff3d3ee14cafc163d35a6))
+* live code playground restoring ([f9773d0](https://github.com/wonderflow-bv/design/commit/f9773d023a1e4c498be719bf6245e9e0d7604146))
+
 ## [1.45.1](https://github.com/wonderflow-bv/design/compare/v1.45.0...v1.45.1) (2021-10-11)
 
 
