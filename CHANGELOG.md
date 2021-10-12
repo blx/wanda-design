@@ -1,3 +1,11 @@
+## [1.46.1](https://github.com/wonderflow-bv/design/compare/v1.46.0...v1.46.1) (2021-10-12)
+
+
+### Bug Fixes
+
+* **themed-img:** fix image sizes ([4229a21](https://github.com/wonderflow-bv/design/commit/4229a217da373381dc0abc3b1b2797362ff2be03))
+* update components ([c659e2a](https://github.com/wonderflow-bv/design/commit/c659e2a34d0ab15e6f4228ff5831f52bac39f9b2))
+
 # [1.46.0](https://github.com/wonderflow-bv/design/compare/v1.45.2...v1.46.0) (2021-10-12)
 
 
