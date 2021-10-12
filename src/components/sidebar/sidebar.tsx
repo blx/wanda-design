@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Sidebar as SidebarClass, Logo as LogoClass, Header } from './sidebar.module.css'
 import { Navigation } from '../navigation'
 import navigation from 'src/navigation'
+import { NavigationMenu } from 'types/navigation'
 
 export const Sidebar = () => {
   return (
@@ -16,7 +17,7 @@ export const Sidebar = () => {
           </a>
         </Link>
       </header>
-      <Navigation data={navigation} />
+      <Navigation data={navigation as NavigationMenu} />
     </Stack>
   )
 }
