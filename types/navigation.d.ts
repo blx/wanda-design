@@ -1,5 +1,6 @@
+import { IconNames } from '@wonderflow/react-components/icons/types'
 
-type NavigationItem = {
+export type NavigationItem = {
   path?: string | Url;
   label: string;
   target?: string;
@@ -9,9 +10,11 @@ type NavigationItem = {
   deprecated?: boolean;
 }
 
-type NavigationGroup = {
+export type NavigationGroup = {
   title?: string;
+  color?: string;
+  icon?: IconNames;
   items: NavigationItem[];
 }
 
-type Navigation = NavigationGroup[]
+export type NavigationMenu = NavigationGroup[]

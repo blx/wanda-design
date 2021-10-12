@@ -5,9 +5,10 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 import { NavigationLink } from './navigation.module.css'
+import { NavigationGroup, NavigationItem, NavigationMenu } from 'types/navigation'
 
 type NavigationProps = {
-  data: Navigation
+  data: NavigationMenu
 };
 
 export const Navigation = ({ data }: NavigationProps) => {
@@ -88,7 +89,7 @@ export const Navigation = ({ data }: NavigationProps) => {
 
         {index !== 0 && <Separator />}
 
-        <Tree.Group title={group.title}>
+        <Tree.Group icon={group.icon} color={group.color} title={group.title}>
           {renderGroup(group)}
         </Tree.Group>
       </Fragment>

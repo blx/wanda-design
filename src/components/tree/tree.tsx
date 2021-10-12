@@ -1,9 +1,12 @@
 import React, { ReactNode, Fragment } from 'react'
-import { Stack, Text, Disclosure } from '@wonderflow/react-components'
+import { Stack, Text, Disclosure, Icon } from '@wonderflow/react-components'
 import { Tree as TreeClass, Title, Li } from './tree.module.css'
+import { IconNames } from '@wonderflow/react-components/icons/types'
 
 type TreeGroupProps = {
   title?: ReactNode;
+  color?: string;
+  icon?: IconNames;
 }
 
 type MenuProps = {
@@ -17,9 +20,21 @@ export const Tree: {
   Menu: React.FC<MenuProps>
   Li: React.FC;
 } = {
-  Group: ({ children, title, ...props }) => (
+  Group: ({ children, title, icon, color = 'gray', ...props }) => (
     <Stack rowGap={16} verticalAlign="start" className={TreeClass} {...props}>
-      {title && <Text size={14} dimmed={5} className={Title}>{title}</Text>}
+      {title && (
+      <Text
+        style={{ color: `var(--highlight-${color}-foreground)` }}
+        size={14}
+        className={Title}
+        weight="bold"
+      >
+        <Stack columnGap={8} direction="row" inline>
+          {icon && <Icon name={icon} />}
+          {title}
+        </Stack>
+      </Text>
+      )}
       <Stack as="ul" rowGap={4}>
         {children}
       </Stack>

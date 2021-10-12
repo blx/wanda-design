@@ -1,6 +1,8 @@
 export default [
   {
     title: 'Get started',
+    color: 'purple',
+    icon: 'compass',
     items: [
       {
         path: '/get-started/introduction',
@@ -18,6 +20,8 @@ export default [
   },
   {
     title: 'Design',
+    icon: 'pc',
+    color: 'green',
     items: [
       {
         path: '/design/brand',
@@ -105,6 +109,8 @@ export default [
   },
   {
     title: 'Develop',
+    icon: 'code',
+    color: 'yellow',
     items: [
       {
         path: '/develop/installation',
