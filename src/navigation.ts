@@ -245,6 +245,13 @@ export default [
             deprecated: false
           },
           {
+            path: '/develop/components/info-state',
+            label: 'Info state',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/develop/components/list',
             label: 'List',
             target: '',
