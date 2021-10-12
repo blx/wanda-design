@@ -4,6 +4,8 @@ import { Separator, Stack, Text, Chip } from '@wonderflow/react-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
+import { NavigationLink } from './navigation.module.css'
+
 type NavigationProps = {
   data: Navigation
 };
@@ -20,7 +22,9 @@ export const Navigation = ({ data }: NavigationProps) => {
     (url: string, children: ReactNode, deprecated?: boolean) => (
       <Stack
         as="a"
+        className={NavigationLink}
         direction="row"
+        href={url}
         verticalAlign="end"
         columnGap={8}
         aria-current={includesPath(url) ? 'page' : undefined}
