@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import { LiveProvider, LiveEditor, withLive, LiveProviderProps } from 'react-live'
 import theme from '@/components/code-block/wonder-theme'
 import { LiveAreaProps, LiveArea } from '@/components/live-area'
@@ -25,14 +25,6 @@ const LiveCodeComponent = ({
 }: LiveCodeComponentProps) => {
   const [editorVisible, setEditorVisible] = useState(showEditor)
   const uid = useUIDSeed()
-
-  const handleEditorVisibility = useCallback(
-    () => {
-      setEditorVisible(!editorVisible)
-      onRestore()
-    },
-    [editorVisible, onRestore]
-  )
 
   return (
     <div className={LiveCodeClass}>
@@ -72,7 +64,7 @@ const LiveCodeComponent = ({
               aria-expanded={editorVisible}
               aria-pressed={editorVisible}
               aria-controls={uid('live-code-editor')}
-              onClick={handleEditorVisibility}
+              onClick={() => setEditorVisible(!editorVisible)}
               kind="flat"
               icon="play"
             />
