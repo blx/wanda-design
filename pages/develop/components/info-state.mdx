@@ -27,7 +27,13 @@ export default ({ children }) => (
       "Multiple directions",
       "Themes ready",
     ]}
-    hero={<Playground scope={{ ...components }} code={example} />}
+    hero={
+      <Playground
+        liveAreaProps={{ minHeight: "600px" }}
+        scope={{ ...components }}
+        code={example}
+      />
+    }
   >
     {children}
   </MdxLayout>
