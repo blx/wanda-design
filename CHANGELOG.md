@@ -1,3 +1,10 @@
+## [1.46.3](https://github.com/wonderflow-bv/design/compare/v1.46.2...v1.46.3) (2021-10-12)
+
+
+### Bug Fixes
+
+* navigation types ([df90fa1](https://github.com/wonderflow-bv/design/commit/df90fa1d7359732ed7913825905e01adf89ec63d))
+
 ## [1.46.2](https://github.com/wonderflow-bv/design/compare/v1.46.1...v1.46.2) (2021-10-12)
 
 
