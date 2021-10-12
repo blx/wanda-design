@@ -1,3 +1,15 @@
+# [1.46.0](https://github.com/wonderflow-bv/design/compare/v1.45.2...v1.46.0) (2021-10-12)
+
+
+### Bug Fixes
+
+* **live-code:** disable code restoration on editor closing ([142fce8](https://github.com/wonderflow-bv/design/commit/142fce8d562e63a2d527a90fcb19f23e4bc6590d))
+
+
+### Features
+
+* add info-state doc ([a02935e](https://github.com/wonderflow-bv/design/commit/a02935e651e3b47ae88812e375df6c6f4c27f6ca))
+
 ## [1.45.2](https://github.com/wonderflow-bv/design/compare/v1.45.1...v1.45.2) (2021-10-11)
 
 
