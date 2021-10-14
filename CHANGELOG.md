@@ -1,3 +1,17 @@
+# [1.47.0](https://github.com/wonderflow-bv/design/compare/v1.46.3...v1.47.0) (2021-10-14)
+
+
+### Bug Fixes
+
+* **info-state:** update doc ([e063cb4](https://github.com/wonderflow-bv/design/commit/e063cb430e6b95ca2a1c68ad5d864788ca1eefcd))
+* update installation doc ([da1cce8](https://github.com/wonderflow-bv/design/commit/da1cce8cb4fbb415e21ed0e611a3c2cb6f6935ea))
+
+
+### Features
+
+* add anchor scroll to live editor ([22d6c5c](https://github.com/wonderflow-bv/design/commit/22d6c5cde53e67f9149a72f333ae278b133ed63b))
+* add toggle-button doc ([#161](https://github.com/wonderflow-bv/design/issues/161)) ([d3f82af](https://github.com/wonderflow-bv/design/commit/d3f82af5196cab4a307f0a3de047c097df8d4d61))
+
 ## [1.46.3](https://github.com/wonderflow-bv/design/compare/v1.46.2...v1.46.3) (2021-10-12)
 
 
