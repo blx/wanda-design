@@ -64,7 +64,9 @@ const LiveCodeComponent = ({
               aria-expanded={editorVisible}
               aria-pressed={editorVisible}
               aria-controls={uid('live-code-editor')}
-              onClick={() => setEditorVisible(!editorVisible)}
+              onClick={() => {
+                setEditorVisible(!editorVisible)
+              }}
               kind="flat"
               icon="play"
             />
