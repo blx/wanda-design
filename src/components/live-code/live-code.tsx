@@ -61,6 +61,8 @@ const LiveCodeComponent = ({
         <Tooltip
           trigger={(
             <IconButton
+              as={!editorVisible ? 'a' : 'button'}
+              href={!editorVisible ? `#${uid('live-code-editor')}` : undefined}
               aria-expanded={editorVisible}
               aria-pressed={editorVisible}
               aria-controls={uid('live-code-editor')}
