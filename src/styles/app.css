@@ -1,5 +1,5 @@
 html {
-  scroll-padding: env(--space-80);
+  scroll-padding: env(--space-200);
 
   &[data-html-smooth='true'] {
     scroll-behavior: smooth;

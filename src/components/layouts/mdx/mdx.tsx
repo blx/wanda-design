@@ -95,7 +95,7 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
                     <Icon name="arrow-up-right" dimension={14} />
                   </a>
                   <a
-                    href="https://github.com/wonderflow-bv/react-components/issues/new/choose"
+                    href="https://github.com/wonderflow-bv/design/issues/new/choose"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

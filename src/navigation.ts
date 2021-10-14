@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Get started',
-    color: 'purple',
+    color: 'cyan',
     icon: 'compass',
     items: [
       {
@@ -351,6 +351,13 @@ export default [
           {
             path: '/develop/components/title',
             label: 'Title',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/develop/components/toggle-button',
+            label: 'Toggle button',
             target: '',
             wip: false,
             deprecated: false
