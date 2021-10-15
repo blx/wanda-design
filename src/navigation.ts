@@ -97,6 +97,13 @@ export default [
             deprecated: false
           },
           {
+            path: '/design/recipes/dropdown',
+            label: 'Dropdown',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/design/recipes/modals',
             label: 'Modals',
             target: '',
