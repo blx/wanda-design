@@ -1,3 +1,10 @@
+# [1.49.0](https://github.com/wonderflow-bv/design/compare/v1.48.0...v1.49.0) (2021-10-15)
+
+
+### Features
+
+* add spinner doc ([#164](https://github.com/wonderflow-bv/design/issues/164)) ([1c40801](https://github.com/wonderflow-bv/design/commit/1c4080179ce65f7c97a907f4d75c82a18413686e))
+
 # [1.48.0](https://github.com/wonderflow-bv/design/compare/v1.47.0...v1.48.0) (2021-10-15)
 
 
