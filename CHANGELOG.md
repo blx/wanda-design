@@ -1,3 +1,10 @@
+# [1.48.0](https://github.com/wonderflow-bv/design/compare/v1.47.0...v1.48.0) (2021-10-15)
+
+
+### Features
+
+* dropdown recipe ([#163](https://github.com/wonderflow-bv/design/issues/163)) ([354cec4](https://github.com/wonderflow-bv/design/commit/354cec475ceb5ba905ee532906e41401712b7b93))
+
 # [1.47.0](https://github.com/wonderflow-bv/design/compare/v1.46.3...v1.47.0) (2021-10-14)
 
 
