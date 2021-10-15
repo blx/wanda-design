@@ -314,6 +314,13 @@ export default [
             deprecated: false
           },
           {
+            path: '/develop/components/spinner',
+            label: 'Spinner',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/develop/components/stack',
             label: 'Stack',
             target: '',
