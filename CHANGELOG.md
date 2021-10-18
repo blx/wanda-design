@@ -1,3 +1,10 @@
+# [1.50.0](https://github.com/wonderflow-bv/design/compare/v1.49.0...v1.50.0) (2021-10-18)
+
+
+### Features
+
+* update dropdown doc ([#181](https://github.com/wonderflow-bv/design/issues/181)) ([c619138](https://github.com/wonderflow-bv/design/commit/c61913893911def5dc5dc3b33e37bce8ffb9a666))
+
 # [1.49.0](https://github.com/wonderflow-bv/design/compare/v1.48.0...v1.49.0) (2021-10-15)
 
 
