@@ -1,22 +1,37 @@
+import { useState } from "react";
 import { MdxLayout } from "@/components/layouts/mdx";
 import { Playground } from "@/components/playground";
 import { LiveArea } from "@/components/live-area";
 import { Props } from "@/components/props";
 import * as Components from "@wonderflow/react-components";
 
-export const example = `<Dropdown
-  placement="bottom-start"
-  trigger={<Button kind="flat">Open dropdown</Button>}
->
-  <Dropdown.Menu>
-    <Dropdown.Item icon="user">Item option 1</Dropdown.Item>
-    <Dropdown.Item icon="comment">Item option 2</Dropdown.Item>
-    <Separator />
-    <Dropdown.Item icon="right-from-bracket">
-      Item option 3
-    </Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>`;
+export const example = `() => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <Dropdown
+      placement="bottom-start"
+      trigger={<Button kind="flat">Open dropdown</Button>}
+    >
+      <Dropdown.Menu>
+        <Dropdown.Item icon="user">Item option 1</Dropdown.Item>
+        <Dropdown.ItemCheckbox
+          onClick={() => setChecked(val => !val)}
+          icon={checked && 'check'}
+          checked={checked}
+        >
+          Checkable option 2
+        </Dropdown.ItemCheckbox>
+        <Separator />
+        <Dropdown.Item icon="right-from-bracket">
+          Item option 3
+        </Dropdown.Item>
+        <Dropdown.Item disabled icon="right-from-bracket">
+          Disabled option 4
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}`;
 
 export default ({ children }) => (
   <MdxLayout
@@ -40,8 +55,8 @@ export default ({ children }) => (
     ]}
     hero={
       <Playground
-        scope={{ ...Components }}
-        liveAreaProps={{ minHeight: "400px" }}
+        scope={{ ...Components, useState }}
+        liveAreaProps={{ minHeight: "330px", verticalAlign: "start" }}
         code={example}
       />
     }
@@ -147,6 +162,14 @@ export default () => {
       description: "Set the element size",
     },
     {
+      name: "disabled",
+      type: ["boolean"],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Set the disabled state",
+    },
+    {
       name: "onClick",
       type: ["() => void"],
       default: "",
@@ -170,6 +193,23 @@ export default () => {
       dangerous: false,
       description:
         "Set the component to a different HTML tag or custom component",
+    },
+  ]}
+/>
+
+### Dropdown.ItemCheckbox
+
+The `Dropdown.ItemCheckbox` extends all the `Dropdown.Item` properties and adds the following ones:
+
+<Props
+  properties={[
+    {
+      name: "checked",
+      type: ["boolean"],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Set the checked status",
     },
   ]}
 />
