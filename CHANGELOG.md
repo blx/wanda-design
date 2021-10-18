@@ -1,3 +1,10 @@
+## [1.50.1](https://github.com/wonderflow-bv/design/compare/v1.50.0...v1.50.1) (2021-10-18)
+
+
+### Bug Fixes
+
+* update deps ([cb2b501](https://github.com/wonderflow-bv/design/commit/cb2b50108e0bacf8b3ff247d167277193f9f497c))
+
 # [1.50.0](https://github.com/wonderflow-bv/design/compare/v1.49.0...v1.50.0) (2021-10-18)
 
 
