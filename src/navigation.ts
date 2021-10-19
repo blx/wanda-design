@@ -107,7 +107,7 @@ export default [
             path: '/design/recipes/modals',
             label: 'Modals',
             target: '',
-            wip: true,
+            wip: false,
             deprecated: false
           }
         ]
