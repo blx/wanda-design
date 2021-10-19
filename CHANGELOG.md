@@ -1,3 +1,10 @@
+# [1.51.0](https://github.com/wonderflow-bv/design/compare/v1.50.2...v1.51.0) (2021-10-19)
+
+
+### Features
+
+* add modals recipe ([89f62cb](https://github.com/wonderflow-bv/design/commit/89f62cb080838b1983cf085d641ffbd9cfa0f614))
+
 ## [1.50.2](https://github.com/wonderflow-bv/design/compare/v1.50.1...v1.50.2) (2021-10-19)
 
 
