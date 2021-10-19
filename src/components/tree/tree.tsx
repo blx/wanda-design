@@ -35,7 +35,7 @@ export const Tree: {
         </Stack>
       </Text>
       )}
-      <Stack as="ul" rowGap={4}>
+      <Stack as="ul">
         {children}
       </Stack>
     </Stack>
@@ -53,7 +53,7 @@ export const Tree: {
             summary={<Text size={16} fluid={false}>{summary}</Text>}
             {...props}
           >
-            <Stack as="ul" rowGap={4}>
+            <Stack as="ul">
               {children}
             </Stack>
           </Disclosure>

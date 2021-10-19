@@ -8,7 +8,7 @@
   }
 
   & summary {
-    padding-left: env(--space-24);
+    padding: env(--space-4) env(--space-24);
   }
 
   & details ul {
@@ -24,16 +24,9 @@
 
 .Li {
   & > :is(a, span) {
-    padding: 0 env(--space-24);
+    padding: env(--space-4) env(--space-24);
     outline-offset: -2px;
     font-weight: 600;
-
-    /*
-    background: none;
-    font-weight: 600;
-    display: block;
-    outline-offset: -2px;
-    color: var(--global-foreground); */
   }
 
   & > :is(a) {
