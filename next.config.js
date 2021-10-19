@@ -43,6 +43,10 @@ module.exports = withPlugins([
       {
         source: '/develop/styles/',
         destination: '/develop/global-styles/'
+      },
+      {
+        source: '/design/foundations/iconography/',
+        destination: '/design/iconography/'
       }
     ]
   },

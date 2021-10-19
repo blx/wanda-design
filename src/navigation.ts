@@ -49,13 +49,6 @@ export default [
             deprecated: false
           },
           {
-            path: '/design/foundations/iconography',
-            label: 'Iconography',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
             path: '/design/foundations/elevations',
             label: 'Elevations',
             target: '',
@@ -70,6 +63,13 @@ export default [
             deprecated: false
           }
         ]
+      },
+      {
+        path: '/design/iconography',
+        label: 'Iconography',
+        target: '',
+        wip: false,
+        deprecated: false
       },
       {
         path: '/design/themes',
