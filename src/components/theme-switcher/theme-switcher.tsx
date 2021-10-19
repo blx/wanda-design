@@ -20,6 +20,7 @@ export const ThemeSwitcher = () => {
       value={currentTheme}
       icon={currentTheme === 'system' ? icon.system : icon[currentTheme]}
       aria-label="Change color scheme"
+      style={{ paddingBottom: 0 }}
     >
       <option value="light">Light</option>
       <option value="system">System</option>
