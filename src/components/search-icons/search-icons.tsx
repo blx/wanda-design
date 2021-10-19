@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Icon, Radio, Stack, Text, Textfield, Title, IconProps } from '@wonderflow/react-components'
+import { Icon, Radio, Stack, Text, Textfield, IconProps, InfoState } from '@wonderflow/react-components'
 import IconsList from '@wonderflow/react-components/icons/structure.json'
 import { useDebounce, useCopyToClipboard } from 'react-use'
 import { BlankButton } from '@/components/blank-button'
@@ -38,7 +38,7 @@ const IconTile: React.FC<IconTileProps> = ({ icon, size }) => {
     >
       <Stack horizontalAlign="center" verticalAlign="center" rowGap={16} fill={false}>
         <Icon className={IconPreview} name={icon} dimension={size} />
-        <Text size={14} weight="bold">{icon}</Text>
+        <Text size={14} textAlign="center" weight="bold">{icon}</Text>
       </Stack>
       {(state.value && copied) && <Text size={14} weight="bold" className={Label}>COPIED</Text>}
     </Stack>
@@ -102,10 +102,9 @@ export const SearchIcons = () => {
       <Bleed>
         { filteredIcons.length === 0
           ? (
-            <Stack horizontalAlign="center" verticalAlign="center" rowGap={16}>
-              <Title as="h2" level="5">Nothing to show</Title>
-              <Text color="informative">Make sure you entered the correct name.</Text>
-            </Stack>
+            <InfoState title="Nothing to show" icon="frown">
+              Make sure you entered the correct name.
+            </InfoState>
             )
           : (
             <div className={Grid}>

@@ -41,6 +41,13 @@
 .IconPreview {
   width: env(--space-24);
   height: env(--space-24);
+  transform: translateY(-80%);
+}
+
+.IconPreview + * {
+  position: absolute;
+  top: 65%;
+  padding: 0 env(--space-16);
 }
 
 .Label {
