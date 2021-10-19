@@ -1,3 +1,16 @@
+# [1.52.0](https://github.com/wonderflow-bv/design/compare/v1.51.0...v1.52.0) (2021-10-19)
+
+
+### Bug Fixes
+
+* update nav style ([b230cfb](https://github.com/wonderflow-bv/design/commit/b230cfba6ec4556fbc68a65f78e4783331af8f02))
+* update search-icons style ([ed6b72b](https://github.com/wonderflow-bv/design/commit/ed6b72bd6015726e18a84ebc499f3f04977816fd))
+
+
+### Features
+
+* move iconography outside foundations ([98c48a2](https://github.com/wonderflow-bv/design/commit/98c48a2830c71e1ee5910bea63129a0552aeb7c3))
+
 # [1.51.0](https://github.com/wonderflow-bv/design/compare/v1.50.2...v1.51.0) (2021-10-19)
 
 
