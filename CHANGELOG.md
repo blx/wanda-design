@@ -1,3 +1,62 @@
+## [1.53.7](https://github.com/wonderflow-bv/design/compare/v1.53.6...v1.53.7) (2021-10-20)
+
+
+### Bug Fixes
+
+* test style ([3beb9d6](https://github.com/wonderflow-bv/design/commit/3beb9d6bee2ca1119016c6b0827ebeba8699f493))
+* update wf ([0d4614d](https://github.com/wonderflow-bv/design/commit/0d4614d931857d5d47efadff9cedd1889f6b97c6))
+
+## [1.53.6](https://github.com/wonderflow-bv/design/compare/v1.53.5...v1.53.6) (2021-10-20)
+
+
+### Bug Fixes
+
+* update wf ([6a17ebd](https://github.com/wonderflow-bv/design/commit/6a17ebd58f7699b6d587158e2eb67c6d9b5cca91))
+* update wf ([8c45843](https://github.com/wonderflow-bv/design/commit/8c45843460dad61cd38c08675b5f0049b48f8b52))
+
+## [1.53.5](https://github.com/wonderflow-bv/design/compare/v1.53.4...v1.53.5) (2021-10-20)
+
+
+### Bug Fixes
+
+* test style ([5e2c230](https://github.com/wonderflow-bv/design/commit/5e2c2309f6f83a7331217774a25b9bda7535d171))
+
+## [1.53.4](https://github.com/wonderflow-bv/design/compare/v1.53.3...v1.53.4) (2021-10-20)
+
+
+### Bug Fixes
+
+* update wf ([b0654e5](https://github.com/wonderflow-bv/design/commit/b0654e5b1d770f37b63535958486503e5f12309a))
+
+## [1.53.3](https://github.com/wonderflow-bv/design/compare/v1.53.2...v1.53.3) (2021-10-20)
+
+
+### Bug Fixes
+
+* update fw ([fb3f5bf](https://github.com/wonderflow-bv/design/commit/fb3f5bfb88d2aabe29c98eec4516c68747963b4f))
+* update wf ([82aafaf](https://github.com/wonderflow-bv/design/commit/82aafafa8a37e82f218d4b3a5509bfe7fa40f040))
+
+## [1.53.2](https://github.com/wonderflow-bv/design/compare/v1.53.1...v1.53.2) (2021-10-20)
+
+
+### Bug Fixes
+
+* wf ([7988d84](https://github.com/wonderflow-bv/design/commit/7988d84a6ed5c5c66069aa5a91115c23b7b0969a))
+
+## [1.53.1](https://github.com/wonderflow-bv/design/compare/v1.53.0...v1.53.1) (2021-10-20)
+
+
+### Bug Fixes
+
+* update test style ([10c3ef1](https://github.com/wonderflow-bv/design/commit/10c3ef1f69631acd30bdc556ef2eb013e1b355d9))
+
+# [1.53.0](https://github.com/wonderflow-bv/design/compare/v1.52.2...v1.53.0) (2021-10-20)
+
+
+### Features
+
+* update wf ([0c52a04](https://github.com/wonderflow-bv/design/commit/0c52a04302f963df7e0a13699e3857645c6e3289))
+
 ## [1.52.2](https://github.com/wonderflow-bv/design/compare/v1.52.1...v1.52.2) (2021-10-20)
 
 

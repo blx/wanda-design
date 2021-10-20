@@ -1,19 +1,21 @@
-name: Continous Deployment
+name: Preview Deployment
 
 on:
-  release:
-    types: [published]
+  pull_request:
+    branches:
+      - "master"
+      - "next"
 
 jobs:
-  deploy:
-    name: Deploy Production
+  deploy_prev:
+    name: Deploy Preview
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v2
       - uses: amondnet/vercel-action@v20
         with:
           scope: wanda-team
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: "--prod"
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
