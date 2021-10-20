@@ -1,3 +1,10 @@
+## [1.52.4](https://github.com/wonderflow-bv/design/compare/v1.52.3...v1.52.4) (2021-10-20)
+
+
+### Bug Fixes
+
+* update button example ([e88604b](https://github.com/wonderflow-bv/design/commit/e88604b5893604bff0abd588cd0aac3e679786ad))
+
 ## [1.52.3](https://github.com/wonderflow-bv/design/compare/v1.52.2...v1.52.3) (2021-10-20)
 
 
