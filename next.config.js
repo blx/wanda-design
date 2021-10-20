@@ -35,25 +35,20 @@ module.exports = withPlugins([
   [withTranspileModules]
 ], {
   async rewrites () {
-    return {
-      fallback: [
-        // These rewrites are checked after headers/redirects
-        // and before all files including _next/public files which
-        // allows overriding page files
-        {
-          source: '/develop/themes',
-          destination: '/develop/using-themes'
-        },
-        {
-          source: '/develop/styles',
-          destination: '/develop/global-styles'
-        },
-        {
-          source: '/design/foundations/iconography',
-          destination: '/design/iconography'
-        }
-      ]
-    }
+    return [
+      {
+        source: '/develop/themes/',
+        destination: '/develop/using-themes/'
+      },
+      {
+        source: '/develop/styles/',
+        destination: '/develop/global-styles/'
+      },
+      {
+        source: '/design/foundations/iconography/',
+        destination: '/design/iconography/'
+      }
+    ]
   },
   distDir: 'build',
   trailingSlash: true,
