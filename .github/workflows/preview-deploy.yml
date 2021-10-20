@@ -3,8 +3,7 @@ name: Preview Deployment
 on:
   pull_request:
     branches:
-      - "master"
-      - "next"
+      - "main"
 
 jobs:
   deploy_prev:
