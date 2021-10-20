@@ -1,3 +1,10 @@
+## [1.52.5](https://github.com/wonderflow-bv/design/compare/v1.52.4...v1.52.5) (2021-10-20)
+
+
+### Bug Fixes
+
+* update vercel configuration ([e70213b](https://github.com/wonderflow-bv/design/commit/e70213b0cc2c16b71f19cc8b47930a82f956cbd7))
+
 ## [1.52.4](https://github.com/wonderflow-bv/design/compare/v1.52.3...v1.52.4) (2021-10-20)
 
 
