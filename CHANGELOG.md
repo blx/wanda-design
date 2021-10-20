@@ -1,3 +1,12 @@
+## [1.52.3](https://github.com/wonderflow-bv/design/compare/v1.52.2...v1.52.3) (2021-10-20)
+
+
+### Bug Fixes
+
+* remove test job from action ([44d68a1](https://github.com/wonderflow-bv/design/commit/44d68a10a874a300dac3dee582e0a2b00950961f))
+* remove test style ([#189](https://github.com/wonderflow-bv/design/issues/189)) ([1072017](https://github.com/wonderflow-bv/design/commit/10720170b8fff312d9631a60c53778c04b395dac))
+* update wf ([3583eab](https://github.com/wonderflow-bv/design/commit/3583eab8b5b4278ae70a4a8935b32933840f39b6))
+
 ## [1.53.7](https://github.com/wonderflow-bv/design/compare/v1.53.6...v1.53.7) (2021-10-20)
 
 
