@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "start": "next dev",
-    "build": "next build && next export -o dist",
+    "build": "next build",
     "lint": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "eslint \"src/**/*.{tsx,ts}\" \"pages/**/*.{tsx,ts}\"",
     "lint:styles": "stylelint src/**/*.css pages/**/*.css",
