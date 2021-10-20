@@ -1,3 +1,10 @@
+## [1.52.1](https://github.com/wonderflow-bv/design/compare/v1.52.0...v1.52.1) (2021-10-20)
+
+
+### Bug Fixes
+
+* update rewrites ([c55eafe](https://github.com/wonderflow-bv/design/commit/c55eafef2533d9b1dfd030c667a8559c9ac79edc))
+
 # [1.52.0](https://github.com/wonderflow-bv/design/compare/v1.51.0...v1.52.0) (2021-10-19)
 
 
