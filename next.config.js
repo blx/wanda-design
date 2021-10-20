@@ -50,7 +50,6 @@ module.exports = withPlugins([
       }
     ]
   },
-  distDir: 'build',
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx']
 })
