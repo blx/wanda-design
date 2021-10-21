@@ -1,3 +1,10 @@
+## [1.54.1](https://github.com/wonderflow-bv/design/compare/v1.54.0...v1.54.1) (2021-10-21)
+
+
+### Bug Fixes
+
+* 404 ([1a4ce37](https://github.com/wonderflow-bv/design/commit/1a4ce37701e1b349ef7faed36419e09c34f38700))
+
 # [1.54.0](https://github.com/wonderflow-bv/design/compare/v1.53.0...v1.54.0) (2021-10-21)
 
 
