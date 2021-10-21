@@ -1,3 +1,10 @@
+# [1.54.0](https://github.com/wonderflow-bv/design/compare/v1.53.0...v1.54.0) (2021-10-21)
+
+
+### Features
+
+* add custom 404 ([56c3b75](https://github.com/wonderflow-bv/design/commit/56c3b75bd3ec53cd8346c04d83350c1d1e6ec73c))
+
 # [1.53.0](https://github.com/wonderflow-bv/design/compare/v1.52.5...v1.53.0) (2021-10-21)
 
 
