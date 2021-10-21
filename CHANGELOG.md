@@ -1,3 +1,10 @@
+# [1.53.0](https://github.com/wonderflow-bv/design/compare/v1.52.5...v1.53.0) (2021-10-21)
+
+
+### Features
+
+* add info-state recipe ([#190](https://github.com/wonderflow-bv/design/issues/190)) ([9a56c0b](https://github.com/wonderflow-bv/design/commit/9a56c0b72cb2ff937480595a02a53d6ceaeb03d5))
+
 ## [1.52.5](https://github.com/wonderflow-bv/design/compare/v1.52.4...v1.52.5) (2021-10-20)
 
 
