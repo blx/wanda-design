@@ -33,7 +33,9 @@ export const Custom404 = () => {
         iconColor="red"
         actions={<Link href="/"><Button as="a">Start from the home</Button></Link>}
       >
-        <Text as="span" maxWidth="40ch" textAlign="center">We&apos;re not able to find the requested page or you entered an invalid link.</Text>
+        <Text as="span" style={{ display: 'block' }} maxWidth="40ch" textAlign="center">
+          We&apos;re not able to find the requested page or you entered an invalid link.
+        </Text>
       </InfoState>
     </Stack>
   )
