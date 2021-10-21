@@ -3,7 +3,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { CodeBlock } from '@/components/code-block'
 import { Title, Text, Separator, IdProvider, List } from '@wonderflow/react-components'
 import { ThemeProvider } from 'next-themes'
-import NextNprogress from 'nextjs-progressbar'
+import NextProgress from 'next-progress'
 import { useRouter } from 'next/router'
 import NextScript from 'next/script'
 import { AnimatePresence } from 'framer-motion'
@@ -65,16 +65,7 @@ const App = ({ Component, pageProps }: any) => {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <NextScript id="docsearch-core" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" strategy="beforeInteractive" />
-      <NextNprogress
-        color="var(--cta-default)"
-        startPosition={0.3}
-        stopDelayMs={100}
-        height={2}
-        showOnShallow
-        options={{
-          showSpinner: false
-        }}
-      />
+      <NextProgress delay={300} color="var(--cta-default)" options={{ showSpinner: false, minimum: 0.3 }} />
       <AnimatePresence
         exitBeforeEnter
         initial={false}

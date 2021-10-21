@@ -5,11 +5,15 @@ import { ThemedImg as ThemedImgClass } from './themed-img.module.css'
 export type ThemedImgProps = ImgHTMLAttributes<HTMLImageElement> & {
   src: string;
   alt?: string;
+  width?: string;
+  height?: string;
 }
 
 export const ThemedImg = ({
   src,
   alt,
+  width = '770',
+  height = '370',
   ...props
 }: ThemedImgProps) => {
   const [mounted, setMounted] = useState(false)
@@ -33,8 +37,8 @@ export const ThemedImg = ({
       <img
         loading="lazy"
         decoding="async"
-        width="770"
-        height="370"
+        width={width}
+        height={height}
         src={(resolvedTheme === 'light') ? lightSrc : darkSrc}
         alt={alt || ''}
         {...props}

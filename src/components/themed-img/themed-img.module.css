@@ -2,6 +2,6 @@
   display: block;
 
   & img {
-    width: 100%;
+    inline-size: 100%;
   }
 }

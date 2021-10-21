@@ -90,6 +90,13 @@ export default [
             deprecated: false
           },
           {
+            path: '/design/recipes/dropdown',
+            label: 'Dropdown',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/design/recipes/forms',
             label: 'Forms',
             target: '',
@@ -97,8 +104,8 @@ export default [
             deprecated: false
           },
           {
-            path: '/design/recipes/dropdown',
-            label: 'Dropdown',
+            path: '/design/recipes/info-states',
+            label: 'Info states',
             target: '',
             wip: false,
             deprecated: false

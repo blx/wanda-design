@@ -3,7 +3,10 @@ import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import * as components from "@wonderflow/react-components";
 
-export const example = `<Card>
+export const example = `<Card
+  left={<Icon name="message" dimension={32} />}
+  right={<Icon name="compass" dimension={32} />}
+>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
   dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
   numquam temporibus.
