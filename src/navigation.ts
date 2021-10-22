@@ -1,4 +1,4 @@
-export default [
+const routes = [
   {
     title: 'Get started',
     color: 'cyan',
@@ -395,3 +395,5 @@ export default [
     ]
   }
 ]
+
+export default routes
