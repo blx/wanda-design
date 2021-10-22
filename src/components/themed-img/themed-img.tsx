@@ -1,27 +1,28 @@
 import React, { ImgHTMLAttributes, useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { ThemedImg as ThemedImgClass } from './themed-img.module.css'
+import Image from 'next/image'
 
 export type ThemedImgProps = ImgHTMLAttributes<HTMLImageElement> & {
   src: string;
   alt?: string;
-  width?: string;
-  height?: string;
+  width?: string | number;
+  height?: string | number;
 }
 
 export const ThemedImg = ({
   src,
   alt,
-  width = '770',
-  height = '370',
-  ...props
+  width = '730',
+  height = '314'
 }: ThemedImgProps) => {
   const [mounted, setMounted] = useState(false)
+  const [naturalHeight, setNaturalHeight] = useState(height)
   const { resolvedTheme } = useTheme()
   const srcParts = src.split('.')
   const lightSrc = `${srcParts[0]}-light.${srcParts[1]}`
   const darkSrc = `${srcParts[0]}-dark.${srcParts[1]}`
-  // When mounted on client, now we can show the UI
+
   useEffect(() => setMounted(true), [])
 
   if (!mounted) return null
@@ -34,15 +35,16 @@ export const ThemedImg = ({
           media="(prefers-color-scheme: dark)"
         />
       )}
-      <img
-        loading="lazy"
-        decoding="async"
-        width={width}
-        height={height}
-        src={(resolvedTheme === 'light') ? lightSrc : darkSrc}
-        alt={alt || ''}
-        {...props}
-      />
+      {mounted && (
+        <Image
+          onLoadingComplete={({ naturalHeight }) => setNaturalHeight(naturalHeight)}
+          width={width}
+          quality={100}
+          height={naturalHeight || height}
+          src={(resolvedTheme === 'light') ? lightSrc : darkSrc}
+          alt={alt || ''}
+        />
+      )}
     </picture>
   )
 }

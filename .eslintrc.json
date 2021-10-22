@@ -1,5 +1,5 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["@wonderflow/eslint-config"],
+  "extends": ["next", "@wonderflow/eslint-config"],
   "plugins": ["@next/eslint-plugin-next", "@typescript-eslint"]
 }
