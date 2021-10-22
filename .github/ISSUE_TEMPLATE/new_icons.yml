@@ -12,7 +12,7 @@ body:
   - type: textarea
     id: icons-list
     attributes:
-      label: Component name
+      label: Icon names
       description: "We need to add a new icons to represent these purposes/actions/topics:"
       value: |
         - User
