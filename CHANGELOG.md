@@ -1,3 +1,10 @@
+## [1.54.2](https://github.com/wonderflow-bv/design/compare/v1.54.1...v1.54.2) (2021-10-22)
+
+
+### Bug Fixes
+
+* update themed-image to next Image ([6e9d151](https://github.com/wonderflow-bv/design/commit/6e9d151f68c7c3289bbb5daa0f90f48288972ea4))
+
 ## [1.54.1](https://github.com/wonderflow-bv/design/compare/v1.54.0...v1.54.1) (2021-10-21)
 
 
