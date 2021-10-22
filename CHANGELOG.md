@@ -1,3 +1,10 @@
+## [1.54.3](https://github.com/wonderflow-bv/design/compare/v1.54.2...v1.54.3) (2021-10-22)
+
+
+### Bug Fixes
+
+* update routes syntax ([bf06aac](https://github.com/wonderflow-bv/design/commit/bf06aac5d30ccf9dece94a5f2afa78bf4a53b810))
+
 ## [1.54.2](https://github.com/wonderflow-bv/design/compare/v1.54.1...v1.54.2) (2021-10-22)
 
 
