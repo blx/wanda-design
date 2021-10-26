@@ -1,3 +1,11 @@
+# [1.55.0](https://github.com/wonderflow-bv/design/compare/v1.54.3...v1.55.0) (2021-10-26)
+
+
+### Features
+
+* add CircularProgress doc ([0aa9f54](https://github.com/wonderflow-bv/design/commit/0aa9f5417dd5226dbaaf050ea0fdd61dadb279e2))
+* add LinearProgress and Avatar doc ([#196](https://github.com/wonderflow-bv/design/issues/196)) ([3f811b9](https://github.com/wonderflow-bv/design/commit/3f811b92e8160c7fe68c99ee94c6a5f83217070b))
+
 ## [1.54.3](https://github.com/wonderflow-bv/design/compare/v1.54.2...v1.54.3) (2021-10-22)
 
 
