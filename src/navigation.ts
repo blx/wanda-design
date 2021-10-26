@@ -222,6 +222,12 @@ const routes = [
             wip: false
           },
           {
+            path: '/develop/components/circular-progress',
+            label: 'Circular progress',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/clamp-text',
             label: 'Clamp text',
             target: '',

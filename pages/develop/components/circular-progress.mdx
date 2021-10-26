@@ -3,21 +3,15 @@ import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import * as components from "@wonderflow/react-components";
 
-export const example = `<LinearProgress value={30} />`;
+export const example = `<CircularProgress value={70} showProgress />`;
 
 export default ({ children }) => (
   <MdxLayout
-    title="Linear progress"
-    description="Indicates determinate and indeterminate loading status"
+    title="Circular progress"
+    description="Indicates determinate loading status"
     showMeta
-    features={["Supports determinate and indeterminate states", "Themes ready"]}
-    hero={
-      <Playground
-        liveAreaProps={{ fill: true }}
-        scope={{ ...components }}
-        code={example}
-      />
-    }
+    features={["Multiple sizes", "Themes ready"]}
+    hero={<Playground scope={{ ...components }} code={example} />}
     links={[
       {
         label: "ARIA design",
@@ -32,10 +26,10 @@ export default ({ children }) => (
 ## Anatomy
 
 ```tsx highlight=1,4
-import { LinearProgress } from "@wonderflow/react-components";
+import { CircularProgress } from "@wonderflow/react-components";
 
 export default () => {
-  return <LinearProgress />;
+  return <CircularProgress value={70} />;
 };
 ```
 
@@ -47,10 +41,9 @@ export default () => {
       name: "value",
       type: ["number"],
       default: "",
-      required: false,
+      required: true,
       dangerous: false,
-      description:
-        "Define the current progress value. If missing the indeterminate status is activated.",
+      description: "Define the current progress value",
     },
     {
       name: "max",
