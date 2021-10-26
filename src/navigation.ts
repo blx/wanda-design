@@ -198,6 +198,12 @@ const routes = [
         target: '',
         items: [
           {
+            path: '/develop/components/avatar',
+            label: 'Avatar',
+            target: '',
+            wip: false
+          },
+          {
             path: '/develop/components/button',
             label: 'Button',
             target: '',
@@ -281,6 +287,13 @@ const routes = [
           {
             path: '/develop/components/modal',
             label: 'Modal',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/develop/components/linear-progress',
+            label: 'Linear progress',
             target: '',
             wip: false,
             deprecated: false
