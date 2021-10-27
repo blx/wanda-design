@@ -333,6 +333,13 @@ const routes = [
             deprecated: false
           },
           {
+            path: '/develop/components/skeleton-block',
+            label: 'Skeleton block',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/develop/components/snackbar',
             label: 'Snackbar',
             target: '',
