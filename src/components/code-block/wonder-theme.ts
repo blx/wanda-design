@@ -1,107 +1,105 @@
-import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 import { PrismTheme } from 'prism-react-renderer'
 
 const theme: PrismTheme = {
   plain: {
-    color: `hsl(${tkns.color.primary['5']})`,
-    backgroundColor: `hsl(${tkns.color.primary[90]})`
+    color: 'var(--global-foreground)'
   },
   styles: [{
     types: ['changed'],
     style: {
-      color: `hsl(${tkns.color.blue[80]})`,
+      color: 'var(--highlight-blue-foreground)',
       fontStyle: 'italic'
     }
   }, {
     types: ['deleted'],
     style: {
-      color: `hsl(${tkns.color.red[20]})`,
+      color: 'var(--highlight-red-foreground)',
       fontStyle: 'italic'
     }
   }, {
     types: ['inserted', 'attr-name'],
     style: {
-      color: `hsl(${tkns.color.red[20]})`,
+      color: 'var(--highlight-red-foreground)',
       fontStyle: 'italic'
     }
   }, {
     types: ['comment'],
     style: {
-      color: `hsl(${tkns.color.primary[40]})`,
+      color: 'var(--dimmed-5)',
       fontStyle: 'italic'
     }
   }, {
     types: ['string', 'url'],
     style: {
-      color: `hsl(${tkns.color.green[10]})`
+      color: 'var(--highlight-green-foreground)'
     }
   }, {
     types: ['variable'],
     style: {
-      color: `hsl(${tkns.color.support.white})`
+      color: 'var(--global-foreground)'
     }
   }, {
     types: ['number'],
     style: {
-      color: `hsl(${tkns.color.yellow[20]})`
+      color: 'var(--highlight-yellow-foreground)'
     }
   }, {
     types: ['builtin', 'char', 'constant'],
     style: {
-      color: `hsl(${tkns.color.cyan[20]})`
+      color: 'var(--highlight-cyan-foreground)'
     }
   }, {
     types: ['function'],
     style: {
-      color: `hsl(${tkns.color.blue[10]})`
+      color: 'var(--highlight-blue-foreground)'
     }
   }, {
     types: ['constant'],
     style: {
-      color: `hsl(${tkns.color.blue[20]})`
+      color: 'var(--highlight-blue-foreground)'
     }
   }, {
     // This was manually added after the auto-generation
     // so that punctuations are not italicised
     types: ['punctuation', 'operator'],
     style: {
-      color: `hsl(${tkns.color.purple[20]})`
+      color: 'var(--highlight-purple-foreground)'
     }
   }, {
     types: ['selector', 'doctype'],
     style: {
-      color: `hsl(${tkns.color.red[20]})`,
+      color: 'var(--highlight-red-foreground)',
       fontStyle: 'italic'
     }
   }, {
     types: ['class-name'],
     style: {
-      color: `hsl(${tkns.color.cyan[20]})`
+      color: 'var(--highlight-cyan-foreground)'
     }
   }, {
     types: ['tag'],
     style: {
-      color: `hsl(${tkns.color.green[10]})`
+      color: 'var(--highlight-green-foreground)'
     }
   }, {
     types: ['keyword', 'atrule'],
     style: {
-      color: `hsl(${tkns.color.red[20]})`
+      color: 'var(--highlight-red-foreground)'
     }
   }, {
     types: ['boolean'],
     style: {
-      color: `hsl(${tkns.color.red[20]})`
+      color: 'var(--highlight-red-foreground)'
     }
   }, {
     types: ['property'],
     style: {
-      color: `hsl(${tkns.color.cyan[20]})`
+      color: 'var(--highlight-cyan-foreground)'
     }
   }, {
     types: ['namespace'],
     style: {
-      color: `hsl(${tkns.color.primary[60]})`
+      color: 'var(--dimmed-8)'
     }
   }]
 }
