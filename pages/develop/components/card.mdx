@@ -6,6 +6,7 @@ import * as components from "@wonderflow/react-components";
 export const example = `<Card
   left={<Icon name="message" dimension={32} />}
   right={<Icon name="compass" dimension={32} />}
+  bordered
 >
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
   dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
@@ -111,6 +112,14 @@ export default () => {
       required: false,
       dangerous: false,
       description: "Set the dimmed background",
+    },
+    {
+      name: "bordered",
+      type: ["boolean"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Set a small border on the card",
     },
     {
       name: "as",
