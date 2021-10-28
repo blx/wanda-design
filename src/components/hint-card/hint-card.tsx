@@ -21,7 +21,9 @@ export const HintCard: React.FC<HintCardProps> = ({
   return (
     <Stack
       as="figure"
+      fill={false}
       className={HintCardClass}
+      verticalAlign="start"
       data-isbad={isBad}
       rowGap={8}
     >

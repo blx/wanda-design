@@ -1,8 +1,6 @@
 .HintCard {
   --accent: var(--highlight-green-foreground);
 
-  display: block;
-
   &[data-isbad='true'] {
     --accent: var(--highlight-red-foreground);
   }

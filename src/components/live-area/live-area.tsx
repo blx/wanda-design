@@ -18,6 +18,7 @@ export const LiveArea: React.FC<LiveAreaProps> = ({
   minHeight = '200px',
   maxHeight,
   style,
+  direction = 'row',
   live = true,
   ...props
 }) => {
@@ -41,7 +42,7 @@ export const LiveArea: React.FC<LiveAreaProps> = ({
       fill={false}
       horizontalAlign="center"
       verticalAlign="center"
-      direction="row"
+      direction={direction}
       columnGap={16}
       rowGap={16}
       style={{ ...dynamicStyle, ...style }}

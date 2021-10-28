@@ -111,6 +111,13 @@ const routes = [
             deprecated: false
           },
           {
+            path: '/design/recipes/loading',
+            label: 'Loading',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/design/recipes/modals',
             label: 'Modals',
             target: '',
