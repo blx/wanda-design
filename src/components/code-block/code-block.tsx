@@ -49,20 +49,18 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
               </Button>
             </Stack>
 
-            <pre className={clsx(Code, className)} style={{ ...style }}>
-              <div ref={CodeRef}>
-                {tokens.map((line, i) => (
-                  <div
-                    key={i}
-                    data-code-block-highlight={highlight && rangeParser(highlight).includes(i + 1)}
-                    {...getLineProps({ line, key: i })}
-                  >
-                    {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                ))}
-              </div>
+            <pre ref={CodeRef} className={clsx(Code, className)} style={{ ...style }}>
+              {tokens.map((line, i) => (
+                <div
+                  key={i}
+                  data-code-block-highlight={highlight && rangeParser(highlight).includes(i + 1)}
+                  {...getLineProps({ line, key: i })}
+                >
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
             </pre>
           </>
         )}

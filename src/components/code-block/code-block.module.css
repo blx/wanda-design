@@ -3,6 +3,7 @@
 .CodeBlock {
   position: relative;
   font-family: env(--font-family-mono);
+  display: grid;
   margin: env(--space-32) 0;
 
   @media (--from-small) {
