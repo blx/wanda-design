@@ -1,3 +1,11 @@
+## [1.56.3](https://github.com/wonderflow-bv/design/compare/v1.56.2...v1.56.3) (2021-10-29)
+
+
+### Bug Fixes
+
+* **code-block:** update focus style ([afd2200](https://github.com/wonderflow-bv/design/commit/afd220040c36157ee399c41ab8bac92c53cabf62))
+* update deps ([feac4e6](https://github.com/wonderflow-bv/design/commit/feac4e662d1aa21e792f8b6026965058db4f8f44))
+
 ## [1.56.2](https://github.com/wonderflow-bv/design/compare/v1.56.1...v1.56.2) (2021-10-29)
 
 
