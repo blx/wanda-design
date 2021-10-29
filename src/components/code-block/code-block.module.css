@@ -5,9 +5,10 @@
   font-family: env(--font-family-mono);
   display: grid;
   margin: env(--space-32) 0;
+  font-size: 0.9em;
 
   @media (--from-small) {
-    font-size: 1em;
+    font-size: env(--font-size-18);
   }
 
   &[data-code-block-has-highlight='true'] [data-code-block-highlight='false'] {
@@ -19,7 +20,6 @@
 
 .Code {
   overflow: auto;
-  font-size: env(--font-size-18);
   padding: env(--space-64) env(--space-24) env(--space-24);
   border: 1px solid var(--dimmed-1);
   border-radius: env(--radius-8);
