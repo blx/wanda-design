@@ -25,10 +25,19 @@
     "noUnusedParameters": true,
     "jsx": "preserve",
     "baseUrl": "./",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
     "paths": {
-      "@/styles/*": ["src/styles/*"],
-      "@/components/*": ["src/components/*"]
+      "@/styles/*": [
+        "src/styles/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ]
     },
   },
   "exclude": [

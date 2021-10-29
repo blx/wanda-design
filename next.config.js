@@ -52,4 +52,7 @@ module.exports = withPlugins([
   },
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx'],
+  experimental: {
+    esmExternals: false
+  }
 })
