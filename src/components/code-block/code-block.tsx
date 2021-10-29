@@ -6,17 +6,19 @@ import rangeParser from 'parse-numeric-range'
 import React, { useCallback, useRef } from 'react'
 import { useCopyToClipboard } from 'react-use'
 
-import { CodeBlock as CodeBlockClass, Action, Code, Toolbar } from './code-block.module.css'
+import { CodeBlock as CodeBlockClass, Action, Code, Toolbar, LineNumber, LineContent } from './code-block.module.css'
 import theme from './wonder-theme'
 
 type CodeBlockProps = {
   children: any;
   highlight?: string;
+  showLineNumbers?: boolean;
 } & PropsWithClass
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({
   children,
   highlight,
+  showLineNumbers = false,
   className
 }) => {
   const language = className?.replace(/language-/, '') as Language
@@ -37,6 +39,29 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
           className, style, tokens, getLineProps, getTokenProps
         }) => (
           <>
+            <pre ref={CodeRef} className={clsx(Code, className)} style={{ ...style }}>
+              {tokens.map((line, i) => (
+                // Line
+                <div
+                  key={i}
+                  style={{ display: 'table-row' }}
+                  data-code-block-highlight={highlight && rangeParser(highlight).includes(i + 1)}
+                  {...getLineProps({ line, key: i })}
+                >
+                  {/* Line number */}
+                  {showLineNumbers && (
+                    <span className={LineNumber}>
+                      {i + 1}
+                    </span>
+                  )}
+                  <span className={LineContent}>
+                    {line.map((token, key) => (
+                      <span key={key} {...getTokenProps({ token, key })} />
+                    ))}
+                  </span>
+                </div>
+              ))}
+            </pre>
             <Stack direction="row" fill={false} horizontalAlign="space-between" verticalAlign="center" className={Toolbar}>
               {language && <Text fluid={false} size={14}>{language}</Text>}
               <Button
@@ -48,20 +73,6 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
                 Copy
               </Button>
             </Stack>
-
-            <pre ref={CodeRef} className={clsx(Code, className)} style={{ ...style }}>
-              {tokens.map((line, i) => (
-                <div
-                  key={i}
-                  data-code-block-highlight={highlight && rangeParser(highlight).includes(i + 1)}
-                  {...getLineProps({ line, key: i })}
-                >
-                  {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              ))}
-            </pre>
           </>
         )}
       </Highlight>
