@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/wonderflow-bv/design.git"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "keywords": [
     "design-system",
     "wonderflow",
@@ -40,7 +43,7 @@
     "@next/bundle-analyzer": "12.0.1",
     "@next/mdx": "11.1.2",
     "@semantic-release/changelog": "6.0.0",
-    "@wonderflow/react-components": "2.33.0",
+    "@wonderflow/react-components": "2.33.1-next.2",
     "body-scroll-lock": "4.0.0-beta.0",
     "clsx": "1.1.1",
     "color-contrast-checker": "1.5.0",

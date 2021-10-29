@@ -7,8 +7,15 @@
   font-size: env(--font-size-18);
   margin-top: env(--space-8);
   border: 1px solid var(--dimmed-1);
+  transition: all env(--duration-100) env(--easing-standard);
+
+  &:focus-within {
+    border-color: var(--dimmed-3);
+    box-shadow: 0 0 0 4px var(--dimmed-1);
+  }
 
   & > * {
+    outline: none;
 
     /* stylelint-disable-next-line declaration-no-important */
     padding: env(--space-24) !important;
