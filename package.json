@@ -9,9 +9,6 @@
     "type": "git",
     "url": "git+https://github.com/wonderflow-bv/design.git"
   },
-  "engines": {
-    "node": "16.x"
-  },
   "keywords": [
     "design-system",
     "wonderflow",
