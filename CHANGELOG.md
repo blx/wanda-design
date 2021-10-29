@@ -1,3 +1,22 @@
+# [1.56.0](https://github.com/wonderflow-bv/design/compare/v1.55.1...v1.56.0) (2021-10-29)
+
+
+### Bug Fixes
+
+* add dynamic code theme ([ca2fdcb](https://github.com/wonderflow-bv/design/commit/ca2fdcb868bb148171480ee5a412ceefcf031624))
+* **code-block:** fix font-size ([03ecf2d](https://github.com/wonderflow-bv/design/commit/03ecf2d9edea248d351bc413d00aae2a1ab71abf))
+* **code-block:** update code-block to show line numbers ([cfe3f81](https://github.com/wonderflow-bv/design/commit/cfe3f8161550e7447577d9ccc85d70d778c48438))
+* codeblock overflow on mobile ([223184d](https://github.com/wonderflow-bv/design/commit/223184d9d5aa1fe776b3252a22b23c7715018de3))
+* update to next 12 ([5a1c8c3](https://github.com/wonderflow-bv/design/commit/5a1c8c38ba99a1eedbc4ed3c5dead4337c2a1e60))
+* updating tokens ([#204](https://github.com/wonderflow-bv/design/issues/204)) ([40b6bbb](https://github.com/wonderflow-bv/design/commit/40b6bbb3321439314830d79af98c3f5e91c8320a))
+
+
+### Features
+
+* add Loading recipe ([#203](https://github.com/wonderflow-bv/design/issues/203)) ([877ddf8](https://github.com/wonderflow-bv/design/commit/877ddf8ddb8bc21834a170a6cad56a6e128f0a94))
+* add SkeletonBlock doc ([#201](https://github.com/wonderflow-bv/design/issues/201)) ([1f11832](https://github.com/wonderflow-bv/design/commit/1f118321e57a15a866c36fae6a161e30d032fad6))
+* added card border and updating tokens ([#205](https://github.com/wonderflow-bv/design/issues/205)) ([e19241e](https://github.com/wonderflow-bv/design/commit/e19241e3b350d50d2fa7a3420b2a09e55dd969df))
+
 ## [1.55.1](https://github.com/wonderflow-bv/design/compare/v1.55.0...v1.55.1) (2021-10-26)
 
 
