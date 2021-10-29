@@ -1,3 +1,10 @@
+## [1.56.2](https://github.com/wonderflow-bv/design/compare/v1.56.1...v1.56.2) (2021-10-29)
+
+
+### Bug Fixes
+
+* loading recipe description ([e36ddca](https://github.com/wonderflow-bv/design/commit/e36ddcaf2f3e0e90008904406e58871ae78c189b))
+
 ## [1.56.1](https://github.com/wonderflow-bv/design/compare/v1.56.0...v1.56.1) (2021-10-29)
 
 
