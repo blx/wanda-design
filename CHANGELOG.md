@@ -1,3 +1,10 @@
+## [1.56.1](https://github.com/wonderflow-bv/design/compare/v1.56.0...v1.56.1) (2021-10-29)
+
+
+### Bug Fixes
+
+* add missing border to live code editor ([ea6c644](https://github.com/wonderflow-bv/design/commit/ea6c644831f8309b83ea6dbb0378246ae21d2c7d))
+
 # [1.56.0](https://github.com/wonderflow-bv/design/compare/v1.55.1...v1.56.0) (2021-10-29)
 
 
