@@ -319,6 +319,13 @@ const routes = [
             deprecated: false
           },
           {
+            path: '/develop/components/range',
+            label: 'Range',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/develop/components/select',
             label: 'Select',
             target: '',
