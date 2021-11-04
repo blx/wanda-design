@@ -298,13 +298,6 @@ const routes = [
             deprecated: false
           },
           {
-            path: '/develop/components/menu-button',
-            label: 'Menu button',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
             path: '/develop/components/modal',
             label: 'Modal',
             target: '',
@@ -321,13 +314,6 @@ const routes = [
           {
             path: '/develop/components/prose',
             label: 'Prose',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/develop/components/slider',
-            label: 'Slider',
             target: '',
             wip: false,
             deprecated: false
@@ -354,6 +340,13 @@ const routes = [
             deprecated: false
           },
           {
+            path: '/develop/components/slider',
+            label: 'Slider',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/develop/components/skeleton-block',
             label: 'Skeleton block',
             target: '',
@@ -370,6 +363,13 @@ const routes = [
           {
             path: '/develop/components/spinner',
             label: 'Spinner',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/develop/components/split-button',
+            label: 'Split button',
             target: '',
             wip: false,
             deprecated: false

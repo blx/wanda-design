@@ -5,16 +5,16 @@ import { Checklist } from "@/components/checklist";
 import * as Components from "@wonderflow/react-components";
 import Markdown from "markdown-to-jsx";
 
-export const example = `<MenuButton kind="secondary" label="Button" placement="right-start">
+export const example = `<SplitButton kind="secondary" label="Button" placement="right-start">
   <Dropdown.Menu>
     <Dropdown.Item padding={false}>Option 1</Dropdown.Item>
     <Dropdown.Item padding={false}>Option 2</Dropdown.Item>
   </Dropdown.Menu>
-</MenuButton>`;
+</SplitButton>`;
 
 export default ({ children }) => (
   <MdxLayout
-    title="Menu button"
+    title="Split button"
     description="Combine actions and secondary actions within the same element"
     showMeta
     features={[
@@ -49,16 +49,16 @@ export default ({ children }) => (
 ## Anatomy
 
 ```tsx highlight=1,5-10
-import { MenuButton } from "@wonderflow/react-components";
+import { SplitButton } from "@wonderflow/react-components";
 
 export default () => {
   return (
-    <MenuButton label="Button">
+    <SplitButton label="Button">
       <Dropdown.Menu>
         <Dropdown.Item>Option 1</Dropdown.Item>
         <Dropdown.Item>Option 2</Dropdown.Item>
       </Dropdown.Menu>
-    </MenuButton>
+    </SplitButton>
   );
 };
 ```
