@@ -3,11 +3,11 @@ import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import * as Components from "@wonderflow/react-components";
 
-export const example = `<Range aria-label="Items count" showValues />`;
+export const example = `<Slider aria-label="Items count" showValues />`;
 
 export default ({ children }) => (
   <MdxLayout
-    title="Range"
+    title="Slider"
     description="An input where the user selects a value from within a given range."
     showMeta
     features={[
@@ -36,10 +36,10 @@ export default ({ children }) => (
 ## Anatomy
 
 ```tsx highlight=1,4
-import { Range } from "@wonderflow/react-components";
+import { Slider } from "@wonderflow/react-components";
 
 export default () => {
-  return <Range />;
+  return <Slider />;
 };
 ```
 
@@ -49,7 +49,7 @@ export default () => {
 
 If you don't want to use numeric values you can use icons instead.
 
-export const exampleWithIcons = `<Range aria-label="brightness" iconMin="moon" iconMax="sun-bright" />`;
+export const exampleWithIcons = `<Slider aria-label="brightness" iconMin="moon" iconMax="sun-bright" />`;
 
 <Playground scope={{ ...Components }} code={exampleWithIcons} />
 

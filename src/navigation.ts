@@ -298,6 +298,13 @@ const routes = [
             deprecated: false
           },
           {
+            path: '/develop/components/menu-button',
+            label: 'Menu button',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/develop/components/modal',
             label: 'Modal',
             target: '',
@@ -319,8 +326,8 @@ const routes = [
             deprecated: false
           },
           {
-            path: '/develop/components/range',
-            label: 'Range',
+            path: '/develop/components/slider',
+            label: 'Slider',
             target: '',
             wip: false,
             deprecated: false
