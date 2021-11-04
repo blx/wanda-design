@@ -1,3 +1,20 @@
+# [1.57.0](https://github.com/wonderflow-bv/design/compare/v1.56.4...v1.57.0) (2021-11-04)
+
+
+### Bug Fixes
+
+* **range:** add missing accessibility data ([0d4c8e4](https://github.com/wonderflow-bv/design/commit/0d4c8e48e4d5d81565a1a165237c4684f91e6861))
+* update toggle button doc ([f1fe156](https://github.com/wonderflow-bv/design/commit/f1fe156496f2285fcfcc4c34743ba82b9a8d7f0a))
+
+
+### Features
+
+* add ButtonsGroup doc ([#220](https://github.com/wonderflow-bv/design/issues/220)) ([4074b5a](https://github.com/wonderflow-bv/design/commit/4074b5a8d721806ecf2765723379fa023c147f19))
+* add MenuButton ([#222](https://github.com/wonderflow-bv/design/issues/222)) ([38f75f3](https://github.com/wonderflow-bv/design/commit/38f75f3ca5f05e879da58c5641193681a125100b))
+* add mixinx doc ([193ce25](https://github.com/wonderflow-bv/design/commit/193ce25a2e7d7748fe2d064fdb49f735a6c331ea))
+* add Range doc ([#214](https://github.com/wonderflow-bv/design/issues/214)) ([a767dfc](https://github.com/wonderflow-bv/design/commit/a767dfcf026d3b561d54dbe422236587933f844d))
+* **dropdown:** add padding prop ([76114b8](https://github.com/wonderflow-bv/design/commit/76114b815e7d5770ed944270ce897ef0770159c0))
+
 ## [1.56.4](https://github.com/wonderflow-bv/design/compare/v1.56.3...v1.56.4) (2021-10-29)
 
 
