@@ -225,6 +225,13 @@ const routes = [
             target: '',
             wip: false,
             deprecated: false
+          },
+          {
+            path: '/components/layouts/masonry',
+            label: 'Masonry',
+            target: '',
+            wip: false,
+            deprecated: false
           }
         ]
       },
