@@ -1,3 +1,18 @@
+# [1.59.0](https://github.com/wonderflow-bv/design/compare/v1.58.0...v1.59.0) (2021-11-08)
+
+
+### Bug Fixes
+
+* clean unused declarations ([7ed8db9](https://github.com/wonderflow-bv/design/commit/7ed8db9fddc19e1cfb1b1b2d1e1964a87ad4a650))
+* test ([8c56374](https://github.com/wonderflow-bv/design/commit/8c56374841dda9d2ac16dbe7a45598db1a213c27))
+* update image for Notifications recipe ([9c5e81a](https://github.com/wonderflow-bv/design/commit/9c5e81a93c832fb7fbd9e942d39259af14eb0035))
+
+
+### Features
+
+* add masonry layout ([#227](https://github.com/wonderflow-bv/design/issues/227)) ([f5ae925](https://github.com/wonderflow-bv/design/commit/f5ae925baa1848a1edec8b89e43d4dc0d67762ee))
+* refactoring components navigation ([14af63e](https://github.com/wonderflow-bv/design/commit/14af63e76ff2a198239ebb6d2173786c0d05e789))
+
 # [1.58.0](https://github.com/wonderflow-bv/design/compare/v1.57.0...v1.58.0) (2021-11-08)
 
 
