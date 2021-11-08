@@ -22,13 +22,10 @@ h6 {
     display: inline-flex;
     margin-left: env(--space-16);
     background-image: none;
-    vertical-align: middle;
   }
 
   & .HeadingAnchor {
     font-size: env(--font-size-16);
-    right: calc(100% + env(--space-8));
-    top: 0;
     inline-size: 24px;
     block-size: 24px;
     visibility: hidden;
