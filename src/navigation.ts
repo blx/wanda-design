@@ -232,6 +232,13 @@ const routes = [
             target: '',
             wip: false,
             deprecated: false
+          },
+          {
+            path: '/components/layouts/grid',
+            label: 'Grid',
+            target: '',
+            wip: true,
+            deprecated: false
           }
         ]
       },
