@@ -34,19 +34,32 @@ module.exports = withPlugins([
   ],
   [withTranspileModules]
 ], {
-  async rewrites () {
+  async redirects () {
     return [
       {
         source: '/develop/themes/',
-        destination: '/develop/using-themes/'
+        destination: '/develop/using-themes/',
+        permanent: true
       },
       {
         source: '/develop/styles/',
-        destination: '/develop/global-styles/'
+        destination: '/develop/global-styles/',
+        permanent: true
       },
       {
         source: '/design/foundations/iconography/',
-        destination: '/design/iconography/'
+        destination: '/design/iconography/',
+        permanent: true
+      },
+      {
+        source: '/develop/components/stack/',
+        destination: '/components/layouts/stack/',
+        permanent: true
+      },
+      {
+        source: '/develop/components/:path*/',
+        destination: '/components/widgets/:path*/',
+        permanent: true
       }
     ]
   },
