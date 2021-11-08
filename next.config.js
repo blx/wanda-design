@@ -4,6 +4,7 @@ const withPlugins = require('next-compose-plugins')
 const withTranspileModules = require('next-transpile-modules')(['@wonderflow/react-components'])
 const mdxSlug = require('remark-slug')
 const mdxLink = require('remark-autolink-headings')
+const redirects = require('./redirects')
 const withMDX = require('@next/mdx')({
   options: {
     remarkPlugins: [
@@ -35,33 +36,7 @@ module.exports = withPlugins([
   [withTranspileModules]
 ], {
   async redirects () {
-    return [
-      {
-        source: '/develop/themes/',
-        destination: '/develop/using-themes/',
-        permanent: true
-      },
-      {
-        source: '/develop/styles/',
-        destination: '/develop/global-styles/',
-        permanent: true
-      },
-      {
-        source: '/design/foundations/iconography/',
-        destination: '/design/iconography/',
-        permanent: true
-      },
-      {
-        source: '/develop/components/stack/',
-        destination: '/components/layouts/stack/',
-        permanent: true
-      },
-      {
-        source: '/develop/components/:path*/',
-        destination: '/components/widgets/:path*/',
-        permanent: true
-      }
-    ]
+    return redirects
   },
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx'],
