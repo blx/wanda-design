@@ -1,3 +1,10 @@
+# [1.58.0](https://github.com/wonderflow-bv/design/compare/v1.57.0...v1.58.0) (2021-11-08)
+
+
+### Features
+
+* created notifications recipe ([#223](https://github.com/wonderflow-bv/design/issues/223)) ([d2abc9d](https://github.com/wonderflow-bv/design/commit/d2abc9d5f7d6f05c421f941d7700c47f92cc6292))
+
 # [1.57.0](https://github.com/wonderflow-bv/design/compare/v1.56.4...v1.57.0) (2021-11-04)
 
 
