@@ -234,6 +234,20 @@ const routes = [
             deprecated: false
           },
           {
+            path: '/components/layouts/separator',
+            label: 'Separator',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/layouts/container',
+            label: 'Container',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/components/layouts/grid',
             label: 'Grid',
             target: '',
@@ -243,235 +257,256 @@ const routes = [
         ]
       },
       {
-        label: 'Widgets',
+        label: 'Buttons',
         expandable: true,
         target: '',
         items: [
           {
-            path: '/components/widgets/avatar',
-            label: 'Avatar',
-            target: '',
-            wip: false
-          },
-          {
-            path: '/components/widgets/button',
+            path: '/components/buttons/button',
             label: 'Button',
             target: '',
             wip: false
           },
           {
-            path: '/components/widgets/card',
-            label: 'Card',
-            target: '',
-            wip: false
-          },
-          {
-            path: '/components/widgets/chip',
-            label: 'Chip',
-            target: '',
-            wip: false
-          },
-          {
-            path: '/components/widgets/circular-progress',
-            label: 'Circular progress',
-            target: '',
-            wip: false
-          },
-          {
-            path: '/components/widgets/clamp-text',
-            label: 'Clamp text',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/container',
-            label: 'Container',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/disclosure',
-            label: 'Disclosure',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/dropdown',
-            label: 'Dropdown',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/elevator',
-            label: 'Elevator',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/icon',
-            label: 'Icon',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/icon-button',
+            path: '/components/buttons/icon-button',
             label: 'Icon button',
             target: '',
             wip: false,
             deprecated: false
           },
           {
-            path: '/components/widgets/info-state',
-            label: 'Info state',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/list',
-            label: 'List',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/modal',
-            label: 'Modal',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/linear-progress',
-            label: 'Linear progress',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/prose',
-            label: 'Prose',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/select',
-            label: 'Select',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/selection-controls',
-            label: 'Selection controls',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/separator',
-            label: 'Separator',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/slider',
-            label: 'Slider',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/skeleton-block',
-            label: 'Skeleton block',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/snackbar',
-            label: 'Snackbar',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/spinner',
-            label: 'Spinner',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/split-button',
+            path: '/components/buttons/split-button',
             label: 'Split button',
             target: '',
             wip: false,
             deprecated: false
           },
           {
-            path: '/components/widgets/star-meter',
-            label: 'Star meter',
+            path: '/components/buttons/toggle-button',
+            label: 'Toggle button',
+            target: '',
+            wip: false,
+            deprecated: false
+          }
+        ]
+      },
+      {
+        label: 'Loading',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/components/loading/circular-progress',
+            label: 'Circular progress',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/components/loading/linear-progress',
+            label: 'Linear progress',
             target: '',
             wip: false,
             deprecated: false
           },
           {
-            path: '/components/widgets/tab',
-            label: 'Tab',
+            path: '/components/loading/skeleton-block',
+            label: 'Skeleton block',
             target: '',
             wip: false,
             deprecated: false
           },
           {
-            path: '/components/widgets/text',
+            path: '/components/loading/spinner',
+            label: 'Spinner',
+            target: '',
+            wip: false,
+            deprecated: false
+          }
+        ]
+      },
+      {
+        label: 'Typography',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/components/typography/clamp-text',
+            label: 'Clamp text',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/typography/list',
+            label: 'List',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/typography/prose',
+            label: 'Prose',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/typography/text',
             label: 'Text',
             target: '',
             wip: false,
             deprecated: false
           },
           {
-            path: '/components/widgets/textfield',
-            label: 'Textfield',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/widgets/theme-switch',
-            label: 'Theme switch',
-            target: '',
-            wip: false,
-            deprecated: true
-          },
-          {
-            path: '/components/widgets/title',
+            path: '/components/typography/title',
             label: 'Title',
             target: '',
             wip: false,
             deprecated: false
-          },
+          }
+        ]
+      },
+      {
+        label: 'Dialogs',
+        expandable: true,
+        target: '',
+        items: [
           {
-            path: '/components/widgets/toggle-button',
-            label: 'Toggle button',
+            path: '/components/dialogs/dropdown',
+            label: 'Dropdown',
             target: '',
             wip: false,
             deprecated: false
           },
           {
-            path: '/components/widgets/tooltip',
+            path: '/components/dialogs/info-state',
+            label: 'Info state',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/dialogs/modal',
+            label: 'Modal',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/dialogs/snackbar',
+            label: 'Snackbar',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/dialogs/tooltip',
             label: 'Tooltip',
             target: '',
             wip: false,
             deprecated: false
+          }
+        ]
+      },
+      {
+        label: 'Inputs',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/components/inputs/select',
+            label: 'Select',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/inputs/selection-controls',
+            label: 'Selection controls',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/inputs/slider',
+            label: 'Slider',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/inputs/textfield',
+            label: 'Textfield',
+            target: '',
+            wip: false,
+            deprecated: false
+          }
+        ]
+      },
+      {
+        label: 'Other',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/components/other/avatar',
+            label: 'Avatar',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/components/other/card',
+            label: 'Card',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/components/other/chip',
+            label: 'Chip',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/components/other/disclosure',
+            label: 'Disclosure',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/other/elevator',
+            label: 'Elevator',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/other/icon',
+            label: 'Icon',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/other/star-meter',
+            label: 'Star meter',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/other/tab',
+            label: 'Tab',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/other/theme-switch',
+            label: 'Theme switch',
+            target: '',
+            wip: false,
+            deprecated: true
           }
         ]
       }

@@ -13,7 +13,7 @@
 
   & details ul {
     padding-left: env(--space-24);
-    margin: env(--space-8) 0 env(--space-16);
+    margin: 0 0 env(--space-24);
   }
 }
 
@@ -29,7 +29,8 @@
     font-weight: 600;
   }
 
-  & > :is(a) {
+  & > :is(a),
+  & details > summary {
     cursor: pointer;
 
     &:hover:not([aria-current='page']) {
