@@ -123,6 +123,13 @@ const routes = [
             target: '',
             wip: false,
             deprecated: false
+          },
+          {
+            path: '/design/recipes/notifications',
+            label: 'Notifications',
+            target: '',
+            wip: false,
+            deprecated: false
           }
         ]
       }
