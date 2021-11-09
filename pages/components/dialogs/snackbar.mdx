@@ -3,7 +3,7 @@ import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import * as components from "@wonderflow/react-components";
 
-export const example = `<Snackbar>
+export const example = `<Snackbar dismissable>
   The Relevance section uses only Feedback with that can be analysed
   with NLP and have a score. <a href="#">Learn more</a>
 </Snackbar>`;
@@ -72,12 +72,20 @@ export default () => {
       description: "Set the label associated with the element",
     },
     {
-      name: "elevated",
+      name: "dismissable",
       type: ["boolean"],
-      default: "",
+      default: "false",
       required: false,
       dangerous: false,
-      description: "Add a shadow for floating notifications",
+      description: "Add a dismiss action on the modal",
+    },
+    {
+      name: "dismissLabel",
+      type: ["string"],
+      default: '"Dismiss"',
+      required: false,
+      dangerous: false,
+      description: "The text for the dismiss action",
     },
     {
       name: "kind",
