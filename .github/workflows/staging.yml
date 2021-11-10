@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - staging
-  workflow_dispatch:
-    branches:
-      - staging
 
 jobs:
   deploy:
@@ -20,5 +17,5 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          alias-domains: |
+          alias-domains: | #Optional
             staging.design.wonderflow.ai
