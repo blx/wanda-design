@@ -45,7 +45,7 @@
   bottom: max(env(--space-24), calc(env(safe-area-inset-bottom) * 1.2));
   z-index: 3;
 
-  @media (--from-small) {
+  @media (--from-large) {
     display: none;
   }
 }
