@@ -163,7 +163,7 @@ const routes = [
       },
       {
         path: '/develop/ssr',
-        label: 'Server sider rendering',
+        label: 'Server side rendering',
         target: '',
         wip: false,
         deprecated: false
@@ -208,20 +208,27 @@ const routes = [
     icon: 'grid-2',
     color: 'purple',
     items: [
-      // {
-      //   path: '/components/overview',
-      //   label: 'Overview',
-      //   target: '',
-      //   wip: false
-      // },
+      {
+        path: '/components/overview',
+        label: 'Overview',
+        target: '',
+        wip: false
+      },
       {
         label: 'Layouts',
         expandable: true,
         target: '',
         items: [
           {
-            path: '/components/layouts/stack',
-            label: 'Stack',
+            path: '/components/layouts/container',
+            label: 'Container',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/layouts/grid',
+            label: 'Grid',
             target: '',
             wip: false,
             deprecated: false
@@ -241,17 +248,10 @@ const routes = [
             deprecated: false
           },
           {
-            path: '/components/layouts/container',
-            label: 'Container',
+            path: '/components/layouts/stack',
+            label: 'Stack',
             target: '',
             wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/layouts/grid',
-            label: 'Grid',
-            target: '',
-            wip: true,
             deprecated: false
           }
         ]
