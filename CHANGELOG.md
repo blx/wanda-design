@@ -1,3 +1,10 @@
+## [1.60.3](https://github.com/wonderflow-bv/design/compare/v1.60.2...v1.60.3) (2021-11-11)
+
+
+### Bug Fixes
+
+* **snackbar:** add onDismiss doc ([8756502](https://github.com/wonderflow-bv/design/commit/87565024948a03e26976339ca0e4cf0f8d648fd4))
+
 ## [1.60.2](https://github.com/wonderflow-bv/design/compare/v1.60.1...v1.60.2) (2021-11-11)
 
 
