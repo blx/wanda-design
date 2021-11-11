@@ -208,12 +208,12 @@ const routes = [
     icon: 'grid-2',
     color: 'purple',
     items: [
-      // {
-      //   path: '/components/overview',
-      //   label: 'Overview',
-      //   target: '',
-      //   wip: false
-      // },
+      {
+        path: '/components/overview',
+        label: 'Overview',
+        target: '',
+        wip: false
+      },
       {
         label: 'Layouts',
         expandable: true,
