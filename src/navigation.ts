@@ -163,7 +163,7 @@ const routes = [
       },
       {
         path: '/develop/ssr',
-        label: 'Server sider rendering',
+        label: 'Server side rendering',
         target: '',
         wip: false,
         deprecated: false
