@@ -29,6 +29,10 @@
     font-weight: 600;
   }
 
+  & > :is(details) {
+    padding-right: env(--space-8);
+  }
+
   & > :is(a),
   & details > summary {
     cursor: pointer;
