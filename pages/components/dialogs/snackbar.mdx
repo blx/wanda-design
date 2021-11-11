@@ -80,6 +80,14 @@ export default () => {
       description: "Add a dismiss action on the modal",
     },
     {
+      name: "onDismiss",
+      type: ["() => void"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description: "Callback for the dismiss action",
+    },
+    {
       name: "dismissLabel",
       type: ["string"],
       default: '"Dismiss"',
