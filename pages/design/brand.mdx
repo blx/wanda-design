@@ -1,8 +1,7 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { Zoomer } from "@/components/zoomer";
 import { Tile } from "@/components/tile";
-import { TileGrid } from "@/components/tile-grid";
-import { Stack, Text } from "@wonderflow/react-components";
+import { Stack, Text, Grid } from "@wonderflow/react-components";
 import { ThemedImg } from "@/components/themed-img";
 
 export default ({ children }) => (
@@ -88,29 +87,35 @@ Icons are versions of the mark logo. The stroke is thicker in order to keep read
 
 ## Resources
 
-<TileGrid>
-  <Tile
-    icon="arrow-down-to-bracket"
-    as="a"
-    href="/assets/logo/full-logo.zip"
-    download
-  >
-    <Text weight="bold">Full Logo</Text>
-  </Tile>
-  <Tile
-    icon="arrow-down-to-bracket"
-    as="a"
-    href="/assets/logo/mark-logo.zip"
-    download
-  >
-    <Text weight="bold">Mark logo</Text>
-  </Tile>
-  <Tile
-    icon="arrow-down-to-bracket"
-    as="a"
-    href="/assets/logo/icons.zip"
-    download
-  >
-    <Text weight="bold">Icons</Text>
-  </Tile>
-</TileGrid>
+<Grid colMinWidth="10rem" columnGap={2} rowGap={2}>
+  <Grid.Item>
+    <Tile
+      icon="arrow-down-to-bracket"
+      as="a"
+      href="/assets/logo/full-logo.zip"
+      download
+    >
+      <Text weight="bold">Full Logo</Text>
+    </Tile>
+  </Grid.Item>
+  <Grid.Item>
+    <Tile
+      icon="arrow-down-to-bracket"
+      as="a"
+      href="/assets/logo/mark-logo.zip"
+      download
+    >
+      <Text weight="bold">Mark logo</Text>
+    </Tile>
+  </Grid.Item>
+  <Grid.Item>
+    <Tile
+      icon="arrow-down-to-bracket"
+      as="a"
+      href="/assets/logo/icons.zip"
+      download
+    >
+      <Text weight="bold">Icons</Text>
+    </Tile>
+  </Grid.Item>
+</Grid>

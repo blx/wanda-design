@@ -1,8 +1,7 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { Stack, Title, Text, Prose } from "@wonderflow/react-components";
+import { Stack, Title, Text, Prose, Grid } from "@wonderflow/react-components";
 import { LiveFrame } from "@/components/live-frame";
 import { LiveArea } from "@/components/live-area";
-import { TileGrid } from "@/components/tile-grid";
 import { Tile } from "@/components/tile";
 import { Resizer } from "@/components/resizer";
 import { ThemedImg } from "@/components/themed-img";
@@ -185,32 +184,38 @@ font-size: clamp(minFontSize, preferredValue, maxFontSize)
 
 ## Resources
 
-<TileGrid>
-  <Tile
-    icon="arrow-up-right"
-    as="a"
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://developer.apple.com/fonts/"
-  >
-    <Text weight="bold">San Francisco font</Text>
-  </Tile>
-  <Tile
-    icon="arrow-up-right"
-    as="a"
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://docs.microsoft.com/en-us/windows/apps/design/downloads/#fonts"
-  >
-    <Text weight="bold">Segoe UI font</Text>
-  </Tile>
-  <Tile
-    icon="arrow-up-right"
-    as="a"
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://design.ubuntu.com/font/"
-  >
-    <Text weight="bold">Ubuntu font</Text>
-  </Tile>
-</TileGrid>
+<Grid colMinWidth="10rem" columnGap={2} rowGap={2}>
+  <Grid.Item>
+    <Tile
+      icon="arrow-up-right"
+      as="a"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://developer.apple.com/fonts/"
+    >
+      <Text weight="bold">San Francisco font</Text>
+    </Tile>
+  </Grid.Item>
+  <Grid.Item>
+    <Tile
+      icon="arrow-up-right"
+      as="a"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://docs.microsoft.com/en-us/windows/apps/design/downloads/#fonts"
+    >
+      <Text weight="bold">Segoe UI font</Text>
+    </Tile>
+  </Grid.Item>
+  <Grid.Item>
+    <Tile
+      icon="arrow-up-right"
+      as="a"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://design.ubuntu.com/font/"
+    >
+      <Text weight="bold">Ubuntu font</Text>
+    </Tile>
+  </Grid.Item>
+</Grid>
