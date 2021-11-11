@@ -1,3 +1,10 @@
+## [1.60.2](https://github.com/wonderflow-bv/design/compare/v1.60.1...v1.60.2) (2021-11-11)
+
+
+### Bug Fixes
+
+* update overview images ([83d4eac](https://github.com/wonderflow-bv/design/commit/83d4eac969be6022b50a8e8ecc2b43c2a8557535))
+
 ## [1.60.1](https://github.com/wonderflow-bv/design/compare/v1.60.0...v1.60.1) (2021-11-11)
 
 
