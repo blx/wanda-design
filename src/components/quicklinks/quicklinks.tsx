@@ -51,7 +51,7 @@ export const QuickLinks = () => {
         </Tile>
       </Link>
 
-      <Link href="/develop/components/button/" passHref>
+      <Link href="/components/overview/" passHref>
         <Tile as="a">
           <Stack direction="row" columnGap={16} horizontalAlign="space-between" fill={false} verticalAlign="center">
             <Stack>

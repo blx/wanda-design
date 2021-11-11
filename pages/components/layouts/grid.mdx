@@ -7,7 +7,7 @@ export const style = {
   style: { background: "var(--dimmed-2)", padding: 24 },
 };
 
-export const example = `<Grid>
+export const example = `<Grid colMinWidth="5rem">
   <Grid.Item {...style}>1</Grid.Item>
   <Grid.Item {...style}>2</Grid.Item>
   <Grid.Item {...style}>3</Grid.Item>
@@ -104,17 +104,17 @@ export default () => {
     },
     {
       name: "filling",
-      type: ["fit", "fill"],
+      type: ["fit", "fill", "false"],
       default: "fill",
       required: false,
       dangerous: false,
       description:
-        "Set how to fill the space based on children. [Learn more about this CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)",
+        "Set the way to autogenerate columns. [Learn more about this CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)",
     },
     {
       name: "colMinWidth",
       type: ["string"],
-      default: "5rem",
+      default: "10rem",
       required: false,
       dangerous: false,
       description:

@@ -41,7 +41,7 @@
     "@next/bundle-analyzer": "12.0.3",
     "@next/mdx": "11.1.2",
     "@semantic-release/changelog": "6.0.1",
-    "@wonderflow/react-components": "2.35.0-next.8",
+    "@wonderflow/react-components": "2.35.0-next.10",
     "body-scroll-lock": "4.0.0-beta.0",
     "clsx": "1.1.1",
     "color-contrast-checker": "1.5.0",
