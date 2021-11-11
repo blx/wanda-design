@@ -1,3 +1,23 @@
+# [1.60.0](https://github.com/wonderflow-bv/design/compare/v1.59.0...v1.60.0) (2021-11-11)
+
+
+### Bug Fixes
+
+* add staging workflow ([36439c9](https://github.com/wonderflow-bv/design/commit/36439c94b852456c7846d172a53275970fd269b3))
+* menu trigger visibility ([b1267ac](https://github.com/wonderflow-bv/design/commit/b1267ac19eb41a21833418254f02b204db6aaf50))
+* navigation padding ([749670e](https://github.com/wonderflow-bv/design/commit/749670ebfc7d43e61161e5781a3c2ae8dfe838dc))
+* **navigation:** correct typo: fom 'server sider rendering' to 'server side rendering' ([8256cdf](https://github.com/wonderflow-bv/design/commit/8256cdf9b75e89890349346a71214057e5d1436f))
+* remove dead imports ([b3f41ac](https://github.com/wonderflow-bv/design/commit/b3f41ac59a01dca2a8008ad54cbe9d3c2c31daa7))
+* replace TileGrid with Grid ([2753801](https://github.com/wonderflow-bv/design/commit/27538013284ec5baf80bf15ce6afa14593efa483))
+* **snackbar:** add dismissable and dismissLabel props ([fcaeb90](https://github.com/wonderflow-bv/design/commit/fcaeb909fca0d019782ed6986b77f5f47ae7e124))
+* staging dispatch event ([3327868](https://github.com/wonderflow-bv/design/commit/332786883952e412a6704c91397cbe2b81dff7cb))
+
+
+### Features
+
+* add component overview page ([928c0ad](https://github.com/wonderflow-bv/design/commit/928c0ad21f174c7e9376b0a003d04c032729e11a))
+* add Grid doc ([#230](https://github.com/wonderflow-bv/design/issues/230)) ([4f0b908](https://github.com/wonderflow-bv/design/commit/4f0b9084ac80dd13bcb98a73da2a21adffbd6476))
+
 # [1.59.0](https://github.com/wonderflow-bv/design/compare/v1.58.0...v1.59.0) (2021-11-08)
 
 
