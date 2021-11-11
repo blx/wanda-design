@@ -220,8 +220,15 @@ const routes = [
         target: '',
         items: [
           {
-            path: '/components/layouts/stack',
-            label: 'Stack',
+            path: '/components/layouts/container',
+            label: 'Container',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/layouts/grid',
+            label: 'Grid',
             target: '',
             wip: false,
             deprecated: false
@@ -241,17 +248,10 @@ const routes = [
             deprecated: false
           },
           {
-            path: '/components/layouts/container',
-            label: 'Container',
+            path: '/components/layouts/stack',
+            label: 'Stack',
             target: '',
             wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/layouts/grid',
-            label: 'Grid',
-            target: '',
-            wip: true,
             deprecated: false
           }
         ]

@@ -40,6 +40,7 @@ module.exports = withPlugins([
   },
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx'],
+  swcMinify: true,
   experimental: {
     esmExternals: false
   }
