@@ -3,29 +3,33 @@ import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import * as components from "@wonderflow/react-components";
 
+export const style = {
+  style: { background: "var(--dimmed-2)", padding: 24 },
+};
+
 export const example = `<Masonry columns={{
   default: 4,
   small: 1,
 }}>
-  <div style={{ background: 'var(--dimmed-2)', padding: 24 }}>
+  <div {...style}>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut deleniti, odit beatae voluptates unde blanditiis placeat facilis
   </div>
-  <div style={{ background: 'var(--dimmed-2)', padding: 24 }}>
+  <div {...style}>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut deleniti, odit beatae voluptates unde bland
   </div>
-  <div style={{ background: 'var(--dimmed-2)', padding: 24 }}>
+  <div {...style}>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut deleniti, odit beatae vo
   </div>
-  <div style={{ background: 'var(--dimmed-2)', padding: 24 }}>
+  <div {...style}>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut deleniti, odit beatae voluptates unde blanditiis placeat facilis mollitia officiis temporibus dignissimos
   </div>
-  <div style={{ background: 'var(--dimmed-2)', padding: 24 }}>
+  <div {...style}>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut deleniti, odit beatae vo
   </div>
-  <div style={{ background: 'var(--dimmed-2)', padding: 24 }}>
+  <div {...style}>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut deleniti, odit beatae voluptates unde blanditiis placeat facilis mollitia officiis temporibus dignissimos assumenda delectus optio
   </div>
-  <div style={{ background: 'var(--dimmed-2)', padding: 24 }}>
+  <div {...style}>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut deleniti, odit beatae voluptates unde blanditiis placeat facilis mollitia officiis
   </div>
 </Masonry>`;
@@ -44,7 +48,7 @@ export default ({ children }) => (
     hero={
       <Playground
         liveAreaProps={{ fill: true }}
-        scope={{ ...components }}
+        scope={{ ...components, style }}
         code={example}
       />
     }
