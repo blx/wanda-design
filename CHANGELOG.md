@@ -1,3 +1,10 @@
+## [1.60.1](https://github.com/wonderflow-bv/design/compare/v1.60.0...v1.60.1) (2021-11-11)
+
+
+### Bug Fixes
+
+* **component-overview:** updated list of `other` components ([d534d98](https://github.com/wonderflow-bv/design/commit/d534d988697f33c81609f08ef5f36e4cf7dacf4c))
+
 # [1.60.0](https://github.com/wonderflow-bv/design/compare/v1.59.0...v1.60.0) (2021-11-11)
 
 
