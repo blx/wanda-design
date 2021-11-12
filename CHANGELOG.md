@@ -1,3 +1,11 @@
+## [1.60.5](https://github.com/wonderflow-bv/design/compare/v1.60.4...v1.60.5) (2021-11-12)
+
+
+### Bug Fixes
+
+* **grid:** fix prop name ([a1e09c1](https://github.com/wonderflow-bv/design/commit/a1e09c1f1d109e860b908b06f6d34eb555bbba51))
+* update button and components ([199b4be](https://github.com/wonderflow-bv/design/commit/199b4bed35921d6d9d976298104e23d47823a727))
+
 ## [1.60.4](https://github.com/wonderflow-bv/design/compare/v1.60.3...v1.60.4) (2021-11-12)
 
 
