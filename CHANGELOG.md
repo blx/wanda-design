@@ -1,3 +1,10 @@
+## [1.60.4](https://github.com/wonderflow-bv/design/compare/v1.60.3...v1.60.4) (2021-11-12)
+
+
+### Bug Fixes
+
+* update components cover images ([574789b](https://github.com/wonderflow-bv/design/commit/574789b49dde332bf74389ec5789c15ec57a1fa9))
+
 ## [1.60.3](https://github.com/wonderflow-bv/design/compare/v1.60.2...v1.60.3) (2021-11-11)
 
 
