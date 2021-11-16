@@ -205,7 +205,7 @@ const routes = [
   },
   {
     title: 'Components',
-    icon: 'grid-2',
+    icon: 'grid',
     color: 'purple',
     items: [
       {
@@ -215,151 +215,40 @@ const routes = [
         wip: false
       },
       {
-        label: 'Layouts',
+        label: 'Actions',
         expandable: true,
         target: '',
         items: [
           {
-            path: '/components/layouts/container',
-            label: 'Container',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/layouts/grid',
-            label: 'Grid',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/layouts/masonry',
-            label: 'Masonry',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/layouts/separator',
-            label: 'Separator',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/layouts/stack',
-            label: 'Stack',
-            target: '',
-            wip: false,
-            deprecated: false
-          }
-        ]
-      },
-      {
-        label: 'Buttons',
-        expandable: true,
-        target: '',
-        items: [
-          {
-            path: '/components/buttons/button',
+            path: '/components/actions/button',
             label: 'Button',
             target: '',
             wip: false
           },
           {
-            path: '/components/buttons/icon-button',
+            path: '/components/actions/disclosure',
+            label: 'Disclosure',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/actions/icon-button',
             label: 'Icon button',
             target: '',
             wip: false,
             deprecated: false
           },
           {
-            path: '/components/buttons/split-button',
+            path: '/components/actions/split-button',
             label: 'Split button',
             target: '',
             wip: false,
             deprecated: false
           },
           {
-            path: '/components/buttons/toggle-button',
+            path: '/components/actions/toggle-button',
             label: 'Toggle button',
-            target: '',
-            wip: false,
-            deprecated: false
-          }
-        ]
-      },
-      {
-        label: 'Loading',
-        expandable: true,
-        target: '',
-        items: [
-          {
-            path: '/components/loading/circular-progress',
-            label: 'Circular progress',
-            target: '',
-            wip: false
-          },
-          {
-            path: '/components/loading/linear-progress',
-            label: 'Linear progress',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/loading/skeleton-block',
-            label: 'Skeleton block',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/loading/spinner',
-            label: 'Spinner',
-            target: '',
-            wip: false,
-            deprecated: false
-          }
-        ]
-      },
-      {
-        label: 'Typography',
-        expandable: true,
-        target: '',
-        items: [
-          {
-            path: '/components/typography/clamp-text',
-            label: 'Clamp text',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/typography/list',
-            label: 'List',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/typography/prose',
-            label: 'Prose',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/typography/text',
-            label: 'Text',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/typography/title',
-            label: 'Title',
             target: '',
             wip: false,
             deprecated: false
@@ -444,6 +333,138 @@ const routes = [
         ]
       },
       {
+        label: 'Layouts',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/components/layouts/container',
+            label: 'Container',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/layouts/grid',
+            label: 'Grid',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/layouts/masonry',
+            label: 'Masonry',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/layouts/separator',
+            label: 'Separator',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/layouts/stack',
+            label: 'Stack',
+            target: '',
+            wip: false,
+            deprecated: false
+          }
+        ]
+      },
+      {
+        label: 'Loading',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/components/loading/circular-progress',
+            label: 'Circular progress',
+            target: '',
+            wip: false
+          },
+          {
+            path: '/components/loading/linear-progress',
+            label: 'Linear progress',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/loading/skeleton-block',
+            label: 'Skeleton block',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/loading/spinner',
+            label: 'Spinner',
+            target: '',
+            wip: false,
+            deprecated: false
+          }
+        ]
+      },
+      {
+        label: 'Navigation',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/components/navigation/tab',
+            label: 'Tab',
+            target: '',
+            wip: false,
+            deprecated: false
+          }
+        ]
+      },
+      {
+        label: 'Typography',
+        expandable: true,
+        target: '',
+        items: [
+          {
+            path: '/components/typography/clamp-text',
+            label: 'Clamp text',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/typography/list',
+            label: 'List',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/typography/prose',
+            label: 'Prose',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/typography/text',
+            label: 'Text',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/typography/title',
+            label: 'Title',
+            target: '',
+            wip: false,
+            deprecated: false
+          }
+        ]
+      },
+      {
         label: 'Other',
         expandable: true,
         target: '',
@@ -467,13 +488,6 @@ const routes = [
             wip: false
           },
           {
-            path: '/components/other/disclosure',
-            label: 'Disclosure',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
             path: '/components/other/elevator',
             label: 'Elevator',
             target: '',
@@ -490,13 +504,6 @@ const routes = [
           {
             path: '/components/other/star-meter',
             label: 'Star meter',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/other/tab',
-            label: 'Tab',
             target: '',
             wip: false,
             deprecated: false
