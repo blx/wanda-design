@@ -419,6 +419,13 @@ const routes = [
             target: '',
             wip: false,
             deprecated: false
+          },
+          {
+            path: '/components/navigation/pagination',
+            label: 'Pagination',
+            target: '',
+            wip: false,
+            deprecated: false
           }
         ]
       },
