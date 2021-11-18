@@ -1,3 +1,17 @@
+# [1.61.0](https://github.com/wonderflow-bv/design/compare/v1.60.5...v1.61.0) (2021-11-18)
+
+
+### Bug Fixes
+
+* update components group ([1e8b38d](https://github.com/wonderflow-bv/design/commit/1e8b38d432920b871996585c6193a0b07d76db15))
+* update deps ([7759749](https://github.com/wonderflow-bv/design/commit/7759749541b473a12b0358ae89d0840734200016))
+
+
+### Features
+
+* add input group ([#243](https://github.com/wonderflow-bv/design/issues/243)) ([1e0d047](https://github.com/wonderflow-bv/design/commit/1e0d04712547d607547e94958c057110888e0f9c))
+* add Pagination ([3ebd076](https://github.com/wonderflow-bv/design/commit/3ebd07608884f2155499001686452878390118b1))
+
 ## [1.60.5](https://github.com/wonderflow-bv/design/compare/v1.60.4...v1.60.5) (2021-11-12)
 
 
