@@ -1,3 +1,10 @@
+## [1.61.1](https://github.com/wonderflow-bv/design/compare/v1.61.0...v1.61.1) (2021-11-18)
+
+
+### Bug Fixes
+
+* add input-group to overview ([3558e0a](https://github.com/wonderflow-bv/design/commit/3558e0ac6e168295a785f292e4eeb7d6f90dc3e0))
+
 # [1.61.0](https://github.com/wonderflow-bv/design/compare/v1.60.5...v1.61.0) (2021-11-18)
 
 
