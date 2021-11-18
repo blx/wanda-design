@@ -38,6 +38,14 @@ module.exports = withPlugins([
   async redirects () {
     return redirects
   },
+  async rewrites () {
+    return [
+      {
+        destination: '/components/buttons/:path*',
+        source: '/components/actions/:path*'
+      }
+    ]
+  },
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx'],
   swcMinify: true,
