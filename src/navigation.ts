@@ -329,6 +329,13 @@ const routes = [
             target: '',
             wip: false,
             deprecated: false
+          },
+          {
+            path: '/components/inputs/input-group',
+            label: 'Input group',
+            target: '',
+            wip: false,
+            deprecated: false
           }
         ]
       },
