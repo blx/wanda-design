@@ -1,3 +1,10 @@
+## [1.61.2](https://github.com/wonderflow-bv/design/compare/v1.61.1...v1.61.2) (2021-11-19)
+
+
+### Bug Fixes
+
+* **pagination:** update prop ([b69e1fc](https://github.com/wonderflow-bv/design/commit/b69e1fc1587ae0db970228966bd2f3a580010754))
+
 ## [1.61.1](https://github.com/wonderflow-bv/design/compare/v1.61.0...v1.61.1) (2021-11-18)
 
 
