@@ -1,3 +1,10 @@
+## [1.61.7](https://github.com/wonderflow-bv/design/compare/v1.61.6...v1.61.7) (2021-11-19)
+
+
+### Bug Fixes
+
+* **buttons:** update prop ([bf53a93](https://github.com/wonderflow-bv/design/commit/bf53a937368e35473181b07c25cabcbd72738d33))
+
 ## [1.61.6](https://github.com/wonderflow-bv/design/compare/v1.61.5...v1.61.6) (2021-11-19)
 
 
