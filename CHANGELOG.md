@@ -1,3 +1,10 @@
+## [1.61.5](https://github.com/wonderflow-bv/design/compare/v1.61.4...v1.61.5) (2021-11-19)
+
+
+### Bug Fixes
+
+* fix props table ([761c639](https://github.com/wonderflow-bv/design/commit/761c6398b95613c0fe00df4cc00a684a68e8cdf2))
+
 ## [1.61.4](https://github.com/wonderflow-bv/design/compare/v1.61.3...v1.61.4) (2021-11-19)
 
 
