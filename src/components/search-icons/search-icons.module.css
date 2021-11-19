@@ -46,7 +46,7 @@
 
 .IconPreview + * {
   position: absolute;
-  top: 65%;
+  top: 60%;
   padding: 0 env(--space-16);
 }
 

@@ -36,7 +36,7 @@ const IconTile: React.FC<IconTileProps> = ({ icon, size }) => {
       verticalAlign="center"
       rowGap={24}
     >
-      <Stack horizontalAlign="center" verticalAlign="center" rowGap={16} fill={false}>
+      <Stack as="span" horizontalAlign="center" verticalAlign="center" rowGap={16} fill={false}>
         <Icon className={IconPreview} name={icon} dimension={size} />
         <Text size={14} textAlign="center" weight="bold">{icon}</Text>
       </Stack>
