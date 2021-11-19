@@ -1,3 +1,11 @@
+## [1.61.4](https://github.com/wonderflow-bv/design/compare/v1.61.3...v1.61.4) (2021-11-19)
+
+
+### Bug Fixes
+
+* iconography markup ([9f602d9](https://github.com/wonderflow-bv/design/commit/9f602d904be5858b0f9c81e1337d6a2f40ebbd56))
+* update markup ([8425d93](https://github.com/wonderflow-bv/design/commit/8425d93fa38e696f493dc49ef57ab1d64135aef1))
+
 ## [1.61.3](https://github.com/wonderflow-bv/design/compare/v1.61.2...v1.61.3) (2021-11-19)
 
 
