@@ -1,3 +1,10 @@
+## [1.61.6](https://github.com/wonderflow-bv/design/compare/v1.61.5...v1.61.6) (2021-11-19)
+
+
+### Bug Fixes
+
+* **icon-button:** add missing pressed prop ([e078095](https://github.com/wonderflow-bv/design/commit/e078095f2054d1d66ee4b6712b244cbb4a1cbd05))
+
 ## [1.61.5](https://github.com/wonderflow-bv/design/compare/v1.61.4...v1.61.5) (2021-11-19)
 
 
