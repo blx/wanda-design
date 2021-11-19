@@ -91,6 +91,14 @@ export default () => {
       description: "Set the loading state and show the spinner",
     },
     {
+      name: "pressed",
+      type: ["boolean"],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Set the pressed state and visual",
+    },
+    {
       name: "onClick",
       type: ["(MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void"],
       default: "",
