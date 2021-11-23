@@ -1,4 +1,6 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
 const withImages = require('next-images')
 const withPlugins = require('next-compose-plugins')
 const withTranspileModules = require('next-transpile-modules')(['@wonderflow/react-components'])
@@ -23,9 +25,7 @@ const withMDX = require('@next/mdx')({
 })
 
 module.exports = withPlugins([
-  [withBundleAnalyzer, {
-    enabled: process.env.ANALYZE === 'true'
-  }],
+  [withBundleAnalyzer],
   [withImages],
   [
     withMDX,
