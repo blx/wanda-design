@@ -12,10 +12,6 @@ export const getPosts = async () => {
           markdown
         }
         title
-        content {
-          html
-          markdown
-        }
       }
     }
   `
@@ -32,10 +28,6 @@ export const getPostDetails = async (slug: PostType['slug']) => {
         slug
         title
         excerpt {
-          html
-          markdown
-        }
-        content {
           html
           markdown
         }

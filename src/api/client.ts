@@ -1,12 +1,7 @@
 import { GraphQLClient } from 'graphql-request'
 
 const client = new GraphQLClient(
-  process.env.CMS_ENDPOINT,
-  {
-    headers: {
-      Authorization: `Bearer ${process.env.CMS_TOKEN}`
-    }
-  }
+  process.env.CMS_ENDPOINT
 )
 
 export default client
