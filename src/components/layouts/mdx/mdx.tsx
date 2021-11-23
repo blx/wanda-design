@@ -2,7 +2,10 @@ import React, { ReactNode } from 'react'
 import slugify from 'slugify'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
-import { Icon, Prose, Stack, Title, List } from '@wonderflow/react-components'
+import { MDXProvider } from '@mdx-js/react'
+import { CodeBlock } from '@/components/code-block'
+import { Icon, Prose, Stack, Title, Text, List, Separator } from '@wonderflow/react-components'
+import Link from 'next/link'
 import { ToC } from '@/components/toc'
 import { DocHead, DocHeadProps } from '@/components/doc-head'
 import { Toolbar } from '@/components/toolbar'
@@ -10,6 +13,21 @@ import { Bleed } from '@/components/bleed'
 
 import { MdxLayout as Mdx, Links, Hero } from './mdx.module.css'
 import Markdown from 'markdown-to-jsx'
+
+/* eslint-disable react/display-name, react/destructuring-assignment */
+const components = {
+  pre: (props: any) => <div {...props} />,
+  code: CodeBlock,
+  h1: (props: any) => <Title as="h1" level="2" {...props} />,
+  h2: (props: any) => <Title as="h2" level="3" {...props} />,
+  h3: (props: any) => <Title as="h3" level="4" {...props} />,
+  h4: (props: any) => <Title as="h4" level="5" {...props} />,
+  p: (props: any) => <Text size={22} {...props} />,
+  a: (props: any) => <Link {...props}><a>{props.children}</a></Link>,
+  ul: (props: any) => <List markerColor="var(--dimmed-5)" {...props}>{props.children}</List>,
+  ol: (props: any) => <List as="ol" {...props}>{props.children}</List>,
+  hr: Separator
+}
 
 type MdxLayoutProps = DocHeadProps & PropsWithClass & {
   tags?: ReactNode;
@@ -122,7 +140,9 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
             )}
           </Stack>
           <Prose>
-            {children}
+            <MDXProvider components={components}>
+              {children}
+            </MDXProvider>
           </Prose>
         </Stack>
       </Stack>
