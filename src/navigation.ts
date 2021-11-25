@@ -345,6 +345,12 @@ const routes = [
         target: '',
         items: [
           {
+            path: '/components/layouts/card',
+            label: 'Card',
+            target: '',
+            wip: false
+          },
+          {
             path: '/components/layouts/container',
             label: 'Container',
             target: '',
@@ -486,12 +492,6 @@ const routes = [
           {
             path: '/components/other/avatar',
             label: 'Avatar',
-            target: '',
-            wip: false
-          },
-          {
-            path: '/components/other/card',
-            label: 'Card',
             target: '',
             wip: false
           },
