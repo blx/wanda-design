@@ -1,7 +1,7 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import * as components from "@wonderflow/react-components";
+import * as Components from "@wonderflow/react-components";
 
 export const columns = [
   {
@@ -83,10 +83,16 @@ export default ({ children }) => (
       "Pagination and loading state out of the box",
       "Themes ready",
     ]}
+    links={[
+      {
+        label: "Base package",
+        url: "https://github.com/jbetancur/react-data-table-component",
+      },
+    ]}
     hero={
       <Playground
         liveAreaProps={{ fill: true }}
-        scope={{ ...components, columns, data }}
+        scope={{ ...Components, columns, data }}
         code={example}
       />
     }
@@ -107,7 +113,20 @@ export default () => {
 
 ## API Reference
 
-This component extends the `react-data-table-component` library, which expones different props that enables different functionalities including(but not limited to) `fixedHeader`, `pagination`, `striped`, `responsive` and `selectableRows`. [For a complete reference here's the maintainer's storybook](https://react-data-table-component.netlify.app/?path=/docs/getting-started-kitchen-sink-ts--kitchen-sink-ts). Down here are listed the props that Wanda adds to the default library component.
+This component extends the [`react-data-table-component`](https://github.com/jbetancur/react-data-table-component) library, which exposes different props that enables multiple functionalities, including(but not limited to) `fixedHeader`, `pagination`, `striped`, and `responsive`.
+
+<Components.Button
+  kind="secondary"
+  as="a"
+  href="https://react-data-table-component.netlify.app/?path=/docs/getting-started-kitchen-sink-ts--kitchen-sink-ts"
+  aria-label="original API refernce"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Original API reference
+</Components.Button>
+
+### Wanda additional props
 
 <Props
   properties={[
