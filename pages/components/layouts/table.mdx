@@ -67,7 +67,7 @@ export const example = `<Table
   columns={columns}
   data={data}
   selectableRows
-  actions={<Button kind="secondary">See mroe</Button>}
+  actions={<Button kind="secondary">See more</Button>}
   contextActions={<Button>Delete</Button>}
   pagination
 />`;
@@ -80,7 +80,7 @@ export default ({ children }) => (
     features={[
       "Highly customizable",
       "Support sorting, reorder and many other interactions",
-      "Pagination and ",
+      "Pagination and loading state out of the box",
       "Themes ready",
     ]}
     hero={
@@ -107,99 +107,42 @@ export default () => {
 
 ## API Reference
 
+This component extends the `react-data-table-component` library, which expones different props that enables different functionalities including(but not limited to) `fixedHeader`, `pagination`, `striped`, `responsive` and `selectableRows`. [For a complete reference here's the maintainer's storybook](https://react-data-table-component.netlify.app/?path=/docs/getting-started-kitchen-sink-ts--kitchen-sink-ts). Down here are listed the props that Wanda adds to the default library component.
+
 <Props
   properties={[
     {
-      name: "rowGap",
-      type: ["0", "TokensTypes['space']"],
-      default: "0",
-      required: false,
-      dangerous: false,
-      description: "Set the space between rows",
-    },
-    {
-      name: "columnGap",
-      type: ["0", "TokensTypes['space']"],
-      default: "0",
-      required: false,
-      dangerous: false,
-      description: "Set the space between columns",
-    },
-    {
-      name: "inline",
-      type: ["boolean"],
-      default: "false",
-      required: false,
-      dangerous: false,
-      description: "Apply `inline-flex` instead of `flex`",
-    },
-    {
-      name: "wrap",
-      type: ["boolean"],
-      default: "false",
-      required: false,
-      dangerous: false,
-      description: "Wrap the children if there isn't enought space",
-    },
-    {
-      name: "fill",
-      type: ["boolean"],
-      default: "true",
-      required: false,
-      dangerous: false,
-      description: "Force direct children to equally fill the space",
-    },
-    {
-      name: "verticalAlign",
-      type: ["string"],
-      default: "",
-      required: false,
-      dangerous: false,
-      description:
-        "Set the vertical alignment for children. Any align-items or justify-content value is accepted",
-    },
-    {
-      name: "horizontalAlign",
-      type: ["string"],
-      default: "",
-      required: false,
-      dangerous: false,
-      description:
-        "Set the horizontal alignment for children. Any align-items or justify-content value is accepted",
-    },
-    {
-      name: "verticalPadding",
-      type: ["TokensTypes['space']"],
-      default: "0",
-      required: false,
-      dangerous: false,
-      description: "Set the vertical padding",
-    },
-    {
-      name: "horizontalPadding",
-      type: ["TokensTypes['space']"],
-      default: "0",
-      required: false,
-      dangerous: false,
-      description: "Set the horizontal padding",
-    },
-    {
-      name: "direction",
-      type: ['"row"', '"column"'],
-      default: '"column"',
-      required: false,
-      dangerous: false,
-      description:
-        "Distribute the elements along the horizontal or vertical axis",
-    },
-    {
-      name: "as",
+      name: "ExpandableRowsComponent",
       type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
-      default: '"div"',
+      default: "",
       required: false,
       dangerous: false,
       description:
-        "Set the component to a different HTML tag or custom component.",
+        "Set the component to use render when an expandable row is open",
+    },
+    {
+      name: "collapsedRowIcon",
+      type: ["IconNames"],
+      default: "chevron-right",
+      required: false,
+      dangerous: false,
+      description: "Set the icon used to expand a row",
+    },
+    {
+      name: "expandedRowIcon",
+      type: ["IconNames"],
+      default: "chevron-down",
+      required: false,
+      dangerous: false,
+      description: "Set the icon used to collapse a row",
+    },
+    {
+      name: "minRowHeight",
+      type: ["string"],
+      default: "48px",
+      required: false,
+      dangerous: false,
+      description: "set the minimum row height",
     },
   ]}
 />
