@@ -1,0 +1,205 @@
+import { MdxLayout } from "@/components/layouts/mdx";
+import { Playground } from "@/components/playground";
+import { Props } from "@/components/props";
+import * as components from "@wonderflow/react-components";
+
+export const columns = [
+  {
+    name: "ID",
+    selector: (row) => row.id,
+    width: "80px",
+    sortable: true,
+    reorder: true,
+  },
+  {
+    name: "First column",
+    selector: (row) => row.someKey,
+    sortable: true,
+    reorder: true,
+    hide: "sm",
+  },
+  {
+    name: "Second column",
+    selector: (row) => row.anotherKey,
+    sortable: true,
+    reorder: true,
+    hide: "md",
+  },
+  {
+    name: "Value",
+    selector: (row) => row.value,
+    sortable: true,
+    reorder: true,
+    right: true,
+  },
+];
+
+export const data = [
+  {
+    id: 1,
+    someKey: "Some data to print",
+    anotherKey: "Another key data",
+    value: 123,
+  },
+  {
+    id: 2,
+    someKey: "Some data to print 2",
+    anotherKey: "Another key data 2",
+    value: 1234,
+  },
+  {
+    id: 3,
+    someKey: "Some data to print 3",
+    anotherKey: "Another key data 3",
+    value: 5324,
+  },
+  {
+    id: 4,
+    someKey: "Some data to print 4",
+    anotherKey: "Another key data 4",
+    value: 124,
+  },
+];
+
+export const example = `<Table
+  noHeader={false}
+  title={<Title level="5">Sample Title</Title>}
+  columns={columns}
+  data={data}
+  selectableRows
+  actions={<Button kind="secondary">See mroe</Button>}
+  contextActions={<Button>Delete</Button>}
+  pagination
+/>`;
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Table"
+    description="Makes tabular data readable and interactive"
+    showMeta
+    features={[
+      "Highly customizable",
+      "Support sorting, reorder and many other interactions",
+      "Pagination and ",
+      "Themes ready",
+    ]}
+    hero={
+      <Playground
+        liveAreaProps={{ fill: true }}
+        scope={{ ...components, columns, data }}
+        code={example}
+      />
+    }
+  >
+    {children}
+  </MdxLayout>
+);
+
+## Anatomy
+
+```tsx highlight=1,4
+import { Table } from "@wonderflow/react-components";
+
+export default () => {
+  return <Table columns={columns} data={data} />;
+};
+```
+
+## API Reference
+
+<Props
+  properties={[
+    {
+      name: "rowGap",
+      type: ["0", "TokensTypes['space']"],
+      default: "0",
+      required: false,
+      dangerous: false,
+      description: "Set the space between rows",
+    },
+    {
+      name: "columnGap",
+      type: ["0", "TokensTypes['space']"],
+      default: "0",
+      required: false,
+      dangerous: false,
+      description: "Set the space between columns",
+    },
+    {
+      name: "inline",
+      type: ["boolean"],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Apply `inline-flex` instead of `flex`",
+    },
+    {
+      name: "wrap",
+      type: ["boolean"],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Wrap the children if there isn't enought space",
+    },
+    {
+      name: "fill",
+      type: ["boolean"],
+      default: "true",
+      required: false,
+      dangerous: false,
+      description: "Force direct children to equally fill the space",
+    },
+    {
+      name: "verticalAlign",
+      type: ["string"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description:
+        "Set the vertical alignment for children. Any align-items or justify-content value is accepted",
+    },
+    {
+      name: "horizontalAlign",
+      type: ["string"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description:
+        "Set the horizontal alignment for children. Any align-items or justify-content value is accepted",
+    },
+    {
+      name: "verticalPadding",
+      type: ["TokensTypes['space']"],
+      default: "0",
+      required: false,
+      dangerous: false,
+      description: "Set the vertical padding",
+    },
+    {
+      name: "horizontalPadding",
+      type: ["TokensTypes['space']"],
+      default: "0",
+      required: false,
+      dangerous: false,
+      description: "Set the horizontal padding",
+    },
+    {
+      name: "direction",
+      type: ['"row"', '"column"'],
+      default: '"column"',
+      required: false,
+      dangerous: false,
+      description:
+        "Distribute the elements along the horizontal or vertical axis",
+    },
+    {
+      name: "as",
+      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
+      default: '"div"',
+      required: false,
+      dangerous: false,
+      description:
+        "Set the component to a different HTML tag or custom component.",
+    },
+  ]}
+/>
