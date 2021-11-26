@@ -20,7 +20,7 @@
 
 .Code {
   overflow: auto;
-  padding: env(--space-64) env(--space-24) env(--space-24);
+  padding: env(--space-48) env(--space-24) env(--space-24);
   border: 1px solid var(--dimmed-1);
   border-radius: env(--radius-8);
 

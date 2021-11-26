@@ -12,6 +12,7 @@ import theme from './wonder-theme'
 type CodeBlockProps = {
   children: any;
   highlight?: string;
+  hideCopy?: boolean;
   showLineNumbers?: boolean;
 } & PropsWithClass
 
@@ -19,6 +20,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   children,
   highlight,
   showLineNumbers = false,
+  hideCopy = false,
   className
 }) => {
   const language = className?.replace(/language-/, '') as Language
@@ -64,14 +66,16 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
             </pre>
             <Stack direction="row" fill={false} horizontalAlign="space-between" verticalAlign="center" className={Toolbar}>
               {language && <Text fluid={false} size={14} dimmed={5}>{language}</Text>}
-              <Button
-                className={Action}
-                dimension="small"
-                kind="flat"
-                onClick={copyContent()}
-              >
-                Copy
-              </Button>
+              {!hideCopy && (
+                <Button
+                  className={Action}
+                  dimension="small"
+                  kind="flat"
+                  onClick={copyContent()}
+                >
+                  Copy
+                </Button>
+              )}
             </Stack>
           </>
         )}
