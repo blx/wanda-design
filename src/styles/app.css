@@ -37,6 +37,7 @@ h6 {
     background-color: var(--highlight-cyan-background);
     color: var(--highlight-cyan-foreground);
     padding-bottom: 1px;
+    trasnform: translateY(-4px);
 
     &::before {
       content: '#';
