@@ -384,6 +384,13 @@ const routes = [
             target: '',
             wip: false,
             deprecated: false
+          },
+          {
+            path: '/components/layouts/table',
+            label: 'Table',
+            target: '',
+            wip: false,
+            deprecated: false
           }
         ]
       },
