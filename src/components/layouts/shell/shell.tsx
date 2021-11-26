@@ -84,7 +84,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       </Stack>
 
       <Stack as="main" verticalAlign="start" fill={false} className={Content}>
-        {header && <header className={Header}>{header}</header>}
+        {header && <section className={Header}>{header}</section>}
         <motion.div
           initial="hidden"
           animate="enter"
