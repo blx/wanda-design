@@ -1,15 +1,19 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+import withTranspileModules from 'next-transpile-modules'
+import bundleAnalyzer from '@next/bundle-analyzer'
+import withImages from 'next-images'
+import withPlugins from 'next-compose-plugins'
+import mdxSlug from 'rehype-slug'
+import mdxLink from 'rehype-autolink-headings'
+import redirects from './redirects.js'
+import mdx from '@next/mdx'
+
+const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true'
 })
-const withImages = require('next-images')
-const withPlugins = require('next-compose-plugins')
-const withTranspileModules = require('next-transpile-modules')(['@wonderflow/react-components'])
-const mdxSlug = require('remark-slug')
-const mdxLink = require('remark-autolink-headings')
-const redirects = require('./redirects')
-const withMDX = require('@next/mdx')({
+const withTm = withTranspileModules(['@wonderflow/react-components'])
+const withMDX = mdx({
   options: {
-    remarkPlugins: [
+    rehypePlugins: [
       mdxSlug,
       [mdxLink, {
         behavior: 'append',
@@ -24,7 +28,7 @@ const withMDX = require('@next/mdx')({
   }
 })
 
-module.exports = withPlugins([
+const nextConfig = withPlugins([
   [withBundleAnalyzer],
   [withImages],
   [
@@ -33,7 +37,7 @@ module.exports = withPlugins([
       extension: /\.mdx?$/
     }
   ],
-  [withTranspileModules]
+  [withTm]
 ], {
   async redirects () {
     return redirects
@@ -53,3 +57,5 @@ module.exports = withPlugins([
     esmExternals: false
   }
 })
+
+export default nextConfig
