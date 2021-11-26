@@ -59,6 +59,66 @@ export const data = [
     anotherKey: "Another key data 4",
     value: 124,
   },
+  {
+    id: 5,
+    someKey: "Some data to print",
+    anotherKey: "Another key data",
+    value: 123,
+  },
+  {
+    id: 6,
+    someKey: "Some data to print 2",
+    anotherKey: "Another key data 2",
+    value: 1234,
+  },
+  {
+    id: 7,
+    someKey: "Some data to print 3",
+    anotherKey: "Another key data 3",
+    value: 5324,
+  },
+  {
+    id: 8,
+    someKey: "Some data to print 4",
+    anotherKey: "Another key data 4",
+    value: 124,
+  },
+  {
+    id: 9,
+    someKey: "Some data to print 3",
+    anotherKey: "Another key data 3",
+    value: 5324,
+  },
+  {
+    id: 10,
+    someKey: "Some data to print 4",
+    anotherKey: "Another key data 4",
+    value: 124,
+  },
+  {
+    id: 11,
+    someKey: "Some data to print",
+    anotherKey: "Another key data",
+    value: 123,
+  },
+  {
+    id: 12,
+    someKey: "Some data to print 2",
+    anotherKey: "Another key data 2",
+    value: 1234,
+  },
+  {
+    id: 13,
+    someKey: "Some data to print 3",
+    anotherKey: "Another key data 3",
+    value: 5324,
+  },
+  {
+    id: 14,
+    someKey: "Some data to print 4",
+    anotherKey: "Another key data 4",
+    value: 124,
+  },
 ];
 
 export const example = `<Table
@@ -70,6 +130,7 @@ export const example = `<Table
   actions={<Button kind="secondary">See more</Button>}
   contextActions={<Button>Delete</Button>}
   pagination
+  paginationPerPage={3}
 />`;
 
 export default ({ children }) => (
@@ -118,7 +179,7 @@ This component extends the [`react-data-table-component`](https://github.com/jbe
 <Components.Button
   kind="secondary"
   as="a"
-  href="https://react-data-table-component.netlify.app/?path=/docs/getting-started-kitchen-sink-ts--kitchen-sink-ts"
+  href="https://react-data-table-component.netlify.app/?path=/docs/api-props--page"
   target="_blank"
   rel="noopener noreferrer"
 >
@@ -131,12 +192,11 @@ This component extends the [`react-data-table-component`](https://github.com/jbe
   properties={[
     {
       name: "ExpandableRowsComponent",
-      type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
+      type: ["React.FC<{data: T}>"],
       default: "",
       required: false,
       dangerous: false,
-      description:
-        "Set the component to use render when an expandable row is open",
+      description: "Set the component to render when an expandable row is open",
     },
     {
       name: "collapsedRowIcon",
