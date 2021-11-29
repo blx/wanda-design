@@ -1,3 +1,21 @@
+# [1.62.0](https://github.com/wonderflow-bv/design/compare/v1.61.7...v1.62.0) (2021-11-29)
+
+
+### Bug Fixes
+
+* **card:** update Card doc ([9ed68f6](https://github.com/wonderflow-bv/design/commit/9ed68f6e182427625627158269085677d835f34a))
+* fix hero bg color ([bf7a762](https://github.com/wonderflow-bv/design/commit/bf7a762dd740bfac2a0be5ec03689324b20809e5))
+* move Card under layouts ([b3305a0](https://github.com/wonderflow-bv/design/commit/b3305a0764c4a16be060d718be017c5567bcff74))
+* **selection-controls:** add indeterminate prop to checkbox ([2bf8e2e](https://github.com/wonderflow-bv/design/commit/2bf8e2e75781e94c3b2281205eda1f45358ad9db))
+* update tiles ([1a9c96a](https://github.com/wonderflow-bv/design/commit/1a9c96add0788acec337e4f31c8d5cf01bfc9e77))
+* use envs ([7e354b4](https://github.com/wonderflow-bv/design/commit/7e354b426d0c67cb1be807e3f024c215ffa6f644))
+
+
+### Features
+
+* add mixins doc section ([d36b24e](https://github.com/wonderflow-bv/design/commit/d36b24e2f4534c3d6f9c8da2e34b9ceb7f80e27b))
+* add Table doc ([cf0e4c9](https://github.com/wonderflow-bv/design/commit/cf0e4c9f6d988e127954713703209c90432c62e2))
+
 ## [1.61.7](https://github.com/wonderflow-bv/design/compare/v1.61.6...v1.61.7) (2021-11-19)
 
 
