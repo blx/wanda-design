@@ -5,7 +5,7 @@ import * as components from "@wonderflow/react-components";
 
 export const example = `<Elevator resting={1}>
   <Card padding={false}>
-    <Tab.Root>
+    <Tab>
       <Tab.Panel icon="check" label="Sign-up">
         <Card>
           <Stack rowGap={24}>
@@ -35,7 +35,7 @@ export const example = `<Elevator resting={1}>
           </Stack>
         </Card>
       </Tab.Panel>
-    </Tab.Root>
+    </Tab>
   </Card>
 </Elevator>`;
 
@@ -72,17 +72,17 @@ import { Tab } from "@wonderflow/react-components";
 
 export default () => {
   return (
-    <Tab.Root>
+    <Tab>
       <Tab.Panel label="Tab item 1">Tab panel 1</Tab.Panel>
       <Tab.Panel label="Tab item 2">Tab panel 2</Tab.Panel>
-    </Tab.Root>
+    </Tab>
   );
 };
 ```
 
 ## API Reference
 
-### Tab.Root
+### Tab
 
 Contains all the tabs component parts.
 
