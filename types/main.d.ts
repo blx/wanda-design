@@ -14,6 +14,7 @@ declare namespace NodeJS {
   export interface ProcessEnv {
     /* eslint-disable @typescript-eslint/naming-convention */
     IS_DEV: boolean;
+    CMS_ENDPOINT: string;
     NEXT_PUBLIC_DOMAIN: string;
   }
 }

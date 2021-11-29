@@ -1,7 +1,7 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { CodeBlock } from "@/components/code-block";
 import { LiveArea } from "@/components/live-area";
-import { Stack } from "@wonderflow/react-components";
+import { Stack, Tab } from "@wonderflow/react-components";
 import tkns from "@wonderflow/tokens/platforms/web/tokens.json";
 
 export default ({ children }) => (
@@ -68,20 +68,16 @@ Here the complete list of the available custom media queries you can use:
 
 If you need to create dynamic css declaration, or reuse block of declarations inside your css you can define and use CSS mixins.
 
-```css
+<Tab.Root>
+  <Tab.Panel icon="layer-group" label="Source">
+
+```css hideCopy
 @define-mixin icon $network, $color: blue {
-  .icon.is-$(network) {
-    color: $color;
-    @mixin-content;
-  }
-  .icon.is-$(network):hover {
+  .Icon.is-$(network) {
     color: white;
     background: $color;
+    @mixin-content;
   }
-}
-
-@mixin icon twitter {
-  background: url("/twt.png");
 }
 
 @mixin icon youtube, red {
@@ -89,4 +85,76 @@ If you need to create dynamic css declaration, or reuse block of declarations in
 }
 ```
 
+  </Tab.Panel>
+  <Tab.Panel icon="arrow-right" label="Output">
+
+```css hideCopy
+.Icon.is-youtube {
+  color: white;
+  background: red;
+  background: url("/youtube.png");
+}
+```
+
+  </Tab.Panel>
+</Tab.Root>
+
 The mixins implementation is based on `postcss-mixins`. To learn more about the mixins syntax and advanced features, please refer to the [postcss-mixins documentation](https://github.com/postcss/postcss-mixins).
+
+### Prebuilt mixins
+
+Wanda's core style comes with a set of prebuilt mixins you can use inside your css. These mixins allows you to reuse the same css declaration inside your components.
+
+#### Vibrancy
+
+Add a vibrancy effect to any element:
+
+<Tab.Root>
+  <Tab.Panel icon="layer-group" label="List">
+
+```css hideCopy
+@define-mixin vibrancy {
+  backdrop-filter: saturate(180%) blur(62px);
+  background: linear-gradient(
+    to bottom,
+    var(--global-vibrancy-background),
+    var(--global-vibrancy-background)
+  );
+}
+
+@define-mixin vibrancy-hover {
+  background: linear-gradient(
+    to bottom,
+    var(--global-vibrancy-background-hover),
+    var(--global-vibrancy-background-hover)
+  );
+}
+
+@define-mixin vibrancy-disabled {
+  color: var(--global-disabled-foreground);
+  backdrop-filter: saturate(180%) blur(62px);
+  background: linear-gradient(
+    to bottom,
+    var(--global-disabled-background),
+    var(--global-disabled-background)
+  );
+}
+```
+
+  </Tab.Panel>
+  <Tab.Panel icon="arrow-right" label="Usage">
+
+```css hideCopy
+@import "@wonderflow/react-components/core/vibrancy.css";
+
+.MyVibrantElement {
+  @mixin vibrancy;
+
+  &:hover {
+    @mixin vibrancy-hover;
+  }
+}
+```
+
+  </Tab.Panel>
+</Tab.Root>

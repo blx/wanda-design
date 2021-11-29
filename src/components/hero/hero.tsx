@@ -1,5 +1,4 @@
 import { Stack, Text, Title } from '@wonderflow/react-components'
-import React from 'react'
 import { QuickLinks } from '@/components/quicklinks'
 import { Hero as HeroClass, Video, Content } from './hero.module.css'
 

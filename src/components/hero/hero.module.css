@@ -40,5 +40,15 @@
   object-position: center;
   position: absolute;
   inset: 0;
-  opacity: 0.05;
+  opacity: 5%;
+
+  @nest [data-theme='light'] & {
+    filter: invert(1);
+  }
+  @nest [data-theme='auto'] & {
+
+    @media (prefers-color-scheme: light) {
+      filter: invert(1);
+    }
+  }
 }

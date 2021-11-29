@@ -345,6 +345,12 @@ const routes = [
         target: '',
         items: [
           {
+            path: '/components/layouts/card',
+            label: 'Card',
+            target: '',
+            wip: false
+          },
+          {
             path: '/components/layouts/container',
             label: 'Container',
             target: '',
@@ -375,6 +381,13 @@ const routes = [
           {
             path: '/components/layouts/stack',
             label: 'Stack',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
+            path: '/components/layouts/table',
+            label: 'Table',
             target: '',
             wip: false,
             deprecated: false
@@ -486,12 +499,6 @@ const routes = [
           {
             path: '/components/other/avatar',
             label: 'Avatar',
-            target: '',
-            wip: false
-          },
-          {
-            path: '/components/other/card',
-            label: 'Card',
             target: '',
             wip: false
           },
