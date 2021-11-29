@@ -1,3 +1,12 @@
+## [1.62.1](https://github.com/wonderflow-bv/design/compare/v1.62.0...v1.62.1) (2021-11-29)
+
+
+### Bug Fixes
+
+* move card into correct group inside overview ([36fa488](https://github.com/wonderflow-bv/design/commit/36fa488ea570c3b312176027789efac39e65e69b))
+* title display prop ([#250](https://github.com/wonderflow-bv/design/issues/250)) ([567866d](https://github.com/wonderflow-bv/design/commit/567866d19f840390721303598fcefa69fa02f4ad))
+* update deps ([4ac033c](https://github.com/wonderflow-bv/design/commit/4ac033cbae73bf426d38f2ffdc9629451be293b0))
+
 # [1.62.0](https://github.com/wonderflow-bv/design/compare/v1.61.7...v1.62.0) (2021-11-29)
 
 
