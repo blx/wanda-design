@@ -1,4 +1,9 @@
 import { getPosts } from '@/api/queries'
+import { ShellLayout } from '@/components/layouts/shell'
+import { Meta } from '@/components/meta'
+import { PostCard } from '@/components/post-card'
+import { Toolbar } from '@/components/toolbar'
+import { List } from '@wonderflow/react-components'
 
 type PostsPageProps = {
   posts: PostType[]
@@ -6,14 +11,19 @@ type PostsPageProps = {
 
 const Posts = ({ posts }: PostsPageProps) => {
   return (
-    <div>
-      <h1>Posts</h1>
-      <ul>
-        {posts.map(({ id, title }) => (
-          <li key={id}>{title}</li>
+    <ShellLayout
+      stickyHeader
+      header={(
+        <Toolbar />
+      )}
+    >
+      <Meta title="Learn - Wanda Design System" description="Learn how to design and develop better user experiences." />
+      <List as="ol" reversed>
+        {posts.map(({ id, title, updatedAt, slug }) => (
+          <li key={id}><PostCard slug={slug} title={title} date={updatedAt} excerpt="ciao" /></li>
         ))}
-      </ul>
-    </div>
+      </List>
+    </ShellLayout>
   )
 }
 

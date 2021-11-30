@@ -6,12 +6,28 @@ export const getPosts = async () => {
     query GetPublishedPosts {
       posts(stage: PUBLISHED) {
         id
+        updatedAt
+        title
         slug
+        externalUrl
         excerpt {
           html
           markdown
         }
-        title
+        authors {
+          fullName
+          role
+          favouriteColor {
+            rgba {
+              r
+              g
+              b
+            }
+          }
+          avatar {
+            url(transformation: {document: {output: {format: webp}}})
+          }
+        }
       }
     }
   `

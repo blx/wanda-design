@@ -1,0 +1,56 @@
+@import '@wonderflow/react-components/core/media.css';
+
+.PostCard {
+  position: relative;
+  cursor: default;
+  border-radius: env(--radius-8);
+
+
+  &:where(:hover, :focus-within) {
+    background-image:
+      linear-gradient(
+        to bottom right,
+        hsl(env(--color-primary-40) / 20%),
+        hsl(env(--color-primary-40) / 0%)
+      );
+  }
+
+  & a {
+    color: var(--global-foreground);
+    background: none;
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+
+  &::before {
+    counter-increment: post-counter;
+    position: absolute;
+    bottom: 0;
+    right: -2.8rem;
+    display: none;
+    color: var(--dimmed-6);
+    opacity: 10%;
+    line-height: 1;
+    font-size: 7rem;
+    font-weight: 100;
+    transition: all 200ms;
+    content: counters(post-counter, '.', decimal-leading-zero);
+
+    @nest .PostCard:where(:hover, :focus-within)& {
+      color: var(--cta-default);
+      opacity: 100%;
+    }
+
+    @media (--from-medium) {
+      display: block;
+    }
+  }
+}
+
+/*
+
+.Abstract {
+  opacity: 80%;
+} */
