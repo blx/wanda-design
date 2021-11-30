@@ -6,11 +6,14 @@ type PostsPageProps = {
 
 const Posts = ({ posts }: PostsPageProps) => {
   return (
-    <ul>
-      {posts.map(({ id, title }) => (
-        <li key={id}>{title}</li>
-      ))}
-    </ul>
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {posts.map(({ id, title }) => (
+          <li key={id}>{title}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
