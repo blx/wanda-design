@@ -6,7 +6,7 @@ import { Toolbar } from '@/components/toolbar'
 import { List } from '@wonderflow/react-components'
 
 type PostsPageProps = {
-  posts: PostType[]
+  posts: PostsType
 }
 
 const Posts = ({ posts }: PostsPageProps) => {
@@ -18,9 +18,16 @@ const Posts = ({ posts }: PostsPageProps) => {
       )}
     >
       <Meta title="Learn - Wanda Design System" description="Learn how to design and develop better user experiences." />
-      <List as="ol" reversed>
-        {posts.map(({ id, title, updatedAt, slug }) => (
-          <li key={id}><PostCard slug={slug} title={title} date={updatedAt} excerpt="ciao" /></li>
+      <List as="ol" hideMarker reversed>
+        {posts.map(({ id, title, updatedAt, slug, excerpt }) => (
+          <li key={id}>
+            <PostCard
+              slug={slug}
+              title={title}
+              updatedAt={updatedAt}
+              excerpt={excerpt}
+            />
+          </li>
         ))}
       </List>
     </ShellLayout>

@@ -7,12 +7,8 @@
 
 
   &:where(:hover, :focus-within) {
-    background-image:
-      linear-gradient(
-        to bottom right,
-        hsl(env(--color-primary-40) / 20%),
-        hsl(env(--color-primary-40) / 0%)
-      );
+    background-image: radial-gradient(var(--dimmed-4) 0.9px, transparent 0.9px);
+    background-size: 29px 29px;
   }
 
   & a {
@@ -38,19 +34,13 @@
     transition: all 200ms;
     content: counters(post-counter, '.', decimal-leading-zero);
 
-    @nest .PostCard:where(:hover, :focus-within)& {
-      color: var(--cta-default);
-      opacity: 100%;
-    }
-
     @media (--from-medium) {
       display: block;
     }
   }
+
+  &:where(:hover, :focus-within)::before {
+    color: var(--c);
+    opacity: 100%;
+  }
 }
-
-/*
-
-.Abstract {
-  opacity: 80%;
-} */

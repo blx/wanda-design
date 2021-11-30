@@ -1,43 +1,67 @@
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { PostCard as PostCardClass } from './post-card.module.css'
-import { Stack, Text, Title } from '@wonderflow/react-components'
+import { ClampText, Stack, Text, Title } from '@wonderflow/react-components'
 import { Datetime } from '@/components/datetime'
 
-type PostCardProps = PropsWithClass & {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  externalUrl?: string;
-}
+type PostCardProps = PropsWithClass & Pick<PostType, 'slug' | 'title' | 'updatedAt' | 'externalUrl' | 'excerpt'>
 
 export const PostCard = ({
   className,
-  date,
+  updatedAt,
   title,
   slug,
   externalUrl,
   excerpt,
   ...props
-}: PostCardProps) => (
-  <article className={clsx(PostCardClass, className)} {...props}>
-    <Link href={externalUrl || `/posts/${encodeURIComponent(slug)}`} passHref>
-      <Stack
-        as="a"
-        target={externalUrl && '_blank'}
-        rowGap={16}
-        verticalAlign="start"
-        horizontalAlign="start"
-        horizontalPadding={16}
-        verticalPadding={16}
-      >
-        <Text as="span" dimmed={5} size={16}>
-          <Datetime date={date} />
-        </Text>
-        <Title as="h2" level="3">{ title }</Title>
-        <Text>{excerpt}</Text>
-      </Stack>
-    </Link>
-  </article>
-)
+}: PostCardProps) => {
+  const [color, setColor] = useState<string>('var(--highlight-gray-foreground)')
+
+  useEffect(() => {
+    const colors = [
+      'var(--highlight-cyan-foreground)',
+      'var(--highlight-purple-foreground)',
+      'var(--highlight-yellow-foreground)',
+      'var(--highlight-green-foreground)',
+      'var(--highlight-blue-foreground)',
+      'var(--highlight-gray-foreground)',
+      'var(--highlight-red-foreground)'
+    ]
+
+    setColor(colors[colors.length * Math.random() | 0])
+  }, [])
+
+  // const renderExcerpt: React.FC = ({ children }) => <ClampText rows={3}>{children}</ClampText>
+
+  return (
+    <article style={{ '--c': color }} className={clsx(PostCardClass, className)} {...props}>
+      <Link href={externalUrl || `/posts/${encodeURIComponent(slug)}`} passHref>
+        <Stack
+          as="a"
+          target={externalUrl && '_blank'}
+          rowGap={32}
+          verticalAlign="start"
+          horizontalAlign="start"
+          horizontalPadding={24}
+          verticalPadding={32}
+        >
+          <Stack rowGap={8}>
+            <Text as="span" dimmed={6} size={16}>
+              <Datetime date={updatedAt} />
+            </Text>
+            <Title as="h2" level="2">
+              <ClampText rows={3}>{ title }</ClampText>
+            </Title>
+          </Stack>
+          <Text maxWidth="50ch">
+            {excerpt}
+            {/* <Markdown options={{ wrapper: renderExcerpt }}>
+              {excerpt}
+            </Markdown> */}
+          </Text>
+        </Stack>
+      </Link>
+    </article>
+  )
+}
