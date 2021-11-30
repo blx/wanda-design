@@ -1,18 +1,32 @@
+import { ShellLayout } from '@/components/layouts/shell'
+import { Fragment } from 'react'
 import { getPostDetails, getPosts } from '@/api/queries'
-// import { Markdown } from '@/components/markdown'
 import { Params } from 'next/dist/server/router'
+import { Markdown } from '@/components/markdown'
+import { Meta } from '@/components/meta'
+import { Toolbar } from '@/components/toolbar'
+import { Prose } from '@wonderflow/react-components'
 
 type PostPageProps = PostType
 
 const Post = ({
   title,
-  content
+  content,
+  excerpt
 }: PostPageProps) => {
   return (
-    <div>
+    <ShellLayout
+      stickyHeader
+      header={(
+        <Toolbar />
+      )}
+    >
+      <Meta title={`${title} - Wanda Design System`} description={excerpt} />
       {title}
-      {content}
-    </div>
+      <Prose>
+        {content && <Markdown options={{ wrapper: Fragment }}>{content}</Markdown>}
+      </Prose>
+    </ShellLayout>
   )
 }
 

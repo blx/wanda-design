@@ -52,8 +52,6 @@
 
 .Header {
 
-  /* border-bottom: 1px solid var(--dimmed-1); */
-
   @nest [data-shell-sticky-header='true'] & {
     position: sticky;
     top: 0;

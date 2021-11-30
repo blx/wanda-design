@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { PostCard as PostCardClass } from './post-card.module.css'
 import { ClampText, Stack, Text, Title } from '@wonderflow/react-components'
 import { Datetime } from '@/components/datetime'
+import { Markdown } from '@/components/markdown'
 
 type PostCardProps = PropsWithClass & Pick<PostType, 'slug' | 'title' | 'updatedAt' | 'externalUrl' | 'excerpt'>
 
@@ -32,7 +33,7 @@ export const PostCard = ({
     setColor(colors[colors.length * Math.random() | 0])
   }, [])
 
-  // const renderExcerpt: React.FC = ({ children }) => <ClampText rows={3}>{children}</ClampText>
+  const renderExcerpt: React.FC = ({ children }) => <ClampText rows={3}>{children}</ClampText>
 
   return (
     <article style={{ '--c': color }} className={clsx(PostCardClass, className)} {...props}>
@@ -55,10 +56,9 @@ export const PostCard = ({
             </Title>
           </Stack>
           <Text maxWidth="50ch">
-            {excerpt}
-            {/* <Markdown options={{ wrapper: renderExcerpt }}>
+            <Markdown options={{ wrapper: renderExcerpt }}>
               {excerpt}
-            </Markdown> */}
+            </Markdown>
           </Text>
         </Stack>
       </Link>

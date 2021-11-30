@@ -23,8 +23,8 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   hideCopy = false,
   className
 }) => {
-  const isNode = typeof children !== 'string'
-  const language = className?.replace(/language-/, '') as Language
+  const isNotString = typeof children !== 'string'
+  const language: Language = isNotString ? children?.props.className.replace(/(lang|language)-/g, '') : className?.replace(/(lang|language)-/g, '')
   const CodeRef = useRef<any>('')
   const [, copyToClipboard] = useCopyToClipboard()
 
@@ -35,7 +35,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
     [CodeRef, copyToClipboard]
   )
 
-  const formattedChildren = (isNode && children) ? children.props.children.trim() : children.trim()
+  const formattedChildren = isNotString ? children.props.children.trim() : children.trim()
 
   return (
     <div className={clsx(CodeBlockClass)} data-code-block-has-highlight={Boolean(highlight)}>
