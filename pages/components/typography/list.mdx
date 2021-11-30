@@ -71,6 +71,14 @@ export default () => {
       description: "Set the marker color",
     },
     {
+      name: "hideMarker",
+      type: ["boolean"],
+      default: "false",
+      required: false,
+      dangerous: false,
+      description: "Hide the marker indicator from items",
+    },
+    {
       name: "as",
       type: ["keyof JSX.IntrinsicElements | React.ComponentType<any>"],
       default: '"ul"',
