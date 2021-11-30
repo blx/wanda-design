@@ -10,10 +10,8 @@ export const getPosts = async () => {
         title
         slug
         externalUrl
-        excerpt {
-          html
-          markdown
-        }
+        excerpt
+        content
         authors {
           fullName
           role
@@ -41,11 +39,25 @@ export const getPostDetails = async (slug: PostType['slug']) => {
     query GetPostDetails($slug: String!) {
       post(where: { slug: $slug }) {
         id
-        slug
+        updatedAt
         title
-        excerpt {
-          html
-          markdown
+        slug
+        externalUrl
+        excerpt
+        content
+        authors {
+          fullName
+          role
+          favouriteColor {
+            rgba {
+              r
+              g
+              b
+            }
+          }
+          avatar {
+            url(transformation: {document: {output: {format: webp}}})
+          }
         }
       }
     }
