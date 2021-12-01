@@ -2,7 +2,7 @@
 @import '@wonderflow/react-components/core/vibrancy.css';
 
 .PostCard {
-  --dot-color: var(--dimmed-4);
+  --dot-color: var(--dimmed-3);
 
   counter-increment: post-counter;
   position: relative;
@@ -10,7 +10,7 @@
   background-image:
     linear-gradient(to bottom right, var(--dimmed-0), hsl(env(--color-primary-80) / 0%)),
     radial-gradient(var(--dot-color) 0.9px, transparent 0.9px);
-  background-size: 100%, 27px 27px;
+  background-size: 100%, 30px 30px;
 
 
   &:where(:hover, :focus-within) {
