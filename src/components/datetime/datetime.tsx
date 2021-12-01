@@ -10,7 +10,7 @@ export const Datetime = ({ date }: IDateProps) => {
 
   return (
     <time
-      aria-label={`Published on ${humanDate}.`}
+      aria-label={`Published on ${humanDate}`}
       dateTime={date}
     >
       {humanDate}

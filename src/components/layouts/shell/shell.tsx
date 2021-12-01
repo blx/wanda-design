@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect, useRef, useCallback } from 'react'
+import React, { ReactNode, useState, useEffect, useRef, useCallback, CSSProperties } from 'react'
 import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
 import clsx from 'clsx'
@@ -15,6 +15,7 @@ type ShellLayoutProps = {
   header?: ReactNode;
   stickyHeader?: boolean;
   showFooter?: boolean;
+  contentMaxWidth?: string;
 } & PropsWithClass
 
 const variants = {
@@ -28,6 +29,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
   header,
   stickyHeader = false,
   showFooter = true,
+  contentMaxWidth = '85ch',
   className,
   ...props
 }) => {
@@ -59,6 +61,10 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
     }
   }, [isWide, router.events])
 
+  const dynamycStyle: CSSProperties = {
+    '--content-max-width': contentMaxWidth
+  }
+
   return (
     <Stack
       fill={false}
@@ -66,6 +72,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
       data-shell-sticky-header={stickyHeader}
       direction="row"
       className={clsx(Shell, className)}
+      style={dynamycStyle}
       {...props}
     >
       <a href="#content-quicklink" className={SkipToContent}>Skip to main content</a>

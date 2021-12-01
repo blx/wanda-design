@@ -4,15 +4,18 @@ import client from '@/api/client'
 export const getPosts = async () => {
   const query = gql`
     query GetPublishedPosts {
-      posts(stage: PUBLISHED) {
+      posts(stage: PUBLISHED, orderBy: publishedAt_DESC) {
         id
         updatedAt
+        publishedAt
+        createdAt
         title
         slug
         externalUrl
         excerpt
         content
         authors {
+          id
           fullName
           role
           favouriteColor {
@@ -40,12 +43,15 @@ export const getPostDetails = async (slug: PostType['slug']) => {
       post(where: { slug: $slug }) {
         id
         updatedAt
+        publishedAt
+        createdAt
         title
         slug
         externalUrl
         excerpt
         content
         authors {
+          id
           fullName
           role
           favouriteColor {

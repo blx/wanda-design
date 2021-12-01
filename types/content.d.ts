@@ -1,13 +1,14 @@
 type AuthorType = {
-  fullName: string,
-  role: string,
+  id: string
+  fullName: string;
+  role: string;
   favouriteColor: {
     rgba: {
-      r: number,
-      g: number,
+      r: number;
+      g: number;
       b: number
     }
-  },
+  };
   avatar: {
     'url': string
   }
@@ -16,6 +17,8 @@ type AuthorType = {
 type PostType = {
   id: string;
   updatedAt: string;
+  publishedAt: string;
+  createdAt: string;
   title: string;
   slug: string;
   externalUrl?: string;

@@ -3,7 +3,7 @@ import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
 import { PostCard } from '@/components/post-card'
 import { Toolbar } from '@/components/toolbar'
-import { List } from '@wonderflow/react-components'
+import { Stack } from '@wonderflow/react-components'
 
 type PostsPageProps = {
   posts: PostsType
@@ -13,29 +13,32 @@ const Posts = ({ posts }: PostsPageProps) => {
   return (
     <ShellLayout
       stickyHeader
+      contentMaxWidth="90ch"
       header={(
         <Toolbar />
       )}
     >
       <Meta title="Learn - Wanda Design System" description="Learn how to design and develop better user experiences." />
-      <List as="ol" hideMarker reversed>
-        {posts.map(({ id, title, updatedAt, slug, excerpt }) => (
-          <li key={id}>
+      <ol style={{ counterReset: 'post-counter', padding: 0 }}>
+        {posts.map((post) => (
+          <Stack as="li" verticalPadding={48} key={post.id}>
             <PostCard
-              slug={slug}
-              title={title}
-              updatedAt={updatedAt}
-              excerpt={excerpt}
+              slug={post.slug}
+              title={post.title}
+              updatedAt={post.updatedAt}
+              createdAt={post.createdAt}
+              authors={post.authors}
+              excerpt={post.excerpt}
             />
-          </li>
+          </Stack>
         ))}
-      </List>
+      </ol>
     </ShellLayout>
   )
 }
 
 export const getStaticProps = async () => {
-  const posts = await getPosts()
+  const posts: PostsType = await getPosts()
   return {
     props: {
       posts

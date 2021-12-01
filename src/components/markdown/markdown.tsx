@@ -13,6 +13,7 @@ export const Markdown: React.FC<{
 }> = ({ children, options }) => (
   <MarkdownToJsx
     options={{
+      ...options,
       overrides: {
         a: { component: CustomLink },
         pre: CodeBlock,
@@ -25,8 +26,7 @@ export const Markdown: React.FC<{
         ul: { component: List, props: { as: 'ul', markerColor: 'var(--dimmed-4)' } },
         ol: { component: List, props: { as: 'ol', markerColor: 'var(--dimmed-4)' } },
         hr: { component: Separator }
-      },
-      ...options
+      }
     }}
   >
     {children}
