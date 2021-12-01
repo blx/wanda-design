@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Avatar, SkeletonBlock, Stack, Text } from '@wonderflow/react-components'
+import { Avatar, Stack, Text } from '@wonderflow/react-components'
 import clsx from 'clsx'
 import { formatRole } from '@/utils/formatters'
 import { motion } from 'framer-motion'
@@ -37,9 +37,10 @@ export const AuthorCard = ({
       fill={false}
       onMouseEnter={() => collapsed && setIsCollapsed(false)}
       onMouseLeave={() => collapsed && setIsCollapsed(true)}
+      style={{ lineHeight: 1 }}
       {...props}
     >
-      {!avatar ? <SkeletonBlock circle width={40} height={40} /> : <Avatar src={avatar} />}
+      <Avatar src={avatar} />
       <motion.div
         className={AuthorInfo}
         variants={variants}
