@@ -1,27 +1,30 @@
 @import '@wonderflow/react-components/core/media.css';
+@import '@wonderflow/react-components/core/vibrancy.css';
 
 .PostCard {
+  --dot-color: var(--dimmed-4);
+
+  counter-increment: post-counter;
   position: relative;
-  cursor: default;
   border-radius: env(--radius-8);
+  background-image:
+    linear-gradient(to bottom right, var(--dimmed-0), hsl(env(--color-primary-80) / 0%)),
+    radial-gradient(var(--dot-color) 0.9px, transparent 0.9px);
+  background-size: 100%, 27px 27px;
 
 
   &:where(:hover, :focus-within) {
-    background-image: radial-gradient(var(--dimmed-4) 0.9px, transparent 0.9px);
-    background-size: 29px 29px;
+    --dot-color: var(--dimmed-6);
   }
 
   & a {
     color: var(--global-foreground);
     background: none;
-
-    & > * {
-      pointer-events: none;
-    }
+    cursor: pointer;
   }
 
   &::before {
-    counter-increment: post-counter;
+    content: counters(post-counter, '.', decimal-leading-zero);
     position: absolute;
     bottom: 0;
     right: -2.8rem;
@@ -32,7 +35,6 @@
     font-size: 7rem;
     font-weight: 100;
     transition: all 200ms;
-    content: counters(post-counter, '.', decimal-leading-zero);
 
     @media (--from-medium) {
       display: block;
@@ -43,4 +45,15 @@
     color: var(--c);
     opacity: 100%;
   }
+}
+
+.Authors {
+
+  @mixin vibrancy;
+
+  padding: env(--space-8);
+  border-radius: 100px;
+  position: absolute;
+  transform: translateY(50%);
+  bottom: 0;
 }

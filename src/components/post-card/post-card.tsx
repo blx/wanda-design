@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { PostCard as PostCardClass } from './post-card.module.css'
-import { ClampText, Stack, Text, Title } from '@wonderflow/react-components'
+import { PostCard as PostCardClass, Authors } from './post-card.module.css'
+import { Chip, ClampText, Elevator, Stack, Text, Title } from '@wonderflow/react-components'
 import { Datetime } from '@/components/datetime'
-import { Markdown } from '@/components/markdown'
+import { AuthorCard } from '@/components/author-card'
 
-type PostCardProps = PropsWithClass & Pick<PostType, 'slug' | 'title' | 'updatedAt' | 'externalUrl' | 'excerpt'>
+type PostCardProps = PropsWithClass & Pick<
+  PostType,
+  'slug' | 'title' | 'updatedAt' | 'createdAt' | 'externalUrl' | 'excerpt' | 'authors'
+>
 
 export const PostCard = ({
   className,
   updatedAt,
+  createdAt,
   title,
   slug,
   externalUrl,
   excerpt,
+  authors,
   ...props
 }: PostCardProps) => {
   const [color, setColor] = useState<string>('var(--highlight-gray-foreground)')
@@ -33,7 +38,7 @@ export const PostCard = ({
     setColor(colors[colors.length * Math.random() | 0])
   }, [])
 
-  const renderExcerpt: React.FC = ({ children }) => <ClampText rows={3}>{children}</ClampText>
+  const isNew = createdAt && new Date(createdAt).getTime() > new Date().getTime() - 1000 * 60 * 60 * 24 * 7
 
   return (
     <article style={{ '--c': color }} className={clsx(PostCardClass, className)} {...props}>
@@ -44,22 +49,49 @@ export const PostCard = ({
           rowGap={32}
           verticalAlign="start"
           horizontalAlign="start"
-          horizontalPadding={24}
-          verticalPadding={32}
+          horizontalPadding={56}
+          verticalPadding={40}
         >
           <Stack rowGap={8}>
-            <Text as="span" dimmed={6} size={16}>
-              <Datetime date={updatedAt} />
-            </Text>
+            <Stack direction="row" verticalAlign="center" columnGap={8} wrap fill={false}>
+              <Text as="span" dimmed={5} size={16}>
+                <Datetime date={updatedAt} />
+              </Text>
+              {isNew && <Chip dimension="small" color="green">new</Chip>}
+            </Stack>
             <Title as="h2" level="2">
               <ClampText rows={3}>{ title }</ClampText>
             </Title>
           </Stack>
-          <Text maxWidth="50ch">
-            <Markdown options={{ wrapper: renderExcerpt }}>
-              {excerpt}
-            </Markdown>
+          <Text maxWidth="50ch" dimmed={6}>
+            <ClampText rows={3}>{excerpt}</ClampText>
           </Text>
+          <Stack direction="row">
+            {authors && (
+              <Elevator resting={1}>
+                <Stack
+                  fill={false}
+                  direction="row"
+                  verticalAlign="center"
+                  horizontalAlign="start"
+                  verticalPadding={8}
+                  horizontalPadding={8}
+                  columnGap={8}
+                  className={Authors}
+                >
+                  {authors.map(person => (
+                    <AuthorCard
+                      key={person.id}
+                      avatar={person.avatar.url}
+                      name={person.fullName}
+                      role={person.role}
+                      collapsed={authors.length > 1}
+                    />
+                  ))}
+                </Stack>
+              </Elevator>
+            )}
+          </Stack>
         </Stack>
       </Link>
     </article>

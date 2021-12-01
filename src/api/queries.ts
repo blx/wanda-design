@@ -1,9 +1,9 @@
 import { gql } from 'graphql-request'
 import client from '@/api/client'
 
-export const getPosts = async () => {
+export const getPosts = async (avatarWidth: number = 300, avatarHeight: number = 300) => {
   const query = gql`
-    query GetPublishedPosts {
+    query GetPublishedPosts($avatarWidth: Int, $avatarHeight: Int) {
       posts(stage: PUBLISHED, orderBy: publishedAt_DESC) {
         id
         updatedAt
@@ -26,20 +26,34 @@ export const getPosts = async () => {
             }
           }
           avatar {
-            url(transformation: {document: {output: {format: webp}}})
+            url(
+              transformation: {
+                document: {
+                  output: {
+                    format: webp
+                  }
+                },
+                image: {
+                  resize: {
+                    height: $avatarHeight,
+                    width: $avatarWidth
+                  }
+                }
+              }
+            )
           }
         }
       }
     }
   `
 
-  const result = await client.request(query)
+  const result = await client.request(query, { avatarWidth, avatarHeight })
   return result.posts
 }
 
-export const getPostDetails = async (slug: PostType['slug']) => {
+export const getPostDetails = async (slug: PostType['slug'], avatarWidth: number = 300, avatarHeight: number = 300) => {
   const query = gql`
-    query GetPostDetails($slug: String!) {
+    query GetPostDetails($slug: String!, $avatarWidth: Int, $avatarHeight: Int) {
       post(where: { slug: $slug }) {
         id
         updatedAt
@@ -62,14 +76,28 @@ export const getPostDetails = async (slug: PostType['slug']) => {
             }
           }
           avatar {
-            url(transformation: {document: {output: {format: webp}}})
+            url(
+              transformation: {
+                document: {
+                  output: {
+                    format: webp
+                  }
+                },
+                image: {
+                  resize: {
+                    height: $avatarHeight,
+                    width: $avatarWidth
+                  }
+                }
+              }
+            )
           }
         }
       }
     }
   `
 
-  const result = await client.request(query, { slug })
+  const result = await client.request(query, { slug, avatarWidth, avatarHeight })
 
   return result.post
 }

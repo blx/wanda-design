@@ -4,10 +4,6 @@ html {
   }
 }
 
-body {
-  scroll-padding: env(--space-200);
-}
-
 h1,
 h2,
 h3,

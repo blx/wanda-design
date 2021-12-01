@@ -21,7 +21,7 @@ const Posts = ({ posts }: PostsPageProps) => {
       <Meta title="Learn - Wanda Design System" description="Learn how to design and develop better user experiences." />
       <ol style={{ counterReset: 'post-counter', padding: 0 }}>
         {posts.map((post) => (
-          <Stack as="li" verticalPadding={48} key={post.id}>
+          <Stack as="li" verticalPadding={80} key={post.id}>
             <PostCard
               slug={post.slug}
               title={post.title}

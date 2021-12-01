@@ -1,0 +1,9 @@
+.AuthorCard {
+  overflow: hidden;
+  height: 40px;
+}
+
+.AuthorInfo {
+  white-space: nowrap;
+}
+
