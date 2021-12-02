@@ -11,10 +11,17 @@ type PostPageProps = PostType
 const Post = ({
   title,
   content,
+  authors,
+  topics,
   excerpt
 }: PostPageProps) => {
   return (
-    <PostLayout title={title} excerpt={excerpt}>
+    <PostLayout
+      title={title}
+      excerpt={excerpt}
+      authors={authors}
+      topics={topics}
+    >
       <Prose>
         {content
           ? <Markdown options={{ wrapper: Fragment }}>{content}</Markdown>

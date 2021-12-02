@@ -22,3 +22,13 @@
     }
   }
 }
+
+.TopicsContainer {
+  position: relative;
+  margin-top: calc(env(--space-72) * -1);
+
+  & > * {
+    position: absolute;
+    right: 0;
+  }
+}
