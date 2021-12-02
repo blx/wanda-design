@@ -1,7 +1,7 @@
 import { Bleed } from '@/components/bleed'
 import { Meta } from '@/components/meta'
 import { Toolbar } from '@/components/toolbar'
-import { Separator, Stack, Title } from '@wonderflow/react-components'
+import { SkeletonBlock, Stack, Title } from '@wonderflow/react-components'
 import { useMedia } from 'react-use'
 import { ShellLayout } from '../shell'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
@@ -27,11 +27,11 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
       <Meta title={`${title} - Wanda Design System`} description={excerpt} />
       <Bleed maxWidth="100vw" className={PostHead}>
         <Stack horizontalAlign="center">
-          <Title maxWidth="15ch" as="h1" level={isWide ? 'display' : '1'}>{title}</Title>
+          {title
+            ? <Title maxWidth="15ch" as="h1" level={isWide ? 'display' : '1'}>{title}</Title>
+            : <SkeletonBlock width="40vw" height={90} />
+            }
         </Stack>
-      </Bleed>
-      <Bleed maxWidth="100vw">
-        <Separator />
       </Bleed>
       <Stack verticalPadding={56}>
         {children}
