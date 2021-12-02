@@ -20,8 +20,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(var(--dimmed-4) 0.9px, transparent 0.9px);
-    background-size: 29px 29px;
+    background-image: radial-gradient(var(--dimmed-2) 0.9px, transparent 0.9px);
+    background-size: 30px 30px;
     pointer-events: none;
   }
 }

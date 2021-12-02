@@ -1,0 +1,22 @@
+@import '@wonderflow/react-components/core/media.css';
+
+.PostHead {
+  --dot-color: var(--dimmed-3);
+
+  padding-bottom: env(--space-40);
+
+  @media (--from-extra-large) {
+    background-image:
+      linear-gradient(177deg, var(--dimmed-0), hsl(env(--color-primary-80) / 0%)),
+      radial-gradient(var(--dot-color) 0.9px, transparent 0.9px);
+    background-size: 100%, 30px 30px;
+    padding-bottom: env(--space-80);
+
+    /* Safari Only trick */
+
+    @supports (-webkit-hyphens: none) {
+      background-image: radial-gradient(var(--dot-color) 0.9px, transparent 0.9px);
+      background-size: 30px 30px;
+    }
+  }
+}

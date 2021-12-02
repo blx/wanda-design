@@ -3,7 +3,7 @@ import { MdxLayout } from "@/components/layouts/mdx";
 import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
 import dynamic from "next/dynamic";
-import * as components from "@wonderflow/react-components";
+import * as Components from "@wonderflow/react-components";
 
 export const DynPortal = dynamic(
   import("@/components/portal").then((m) => m.Portal),
@@ -68,7 +68,7 @@ export default ({ children }) => (
     ]}
     hero={
       <Playground
-        scope={{ ...components, useState, DynPortal }}
+        scope={{ ...Components, useState, DynPortal }}
         code={example}
       />
     }
@@ -135,10 +135,10 @@ export default () => {
 };
 ```
 
-<Snackbar kind="warning">
+<Components.Snackbar kind="warning">
   It's important to consider that by passing custom content you have to handle
   the overflow, size, position and accessibility by yourself.
-</Snackbar>
+</Components.Snackbar>
 
 ## API Reference
 

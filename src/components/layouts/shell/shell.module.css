@@ -52,8 +52,6 @@
 
 .Header {
 
-  /* border-bottom: 1px solid var(--dimmed-1); */
-
   @nest [data-shell-sticky-header='true'] & {
     position: sticky;
     top: 0;
@@ -69,8 +67,8 @@
     padding: env(--space-16) env(--space-24) max(env(--space-88), env(safe-area-inset-bottom));
 
     @media (--from-medium) {
-      max-inline-size: 85ch;
-      padding: env(--space-48) env(--space-64);
+      max-inline-size: var(--content-max-width);
+      padding: 0  env(--space-64) env(--space-48);
     }
   }
 }
