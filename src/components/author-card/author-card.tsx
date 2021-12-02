@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Avatar, Stack, Text } from '@wonderflow/react-components'
 import clsx from 'clsx'
 import { formatRole } from '@/utils/formatters'
@@ -28,9 +28,12 @@ export const AuthorCard = ({
 }: AuthorCardProps) => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed)
 
+  useEffect(() => {
+    setIsCollapsed(collapsed)
+  }, [collapsed])
+
   return (
     <Stack
-      as="li"
       className={clsx(AuthorCardClass, className)}
       direction="row"
       verticalAlign="center"
