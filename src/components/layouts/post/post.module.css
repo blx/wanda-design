@@ -3,8 +3,7 @@
 .PostHead {
   --dot-color: var(--dimmed-3);
 
-  padding-bottom: env(--space-40);
-  padding-top: env(--space-40);
+  padding: env(--space-64) 0;
   box-shadow: inset 0 -1px 0 var(--dimmed-1);
 
   @media (--from-extra-large) {
@@ -25,7 +24,7 @@
 
 .TopicsContainer {
   position: relative;
-  margin-top: calc(env(--space-72) * -1);
+  margin-top: calc(env(--space-104) * -1);
 
   & > * {
     position: absolute;

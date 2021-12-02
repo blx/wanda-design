@@ -40,7 +40,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
     >
       <Meta title={`${title} - Wanda Design System`} description={excerpt} />
 
-      <Stack rowGap={56}>
+      <Stack rowGap={88}>
         <Bleed maxWidth="100vw" className={PostHead}>
           <Stack horizontalAlign="center">
             {title
@@ -51,7 +51,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
         </Bleed>
 
         {topics && (
-        <Container dimension="medium" className={TopicsContainer}>
+        <Container dimension="large" className={TopicsContainer}>
           <Stack direction="row" horizontalAlign="end" columnGap={8}>
             {topics.map((topic, i) => (
               <Link href={`/posts/topic/${topic}`} key={topic}>
