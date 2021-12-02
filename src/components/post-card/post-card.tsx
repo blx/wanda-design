@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { PostCard as PostCardClass, Authors } from './post-card.module.css'
-import { Chip, ClampText, Elevator, Stack, Text, Title } from '@wonderflow/react-components'
+import { ClampText, Elevator, Stack, Text, Title } from '@wonderflow/react-components'
 import { Datetime } from '@/components/datetime'
 import { AuthorCard } from '@/components/author-card'
+import { useMedia } from 'react-use'
+import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 
 type PostCardProps = PropsWithClass & Pick<
   PostType,
@@ -23,6 +25,7 @@ export const PostCard = ({
   ...props
 }: PostCardProps) => {
   const [color, setColor] = useState<string>('var(--highlight-gray-foreground)')
+  const isMedium = useMedia(`(min-width: ${tkns.breakpoint.medium})`, true)
 
   useEffect(() => {
     const colors = [
@@ -38,8 +41,6 @@ export const PostCard = ({
     setColor(colors[colors.length * Math.random() | 0])
   }, [])
 
-  const isNew = createdAt && new Date(createdAt).getTime() > new Date().getTime() - 1000 * 60 * 60 * 24 * 7
-
   return (
     <article style={{ '--c': color }} className={clsx(PostCardClass, className)} {...props}>
       <Link href={externalUrl || `/posts/${encodeURIComponent(slug)}`} passHref>
@@ -49,7 +50,7 @@ export const PostCard = ({
           rowGap={32}
           verticalAlign="start"
           horizontalAlign="start"
-          horizontalPadding={56}
+          horizontalPadding={isMedium ? 56 : 16}
           verticalPadding={40}
         >
           <Stack rowGap={8}>
@@ -57,9 +58,8 @@ export const PostCard = ({
               <Text as="span" dimmed={5} size={16}>
                 <Datetime date={updatedAt} />
               </Text>
-              {isNew && <Chip dimension="small" color="green">new</Chip>}
             </Stack>
-            <Title as="h2" level="2">
+            <Title as="h2" level={isMedium ? '2' : '3'}>
               <ClampText rows={3}>{ title }</ClampText>
             </Title>
           </Stack>
@@ -70,6 +70,7 @@ export const PostCard = ({
             {authors && (
               <Elevator resting={1}>
                 <Stack
+                  as="ul"
                   fill={false}
                   direction="row"
                   verticalAlign="center"
@@ -85,7 +86,7 @@ export const PostCard = ({
                       avatar={person.avatar.url}
                       name={person.fullName}
                       role={person.role}
-                      collapsed={authors.length > 1}
+                      collapsed={authors?.length > 1}
                     />
                   ))}
                 </Stack>

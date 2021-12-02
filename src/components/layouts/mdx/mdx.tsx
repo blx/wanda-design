@@ -62,7 +62,7 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
       {...props}
     >
       <Meta title={`${title} - Wanda Design System`} description={description} />
-      <Stack rowGap={48}>
+      <Stack rowGap={48} verticalPadding={48}>
         <DocHead title={title} description={description}>
           {tags}
         </DocHead>

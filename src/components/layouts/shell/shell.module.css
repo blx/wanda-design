@@ -68,7 +68,7 @@
 
     @media (--from-medium) {
       max-inline-size: var(--content-max-width);
-      padding: env(--space-48) env(--space-64);
+      padding: 0  env(--space-64) env(--space-48);
     }
   }
 }

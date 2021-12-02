@@ -26,10 +26,11 @@ export const AuthorCard = ({
   collapsed = false,
   ...props
 }: AuthorCardProps) => {
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed || false)
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed)
 
   return (
     <Stack
+      as="li"
       className={clsx(AuthorCardClass, className)}
       direction="row"
       verticalAlign="center"

@@ -14,6 +14,8 @@ type AuthorType = {
   }
 }
 
+type TopicsType = string[]
+
 type PostType = {
   id: string;
   updatedAt: string;
@@ -22,6 +24,7 @@ type PostType = {
   title: string;
   slug: string;
   externalUrl?: string;
+  topics?: TopicsType;
   excerpt: string;
   content: string;
   authors?: AuthorType[];

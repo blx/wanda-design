@@ -1,10 +1,9 @@
-import { ShellLayout } from '@/components/layouts/shell'
 import { Fragment } from 'react'
 import { getPostDetails, getPosts } from '@/api/queries'
 import { Params } from 'next/dist/server/router'
 import { Markdown } from '@/components/markdown'
-import { Meta } from '@/components/meta'
-import { Toolbar } from '@/components/toolbar'
+
+import { PostLayout } from '@/components/layouts/post'
 import { Prose } from '@wonderflow/react-components'
 
 type PostPageProps = PostType
@@ -15,25 +14,18 @@ const Post = ({
   excerpt
 }: PostPageProps) => {
   return (
-    <ShellLayout
-      stickyHeader
-      header={(
-        <Toolbar />
-      )}
-    >
-      <Meta title={`${title} - Wanda Design System`} description={excerpt} />
-      {title}
+    <PostLayout title={title} excerpt={excerpt}>
       <Prose>
-        {content && <Markdown options={{ wrapper: Fragment }}>{content}</Markdown>}
+        <Markdown options={{ wrapper: Fragment }}>{content}</Markdown>
       </Prose>
-    </ShellLayout>
+    </PostLayout>
   )
 }
 
 export async function getStaticPaths () {
   const posts = await getPosts()
   return {
-    paths: posts.map((post: Partial<PostType>) => ({
+    paths: posts.map((post: PostType) => ({
       params: {
         slug: post.slug
       }

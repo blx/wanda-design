@@ -1,5 +1,4 @@
 @import '@wonderflow/react-components/core/media.css';
-@import '@wonderflow/react-components/core/vibrancy.css';
 
 .PostCard {
   --dot-color: var(--dimmed-3);
@@ -8,13 +7,20 @@
   position: relative;
   border-radius: env(--radius-8);
   background-image:
-    linear-gradient(to bottom right, var(--dimmed-0), hsl(env(--color-primary-80) / 0%)),
+    linear-gradient(178deg, var(--dimmed-0), hsl(env(--color-primary-80) / 0%)),
     radial-gradient(var(--dot-color) 0.9px, transparent 0.9px);
   background-size: 100%, 30px 30px;
 
+  /* Safari Only trick */
+
+  @supports (-webkit-hyphens: none) {
+    background-image: radial-gradient(var(--dot-color) 0.9px, transparent 0.9px);
+    background-size: 30px 30px;
+  }
+
 
   &:where(:hover, :focus-within) {
-    --dot-color: var(--dimmed-6);
+    --dot-color: var(--dimmed-5);
   }
 
   & a {
@@ -32,7 +38,7 @@
     color: var(--dimmed-6);
     opacity: 10%;
     line-height: 1;
-    font-size: 7rem;
+    font-size: 8rem;
     font-weight: 100;
     transition: all 200ms;
 
@@ -48,12 +54,11 @@
 }
 
 .Authors {
-
-  @mixin vibrancy;
-
+  background-color: var(--dimmed-0);
   padding: env(--space-8);
-  border-radius: 100px;
+  border-radius: 1e5px;
   position: absolute;
-  transform: translateY(50%);
   bottom: 0;
+  transform: translateY(calc(50% - 14px));
+  border: 1px solid var(--dimmed-1);
 }
