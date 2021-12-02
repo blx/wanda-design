@@ -5,11 +5,14 @@
 
 .AuthorInfo {
   white-space: nowrap;
+  padding-left: env(--space-8);
+  padding-right: env(--space-8);
 
   @nest .AuthorCard[data-author-card-collapsed='true'] & {
     --duration: env(--duration-200);
 
     padding-left: 0;
+    padding-right: 0;
     transition:
       max-width var(--duration),
       transform var(--duration),
