@@ -1,3 +1,10 @@
+## [1.63.2](https://github.com/wonderflow-bv/design/compare/v1.63.1...v1.63.2) (2021-12-06)
+
+
+### Bug Fixes
+
+* post-card wrong url ([c38cab8](https://github.com/wonderflow-bv/design/commit/c38cab84cfbba281e8e5a59df4000154ca83d8eb))
+
 ## [1.63.1](https://github.com/wonderflow-bv/design/compare/v1.63.0...v1.63.1) (2021-12-06)
 
 
