@@ -1,3 +1,39 @@
+# [1.63.0](https://github.com/wonderflow-bv/design/compare/v1.62.1...v1.63.0) (2021-12-06)
+
+
+### Bug Fixes
+
+* **author-card:** remove skeleton ([7a1f693](https://github.com/wonderflow-bv/design/commit/7a1f693b0fdca6375068e28a9decf65d57b44b6a))
+* bleed overflow ([338da80](https://github.com/wonderflow-bv/design/commit/338da80329794f4aeb1f14094598bd0e25e8de82))
+* **bleed:** fix size calculation ([99954b9](https://github.com/wonderflow-bv/design/commit/99954b9399af816b40c89a5a9dc01dab7b325fc3))
+* fix weird scroll-padding related bug ([2a21d0d](https://github.com/wonderflow-bv/design/commit/2a21d0d159f4022efaf625c9af74e41eabdbb55d))
+* fix weird scroll-padding related bug ([54720d1](https://github.com/wonderflow-bv/design/commit/54720d168f4a4a1755ad0144237b8f7eec9b12bc))
+* **list:** add new hideMarker prop ([0adc251](https://github.com/wonderflow-bv/design/commit/0adc25127540f44b456363a1502670c61fe71492))
+* **modal:** update snackbar usage ([16a845c](https://github.com/wonderflow-bv/design/commit/16a845ce168b93aefe8ac453ec4fff43b9c7c6ca))
+* post layout ([7376062](https://github.com/wonderflow-bv/design/commit/7376062b5a9d54c2ee153b753a8d3c3089355406))
+* **post-card:** update style ([a7c8bd1](https://github.com/wonderflow-bv/design/commit/a7c8bd17d81de66f094a22e67f8e42556bc02572))
+* replace Tab.Root with Tab ([52d7f64](https://github.com/wonderflow-bv/design/commit/52d7f64bbf96196a848845fdba456c2eb70b37c2))
+* **shell:** add sidebar width as custom prop ([e17cf62](https://github.com/wonderflow-bv/design/commit/e17cf621a6c0e8a4a46a060fb097233fdecae372))
+* test p path ([d7c1821](https://github.com/wonderflow-bv/design/commit/d7c1821812f2d24769cb92e2c237421aa7d81407))
+* test preview page ([2c5690a](https://github.com/wonderflow-bv/design/commit/2c5690a08f9f80993ff8ee006cfcbe5f9242271e))
+* try to fix author-card collapsed ([5bc5f37](https://github.com/wonderflow-bv/design/commit/5bc5f37866219515384d27a725c527e52ba09db3))
+* update author-card animation ([fcc8cbe](https://github.com/wonderflow-bv/design/commit/fcc8cbe3c38fdbf47a4bf2c8baa038a76a8ca457))
+* update author-card paddings ([82b9498](https://github.com/wonderflow-bv/design/commit/82b9498f96206b14105d364df2b7004bab005aee))
+* update deps ([13a437e](https://github.com/wonderflow-bv/design/commit/13a437eb0b11b9f321eb9c5b13407da6662ce7ce))
+* update icons ([b71bf7c](https://github.com/wonderflow-bv/design/commit/b71bf7c90998142f9308c80e3f2f1d3b170ccab0))
+* update layouts and post components ([cf9ef88](https://github.com/wonderflow-bv/design/commit/cf9ef8888240af7f051374f02cfe95281f4a35dd))
+* update p route ([c9703dd](https://github.com/wonderflow-bv/design/commit/c9703dd020dff3ce7d1f907eb8b24eef30af8608))
+* update queries name ([d519ec3](https://github.com/wonderflow-bv/design/commit/d519ec3c807641db2be45b3c244ff4890d2987a0))
+
+
+### Features
+
+* add post-card design ([c816d3e](https://github.com/wonderflow-bv/design/commit/c816d3e88adb24e3881095ef85618b9ae0daf2de))
+* add skeleton to slug ([fac2292](https://github.com/wonderflow-bv/design/commit/fac2292a376b6a6c9209b4d7ede58278acf51cbe))
+* add wip topics list ([dbc89af](https://github.com/wonderflow-bv/design/commit/dbc89afeb3bf346a46da76da7d0c8280da9e4d27))
+* init post-card and update layoouts ([7075886](https://github.com/wonderflow-bv/design/commit/7075886c041ce61c1ee033b111cae36abc4b0182))
+* refactoring post layout and topics page ([4acfd31](https://github.com/wonderflow-bv/design/commit/4acfd31b9229ce4283abb5e16d17804426b54d2f))
+
 ## [1.62.1](https://github.com/wonderflow-bv/design/compare/v1.62.0...v1.62.1) (2021-11-29)
 
 
