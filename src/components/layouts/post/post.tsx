@@ -54,7 +54,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
         <Container dimension="large" className={TopicsContainer}>
           <Stack direction="row" horizontalAlign="end" columnGap={8}>
             {topics.map((topic, i) => (
-              <Link href={`/posts/topic/${topic}`} key={topic}>
+              <Link href={`/learn/topic/${topic}`} key={topic}>
                 <a style={{ background: 'none' }}>
                   <Elevator resting={1}>
                     <Chip dimension="big" color={colors[i] as ChipProps['color']}>{topic}</Chip>
