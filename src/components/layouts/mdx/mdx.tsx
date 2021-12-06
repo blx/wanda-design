@@ -14,7 +14,6 @@ import { Bleed } from '@/components/bleed'
 import { MdxLayout as Mdx, Links, Hero } from './mdx.module.css'
 import Markdown from 'markdown-to-jsx'
 
-/* eslint-disable react/display-name, react/destructuring-assignment */
 const components = {
   pre: (props: any) => <div {...props} />,
   code: CodeBlock,
@@ -63,7 +62,7 @@ export const MdxLayout: React.FC<MdxLayoutProps> = ({
       {...props}
     >
       <Meta title={`${title} - Wanda Design System`} description={description} />
-      <Stack rowGap={48}>
+      <Stack rowGap={48} verticalPadding={48}>
         <DocHead title={title} description={description}>
           {tags}
         </DocHead>

@@ -7,11 +7,20 @@ const routes = [
       {
         path: '/get-started/introduction',
         label: 'Introduction',
-        target: ''
+        target: '',
+        wip: false,
+        deprecated: false
       },
       {
         path: '/get-started/accessibility',
         label: 'Accessibility',
+        target: '',
+        wip: false,
+        deprecated: false
+      },
+      {
+        path: '/posts',
+        label: 'Learn',
         target: '',
         wip: false,
         deprecated: false

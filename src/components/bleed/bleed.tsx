@@ -4,17 +4,20 @@ import { Bleed as BleedClass } from './bleed.module.css'
 
 type BleedProps = {
   maxWidth?: string;
+  offset?: string;
 } & HTMLAttributes<HTMLOrSVGElement>
 
 export const Bleed: React.FC<BleedProps> = ({
   children,
   maxWidth = '85ch',
+  offset,
   style,
   className,
   ...props
 }) => {
   const dynamicStyle: CSSProperties = {
-    '--max-w': maxWidth
+    '--max-w': maxWidth,
+    '--offset': offset
   }
 
   return (
