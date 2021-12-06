@@ -19,7 +19,7 @@ const routes = [
         deprecated: false
       },
       {
-        path: '/posts',
+        path: '/learn',
         label: 'Learn',
         target: '',
         wip: false,

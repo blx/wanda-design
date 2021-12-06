@@ -9,7 +9,7 @@ type PostsPageProps = {
   posts: PostsType
 }
 
-const Posts = ({ posts }: PostsPageProps) => {
+const Learn = ({ posts }: PostsPageProps) => {
   return (
     <ShellLayout
       stickyHeader
@@ -48,4 +48,4 @@ export const getStaticProps = async () => {
   }
 }
 
-export default Posts
+export default Learn
