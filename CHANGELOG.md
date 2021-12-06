@@ -1,3 +1,10 @@
+## [1.63.1](https://github.com/wonderflow-bv/design/compare/v1.63.0...v1.63.1) (2021-12-06)
+
+
+### Bug Fixes
+
+* rename /posts to /learn ([5115ee2](https://github.com/wonderflow-bv/design/commit/5115ee217869470fcfbaae776dd2969928cdc0c6))
+
 # [1.63.0](https://github.com/wonderflow-bv/design/compare/v1.62.1...v1.63.0) (2021-12-06)
 
 
