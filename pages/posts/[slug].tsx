@@ -50,8 +50,8 @@ export async function getStaticPaths () {
   }
 }
 
-export const getStaticProps = async ({ params, preview }: Params) => {
-  const postDetails = await getPostDetailsBySlug(params.slug, preview && 'DRAFT')
+export const getStaticProps = async ({ params }: Params) => {
+  const postDetails = await getPostDetailsBySlug(params.slug)
 
   return {
     props: { ...postDetails },
