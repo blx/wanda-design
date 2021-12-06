@@ -41,7 +41,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
       <Meta title={`${title} - Wanda Design System`} description={excerpt} />
 
       <Stack rowGap={88}>
-        <Bleed maxWidth="100vw" className={PostHead}>
+        <Bleed maxWidth="100vw" offset="var(--sidebar-width)" className={PostHead}>
           <Stack horizontalAlign="center">
             {title
               ? <Title maxWidth="15ch" as="h1" level={isWide ? 'display' : '1'}>{title}</Title>
