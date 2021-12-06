@@ -1,7 +1,7 @@
 import { Bleed } from '@/components/bleed'
 import { Meta } from '@/components/meta'
 import { Toolbar } from '@/components/toolbar'
-import { Chip, ChipProps, Container, SkeletonBlock, Stack, Text, Title } from '@wonderflow/react-components'
+import { Chip, ChipProps, Container, Elevator, SkeletonBlock, Stack, Title } from '@wonderflow/react-components'
 import { useMedia } from 'react-use'
 import { ShellLayout } from '@/components/layouts/shell'
 import Link from 'next/link'
@@ -55,7 +55,11 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
           <Stack direction="row" horizontalAlign="end" columnGap={8}>
             {topics.map((topic, i) => (
               <Link href={`/posts/topic/${topic}`} key={topic}>
-                <a style={{ background: 'none' }}><Chip dimension="big" color={colors[i] as ChipProps['color']}>{topic}</Chip></a>
+                <a style={{ background: 'none' }}>
+                  <Elevator resting={1}>
+                    <Chip dimension="big" color={colors[i] as ChipProps['color']}>{topic}</Chip>
+                  </Elevator>
+                </a>
               </Link>
             ))}
           </Stack>
@@ -67,7 +71,6 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
             rowGap={16}
             horizontalAlign="start"
           >
-            <Text weight="bold">Written by:</Text>
             <Stack
               direction="row"
               wrap
@@ -86,7 +89,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
           </Stack>
         )}
 
-        <Stack verticalPadding={56}>
+        <Stack verticalPadding={56} style={{ contentVisibility: 'auto', containIntrinsicSize: '1000px' }}>
           {children}
         </Stack>
       </Stack>

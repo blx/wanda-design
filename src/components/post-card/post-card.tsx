@@ -67,7 +67,7 @@ export const PostCard = ({
             <ClampText rows={3}>{excerpt}</ClampText>
           </Text>
           <Stack direction="row">
-            {authors && (
+            {authors && authors?.length > 0 && (
               <Elevator resting={1}>
                 <Stack
                   as="ul"

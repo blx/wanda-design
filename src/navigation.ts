@@ -17,14 +17,14 @@ const routes = [
         target: '',
         wip: false,
         deprecated: false
+      },
+      {
+        path: '/posts',
+        label: 'Learn',
+        target: '',
+        wip: false,
+        deprecated: false
       }
-      // {
-      //   path: '/posts',
-      //   label: 'Learn',
-      //   target: '',
-      //   wip: false,
-      //   deprecated: false
-      // }
     ]
   },
   {

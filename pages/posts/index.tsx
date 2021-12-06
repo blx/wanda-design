@@ -23,6 +23,7 @@ const Posts = ({ posts }: PostsPageProps) => {
         {posts.map((post) => (
           <Stack as="li" verticalPadding={80} key={post.id}>
             <PostCard
+              externalUrl={post.externalUrl}
               slug={post.slug}
               title={post.title}
               updatedAt={post.updatedAt}

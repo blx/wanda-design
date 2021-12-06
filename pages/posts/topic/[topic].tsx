@@ -3,7 +3,7 @@ import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
 import { PostCard } from '@/components/post-card'
 import { Toolbar } from '@/components/toolbar'
-import { Stack } from '@wonderflow/react-components'
+import { Stack, Text, Title } from '@wonderflow/react-components'
 import { Params } from 'next/dist/server/router'
 
 type TopicPageProps = {
@@ -17,10 +17,16 @@ const TopicPage = ({ tagName, posts }: TopicPageProps) => (
     contentMaxWidth="90ch"
     header={(
       <Toolbar />
-      )}
+    )}
   >
     <Meta title="Learn - Wanda Design System" description="Learn how to design and develop better user experiences." />
-    {tagName}
+    <Stack verticalPadding={80} horizontalAlign="center">
+      <Text size={22}>You are seeing content under the category:</Text>
+      <Title as="h1" level="display">
+        #
+        {tagName}
+      </Title>
+    </Stack>
     <ol style={{ counterReset: 'post-counter', padding: 0 }}>
       {posts?.map((post) => (
         <Stack as="li" verticalPadding={80} key={post.id}>
