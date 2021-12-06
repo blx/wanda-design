@@ -1,6 +1,8 @@
 @import '@wonderflow/react-components/core/media.css';
 
 .Shell {
+  --sidebar-width: 16.55rem;
+
   position: relative;
 }
 
@@ -18,7 +20,7 @@
 
   @media (--from-large) {
     border-right: 1px solid var(--dimmed-1);
-    inline-size: 16.55rem;
+    inline-size: var(--sidebar-width);
     block-size: 100vh;
     position: sticky;
     display: flex;
