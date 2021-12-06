@@ -1,4 +1,4 @@
-import { getPosts, getPostsByTopic } from '@/api/queries'
+import { getPublishedPosts, getPublishedPostsByTopic } from '@/api/queries'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
 import { PostCard } from '@/components/post-card'
@@ -45,7 +45,7 @@ const TopicPage = ({ tagName, posts }: TopicPageProps) => (
 )
 
 export const getStaticPaths = async () => {
-  const posts = await getPosts()
+  const posts = await getPublishedPosts()
 
   // extracts all topics from posts and returns an array of unique values
   const topics = posts.reduce((acc: TopicsType, post: PostType) => {
@@ -70,7 +70,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }: Params) => {
-  const posts: PostsType = await getPostsByTopic([params.topic])
+  const posts: PostsType = await getPublishedPostsByTopic([params.topic])
 
   return {
     props: {

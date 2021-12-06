@@ -1,4 +1,4 @@
-import { getPosts } from '@/api/queries'
+import { getPublishedPosts } from '@/api/queries'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
 import { PostCard } from '@/components/post-card'
@@ -39,7 +39,7 @@ const Posts = ({ posts }: PostsPageProps) => {
 }
 
 export const getStaticProps = async () => {
-  const posts: PostsType = await getPosts()
+  const posts: PostsType = await getPublishedPosts()
   return {
     props: {
       posts

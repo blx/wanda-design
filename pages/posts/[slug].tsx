@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { getPostDetailsBySlug, getPosts } from '@/api/queries'
+import { getPostDetailsBySlug, getPublishedPosts } from '@/api/queries'
 import { Params } from 'next/dist/server/router'
 import { Markdown } from '@/components/markdown'
 
@@ -38,7 +38,7 @@ const Post = ({
 }
 
 export async function getStaticPaths () {
-  const posts = await getPosts()
+  const posts = await getPublishedPosts()
   return {
     paths: posts.map((post: PostType) => ({
       params: {

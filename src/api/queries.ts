@@ -1,12 +1,12 @@
 import { gql } from 'graphql-request'
 import client from '@/api/client'
 
-export const getPosts = async (
+export const getPublishedPosts = async (
   avatarWidth: number = 300,
   avatarHeight: number = 300
 ) => {
   const query = gql`
-    query GetPublishedPosts($avatarWidth: Int, $avatarHeight: Int) {
+    query ($avatarWidth: Int, $avatarHeight: Int) {
       posts(
         stage: PUBLISHED,
         orderBy: publishedAt_DESC
@@ -58,13 +58,13 @@ export const getPosts = async (
   return result.posts
 }
 
-export const getPostsByTopic = async (
+export const getPublishedPostsByTopic = async (
   topic: string[],
   avatarWidth: number = 300,
   avatarHeight: number = 300
 ) => {
   const query = gql`
-    query getAllPublishedPostsByTopic($topic: [Topics!], $avatarWidth: Int, $avatarHeight: Int) {
+    query ($topic: [Topics!], $avatarWidth: Int, $avatarHeight: Int) {
       posts(
         stage: PUBLISHED,
         orderBy: publishedAt_DESC
@@ -122,11 +122,11 @@ export const getPostsByTopic = async (
 export const getPostDetailsBySlug = async (
   slug: PostType['slug'],
   stage: 'PUBLISHED' | 'DRAFT' = 'PUBLISHED',
-  avatarWidth: number = 300,
-  avatarHeight: number = 300
+  avatarWidth: number = 120,
+  avatarHeight: number = 120
 ) => {
   const query = gql`
-    query GetPostDetails($slug: String!, $stage: Stage!, $avatarWidth: Int, $avatarHeight: Int) {
+    query ($slug: String!, $stage: Stage!, $avatarWidth: Int, $avatarHeight: Int) {
       post(where: { slug: $slug }, stage: $stage) {
         id
         updatedAt
