@@ -7,7 +7,10 @@ export const getPosts = async (
 ) => {
   const query = gql`
     query GetPublishedPosts($avatarWidth: Int, $avatarHeight: Int) {
-      posts(stage: PUBLISHED, orderBy: publishedAt_DESC) {
+      posts(
+        stage: PUBLISHED,
+        orderBy: publishedAt_DESC
+      ) {
         id
         updatedAt
         publishedAt
@@ -116,14 +119,15 @@ export const getPostsByTopic = async (
   return result.posts
 }
 
-export const getPostDetails = async (
+export const getPostDetailsBySlug = async (
   slug: PostType['slug'],
+  stage: 'PUBLISHED' | 'DRAFT' = 'PUBLISHED',
   avatarWidth: number = 300,
   avatarHeight: number = 300
 ) => {
   const query = gql`
-    query GetPostDetails($slug: String!, $avatarWidth: Int, $avatarHeight: Int) {
-      post(where: { slug: $slug }) {
+    query GetPostDetails($slug: String!, $stage: Stage!, $avatarWidth: Int, $avatarHeight: Int) {
+      post(where: { slug: $slug }, stage: $stage) {
         id
         updatedAt
         publishedAt
@@ -167,7 +171,7 @@ export const getPostDetails = async (
     }
   `
 
-  const result = await client.request(query, { slug, avatarWidth, avatarHeight })
+  const result = await client.request(query, { slug, stage, avatarWidth, avatarHeight })
 
   return result.post
 }
