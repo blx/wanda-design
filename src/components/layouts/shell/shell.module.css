@@ -82,7 +82,7 @@
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute;
+  position: sticky;
   visibility: inherit;
   white-space: nowrap;
   width: 1px;
