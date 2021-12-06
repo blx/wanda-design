@@ -43,7 +43,7 @@ export const PostCard = ({
 
   return (
     <article style={{ '--c': color }} className={clsx(PostCardClass, className)} {...props}>
-      <Link href={externalUrl || `/posts/${encodeURIComponent(slug)}`} passHref>
+      <Link href={externalUrl || `/learn/${encodeURIComponent(slug)}`} passHref>
         <Stack
           as="a"
           target={externalUrl && '_blank'}
