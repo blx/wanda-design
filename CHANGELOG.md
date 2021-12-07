@@ -1,3 +1,10 @@
+## [1.63.5](https://github.com/wonderflow-bv/design/compare/v1.63.4...v1.63.5) (2021-12-07)
+
+
+### Bug Fixes
+
+* update elevations table ([0dcce9d](https://github.com/wonderflow-bv/design/commit/0dcce9d039315cdb1036b92c0cee6877ee10e7eb))
+
 ## [1.63.4](https://github.com/wonderflow-bv/design/compare/v1.63.3...v1.63.4) (2021-12-07)
 
 
