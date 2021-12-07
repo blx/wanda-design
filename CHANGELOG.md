@@ -1,3 +1,11 @@
+## [1.63.4](https://github.com/wonderflow-bv/design/compare/v1.63.3...v1.63.4) (2021-12-07)
+
+
+### Bug Fixes
+
+* hide authors and topics if empty ([fe57cf3](https://github.com/wonderflow-bv/design/commit/fe57cf358bd6e797ac6a4926be0a1ebaff82cfa1))
+* **post-card:** add rel for external url ([220a39a](https://github.com/wonderflow-bv/design/commit/220a39ad2d9fd0728ead36389e0e638e799e37f1))
+
 ## [1.63.3](https://github.com/wonderflow-bv/design/compare/v1.63.2...v1.63.3) (2021-12-06)
 
 
