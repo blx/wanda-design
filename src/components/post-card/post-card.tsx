@@ -47,6 +47,7 @@ export const PostCard = ({
         <Stack
           as="a"
           target={externalUrl && '_blank'}
+          rel={externalUrl && 'noopener noreferrer'}
           rowGap={32}
           verticalAlign="start"
           horizontalAlign="start"
