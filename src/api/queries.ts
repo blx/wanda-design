@@ -9,7 +9,7 @@ export const getPublishedPosts = async (
     query ($avatarWidth: Int, $avatarHeight: Int) {
       posts(
         stage: PUBLISHED,
-        orderBy: publishedAt_DESC
+        orderBy: updatedAt_DESC
       ) {
         id
         updatedAt
