@@ -50,7 +50,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
           </Stack>
         </Bleed>
 
-        {topics && (
+        {topics && topics.length > 0 && (
         <Container dimension="large" className={TopicsContainer}>
           <Stack direction="row" horizontalAlign="end" columnGap={8}>
             {topics.map((topic, i) => (
@@ -66,7 +66,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
         </Container>
         )}
 
-        {authors && (
+        {authors && authors.length > 0 && (
           <Stack
             rowGap={16}
             horizontalAlign="start"
