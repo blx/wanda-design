@@ -1,3 +1,15 @@
+# [1.64.0](https://github.com/wonderflow-bv/design/compare/v1.63.5...v1.64.0) (2021-12-07)
+
+
+### Bug Fixes
+
+* fix post ordering ([b5f2edb](https://github.com/wonderflow-bv/design/commit/b5f2edbbe8b7fe098c5dd1eb7e19a064cfd82e1e))
+
+
+### Features
+
+* add items with icons to dropdown recipe ([6621589](https://github.com/wonderflow-bv/design/commit/662158932e3ca067306dcd8f7f5b9e1b2aa7e43c))
+
 ## [1.63.5](https://github.com/wonderflow-bv/design/compare/v1.63.4...v1.63.5) (2021-12-07)
 
 
