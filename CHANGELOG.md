@@ -1,3 +1,10 @@
+## [1.64.1](https://github.com/wonderflow-bv/design/compare/v1.64.0...v1.64.1) (2021-12-07)
+
+
+### Bug Fixes
+
+* add externalUrl link to topics post ([de60415](https://github.com/wonderflow-bv/design/commit/de604150183f9c8da46182e6d4d067282b1e41c1))
+
 # [1.64.0](https://github.com/wonderflow-bv/design/compare/v1.63.5...v1.64.0) (2021-12-07)
 
 
