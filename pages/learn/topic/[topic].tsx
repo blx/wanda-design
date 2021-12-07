@@ -36,6 +36,7 @@ const TopicPage = ({ tagName, posts }: TopicPageProps) => (
             updatedAt={post.updatedAt}
             createdAt={post.createdAt}
             authors={post.authors}
+            externalUrl={post.externalUrl}
             excerpt={post.excerpt}
           />
         </Stack>
