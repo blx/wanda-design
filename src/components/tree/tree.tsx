@@ -50,7 +50,7 @@ export const Tree: {
             open={open}
             dimension="small"
             iconPosition="right"
-            summary={<Text as="span" size={16} fluid={false}>{summary}</Text>}
+            summary={<Text as="span" size={16}>{summary}</Text>}
             {...props}
           >
             <Stack as="ul">

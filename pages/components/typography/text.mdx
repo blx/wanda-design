@@ -12,7 +12,7 @@ export const example = `<Text>
 export default ({ children }) => (
   <MdxLayout
     title="Text"
-    description="Dynamic and fluid typography with control"
+    description="Typography with control"
     showMeta
     features={[
       "Dynamic HTML tag",
@@ -72,14 +72,6 @@ export default () => {
       required: false,
       dangerous: false,
       description: "Set the weight of the text",
-    },
-    {
-      name: "fluid",
-      type: ["boolean"],
-      default: "true",
-      required: false,
-      dangerous: false,
-      description: "Set the responsive font-size",
     },
     {
       name: "maxWidth",
