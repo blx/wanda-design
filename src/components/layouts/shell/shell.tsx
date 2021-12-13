@@ -81,7 +81,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
 
       <Stack
         rowGap={88}
-        as="aside"
+        as="header"
         verticalAlign="space-between"
         fill={false}
         className={Aside}
