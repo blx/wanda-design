@@ -25,25 +25,27 @@ npm install -D @wonderflow/config
 ```
 
 <Snackbar kind="info">
-  <b>@wonderflow/config</b> package exposes predefined configurations which you
-  have to use in order to compile all the elements from the design system. Read
-  the next section for more info.
+  The <b>@wonderflow/config</b> exposes the required PostCSS configuration which
+  you have to use in order to compile the CSS from the design system. Read the
+  next section for more info.
 </Snackbar>
 
 ## Configuration
 
-To being able to use the components and styles from the design system there are a couple of steps to follow before doing everything else.
+Wanda's components relies on PostCSS to provide the best DX while writing CSS.
 
-The first thing to do is configuring Postcss, so inside your local **postcss.config.js** file import `postcssConfig` from **@wonderflow/config** and export it.
+To being able to use the components and compile the CSS from the design system there are a couple of steps to follow before doing everything else.
+
+Assuming you have already installed [PostCSS](https://postcss.org/) on your current stack, the first thing to do is passing Wanda's configuration to it, you can do so by importing `postcssConfig` from `@wonderflow/config` inside your local **postcss.config.js** file.
 
 ```js
 const { postcssConfig } = require("@wonderflow/config");
 module.exports = postcssConfig;
 ```
 
-### Using with custom plugins
+### Usage with other plugins
 
-If you're alread using custom postcss plugins you can merge them with the ones required by Wanda. If you declare a plugin which is already used by Wanda you'll overwrite it.
+If you're already using other PostCSS plugins you can combine them with the ones required by Wanda. If you declare a plugin which is already used by Wanda you'll overwrite it.
 
 ```js
 const { postcssConfig } = require("@wonderflow/config");
@@ -67,21 +69,6 @@ import "@wonderflow/react-components/themes/light.css";
   You must include at least one css theme file in order to make the components
   work as expected. <a href="/develop/themes/">See more</a>.
 </Snackbar>
-
-### Merging config
-
-If you're already using some PostCSS plugin you need to merge the configurations:
-
-```js
-const { postcssConfig } = require("@wonderflow/config");
-
-module.exports = {
-  plugins: {
-    ...postcssConfig.plugins,
-    "other-plugins": {},
-  },
-};
-```
 
 ## Recommended tools
 
