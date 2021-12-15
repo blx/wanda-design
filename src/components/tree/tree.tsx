@@ -26,6 +26,7 @@ export const Tree: {
       <Text
         style={{ color: `var(--highlight-${color}-foreground)` }}
         size={14}
+        responsive={false}
         className={Title}
         weight="bold"
       >
