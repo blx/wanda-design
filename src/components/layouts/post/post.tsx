@@ -9,6 +9,7 @@ import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 
 import { PostHead, TopicsContainer } from './post.module.css'
 import { AuthorCard } from '@/components/author-card'
+import { useLayoutEffect, useState } from 'react'
 
 export type PostLayoutProps = Partial<PostType>
 
@@ -19,8 +20,8 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
   topics,
   children
 }) => {
+  const [wideTitle, setWideTitle] = useState<boolean>(false)
   const isWide = useMedia(`(min-width: ${tkns.breakpoint['extra-large']})`, true)
-
   const colors = [
     'cyan',
     'purple',
@@ -30,6 +31,10 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
     'gray',
     'red'
   ]
+
+  useLayoutEffect(() => {
+    isWide && setWideTitle(isWide)
+  }, [isWide])
 
   return (
     <ShellLayout
@@ -44,7 +49,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
         <Bleed maxWidth="100vw" offset="var(--sidebar-width)" className={PostHead}>
           <Stack horizontalAlign="center">
             {title
-              ? <Title maxWidth="15ch" as="h1" level={isWide ? 'display' : '1'}>{title}</Title>
+              ? <Title maxWidth="15ch" as="h1" level={wideTitle ? 'display' : '1'}>{title}</Title>
               : <SkeletonBlock width="40vw" height={90} />
           }
           </Stack>
