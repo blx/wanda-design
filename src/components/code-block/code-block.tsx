@@ -68,7 +68,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
               ))}
             </pre>
             <Stack direction="row" fill={false} horizontalAlign="space-between" verticalAlign="center" className={Toolbar}>
-              {language && <Text size={14} dimmed={5}>{language}</Text>}
+              {language && <Text responsive={false} size={14} dimmed={5}>{language}</Text>}
               {!hideCopy && (
                 <Button
                   className={Action}

@@ -1,3 +1,4 @@
+import React from 'react'
 import { InfoState, Stack, Text, Button } from '@wonderflow/react-components'
 import Link from 'next/link'
 

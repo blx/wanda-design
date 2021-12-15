@@ -1,5 +1,6 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { Stack, Title, Text, Grid } from "@wonderflow/react-components";
+import { Stack, Title, Text, Prose, Grid } from "@wonderflow/react-components";
+import { LiveFrame } from "@/components/live-frame";
 import { LiveArea } from "@/components/live-area";
 import { Tile } from "@/components/tile";
 import { Resizer } from "@/components/resizer";
@@ -147,6 +148,39 @@ Wanda's typography system provides five different sizes for text content. While 
     </Text>
   </Stack>
 </LiveArea>
+
+## Fluid typography
+
+The whole typography system of Wanda is built on top of a dynamic typography size which improve the readability and adapt the text size on smaller devices.
+
+On smaller devices both titles and text content are resized dynamically based on the viewport size by using this formula:
+
+```bash
+slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
+yAxisIntersection = -minWidth * slope + minFontSize
+preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
+
+font-size: clamp(minFontSize, preferredValue, maxFontSize)
+```
+
+### Try yourself
+
+<Resizer padding={false} height="300">
+  <LiveArea live={false}>
+    <LiveFrame>
+      <Prose>
+        <Title as="h1" level="1">
+          Sample title
+        </Title>
+        <Text size={22}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+          dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
+          numquam temporibus.
+        </Text>
+      </Prose>
+    </LiveFrame>
+  </LiveArea>
+</Resizer>
 
 ## Resources
 
