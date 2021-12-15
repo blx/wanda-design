@@ -89,7 +89,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
           </Stack>
         )}
 
-        <Stack verticalPadding={56} style={{ contentVisibility: 'auto', containIntrinsicSize: '1000px' }}>
+        <Stack verticalPadding={56}>
           {children}
         </Stack>
       </Stack>

@@ -1,7 +1,18 @@
 import MarkdownToJsx, { MarkdownToJSX } from 'markdown-to-jsx'
 import { CodeBlock } from '@/components/code-block'
 import Link, { LinkProps } from 'next/link'
-import { Title, List, Separator, Text } from '@wonderflow/react-components'
+import {
+  Text,
+  List,
+  Title,
+  Separator,
+  Snackbar,
+  Button,
+  Chip,
+  Disclosure,
+  Tooltip
+} from '@wonderflow/react-components'
+import { LiveArea } from '@/components/live-area'
 
 const CustomLink: React.FC<LinkProps> = ({ children, href, ...props }) => (
   <Link href={href} {...props}><a>{children}</a></Link>
@@ -26,7 +37,13 @@ export const Markdown: React.FC<{
         h4: { component: Title, props: { level: '4', as: 'h4' } },
         h5: { component: Title, props: { level: '5', as: 'h5' } },
         h6: { component: Title, props: { level: '6', as: 'h6' } },
-        hr: { component: Separator }
+        hr: { component: Separator },
+        Button: { component: Button },
+        Chip: { component: Chip },
+        Disclosure: { component: Disclosure },
+        Snackbar: { component: Snackbar },
+        Tooltip: { component: Tooltip },
+        LiveArea: { component: LiveArea }
       },
       ...options
     }}

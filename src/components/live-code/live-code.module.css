@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.LiveArea {
+  padding-top: env(--space-56);
+}
+
 .Editor {
   border-radius: env(--radius-8);
   font-size: env(--font-size-18);

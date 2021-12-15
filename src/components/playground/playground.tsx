@@ -1,4 +1,3 @@
-import React from 'react'
 import { LiveCodeProps } from '@/components/live-code'
 import dynamic from 'next/dynamic'
 

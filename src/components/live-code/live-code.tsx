@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { LiveProvider, LiveEditor, withLive, LiveProviderProps } from 'react-live'
 import theme from '@/components/code-block/wonder-theme'
 import { LiveAreaProps, LiveArea } from '@/components/live-area'
-import { LiveCode as LiveCodeClass, Editor, Toolbar } from './live-code.module.css'
+import { LiveCode as LiveCodeClass, Editor, Toolbar, LiveArea as LiveAreaClass } from './live-code.module.css'
 import { IconButton, Tooltip, Stack, Dropdown, Snackbar, Text } from '@wonderflow/react-components'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useUIDSeed } from 'react-uid'
@@ -28,7 +28,7 @@ const LiveCodeComponent = ({
 
   return (
     <div className={LiveCodeClass}>
-      <LiveArea {...liveAreaProps}>
+      <LiveArea className={LiveAreaClass} {...liveAreaProps}>
         {live.element && <live.element />}
       </LiveArea>
       <AnimatePresence>
@@ -99,6 +99,11 @@ export const LiveCode = ({
 }: LiveCodeProps) => {
   const [liveCode, setLiveCode] = useState<string | undefined>(code)
   const [debouncedLiveCode, setDebouncedLiveCode] = useState<string | undefined>(code)
+  const isStringWrapped = code?.startsWith('`') || code?.startsWith('"')
+
+  useEffect(() => {
+    isStringWrapped && setLiveCode(code?.replace(/`(.*)`/mg, '$1'))
+  }, [code, isStringWrapped])
 
   // eslint-disable-next-line no-empty-pattern
   const [] = useDebounce(
