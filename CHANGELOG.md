@@ -1,3 +1,10 @@
+# [1.65.0](https://github.com/wonderflow-bv/design/compare/v1.64.1...v1.65.0) (2021-12-15)
+
+
+### Features
+
+* **posts:** supporting custom components ([#262](https://github.com/wonderflow-bv/design/issues/262)) ([e4a06c5](https://github.com/wonderflow-bv/design/commit/e4a06c515e1f2afbca843727de279fd0f7632135))
+
 ## [1.64.1](https://github.com/wonderflow-bv/design/compare/v1.64.0...v1.64.1) (2021-12-07)
 
 
