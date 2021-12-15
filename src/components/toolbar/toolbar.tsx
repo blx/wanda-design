@@ -12,8 +12,8 @@ const DynThemeSwitcher = dynamic(
   { ssr: false }
 )
 
-const DynPortal = dynamic(
-  import('@/components/portal').then(m => m.Portal),
+const DynOverlayContainer = dynamic(
+  import('@wonderflow/react-components').then(m => m.OverlayContainer),
   { ssr: false }
 )
 
@@ -71,11 +71,13 @@ export const Toolbar: React.FC<ToolbarProps> = ({
       />
       <DynThemeSwitcher />
       {children}
-      <DynPortal>
-        <Modal overlayColor="auto" onClose={() => setShowModal(false)} visible={showModal}>
+      <DynOverlayContainer>
+        {showModal && (
+        <Modal overlayColor="auto" onClose={() => setShowModal(false)}>
           <SearchModal />
         </Modal>
-      </DynPortal>
+        )}
+      </DynOverlayContainer>
     </Stack>
   )
 }

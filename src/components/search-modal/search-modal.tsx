@@ -1,13 +1,13 @@
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Search } from '@/components/search'
 import { QuickLinks } from '@/components/quicklinks'
-import { IconButton, Stack, Text, useModalContext } from '@wonderflow/react-components'
+import { IconButton, Stack, Text, useModalContext, Title } from '@wonderflow/react-components'
 
 import { SearchModal as SearchModalClass, Links } from './search-modal.module.css'
 
 export const SearchModal = () => {
   const [isSearching, setIsSearching] = useState<string>('')
-  const { onClose } = useModalContext()
+  const { onClose, titleId } = useModalContext()
 
   const handleSearch = useCallback(
     (value: string) => {
@@ -32,7 +32,12 @@ export const SearchModal = () => {
         </Stack>
       </Stack>
       <div className={Links}>
-        {!isSearching && <QuickLinks />}
+        {!isSearching && (
+        <Stack horizontalAlign="center" rowGap={32}>
+          <Title textAlign="center" id={titleId} level="4">Search anything or start from here</Title>
+          <QuickLinks />
+        </Stack>
+        )}
       </div>
     </Stack>
   )
