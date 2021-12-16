@@ -1,5 +1,5 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { Snackbar } from "@wonderflow/react-components";
+import { Snackbar, Chip } from "@wonderflow/react-components";
 import { Markdown } from "@/components/markdown";
 
 export default ({ children }) => (
@@ -8,6 +8,7 @@ export default ({ children }) => (
     description="Allows exit animations when a component is unmounted"
     showMeta
     showLinks={false}
+    tags={<Chip color="yellow">Deprecated</Chip>}
     features={["Enable exiting animations when components are unmounted"]}
   >
     {children}

@@ -196,13 +196,6 @@ const routes = [
             deprecated: false
           },
           {
-            path: '/develop/utilities/presence',
-            label: 'Presence',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
             path: '/develop/utilities/polymorphic',
             label: 'Polymorphic',
             target: '',
@@ -381,6 +374,12 @@ const routes = [
             deprecated: false
           },
           {
+            path: '/components/layouts/overlay-container',
+            label: 'Overlay container',
+            target: '',
+            wip: false
+          },
+          {
             path: '/components/layouts/separator',
             label: 'Separator',
             target: '',
@@ -537,13 +536,6 @@ const routes = [
             target: '',
             wip: false,
             deprecated: false
-          },
-          {
-            path: '/components/other/theme-switch',
-            label: 'Theme switch',
-            target: '',
-            wip: false,
-            deprecated: true
           }
         ]
       }

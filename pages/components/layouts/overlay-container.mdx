@@ -1,0 +1,94 @@
+import { useState } from "react";
+import { MdxLayout } from "@/components/layouts/mdx";
+import { Playground } from "@/components/playground";
+import { Props } from "@/components/props";
+import * as components from "@wonderflow/react-components";
+
+export const example = `() => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setVisible(true)}>Open Overlay</Button>
+      {visible && (
+        <OverlayContainer>
+          <Stack
+            fill={false}
+            horizontalAlign="center"
+            verticalAlign="center"
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgb(0 0 0 / 60%)',
+              backdropFilter: 'blur(36px)',
+            }}
+          >
+            I'm over the top
+            <Button
+              kind="secondary"
+              onClick={() => setVisible(false)}
+            >
+              Close me
+            </Button>
+          </Stack>
+        </OverlayContainer>
+      )}
+    </>
+)}`;
+
+export default ({ children }) => (
+  <MdxLayout
+    title="Overlay container"
+    description="Render modal elements above everything"
+    showMeta
+    features={[
+      "Easy usage",
+      "Create a portal to the desired container",
+      "No z-index issues",
+    ]}
+    hero={
+      <Playground
+        liveAreaProps={{ direction: "row" }}
+        scope={{ ...components, useState }}
+        code={example}
+      />
+    }
+  >
+    {children}
+  </MdxLayout>
+);
+
+## Anatomy
+
+```tsx highlight=1,4
+import { OverlayContainer } from "@wonderflow/react-components";
+
+export default () => {
+  return <OverlayContainer>...</OverlayContainer>;
+};
+```
+
+## API Reference
+
+<Props
+  properties={[
+    {
+      name: "root",
+      type: ["HTMLElement"],
+      default: "document.body",
+      required: false,
+      dangerous: false,
+      description: "Set the root element to render the container",
+    },
+    {
+      name: "index",
+      type: ["number"],
+      default: "4",
+      required: false,
+      dangerous: false,
+      description: "Define the z-index of the container",
+    },
+  ]}
+/>
