@@ -1,4 +1,4 @@
-@import '@wonderflow/react-components/core/media.css';
+@import '@wonderflow/react-components/core/utils/media.css';
 
 .Shell {
   --sidebar-width: 16.55rem;
