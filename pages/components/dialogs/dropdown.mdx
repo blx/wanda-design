@@ -15,7 +15,7 @@ export const example = `() => {
         <Dropdown.Item icon="user">Item option 1</Dropdown.Item>
         <Dropdown.ItemCheckbox
           onClick={() => setChecked(val => !val)}
-          icon={checked && 'check'}
+          icon={checked ? 'check' : undefined}
           checked={checked}
         >
           Checkable option 2
