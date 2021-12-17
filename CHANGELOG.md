@@ -1,3 +1,10 @@
+# [1.66.0](https://github.com/wonderflow-bv/design/compare/v1.65.0...v1.66.0) (2021-12-17)
+
+
+### Features
+
+* **tooltip:** add interactive prop to documention ([bccf7f1](https://github.com/wonderflow-bv/design/commit/bccf7f1bbc87e6334a2f0357d94bc35f6a152448))
+
 # [1.65.0](https://github.com/wonderflow-bv/design/compare/v1.64.1...v1.65.0) (2021-12-15)
 
 
