@@ -1,7 +1,7 @@
 {
   "branches": ["main"],
   "plugins": [
-    "@semantic-release/commit-analyzer",
+    "commit-analyzer-fail-on-no-release",
     "@semantic-release/release-notes-generator",
     [
       "@semantic-release/changelog",

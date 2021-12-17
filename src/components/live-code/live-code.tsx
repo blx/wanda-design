@@ -13,7 +13,7 @@ type LiveCodeComponentProps = {
   live?: any;
   liveAreaProps?: LiveAreaProps;
   showEditor?: boolean
-  onRestore?: any;
+  onRestore?(): void;
 }
 
 const LiveCodeComponent = ({
