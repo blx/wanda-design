@@ -1,13 +1,13 @@
 import { useCallback, useState } from 'react'
 import { Search } from '@/components/search'
 import { QuickLinks } from '@/components/quicklinks'
-import { IconButton, Stack, Text, useModalContext, Title } from '@wonderflow/react-components'
+import { IconButton, Stack, Text, useOverlayContext, Title } from '@wonderflow/react-components'
 
 import { SearchModal as SearchModalClass, Links } from './search-modal.module.css'
 
 export const SearchModal = () => {
   const [isSearching, setIsSearching] = useState<string>('')
-  const { onClose, titleId } = useModalContext()
+  const { onClose, titleId } = useOverlayContext()
 
   const handleSearch = useCallback(
     (value: string) => {

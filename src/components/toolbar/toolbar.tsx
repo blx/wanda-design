@@ -71,13 +71,13 @@ export const Toolbar: React.FC<ToolbarProps> = ({
       />
       <DynThemeSwitcher />
       {children}
-      {showModal && (
-        <DynOverlayContainer>
-          <Modal overlayColor="auto" onClose={() => setShowModal(false)}>
+      <DynOverlayContainer overlayColor="auto" onClose={() => setShowModal(false)}>
+        {showModal && (
+          <Modal>
             <SearchModal />
           </Modal>
-        </DynOverlayContainer>
-      )}
+        )}
+      </DynOverlayContainer>
     </Stack>
   )
 }
