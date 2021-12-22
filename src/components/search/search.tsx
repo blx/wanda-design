@@ -1,47 +1,18 @@
-import React, { useEffect } from 'react'
-import { Textfield } from '@wonderflow/react-components'
-import { TextfieldProps } from '@wonderflow/react-components/textfield'
+import React from 'react'
 import Head from 'next/head'
+import { DocSearch } from '@docsearch/react'
 
-type SearchProps = TextfieldProps & {
-  size?: number;
-}
-
-declare const window: any
-
-export const Search = ({
-  className,
-  dimension = 'big',
-  size,
-  ...props
-}: SearchProps) => {
-  useEffect(() => {
-    if (window.docsearch) {
-      window.docsearch({
-        apiKey: '9e6d8175d4b610a1441417e9a1d8ceda',
-        indexName: 'wonderflow',
-        inputSelector: '#site-search',
-        debug: true
-      })
-    } else {
-      console.warn('Search has failed to load DocSearch')
-    }
-  }, [])
+export const Search = () => {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" key="search" />
+        <link rel="preconnect" href="https://BR3WX4TQPD-dsn.algolia.net" crossOrigin="true" />
       </Head>
-      <Textfield
-        className={className}
-        id="site-search"
-        size={size}
-        dimension={dimension}
-        icon="magnifying-glass"
-        iconPosition="left"
-        type="search"
+      <DocSearch
+        appId="BR3WX4TQPD"
+        apiKey="627f4f52ba7b2a907ae06723932589b3"
+        indexName="wonderflow"
         placeholder="Search content across the website..."
-        {...props}
       />
     </>
   )

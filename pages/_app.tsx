@@ -7,9 +7,11 @@ import NextScript from 'next/script'
 import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
 
+import '@docsearch/css'
 import '@wonderflow/react-components/themes.css'
 import '@wonderflow/react-components/core.css'
 import '@/styles/app.css'
+import '@/styles/docsearch.css'
 import '@/styles/shame.css'
 
 const Providers = ({ children }: { children: ReactNode }) => (
