@@ -8,7 +8,7 @@
   --docsearch-spacing: 16px;
   --docsearch-icon-stroke-width: 1.4;
   --docsearch-highlight-color: var(--highlight-cyan-foreground);
-  --docsearch-muted-color: var(--dimmed-5);
+  --docsearch-muted-color: var(--dimmed-7);
   --docsearch-container-background: hsl(env(--color-primary-100) / 95%);
   --docsearch-logo-color: var(--dimmed-4);
 
