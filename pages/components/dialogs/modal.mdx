@@ -16,32 +16,29 @@ export const example = `() => {
   return (
     <>
       <Button onClick={() => setVisible(true)}>Show Modal</Button>
+        <OverlayContainer onClose={() => setVisible(false)}>
         {visible && (
-          <DynOverlayContainer>
-            <Modal
-              key="default-modal"
-              onClose={() => setVisible(false)}
-            >
-              <Modal.Content title="Account deletion">
-                <Stack
-                  fill={false}
-                  horizontalAlign="center"
-                  rowGap={32}
-                  horizontalPadding={24}
-                  verticalPadding={24}
-                >
-                  <Text>Do you really want to delete this account?</Text>
-                  <Stack direction="row" columnGap={8}>
-                    <Button onClick={() => setVisible(false)} kind="flat">
-                      No
-                    </Button>
-                    <Button onClick={() => setVisible(false)}>Confirm</Button>
-                  </Stack>
+          <Modal key="default-modal">
+            <Modal.Content title="Account deletion">
+              <Stack
+                fill={false}
+                horizontalAlign="center"
+                rowGap={32}
+                horizontalPadding={24}
+                verticalPadding={24}
+              >
+                <Text>Do you really want to delete this account?</Text>
+                <Stack direction="row" columnGap={8}>
+                  <Button onClick={() => setVisible(false)} kind="flat">
+                    No
+                  </Button>
+                  <Button onClick={() => setVisible(false)}>Confirm</Button>
                 </Stack>
-              </Modal.Content>
-            </Modal>
-        </DynOverlayContainer>
-      )}
+              </Stack>
+            </Modal.Content>
+          </Modal>
+        )}
+      </OverlayContainer>
     </>
   );
 }`;
@@ -81,22 +78,20 @@ export default ({ children }) => (
 
 ## Anatomy
 
-```tsx highlight=1,4,8-14
+```tsx highlight=1,4,7-13
 import { Modal, OverlayContainer } from "@wonderflow/react-components";
 
 export default () => {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <>
+    <OverlayContainer>
       {visible && (
-        <OverlayContainer>
-          <Modal>
-            <Modal.Content title="Modal title">....</Modal.Content>
-          </Modal>
-        </OverlayContainer>
+        <Modal>
+          <Modal.Content title="Modal title">....</Modal.Content>
+        </Modal>
       )}
-    </>
+    </OverlayContainer>
   );
 };
 ```
@@ -106,21 +101,21 @@ export default () => {
 If you want to use the `Modal` component to show custom elements instead of the `Modal.Content` (which renders the card), you can pass an element inside it.
 
 export const CustomModalContent = () => {
-  const { onClose, titleId } = Components.useModalContext();
+  const { onClose, titleId } = Components.useOverlayContext();
   return (
-    <Components.Card>
+    <Components.Stack verticalAlign="center">
       <Components.Stack direction="row" verticalAlign="center" columnGap={48}>
         <Components.Title id={titleId} level="4">
           My custom modal title
         </Components.Title>
         <Components.IconButton
-          onClick={() => onClose()}
+          onClick={onClose}
           icon="xmark"
           aria-label="Close modal"
         />
       </Components.Stack>
       <p>My custom content</p>
-    </Components.Card>
+    </Components.Stack>
   );
 };
 
@@ -131,13 +126,13 @@ export const CustomModal = () => {
       <Components.Button onClick={() => setVisible(true)}>
         Show Modal
       </Components.Button>
-      {visible && (
-        <DynOverlayContainer>
-          <Components.Modal onClose={() => setVisible(false)}>
+      <DynOverlayContainer onClose={() => setVisible(false)}>
+        {visible && (
+          <Components.Modal>
             <CustomModalContent />
           </Components.Modal>
-        </DynOverlayContainer>
-      )}
+        )}
+      </DynOverlayContainer>
     </>
   );
 };
@@ -150,14 +145,14 @@ export const CustomModal = () => {
 import {
   Modal,
   OverlayContainer,
-  useModalContext,
+  useOverlayContext,
   Button,
   Title,
   Card,
 } from "@wonderflow/react-components";
 
 export const CustomModalContent = () => {
-  const { onClose, titleId } = useModalContext();
+  const { onClose, titleId } = useOverlayContext();
 
   return (
     <Card>
@@ -177,22 +172,17 @@ export const PageExample = () => {
   return (
     <>
       <Button onClick={() => setVisible(true)}>Show Modal</Button>
-      {visible && (
-        <OverlayContainer>
-          <Modal onClose={() => setVisible(false)}>
+      <OverlayContainer onClose={() => setVisible(false)}>
+        {visible && (
+          <Modal>
             <CustomModalContent />
           </Modal>
-        </OverlayContainer>
-      )}
+        )}
+      </OverlayContainer>
     </>
   );
 };
 ```
-
-<Components.Snackbar kind="warning">
-  It's important to consider that by passing custom content you have to handle
-  the overflow, size, position and accessibility by yourself.
-</Components.Snackbar>
 
 ## API Reference
 
@@ -200,23 +190,6 @@ export const PageExample = () => {
 
 <Props
   properties={[
-    {
-      name: "overlayColor",
-      type: ["light", "dark", "auto"],
-      default: '"dark"',
-      required: false,
-      dangerous: false,
-      description: "Set the backdrop overlay color",
-    },
-    {
-      name: "onClose",
-      type: ["() => void"],
-      default: "",
-      required: true,
-      dangerous: false,
-      description:
-        "Callback to close the modal. This is used on the overlay and the close button if Modal.Content is used.",
-    },
     {
       name: "closeOnClickOutside",
       type: ["boolean"],
@@ -247,31 +220,6 @@ export const PageExample = () => {
       required: false,
       dangerous: false,
       description: "Set the modal content style. By default is always light",
-    },
-  ]}
-/>
-
-### useModalContext
-
-<Props
-  properties={[
-    {
-      name: "titleId",
-      type: ["string"],
-      default: "",
-      required: false,
-      dangerous: false,
-      description:
-        "The auto generated id to assign to the custom modal title to give it an accessbility name",
-    },
-    {
-      name: "onClose",
-      type: ["() => void"],
-      default: "",
-      required: false,
-      dangerous: false,
-      description:
-        "The callback passed to the Modal and available inside the Modal content.",
     },
   ]}
 />
