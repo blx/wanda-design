@@ -30,7 +30,7 @@ export const Navigation = ({ data }: NavigationProps) => {
         columnGap={8}
         aria-current={includesPath(url) ? 'page' : undefined}
       >
-        {children}
+        <Text responsive={false}>{children}</Text>
         {deprecated && <Chip color="yellow" dimension="small">deprecated</Chip>}
       </Stack>
     ),
