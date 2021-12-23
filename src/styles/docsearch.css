@@ -32,7 +32,7 @@
   /* Hit props */
   --docsearch-hit-height: 56px;
   --docsearch-hit-color: var(--global-foreground);
-  --docsearch-hit-active-color: var(--highlight-cyan-background);
+  --docsearch-hit-active-color: var(--global-background);
   --docsearch-hit-background: var(--dimmed-0);
   --docsearch-hit-shadow: none;
 
