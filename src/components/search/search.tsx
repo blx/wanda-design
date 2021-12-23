@@ -10,7 +10,7 @@ export const Search = () => {
       </Head>
       <DocSearch
         appId="BR3WX4TQPD"
-        apiKey="627f4f52ba7b2a907ae06723932589b3"
+        apiKey={process.env.NEXT_PUBLIC_ALGOLIA_API_KEY}
         indexName="wonderflow"
         placeholder="Search content across the website..."
       />
