@@ -17,7 +17,7 @@ While some of the developing tools like [PostCSS](https://postcss.org/) are mand
 
 ## Installation
 
-Wanda's development core elements are formed by [tokens](/develop/design-tokens/), [react-components](https://github.com/wonderflow-bv/react-components) and the [shared configurations](https://github.com/wonderflow-bv/config/). **These packages are required.**
+Wanda's core elements are formed by [tokens](/develop/design-tokens/), [react-components](https://github.com/wonderflow-bv/react-components) and the [shared configurations](https://github.com/wonderflow-bv/config/).
 
 ```bash
 npm install @wonderflow/react-components
@@ -26,17 +26,17 @@ npm install -D @wonderflow/config
 
 <Snackbar kind="info">
   The <b>@wonderflow/config</b> exposes the required PostCSS configuration which
-  you have to use in order to compile the CSS from the design system. Read the
-  next section for more info.
+  you have to use in order to use tokens and CSS utilities from the design
+  system. Read the next section for more info.
 </Snackbar>
 
 ## Configuration
 
-Wanda's components relies on PostCSS to provide the best DX while writing CSS.
+Wanda's components relies on [PostCSS](https://postcss.org/) to provide the best DX while writing CSS.
 
-To being able to use the components and compile the CSS from the design system there are a couple of steps to follow before doing everything else.
+To being able to use tokens and custom utilities like custom media queries provided by the design system there are a couple of steps to follow.
 
-Assuming you have already installed [PostCSS](https://postcss.org/) on your current stack, the first thing to do is passing Wanda's configuration to it, you can do so by importing `postcssConfig` from `@wonderflow/config` inside your local **postcss.config.js** file.
+Assuming you have already installed PostCSS on your current stack, the first thing to do is passing Wanda's required plugins to it, you can do so by importing `postcssConfig` from `@wonderflow/config` inside your local **postcss.config.js** file.
 
 ```js
 const { postcssConfig } = require("@wonderflow/config");
@@ -58,11 +58,13 @@ module.exports = {
 };
 ```
 
-Then inside your app js entry point you have to import two required css files, one is the core styles and other is the theme file which contains all the theme keys used by components and that you can have to use inside your custom css.
+Then inside your app entry point you have to import two required css files, one is the core styles and other is a theme file which contains all the theme keys used by components and that you can have to use inside your custom css.
 
 ```js
 import "@wonderflow/react-components/core.css";
 import "@wonderflow/react-components/themes/light.css";
+/* ...or import both light/dark themes if you want to use both of them
+   import "@wonderflow/react-components/themes.css"; */
 ```
 
 <Snackbar kind="warning" title="Include at least one theme">
