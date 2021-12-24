@@ -83,7 +83,7 @@ export default () => {
 
   return (
     <OverlayContainer onClose={() => setVisible(false)}>
-      {visible && <Drawer title="Modal title">....</Drawer>}
+      {visible && <Drawer title="Drawer title">....</Drawer>}
     </OverlayContainer>
   );
 };
@@ -168,7 +168,7 @@ export const PageExample = () => {
 
   return (
     <>
-      <Button onClick={() => setVisible(true)}>Show Modal</Button>
+      <Button onClick={() => setVisible(true)}>Show drawer</Button>
       <OverlayContainer obfuscate={false} onClose={() => setVisible(false)}>
         {visible && (
           <Drawer isModal={false}>
@@ -226,7 +226,7 @@ export const PageExample = () => {
       default: '"light"',
       required: false,
       dangerous: false,
-      description: "Set the modal content style. By default is always light",
+      description: "Set the drawer content style. By default is always light",
     },
     {
       name: "maxWidth",
@@ -258,16 +258,17 @@ Adheres to the [`dialog` role requirements](https://www.w3.org/TR/wai-aria-1.2/#
   properties={[
     {
       name: "tab",
-      description: "Moves focus to the next focusable element inside the modal",
+      description:
+        "Moves focus to the next focusable element inside the drawer",
     },
     {
       name: "shif + tab",
       description:
-        "Moves focus to the previous focusable element inside the modal",
+        "Moves focus to the previous focusable element inside the drawer",
     },
     {
       name: "esc",
-      description: "Close the modal and move the focus on the trigger element",
+      description: "Close the drawer and move the focus on the trigger element",
     },
   ]}
 />
