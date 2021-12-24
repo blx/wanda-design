@@ -263,6 +263,13 @@ const routes = [
         target: '',
         items: [
           {
+            path: '/components/dialogs/drawer',
+            label: 'Drawer',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/components/dialogs/dropdown',
             label: 'Dropdown',
             target: '',
