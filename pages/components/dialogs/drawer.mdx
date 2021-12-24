@@ -93,7 +93,7 @@ export default () => {
 
 You can pass any content to the drawer. If you have a custom react component and you want to close the `Drawer` from inside, you can get the `onClose` callback from `OverlayContext`.
 
-In the following example we're going to use a custom component as Drawer's content, that will close the drawer when the user clicks on the button. We're also creating a non-modal drawer, which allows interactions with the rest of the page (the `closeOnClickOutside` property is ignored when `isModal` is `true`)
+In the following example we're going to use a custom component as Drawer's content, that will close the drawer when the user clicks on the button. We're also creating a non-modal drawer, which allows interactions with the rest of the page (the `closeOnClickOutside` property is ignored when `isModal` is `false`)
 
 export const CustomDrawerContent = () => {
   const { onClose, titleId } = Components.useOverlayContext();
