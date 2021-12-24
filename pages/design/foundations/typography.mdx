@@ -1,9 +1,7 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { Stack, Title, Text, Prose, Grid } from "@wonderflow/react-components";
-import { LiveFrame } from "@/components/live-frame";
+import { Stack, Title, Text, Grid } from "@wonderflow/react-components";
 import { LiveArea } from "@/components/live-area";
 import { Tile } from "@/components/tile";
-import { Resizer } from "@/components/resizer";
 import { ThemedImg } from "@/components/themed-img";
 
 export default ({ children }) => (
@@ -149,38 +147,21 @@ Wanda's typography system provides five different sizes for text content. While 
   </Stack>
 </LiveArea>
 
-## Fluid typography
+## Responsive typography
 
-The whole typography system of Wanda is built on top of a dynamic typography size which improve the readability and adapt the text size on smaller devices.
+The whole typography system of Wanda is built on top of a respnsive typography size which improve the readability and adapt the text size on smaller devices.
 
-On smaller devices both titles and text content are resized dynamically based on the viewport size by using this formula:
+On smaller screens both titles and text content are resized dynamically based on the viewport size by using the following scheme. Each number refers to a specific size of the text.
 
-```bash
-slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
-yAxisIntersection = -minWidth * slope + minFontSize
-preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
-
-font-size: clamp(minFontSize, preferredValue, maxFontSize)
+```bash hideCopy
+MOBILE     DESKTOP
+  14    ↔    16
+  16    ↔    18
+  18    ↔    22
+  22    ↔    28
 ```
 
-### Try yourself
-
-<Resizer padding={false} height="300">
-  <LiveArea live={false}>
-    <LiveFrame>
-      <Prose>
-        <Title as="h1" level="1">
-          Sample title
-        </Title>
-        <Text size={22}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-          dolores, tempore quas labore officiis praesentium. Porro sed dolorem,
-          numquam temporibus.
-        </Text>
-      </Prose>
-    </LiveFrame>
-  </LiveArea>
-</Resizer>
+Text elements sized `18` on desktop becomes `16` on mobile, and so on. Text elements sized `14` on desktop, are the same size even on mobile to ensure a minimum readability.
 
 ## Resources
 
