@@ -190,6 +190,14 @@ export const PageExample = () => {
         'Set the overlay style. This is used to obscure the content behind the overlay if `obfuscate` is `true`. The `"auto"` value means that the overlay will be dark if the theme is dark and light if the theme is light.',
     },
     {
+      name: "obfuscate",
+      type: ["boolean"],
+      default: "true",
+      required: false,
+      dangerous: false,
+      description: "Set the overlay to obscure the page content behind it.",
+    },
+    {
       name: "onClose",
       type: ["() => void"],
       default: "",

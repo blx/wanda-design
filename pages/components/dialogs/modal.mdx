@@ -50,8 +50,7 @@ export default ({ children }) => (
     showMeta
     features={[
       "Keyboard accessible",
-      "Focus is automatically trapped when modal",
-      "Can be controlled or uncontrolled",
+      "Focus is automatically trapped",
       "Manages screen reader announcements with Title",
       "Themes ready",
     ]}
@@ -85,7 +84,7 @@ export default () => {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <OverlayContainer>
+    <OverlayContainer onClose={() => setVisible(false)}>
       {visible && (
         <Modal>
           <Modal.Content title="Modal title">....</Modal.Content>
@@ -159,7 +158,7 @@ export const CustomModalContent = () => {
       <Title id={titleId} level="4">
         My custom modal title
       </Title>
-      <Button onClick={() => onClose()} icon="xmark">
+      <Button onClick={onClose} icon="xmark">
         Close modal
       </Button>
     </Card>
@@ -167,7 +166,7 @@ export const CustomModalContent = () => {
 };
 
 export const PageExample = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   return (
     <>
@@ -196,7 +195,8 @@ export const PageExample = () => {
       default: "true",
       required: false,
       dangerous: false,
-      description: "Run onClose callback when clicking the backdrop layer",
+      description:
+        "Run onClose callback from the `OverlayContext` when clicking the backdrop layer",
     },
   ]}
 />
