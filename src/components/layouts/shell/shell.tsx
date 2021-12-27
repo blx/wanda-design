@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useRef, useCallback, CSSProperties, useLayoutEffect } from 'react'
+import React, { ReactNode, useState, useRef, useCallback, CSSProperties, useEffect } from 'react'
 import { Meta } from '@/components/meta'
 import { Sidebar } from '@/components/sidebar'
 import clsx from 'clsx'
@@ -45,7 +45,7 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
     [collapsed]
   )
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.matchMedia(`(min-width: ${tkns.breakpoint.large})`).addEventListener('change', () => {
       setCollapsed(true)
     })
@@ -67,16 +67,16 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
     >
       <a href="#content-quicklink" className={SkipToContent}>Skip to main content</a>
       <Meta />
-      <Elevator resting={3}>
-        <IconButton
-          onClick={() => handleSidebar()}
-          icon={collapsed ? 'bars' : 'xmark'}
-          dimension="big"
-          className={MenuTrigger}
-        />
-      </Elevator>
 
       <FocusOn enabled={!collapsed}>
+        <Elevator resting={3}>
+          <IconButton
+            onClick={() => handleSidebar()}
+            icon={collapsed ? 'bars' : 'xmark'}
+            dimension="big"
+            className={MenuTrigger}
+          />
+        </Elevator>
         <Stack
           rowGap={88}
           as="header"
