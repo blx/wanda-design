@@ -6,7 +6,7 @@ import { LiveCode as LiveCodeClass, Editor, Toolbar, LiveArea as LiveAreaClass }
 import { IconButton, Tooltip, Stack, Dropdown, Snackbar, Text } from '@wonderflow/react-components'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useUIDSeed } from 'react-uid'
-import { useDebounce } from 'react-use'
+import { useDebounce } from 'ahooks'
 
 type LiveCodeComponentProps = {
   onEdit?: any;
@@ -98,7 +98,6 @@ export const LiveCode = ({
   liveAreaProps
 }: LiveCodeProps) => {
   const [liveCode, setLiveCode] = useState<string | undefined>(code)
-  const [debouncedLiveCode, setDebouncedLiveCode] = useState<string | undefined>(code)
   const isStringWrapped = code?.startsWith('`') || code?.startsWith('"')
 
   useEffect(() => {
@@ -106,12 +105,9 @@ export const LiveCode = ({
   }, [code, isStringWrapped])
 
   // eslint-disable-next-line no-empty-pattern
-  const [] = useDebounce(
-    () => {
-      setDebouncedLiveCode(liveCode)
-    },
-    350,
-    [liveCode]
+  const debouncedLiveCode = useDebounce(
+    liveCode,
+    { wait: 300 }
   )
 
   return (

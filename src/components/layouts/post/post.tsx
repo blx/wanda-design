@@ -2,7 +2,6 @@ import { Bleed } from '@/components/bleed'
 import { Meta } from '@/components/meta'
 import { Toolbar } from '@/components/toolbar'
 import { Chip, ChipProps, Container, Elevator, SkeletonBlock, Stack, Title } from '@wonderflow/react-components'
-import { useMedia } from 'react-use'
 import { ShellLayout } from '@/components/layouts/shell'
 import Link from 'next/link'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
@@ -21,7 +20,6 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
   children
 }) => {
   const [wideTitle, setWideTitle] = useState<boolean>(false)
-  const isWide = useMedia(`(min-width: ${tkns.breakpoint['extra-large']})`, true)
   const colors = [
     'cyan',
     'purple',
@@ -33,8 +31,10 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
   ]
 
   useLayoutEffect(() => {
-    isWide && setWideTitle(isWide)
-  }, [isWide])
+    window.matchMedia(`(min-width: ${tkns.breakpoint['extra-large']})`).addEventListener('change', ({ matches }) => {
+      setWideTitle(matches)
+    })
+  }, [])
 
   return (
     <ShellLayout

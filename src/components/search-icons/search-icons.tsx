@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Icon, Radio, Stack, Text, Textfield, IconProps, InfoState } from '@wonderflow/react-components'
 import IconsList from '@wonderflow/react-components/icons/structure.json'
-import { useDebounce, useCopyToClipboard } from 'react-use'
+import { useDebounce } from 'ahooks'
 import { BlankButton } from '@/components/blank-button'
 import { Bleed } from '@/components/bleed'
 import { SearchIcons as SearchIconsClass, IconTile as IconTileClass, Grid, Label, IconPreview, ToolBar } from './search-icons.module.css'
@@ -14,16 +14,20 @@ type IconTileProps = {
 }
 
 const IconTile: React.FC<IconTileProps> = ({ icon, size }) => {
-  const [state, copyToClipboard] = useCopyToClipboard()
-  const [copied, setCopied] = useState(false)
+  const [copiedName, setCopiedName] = useState<string>('')
+  const [copied, setCopied] = useState<boolean>(false)
 
   const handleCopy = useCallback(
     (icon: string) => () => {
       setCopied(true)
-      copyToClipboard(icon)
+      navigator.clipboard.writeText(icon).then(() => {
+        setCopiedName(icon)
+      }, () => {
+        setCopied(false)
+      })
       setTimeout(() => setCopied(false), 1000)
     },
-    [copyToClipboard]
+    [setCopiedName]
   )
 
   return (
@@ -38,9 +42,9 @@ const IconTile: React.FC<IconTileProps> = ({ icon, size }) => {
     >
       <Stack as="span" horizontalAlign="center" verticalAlign="center" rowGap={16} fill={false}>
         <Icon className={IconPreview} name={icon} dimension={size} />
-        <Text size={14} textAlign="center" weight="bold">{icon}</Text>
+        <Text size={14} responsive={false} textAlign="center" weight="bold">{icon}</Text>
       </Stack>
-      {(state.value && copied) && <Text size={14} weight="bold" className={Label}>COPIED</Text>}
+      {(copiedName && copied) && <Text size={14} weight="bold" className={Label}>COPIED</Text>}
     </Stack>
   )
 }
@@ -49,16 +53,11 @@ export const SearchIcons = () => {
   const fieldRef = useRef<HTMLInputElement>(null)
   const [searchTerm, setSearchTerm] = useState<string>('')
   const [iconSize, setIconSize] = useState<TokensTypes['icon']['size']>(16)
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('')
-  const filteredIcons = useMemo(() => IconsList.filter(iconName => iconName.includes(debouncedSearchTerm)), [debouncedSearchTerm])
-
-  const [isReady] = useDebounce(
-    () => {
-      setDebouncedSearchTerm(searchTerm)
-    },
-    300,
-    [searchTerm]
+  const debouncedSearchTerm = useDebounce(
+    searchTerm,
+    { wait: 300 }
   )
+  const filteredIcons = useMemo(() => IconsList.filter(iconName => iconName.includes(debouncedSearchTerm)), [debouncedSearchTerm])
 
   const handleSearch = useCallback(
     ({ currentTarget }) => {
@@ -82,7 +81,7 @@ export const SearchIcons = () => {
             onChange={handleSearch}
             icon="magnifying-glass"
             iconPosition="left"
-            data-search-icons-searched={isReady()}
+            data-search-icons-searched={!!debouncedSearchTerm}
             placeholder="Search icon names"
             dimension="big"
             autoFocus

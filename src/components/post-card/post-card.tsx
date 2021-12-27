@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { PostCard as PostCardClass, Authors } from './post-card.module.css'
 import { ClampText, Elevator, Stack, Text, Title } from '@wonderflow/react-components'
 import { Datetime } from '@/components/datetime'
 import { AuthorCard } from '@/components/author-card'
-import { useMedia } from 'react-use'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 
 type PostCardProps = PropsWithClass & Pick<
@@ -25,7 +24,13 @@ export const PostCard = ({
   ...props
 }: PostCardProps) => {
   const [color, setColor] = useState<string>('var(--highlight-gray-foreground)')
-  const isMedium = useMedia(`(min-width: ${tkns.breakpoint.medium})`, true)
+  const [isMedium, setIsMedium] = useState<boolean>(false)
+
+  useLayoutEffect(() => {
+    window.matchMedia(`(min-width: ${tkns.breakpoint.medium})`).addEventListener('change', ({ matches }) => {
+      setIsMedium(matches)
+    })
+  }, [])
 
   useEffect(() => {
     const colors = [

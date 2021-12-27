@@ -4,7 +4,6 @@ import clsx from 'clsx'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import rangeParser from 'parse-numeric-range'
 import React, { useCallback, useRef } from 'react'
-import { useCopyToClipboard } from 'react-use'
 
 import { CodeBlock as CodeBlockClass, Action, Code, Toolbar, LineNumber, LineContent } from './code-block.module.css'
 import theme from './wonder-theme'
@@ -26,13 +25,12 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   const isNotString = typeof children !== 'string'
   const language: Language = isNotString ? children?.props.className.replace(/(lang|language)-/g, '') : className?.replace(/(lang|language)-/g, '')
   const CodeRef = useRef<any>('')
-  const [, copyToClipboard] = useCopyToClipboard()
 
   const copyContent = useCallback(
     () => () => {
-      copyToClipboard(CodeRef.current.innerText)
+      navigator.clipboard.writeText(CodeRef.current.innerText)
     },
-    [CodeRef, copyToClipboard]
+    [CodeRef]
   )
 
   const formattedChildren = isNotString ? children.props.children.trim() : children.trim()
