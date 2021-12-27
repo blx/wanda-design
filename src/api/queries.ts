@@ -175,3 +175,22 @@ export const getPostDetailsBySlug = async (
 
   return result.post
 }
+
+export const getPublishedReleaseNotes = async () => {
+  const query = gql`
+    query {
+      releaseNotes(stage: PUBLISHED, orderBy: releaseDate_DESC) {
+        content
+        new
+        breaking
+        fixes
+        id
+        title
+        releaseDate
+      }
+    }
+  `
+
+  const result = await client.request(query)
+  return result.releaseNotes
+}

@@ -1,0 +1,65 @@
+@import '@wonderflow/react-components/core/utils/media.css';
+
+.Notes {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: calc(80px / 2);
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: red;
+  }
+}
+
+.Tag {
+  min-inline-size: 80px;
+}
+
+.Changes {
+  & li {
+    display: flex;
+    gap: env(--space-8);
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @media (--from-small) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  & li::before {
+    display: inline-block;
+    padding: 2px;
+    font-size: env(--font-size-14);
+    border-radius: 1e5px;
+    font-weight: 600;
+    margin: 2px 0;
+    min-width: 88px;
+    text-align: center;
+  }
+
+  & [data-note-type='breaking'] li::before {
+    content: 'BREAKING';
+    background-color: var(--highlight-red-background);
+    color: var(--highlight-red-foreground);
+  }
+
+  & [data-note-type='fixes'] li::before {
+    content: 'FIXES';
+    background-color: var(--highlight-blue-background);
+    color: var(--highlight-blue-foreground);
+  }
+
+  & [data-note-type='new'] li::before {
+    content: 'NEW';
+    background-color: var(--highlight-green-background);
+    color: var(--highlight-green-foreground);
+  }
+}
+
