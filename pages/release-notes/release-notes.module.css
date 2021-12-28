@@ -46,8 +46,8 @@
 .Changes.Changes {
   & li {
     position: relative;
-    margin-top: env(--space-8);
-    margin-bottom: env(--space-8);
+    margin-top: env(--space-16);
+    margin-bottom: env(--space-16);
     margin-left: env(--space-88);
     gap: env(--space-8);
     align-items: flex-start;
@@ -62,13 +62,15 @@
 
   & li::before {
     position: absolute;
+    top: 0;
     left: calc(env(--space-88) * -1);
     display: inline-block;
     font-size: 0.66rem;
-    border-radius: 1e5px;
+    border-radius: env(--radius-4);
     font-weight: 600;
     min-inline-size: env(--space-80);
     text-align: center;
+    padding-top: 1px;
     line-height: 1.8;
   }
 
