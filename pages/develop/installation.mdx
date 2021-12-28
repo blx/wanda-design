@@ -58,20 +58,14 @@ module.exports = {
 };
 ```
 
-Then inside your app entry point you have to import two required css files, one is the core styles and other is a theme file which contains all the theme keys used by components and that you can have to use inside your custom css.
+### Importing themes
+
+Then inside your app entry point you have to import two required css files, one is the core styles and other is a theme file which contains all the theme keys used by components and that you can use inside your custom css.
 
 ```js
 import "@wonderflow/react-components/core.css";
-import "@wonderflow/react-components/themes/light.css";
-/* ...or import both light/dark themes
- * if you want to use both of them */
 import "@wonderflow/react-components/themes.css";
 ```
-
-<Snackbar kind="warning" title="Include at least one theme">
-  You must include at least one css theme file in order to make the components
-  work as expected. <a href="/develop/themes/">See more</a>.
-</Snackbar>
 
 ## Recommended tools
 
