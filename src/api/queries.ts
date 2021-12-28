@@ -179,13 +179,13 @@ export const getPostDetailsBySlug = async (
 export const getPublishedReleaseNotes = async () => {
   const query = gql`
     query {
-      releaseNotes(stage: PUBLISHED, orderBy: releaseDate_DESC) {
+      releaseNotes(stage: PUBLISHED, orderBy: releaseDate_DESC, first: 10) {
         content
         new
         breaking
         fixes
         id
-        title
+        tag
         releaseDate
       }
     }

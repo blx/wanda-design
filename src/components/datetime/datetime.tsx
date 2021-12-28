@@ -6,10 +6,9 @@ export interface IDateProps extends HTMLAttributes<HTMLTimeElement> {
 
 export const Datetime = ({ date }: IDateProps) => {
   const timeDate: Date = new Date(date)
-  const humanDate = new Intl.DateTimeFormat('en-GB', {
-    weekday: 'long',
+  const humanDate = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
-    month: 'short',
+    month: 'long',
     day: 'numeric'
   }).format(timeDate)
 
