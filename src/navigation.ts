@@ -24,6 +24,13 @@ const routes = [
         target: '',
         wip: false,
         deprecated: false
+      },
+      {
+        path: '/release-notes',
+        label: 'Release notes',
+        target: '',
+        wip: false,
+        deprecated: false
       }
     ]
   },
