@@ -1,4 +1,4 @@
-import { getPublishedReleaseNotes } from '@/api/queries'
+import { getPublishedReleaseNotes } from '@/services/queries'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
 import { Toolbar } from '@/components/toolbar'

@@ -1,4 +1,4 @@
-import { getPublishedPosts } from '@/api/queries'
+import { getPublishedPosts } from '@/services/queries'
 import { FadeIn } from '@/components/fade-in'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'

@@ -1,4 +1,4 @@
-import { getPublishedPosts, getPublishedPostsByTopic } from '@/api/queries'
+import { getPublishedPosts, getPublishedPostsByTopic } from '@/services/queries'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
 import { PostCard } from '@/components/post-card'

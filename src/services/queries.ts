@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request'
-import client from '@/api/client'
+import client from '@/services/client'
 
 export const getPublishedPosts = async (
   avatarWidth: number = 300,

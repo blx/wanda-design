@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { getPostDetailsBySlug } from '@/api/queries'
+import { getPostDetailsBySlug } from '@/services/queries'
 import { Params } from 'next/dist/server/router'
 import { Markdown } from '@/components/markdown'
 
