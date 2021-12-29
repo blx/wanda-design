@@ -8,7 +8,7 @@ import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
 
 import { PostHead, TopicsContainer } from './post.module.css'
 import { AuthorCard } from '@/components/author-card'
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export type PostLayoutProps = Partial<PostType>
 
@@ -30,7 +30,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
     'red'
   ]
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.matchMedia(`(min-width: ${tkns.breakpoint['extra-large']})`).addEventListener('change', ({ matches }) => {
       setWideTitle(matches)
     })

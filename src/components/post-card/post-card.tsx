@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { PostCard as PostCardClass, Authors } from './post-card.module.css'
@@ -26,7 +26,7 @@ export const PostCard = ({
   const [color, setColor] = useState<string>('var(--highlight-gray-foreground)')
   const [isMedium, setIsMedium] = useState<boolean>(false)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.matchMedia(`(min-width: ${tkns.breakpoint.medium})`).addEventListener('change', ({ matches }) => {
       setIsMedium(matches)
     })
