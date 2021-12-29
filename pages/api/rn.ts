@@ -1,9 +1,9 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiResponse } from 'next'
 import slackifyMarkdown from 'slackify-markdown'
 
 // import { verifyWebhookSignature } from '@graphcms/utils'
 
-export default async function handler (req: NextApiRequest, res: NextApiResponse) {
+export default async function handler (res: NextApiResponse) {
   // const body = req.body
   // const signature = req.headers['gcms-signature']
   // const secret = process.env.CMS_SIGNATURE
