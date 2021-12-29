@@ -531,6 +531,12 @@ const routes = [
             wip: false
           },
           {
+            path: '/components/other/datetime',
+            label: 'Datetime',
+            target: '',
+            wip: false
+          },
+          {
             path: '/components/other/elevator',
             label: 'Elevator',
             target: '',

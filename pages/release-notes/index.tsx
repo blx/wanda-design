@@ -3,9 +3,8 @@ import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
 import { Toolbar } from '@/components/toolbar'
 import { Markdown } from '@/components/markdown'
-import { Card, Stack, Title, Text } from '@wonderflow/react-components'
+import { Card, Stack, Title, Text, Datetime } from '@wonderflow/react-components'
 import { Notes, Changes, Tag } from './release-notes.module.css'
-import { Datetime } from '@/components/datetime'
 
 type ReleaseNotesPageProps = {
   notes: ReleaseNotes
