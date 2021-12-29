@@ -14,6 +14,7 @@ declare namespace NodeJS {
   export interface ProcessEnv {
     /* eslint-disable @typescript-eslint/naming-convention */
     CMS_ENDPOINT: string;
+    CMS_SIGNATURE: string;
     NEXT_PUBLIC_DOMAIN: string;
     NEXT_PUBLIC_ALGOLIA_API_KEY: string;
   }
