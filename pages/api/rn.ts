@@ -4,14 +4,15 @@ import { verifyWebhookSignature } from '@graphcms/utils'
 
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
   const body = req.body
+  const releaseData: ReleaseNote = body.data
   const signature = req.headers['gcms-signature']
   const secret = process.env.CMS_SIGNATURE
-  const hasChanges = body.data.breaking || body.data.new || body.data.fixes
+  const hasChanges = releaseData.breaking || releaseData.new || releaseData.fixes
 
   const changesTemplate = `This release includes:\n\n
-  ${body.data.breaking ? '✓ BREAKING CHANGES' : ''}
-  ${body.data.new ? '✓ NEW FEATURES' : ''}
-  ${body.data.fixes ? '✓ FIXES' : ''}
+  ${releaseData.breaking ? '✓ BREAKING CHANGES' : ''}
+  ${releaseData.new ? '✓ NEW FEATURES' : ''}
+  ${releaseData.fixes ? '✓ FIXES' : ''}
 `
 
   const slackMessage = {
@@ -20,7 +21,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
         type: 'header',
         text: {
           type: 'plain_text',
-          text: `✨ New release ${body.data.tag || ''} ✨`,
+          text: `✨ New release ${releaseData.tag || ''} ✨`,
           emoji: true
         }
       },
@@ -28,7 +29,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `${slackifyMarkdown(body.data.content || '') || ' '}`
+          text: `${slackifyMarkdown(releaseData.content || '') || ' '}`
         }
       },
       {
@@ -57,7 +58,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
               year: 'numeric',
               month: 'long',
               day: 'numeric'
-            }).format(new Date(body.data.releaseDate))}`,
+            }).format(new Date(releaseData.releaseDate))}`,
             emoji: true
           },
           {
