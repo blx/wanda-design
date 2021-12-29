@@ -6,6 +6,7 @@ import { ClampText, Elevator, Stack, Text, Title } from '@wonderflow/react-compo
 import { Datetime } from '@/components/datetime'
 import { AuthorCard } from '@/components/author-card'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
+import { TextReveal } from '@/components/text-reveal'
 
 type PostCardProps = PropsWithClass & Pick<
   PostType,
@@ -66,7 +67,9 @@ export const PostCard = ({
               </Text>
             </Stack>
             <Title as="h2" level={isMedium ? '2' : '3'}>
-              <ClampText rows={3}>{ title }</ClampText>
+              <TextReveal>
+                <ClampText rows={3}>{ title }</ClampText>
+              </TextReveal>
             </Title>
           </Stack>
           <Text maxWidth="50ch" dimmed={6}>
