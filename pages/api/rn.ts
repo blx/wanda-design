@@ -64,10 +64,6 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
         {
           type: 'mrkdwn',
           text: 'design.wonderflow.ai'
-        },
-        {
-          type: 'mrkdwn',
-          text: '<https://github.com/wonderflow-bv/design/issues/new/choose|Open issue or request>'
         }
       ]
     }
