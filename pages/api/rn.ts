@@ -64,18 +64,16 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
         {
           type: 'mrkdwn',
           text: 'design.wonderflow.ai'
+        },
+        {
+          type: 'mrkdwn',
+          text: '[File an issue](https://github.com/wonderflow-bv/design/issues)'
         }
       ]
     }
   ]
 
   const isValid = verifyWebhookSignature({ body, signature, secret })
-  // if (isValid) {
-  //   await fetch(process.env.SLACK_HOOK, {
-  //     method: 'POST',
-  //     body: JSON.stringify(slackMessage)
-  //   }).then(() => res.status(200).json(slackMessage))
-  // }
 
   if (isValid) {
     try {
@@ -89,4 +87,6 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
       res.status(500).send({ error: 'failed to fetch data' })
     }
   }
+
+  res.status(500).send({ error: 'unverified signature' })
 }
