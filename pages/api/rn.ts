@@ -43,7 +43,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
       type: 'section',
       text: {
         type: 'mrkdwn',
-        text: '<https://design.wonderflow.ai/release-notes|Full release notes >'
+        text: '<https://design.wonderflow.ai/release-notes|Full release notes>'
       }
     },
     {
@@ -67,7 +67,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
         },
         {
           type: 'mrkdwn',
-          text: '[File an issue](https://github.com/wonderflow-bv/design/issues)'
+          text: '<https://github.com/wonderflow-bv/design/issues/new/choose|Open issue or request>'
         }
       ]
     }
