@@ -138,27 +138,12 @@ Wanda's core style comes with a set of prebuilt mixins you can use inside your c
 
 #### Vibrancy
 
-Add a vibrancy effect to any element:
+Add a vibrancy effect to any element. You can use it to add blur effect and filters to underlyings elements.
 
-<Tab>
-  <Tab.Panel icon="layer-group" label="List">
-
-```css hideCopy
-@define-mixin vibrancy {
-  backdrop-filter: saturate(180%) blur(62px);
-}
-```
-
-  </Tab.Panel>
-  <Tab.Panel icon="arrow-right" label="Usage">
-
-```css hideCopy
+```css
 @import "@wonderflow/react-components/core/utils/vibrancy.css";
 
 .MyVibrantElement {
   @mixin vibrancy;
 }
 ```
-
-  </Tab.Panel>
-</Tab>
