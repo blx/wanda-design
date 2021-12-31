@@ -6,10 +6,10 @@ import * as Components from "@wonderflow/react-components";
 import { Markdown } from "@/components/markdown";
 
 export const example = `<SplitButton kind="secondary" label="Button" placement="right-start">
-  <Dropdown.Menu>
-    <Dropdown.Item padding={false}>Option 1</Dropdown.Item>
-    <Dropdown.Item padding={false}>Option 2</Dropdown.Item>
-  </Dropdown.Menu>
+  <Menu>
+    <Menu.Item padding={false}>Option 1</Menu.Item>
+    <Menu.Item padding={false}>Option 2</Menu.Item>
+  </Menu>
 </SplitButton>`;
 
 export default ({ children }) => (
@@ -54,10 +54,10 @@ import { SplitButton } from "@wonderflow/react-components";
 export default () => {
   return (
     <SplitButton label="Button">
-      <Dropdown.Menu>
-        <Dropdown.Item>Option 1</Dropdown.Item>
-        <Dropdown.Item>Option 2</Dropdown.Item>
-      </Dropdown.Menu>
+      <Menu>
+        <Menu.Item>Option 1</Menu.Item>
+        <Menu.Item>Option 2</Menu.Item>
+      </Menu>
     </SplitButton>
   );
 };

@@ -456,6 +456,13 @@ const routes = [
         target: '',
         items: [
           {
+            path: '/components/navigation/menu',
+            label: 'Menu',
+            target: '',
+            wip: false,
+            deprecated: false
+          },
+          {
             path: '/components/navigation/tab',
             label: 'Tab',
             target: '',
