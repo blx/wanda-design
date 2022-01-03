@@ -83,6 +83,14 @@ export default () => {
         "Set the responsive font-size which scale down by one size on mobile",
     },
     {
+      name: "lineHeight",
+      type: ['"none"', '"small"', '"large"'],
+      default: '"large"',
+      required: false,
+      dangerous: false,
+      description: "Set the text line height.",
+    },
+    {
       name: "maxWidth",
       type: ["string"],
       default: "",
