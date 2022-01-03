@@ -141,12 +141,12 @@ export default () => {
     },
     {
       name: "direction",
-      type: ['"row"', '"column"'],
+      type: ['"row"', '"column"', '"row-reverse"', '"column-reverse"'],
       default: '"column"',
       required: false,
       dangerous: false,
       description:
-        "Distribute the elements along the horizontal or vertical axis",
+        "Distribute the elements along the horizontal or vertical axis by using the flexbox layout model",
     },
     {
       name: "as",
