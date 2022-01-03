@@ -7,8 +7,14 @@ import * as Components from "@wonderflow/react-components";
 export const example = `() => {
   const [checked, setChecked] = useState(false);
   return (
-    <Menu>
-      <Menu.Item autoFocus icon="user">Item option 1</Menu.Item>
+    <Menu style={{ inlineSize: '100%', maxInlineSize: 400 }}>
+      <Menu.Item
+        autoFocus
+        decoration={<Chip dimension="small">Decoration</Chip>}
+        icon="user"
+      >
+      Item option 1
+      </Menu.Item>
       <Menu.ItemCheckbox
         onClick={() => setChecked(val => !val)}
         icon={checked ? 'check' : undefined}
@@ -17,7 +23,10 @@ export const example = `() => {
         Checkable option 2
       </Menu.ItemCheckbox>
       <Separator />
-      <Menu.Item icon="right-from-bracket">
+      <Menu.Item
+        decoration={<Text size={14} sentiment="danger">Danger</Text>}
+        icon="right-from-bracket"
+      >
         Item option 3
       </Menu.Item>
       <Menu.Item disabled icon="right-from-bracket">
@@ -35,7 +44,7 @@ export default ({ children }) => (
     features={[
       "Keyboard accessible",
       "Reusable",
-      "Checkable items and icons",
+      "Checkable items",
       "Themes ready",
     ]}
     links={[
@@ -105,6 +114,15 @@ export default () => {
       required: false,
       dangerous: false,
       description: "Add padding to align text with items with icon",
+    },
+    {
+      name: "decoration",
+      type: ["ReactNode"],
+      default: "",
+      required: false,
+      dangerous: false,
+      description:
+        "Add an element to decorate the menu item. This is useful for adding extra elements and informations to the menu item. Don't use interactive elements (link, buttons, etc..) as decoration if `Menu.Item` is rendered as ´<button>´ (default).",
     },
     {
       name: "autoFocus",
