@@ -61,11 +61,17 @@ export default ({ children }) => (
 
 ## Anatomy
 
-```tsx highlight=1,4
-import { Pagination } from "@wonderflow/react-components";
+```tsx highlight=1,5-9
+import { Menu } from "@wonderflow/react-components";
 
 export default () => {
-  return <Pagination itemsCount={1000} />;
+  return (
+    <Menu>
+      <Menu.Item>Item</Menu.Item>
+      <Menu.ItemCheckbox>Checkable item</Menu.ItemCheckbox>
+      <Menu.Item>Item</Menu.Item>
+    </Menu>
+  );
 };
 ```
 
