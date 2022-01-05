@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/wonderflow-bv/design/compare/v1.67.1...v2.0.0) (2022-01-05)
+
+
+### Features
+
+* remove rn signature verification ([769e9fa](https://github.com/wonderflow-bv/design/commit/769e9fab52a27938f5bb4753be3e66388cb1e71f))
+
+
+### BREAKING CHANGES
+
+* remove release notes signature
+
 ## [1.67.1](https://github.com/wonderflow-bv/design/compare/v1.67.0...v1.67.1) (2022-01-05)
 
 
