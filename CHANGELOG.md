@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/wonderflow-bv/design/compare/v2.0.0...v3.0.0) (2022-01-05)
+
+
+### Bug Fixes
+
+* navigation ([d78e682](https://github.com/wonderflow-bv/design/commit/d78e68244a6f984ef44dc9300b585199c8fac919))
+
+
+### BREAKING CHANGES
+
+* align versions
+
 # [2.0.0](https://github.com/wonderflow-bv/design/compare/v1.67.1...v2.0.0) (2022-01-05)
 
 
