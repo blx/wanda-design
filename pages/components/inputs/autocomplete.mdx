@@ -1,7 +1,7 @@
 import { MdxLayout } from "@/components/layouts/mdx";
 import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
-import * as components from "@wonderflow/react-components";
+import * as Components from "@wonderflow/react-components";
 
 export const example = `<Autocomplete icon="magnifying-glass">
   <Autocomplete.Option value="apple">
@@ -28,7 +28,8 @@ export default ({ children }) => (
       "Composable and full control over options",
       "Themes ready",
     ]}
-    hero={<Playground scope={{ ...components }} code={example} />}
+    tags={<Components.Chip color="blue">Beta</Components.Chip>}
+    hero={<Playground scope={{ ...Components }} code={example} />}
   >
     {children}
   </MdxLayout>
@@ -41,7 +42,7 @@ import { Autocomplete } from "@wonderflow/react-components";
 
 export default () => {
   return (
-    <Autocomplete icon="compass">
+    <Autocomplete>
       <Autocomplete.Option value="1">Option 1</Autocomplete.Option>
       <Autocomplete.Option value="2">Option 2</Autocomplete.Option>
       <Autocomplete.Option value="3">Option 3</Autocomplete.Option>

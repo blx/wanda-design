@@ -52,13 +52,7 @@ export default ({ children }) => (
         url: "https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton",
       },
     ]}
-    hero={
-      <Playground
-        scope={{ ...Components, useState }}
-        liveAreaProps={{ minHeight: "330px", verticalAlign: "start" }}
-        code={example}
-      />
-    }
+    hero={<Playground scope={{ ...Components, useState }} code={example} />}
   >
     {children}
   </MdxLayout>
