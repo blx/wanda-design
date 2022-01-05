@@ -38,8 +38,8 @@
       "@/components/*": [
         "src/components/*"
       ],
-      "@/api/*": [
-        "src/api/*"
+      "@/services/*": [
+        "src/services/*"
       ],
       "@/utils/*": [
         "src/utils/*"

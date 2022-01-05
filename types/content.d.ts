@@ -31,3 +31,15 @@ type PostType = {
 }
 
 type PostsType = PostType[]
+
+type ReleaseNote = {
+  id: string
+  releaseDate: string
+  content?: string
+  new?: string
+  breaking?: string
+  fixes?: string
+  tag?: string
+}
+
+type ReleaseNotes = ReleaseNote[]

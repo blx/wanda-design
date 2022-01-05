@@ -50,8 +50,8 @@ const nextConfig = withPlugins([
       }
     ]
   },
-  trailingSlash: true,
-  pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx'],
+  trailingSlash: false,
+  pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx', 'ts'],
   swcMinify: true,
   images: {
     domains: ['media.graphcms.com']

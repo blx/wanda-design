@@ -1,4 +1,4 @@
-@import '@wonderflow/react-components/core/media.css';
+@import '@wonderflow/react-components/core/utils/media.css';
 
 .CodeBlock {
   position: relative;
@@ -14,7 +14,6 @@
   &[data-code-block-has-highlight='true'] [data-code-block-highlight='false'] {
     opacity: 50%;
     filter: saturate(0);
-    user-select: none;
   }
 }
 

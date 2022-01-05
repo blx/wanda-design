@@ -17,7 +17,7 @@ Core styles are what you need to write your custom css. They include custom prop
 Inside the core style, we provide a set of breakpoints which you can use while building components and applications. To use them you have to import the relative file:
 
 ```css
-@import "@wonderflow/react-components/core/media.css";
+@import "@wonderflow/react-components/core/utils/media.css";
 ```
 
 Here the complete list of the available custom media queries you can use:
@@ -60,8 +60,39 @@ Here the complete list of the available custom media queries you can use:
 @media (--light-scheme);
 /* (prefers-color-scheme: light) */
 
-@media (--allow-motion);
+@media (--motion);
 /* (prefers-reduced-motion: no-preference) */
+
+@media (--reduced-motion);
+/* (prefers-reduced-motion: reduce) */
+
+@media (--opacity);
+/* (prefers-reduced-transparency: no-preference) */
+
+@media (--reduce-opacity);
+/* (prefers-reduced-transparency: reduce) */
+
+@media (--high-contrast);
+/* (prefers-contrast: high) */
+
+@media (--low-contraast);
+/* (prefers-contrast: low) */
+```
+
+### Pointers
+
+```css
+@media (--touch);
+/* (hover: none) and (pointer: coarse) */
+
+@media (--stylus);
+/* (hover: none) and (pointer: fine) */
+
+@media (--pointer);
+/* (hover) and (pointer: coarse) */
+
+@media (--mouse);
+/* (hover) and (pointer: fine) */
 ```
 
 ## Mixins
@@ -101,60 +132,18 @@ If you need to create dynamic css declaration, or reuse block of declarations in
 
 The mixins implementation is based on `postcss-mixins`. To learn more about the mixins syntax and advanced features, please refer to the [postcss-mixins documentation](https://github.com/postcss/postcss-mixins).
 
-### Prebuilt mixins
+### Builtin mixins
 
 Wanda's core style comes with a set of prebuilt mixins you can use inside your css. These mixins allows you to reuse the same css declaration inside your components.
 
 #### Vibrancy
 
-Add a vibrancy effect to any element:
+Add a vibrancy effect to any element. You can use it to add blur effect and filters to underlyings elements.
 
-<Tab>
-  <Tab.Panel icon="layer-group" label="List">
-
-```css hideCopy
-@define-mixin vibrancy {
-  backdrop-filter: saturate(180%) blur(62px);
-  background: linear-gradient(
-    to bottom,
-    var(--global-vibrancy-background),
-    var(--global-vibrancy-background)
-  );
-}
-
-@define-mixin vibrancy-hover {
-  background: linear-gradient(
-    to bottom,
-    var(--global-vibrancy-background-hover),
-    var(--global-vibrancy-background-hover)
-  );
-}
-
-@define-mixin vibrancy-disabled {
-  color: var(--global-disabled-foreground);
-  backdrop-filter: saturate(180%) blur(62px);
-  background: linear-gradient(
-    to bottom,
-    var(--global-disabled-background),
-    var(--global-disabled-background)
-  );
-}
-```
-
-  </Tab.Panel>
-  <Tab.Panel icon="arrow-right" label="Usage">
-
-```css hideCopy
-@import "@wonderflow/react-components/core/vibrancy.css";
+```css
+@import "@wonderflow/react-components/core/utils/vibrancy.css";
 
 .MyVibrantElement {
   @mixin vibrancy;
-
-  &:hover {
-    @mixin vibrancy-hover;
-  }
 }
 ```
-
-  </Tab.Panel>
-</Tab>

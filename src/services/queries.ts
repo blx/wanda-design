@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request'
-import client from '@/api/client'
+import client from '@/services/client'
 
 export const getPublishedPosts = async (
   avatarWidth: number = 300,
@@ -174,4 +174,23 @@ export const getPostDetailsBySlug = async (
   const result = await client.request(query, { slug, stage, avatarWidth, avatarHeight })
 
   return result.post
+}
+
+export const getPublishedReleaseNotes = async () => {
+  const query = gql`
+    query {
+      releaseNotes(stage: PUBLISHED, orderBy: releaseDate_DESC, first: 10) {
+        content
+        new
+        breaking
+        fixes
+        id
+        tag
+        releaseDate
+      }
+    }
+  `
+
+  const result = await client.request(query)
+  return result.releaseNotes
 }

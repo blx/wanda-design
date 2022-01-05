@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode } from 'react'
+import { forwardRef, ReactNode } from 'react'
 import { Banner as BannerClass } from './banner.module.css'
 import { Stack, Title, Polymorphic } from '@wonderflow/react-components'
 

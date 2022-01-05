@@ -8,7 +8,7 @@ export const example = `<Title as="h3" level="3">Title</Title>`;
 export default ({ children }) => (
   <MdxLayout
     title="Title"
-    description="Dynamic and fluid titles with control"
+    description="Dynamic and responsive titles with control"
     showMeta
     features={[
       "Dynamic HTML tag",
@@ -54,12 +54,13 @@ export default () => {
       description: "Set the title line height. Useful for long titles.",
     },
     {
-      name: "fluid",
+      name: "responsive",
       type: ["boolean"],
       default: "true",
       required: false,
       dangerous: false,
-      description: "Set the responsive font-size",
+      description:
+        "Set the responsive font-size which scale down by one size on mobile",
     },
     {
       name: "maxWidth",

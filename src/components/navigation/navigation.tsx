@@ -20,7 +20,7 @@ export const Navigation = ({ data }: NavigationProps) => {
   )
 
   const navigationLink = useCallback(
-    (url: string, children: ReactNode, deprecated?: boolean) => (
+    (url: string, children: ReactNode, tag?: NavigationItem['tag']) => (
       <Stack
         as="a"
         className={NavigationLink}
@@ -28,10 +28,11 @@ export const Navigation = ({ data }: NavigationProps) => {
         href={url}
         verticalAlign="end"
         columnGap={8}
+        fill={false}
         aria-current={includesPath(url) ? 'page' : undefined}
       >
-        {children}
-        {deprecated && <Chip color="yellow" dimension="small">deprecated</Chip>}
+        <Text as="span" responsive={false}>{children}</Text>
+        {tag && <Chip color={tag.color || 'gray'} dimension="small">{tag.label}</Chip>}
       </Stack>
     ),
     [includesPath]
@@ -42,7 +43,7 @@ export const Navigation = ({ data }: NavigationProps) => {
       <Tree.Li key={subItem.path}>
         {subItem.wip
           ? (
-            <Text as="span" size={16} dimmed={5} fluid={false}>
+            <Text as="span" size={16} dimmed={5} responsive={false}>
               <Stack as="span" direction="row" columnGap={8} inline verticalAlign="center">
                 {subItem.label}
                 <Chip dimension="small">soon</Chip>
@@ -51,7 +52,7 @@ export const Navigation = ({ data }: NavigationProps) => {
             )
           : (
             <Link href={subItem.path}>
-              {navigationLink(subItem.path, subItem.label, subItem.deprecated)}
+              {navigationLink(subItem.path, subItem.label, subItem.tag)}
             </Link>
             )
           }

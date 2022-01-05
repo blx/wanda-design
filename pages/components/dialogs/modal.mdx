@@ -2,11 +2,12 @@ import { useState } from "react";
 import { MdxLayout } from "@/components/layouts/mdx";
 import { Playground } from "@/components/playground";
 import { Props } from "@/components/props";
+import { LiveArea } from "@/components/live-area";
 import dynamic from "next/dynamic";
 import * as Components from "@wonderflow/react-components";
 
-export const DynPortal = dynamic(
-  import("@/components/portal").then((m) => m.Portal),
+export const DynOverlayContainer = dynamic(
+  import("@wonderflow/react-components").then((m) => m.OverlayContainer),
   { ssr: false }
 );
 
@@ -15,31 +16,29 @@ export const example = `() => {
   return (
     <>
       <Button onClick={() => setVisible(true)}>Show Modal</Button>
-      <DynPortal>
-        <Modal
-          key="default-modal"
-          visible={visible}
-          onClose={() => setVisible(false)}
-        >
-          <Modal.Content title="Account deletion">
-            <Stack
-              fill={false}
-              horizontalAlign="center"
-              rowGap={32}
-              horizontalPadding={24}
-              verticalPadding={24}
-            >
-              <Text>Do you really want to delete this account?</Text>
-              <Stack direction="row" columnGap={8}>
-                <Button onClick={() => setVisible(false)} kind="flat">
-                  No
-                </Button>
-                <Button onClick={() => setVisible(false)}>Confirm</Button>
+        <OverlayContainer onClose={() => setVisible(false)}>
+        {visible && (
+          <Modal key="default-modal">
+            <Modal.Content title="Account deletion">
+              <Stack
+                fill={false}
+                horizontalAlign="center"
+                rowGap={32}
+                horizontalPadding={24}
+                verticalPadding={24}
+              >
+                <Text>Do you really want to delete this account?</Text>
+                <Stack direction="row" columnGap={8}>
+                  <Button onClick={() => setVisible(false)} kind="flat">
+                    No
+                  </Button>
+                  <Button onClick={() => setVisible(false)}>Confirm</Button>
+                </Stack>
               </Stack>
-            </Stack>
-          </Modal.Content>
-        </Modal>
-      </DynPortal>
+            </Modal.Content>
+          </Modal>
+        )}
+      </OverlayContainer>
     </>
   );
 }`;
@@ -51,8 +50,7 @@ export default ({ children }) => (
     showMeta
     features={[
       "Keyboard accessible",
-      "Focus is automatically trapped when modal",
-      "Can be controlled or uncontrolled",
+      "Focus is automatically trapped",
       "Manages screen reader announcements with Title",
       "Themes ready",
     ]}
@@ -68,7 +66,7 @@ export default ({ children }) => (
     ]}
     hero={
       <Playground
-        scope={{ ...Components, useState, DynPortal }}
+        scope={{ ...Components, useState, DynOverlayContainer }}
         code={example}
       />
     }
@@ -79,40 +77,20 @@ export default ({ children }) => (
 
 ## Anatomy
 
-```tsx highlight=1,4,7-9
-import { Modal } from "@wonderflow/react-components";
+```tsx highlight=1,4,7-13
+import { Modal, OverlayContainer } from "@wonderflow/react-components";
 
 export default () => {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <Modal visible={visible} title="Modal title">
-      <Modal.Content>....</Modal.Content>
-    </Modal>
-  );
-};
-```
-
-### Dynamic mounting
-
-In some situations you need to dynamically mount the `Modal` component based on a condition, instead of using the `visible` property. In these cases, you need to wrap the `Modal` and the `condition` inside the `Presence` provider in order to keep the exiting animation.
-
-```tsx highlight=1,4,5,8-15
-import { Modal, useModalContext, Presence } from "@wonderflow/react-components";
-
-export default () => {
-  const [visible, setVisible] = useState<boolean>(false);
-  const { titleId, onClose } = useModalContext();
-
-  return (
-    <Presence>
+    <OverlayContainer onClose={() => setVisible(false)}>
       {visible && (
-        <Modal title="Modal title">
-          <p id={titleId}>Modal title</p>
-          <button onClick={onClose}>Close modal</button>
+        <Modal>
+          <Modal.Content title="Modal title">....</Modal.Content>
         </Modal>
       )}
-    </Presence>
+    </OverlayContainer>
   );
 };
 ```
@@ -121,24 +99,89 @@ export default () => {
 
 If you want to use the `Modal` component to show custom elements instead of the `Modal.Content` (which renders the card), you can pass an element inside it.
 
-```tsx highlight=1,4,7-9
-import { Modal } from "@wonderflow/react-components";
+export const CustomModalContent = () => {
+  const { onClose, titleId } = Components.useOverlayContext();
+  return (
+    <Components.Stack verticalAlign="center">
+      <Components.Stack direction="row" verticalAlign="center" columnGap={48}>
+        <Components.Title id={titleId} level="4">
+          My custom modal title
+        </Components.Title>
+        <Components.IconButton
+          onClick={onClose}
+          icon="xmark"
+          aria-label="Close modal"
+        />
+      </Components.Stack>
+      <p>My custom content</p>
+    </Components.Stack>
+  );
+};
 
-export default () => {
+export const CustomModal = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <Components.Button onClick={() => setVisible(true)}>
+        Show Modal
+      </Components.Button>
+      <DynOverlayContainer onClose={() => setVisible(false)}>
+        {visible && (
+          <Components.Modal>
+            <CustomModalContent />
+          </Components.Modal>
+        )}
+      </DynOverlayContainer>
+    </>
+  );
+};
+
+<LiveArea>
+  <CustomModal />
+</LiveArea>
+
+```tsx highlight=1-8,11,14-21,26,29-38
+import {
+  Modal,
+  OverlayContainer,
+  useOverlayContext,
+  Button,
+  Title,
+  Card,
+} from "@wonderflow/react-components";
+
+export const CustomModalContent = () => {
+  const { onClose, titleId } = useOverlayContext();
+
+  return (
+    <Card>
+      <Title id={titleId} level="4">
+        My custom modal title
+      </Title>
+      <Button onClick={onClose} icon="xmark">
+        Close modal
+      </Button>
+    </Card>
+  );
+};
+
+export const PageExample = () => {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <Modal visible={visible} title="Modal title">
-      <div>My custom content wrapper</div>
-    </Modal>
+    <>
+      <Button onClick={() => setVisible(true)}>Show Modal</Button>
+      <OverlayContainer onClose={() => setVisible(false)}>
+        {visible && (
+          <Modal>
+            <CustomModalContent />
+          </Modal>
+        )}
+      </OverlayContainer>
+    </>
   );
 };
 ```
-
-<Components.Snackbar kind="warning">
-  It's important to consider that by passing custom content you have to handle
-  the overflow, size, position and accessibility by yourself.
-</Components.Snackbar>
 
 ## API Reference
 
@@ -147,37 +190,13 @@ export default () => {
 <Props
   properties={[
     {
-      name: "visible",
-      type: ['"boolean"'],
-      default: "false",
-      required: false,
-      dangerous: false,
-      description: "Set the visibility and render of the modal",
-    },
-    {
-      name: "overlayColor",
-      type: ["light", "dark", "auto"],
-      default: '"dark"',
-      required: false,
-      dangerous: false,
-      description: "Set the backdrop overlay color",
-    },
-    {
-      name: "onClose",
-      type: ["() => void"],
-      default: "",
-      required: true,
-      dangerous: false,
-      description:
-        "Callback to close the modal. This is used on the overlay and the close button if Modal.Content is used.",
-    },
-    {
       name: "closeOnClickOutside",
       type: ["boolean"],
       default: "true",
       required: false,
       dangerous: false,
-      description: "Run onClose callback when clicking the backdrop layer",
+      description:
+        "Run onClose callback from the `OverlayContext` when clicking the backdrop layer",
     },
   ]}
 />
@@ -194,30 +213,13 @@ export default () => {
       dangerous: false,
       description: "The modal title which labels the modal to AT",
     },
-  ]}
-/>
-
-### useModalContext
-
-<Props
-  properties={[
     {
-      name: "titleId",
-      type: ["string"],
-      default: "",
+      name: "theme",
+      type: ['"light"', '"dark"', '"auto"'],
+      default: '"light"',
       required: false,
       dangerous: false,
-      description:
-        "The auto generated id to assign to the modal title to give it an accessbility name",
-    },
-    {
-      name: "onClose",
-      type: ["() => void"],
-      default: "",
-      required: false,
-      dangerous: false,
-      description:
-        "The callback passed to the Modal and available inside the Modal content.",
+      description: "Set the modal content style. By default is always light",
     },
   ]}
 />

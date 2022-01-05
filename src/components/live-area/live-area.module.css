@@ -1,41 +1,40 @@
-@import '@wonderflow/react-components/core/media.css';
+@import '@wonderflow/react-components/core/utils/media.css';
 
 .LiveArea {
   border-radius: env(--radius-8);
-  background-image: radial-gradient(var(--dimmed-1) 0.9px, var(--dimmed-0) 0.9px);
-  background-size: 18px 18px;
   min-block-size: var(--minHeight);
   max-block-size: var(--maxHeight);
   padding: env(--space-16) env(--space-40);
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-  overflow: auto;
   block-size: 100%;
-  z-index: 0;
+  z-index: 1;
   position: relative;
 
   @media (--from-medium) {
     padding: env(--space-40) env(--space-64) env(--space-40);
   }
 
-  &[data-live-area-live='true'] {
-    overflow: hidden;
-
-    &::before {
-      background: #fff;
-      border-radius: 100%;
-      content: '';
-      display: block;
-      block-size: 600px;
-      inline-size: 600px;
-      top: var(--hoverY, -600px);
-      left: var(--hoverX, -600px);
-      position: absolute;
-      mix-blend-mode: soft-light;
-      filter: blur(60px);
-      opacity: 10%;
-      z-index: -1;
-      transition: transform env(--duration-200) ease-out;
-    }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image:
+      radial-gradient(
+        circle at center,
+        var(--dimmed-1) 60%,
+        var(--dimmed-0)
+      );
+    mask-image:
+      radial-gradient(
+        black 0.9px,
+        transparent 0.9px
+      );
+    mask-size: 18px 18px;
   }
 }

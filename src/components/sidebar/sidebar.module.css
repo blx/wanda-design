@@ -3,6 +3,7 @@
 }
 
 .Header {
+  background: none;
   padding: env(--space-24);
 
   & > a {

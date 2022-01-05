@@ -1,47 +1,28 @@
-import React, { useEffect } from 'react'
-import { Textfield } from '@wonderflow/react-components'
-import { TextfieldProps } from '@wonderflow/react-components/textfield'
+import React from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
+import { DocSearchProps } from '@docsearch/react'
+import { SkeletonBlock } from '@wonderflow/react-components'
 
-type SearchProps = TextfieldProps & {
-  size?: number;
-}
+const DynDocSearch = dynamic<DocSearchProps>(
+  import('@docsearch/react').then(m => m.DocSearch),
+  {
+    ssr: false,
+    loading: () => <SkeletonBlock height={24} width={150} />
+  }
+)
 
-declare const window: any
-
-export const Search = ({
-  className,
-  dimension = 'big',
-  size,
-  ...props
-}: SearchProps) => {
-  useEffect(() => {
-    if (window.docsearch) {
-      window.docsearch({
-        apiKey: '9e6d8175d4b610a1441417e9a1d8ceda',
-        indexName: 'wonderflow',
-        inputSelector: '#site-search',
-        debug: true
-      })
-    } else {
-      console.warn('Search has failed to load DocSearch')
-    }
-  }, [])
+export const Search = () => {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" key="search" />
+        <link rel="preconnect" href="https://BR3WX4TQPD-dsn.algolia.net" crossOrigin="true" />
       </Head>
-      <Textfield
-        className={className}
-        id="site-search"
-        size={size}
-        dimension={dimension}
-        icon="magnifying-glass"
-        iconPosition="left"
-        type="search"
+      <DynDocSearch
+        appId="BR3WX4TQPD"
+        apiKey={process.env.NEXT_PUBLIC_ALGOLIA_API_KEY}
+        indexName="wonderflow"
         placeholder="Search content across the website..."
-        {...props}
       />
     </>
   )

@@ -1,4 +1,6 @@
-const routes = [
+import { NavigationMenu } from 'types/navigation'
+
+const routes: NavigationMenu = [
   {
     title: 'Get started',
     color: 'cyan',
@@ -7,23 +9,22 @@ const routes = [
       {
         path: '/get-started/introduction',
         label: 'Introduction',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         path: '/get-started/accessibility',
         label: 'Accessibility',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         path: '/learn',
         label: 'Learn',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
+      },
+      {
+        path: '/release-notes',
+        label: 'Release notes',
+        target: ''
       }
     ]
   },
@@ -35,9 +36,7 @@ const routes = [
       {
         path: '/design/brand',
         label: 'Brand',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         label: 'Foundations',
@@ -46,46 +45,35 @@ const routes = [
           {
             path: '/design/foundations/colors',
             label: 'Colors',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/foundations/typography',
             label: 'Typography',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/foundations/elevations',
             label: 'Elevations',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/foundations/motion',
             label: 'Motion',
             target: '',
-            wip: true,
-            deprecated: false
+            wip: true
           }
         ]
       },
       {
         path: '/design/iconography',
         label: 'Iconography',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         path: '/design/themes',
         label: 'Themes',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         label: 'Recipes',
@@ -94,51 +82,37 @@ const routes = [
           {
             path: '/design/recipes/buttons',
             label: 'Buttons',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/recipes/dropdown',
             label: 'Dropdown',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/recipes/forms',
             label: 'Forms',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/recipes/info-states',
             label: 'Info states',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/recipes/loading',
             label: 'Loading',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/recipes/modals',
             label: 'Modals',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/design/recipes/notifications',
             label: 'Notifications',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           }
         ]
       }
@@ -152,37 +126,27 @@ const routes = [
       {
         path: '/develop/installation',
         label: 'Installation',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         path: '/develop/design-tokens',
         label: 'Design tokens',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         path: '/develop/global-styles',
         label: 'Global styles',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         path: '/develop/ssr',
         label: 'Server side rendering',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         path: '/develop/using-themes',
         label: 'Using themes',
-        target: '',
-        wip: false,
-        deprecated: false
+        target: ''
       },
       {
         label: 'Utilities',
@@ -191,22 +155,12 @@ const routes = [
           {
             path: '/develop/utilities/id-provider',
             label: 'Id Provider',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/develop/utilities/presence',
-            label: 'Presence',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/develop/utilities/polymorphic',
             label: 'Polymorphic',
-            target: '',
-            wip: false
+            target: ''
           }
         ]
       }
@@ -220,8 +174,7 @@ const routes = [
       {
         path: '/components/overview',
         label: 'Overview',
-        target: '',
-        wip: false
+        target: ''
       },
       {
         label: 'Actions',
@@ -231,36 +184,27 @@ const routes = [
           {
             path: '/components/actions/button',
             label: 'Button',
-            target: '',
-            wip: false
+            target: ''
           },
           {
             path: '/components/actions/disclosure',
             label: 'Disclosure',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/actions/icon-button',
             label: 'Icon button',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/actions/split-button',
             label: 'Split button',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/actions/toggle-button',
             label: 'Toggle button',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           }
         ]
       },
@@ -270,39 +214,34 @@ const routes = [
         target: '',
         items: [
           {
+            path: '/components/dialogs/drawer',
+            label: 'Drawer',
+            target: ''
+          },
+          {
             path: '/components/dialogs/dropdown',
             label: 'Dropdown',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/dialogs/info-state',
             label: 'Info state',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/dialogs/modal',
             label: 'Modal',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/dialogs/snackbar',
             label: 'Snackbar',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/dialogs/tooltip',
             label: 'Tooltip',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           }
         ]
       },
@@ -312,39 +251,38 @@ const routes = [
         target: '',
         items: [
           {
+            path: '/components/inputs/autocomplete',
+            label: 'Autocomplete',
+            target: '',
+            tag: {
+              label: 'beta',
+              color: 'blue'
+            }
+          },
+          {
             path: '/components/inputs/select',
             label: 'Select',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/inputs/selection-controls',
             label: 'Selection controls',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/inputs/slider',
             label: 'Slider',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/inputs/textfield',
             label: 'Textfield',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/inputs/input-group',
             label: 'Input group',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           }
         ]
       },
@@ -356,50 +294,42 @@ const routes = [
           {
             path: '/components/layouts/card',
             label: 'Card',
-            target: '',
-            wip: false
+            target: ''
           },
           {
             path: '/components/layouts/container',
             label: 'Container',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/layouts/grid',
             label: 'Grid',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/layouts/masonry',
             label: 'Masonry',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
+          },
+          {
+            path: '/components/layouts/overlay-container',
+            label: 'Overlay container',
+            target: ''
           },
           {
             path: '/components/layouts/separator',
             label: 'Separator',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/layouts/stack',
             label: 'Stack',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/layouts/table',
             label: 'Table',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           }
         ]
       },
@@ -411,29 +341,22 @@ const routes = [
           {
             path: '/components/loading/circular-progress',
             label: 'Circular progress',
-            target: '',
-            wip: false
+            target: ''
           },
           {
             path: '/components/loading/linear-progress',
             label: 'Linear progress',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/loading/skeleton-block',
             label: 'Skeleton block',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/loading/spinner',
             label: 'Spinner',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           }
         ]
       },
@@ -443,18 +366,19 @@ const routes = [
         target: '',
         items: [
           {
+            path: '/components/navigation/menu',
+            label: 'Menu',
+            target: ''
+          },
+          {
             path: '/components/navigation/tab',
             label: 'Tab',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/navigation/pagination',
             label: 'Pagination',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           }
         ]
       },
@@ -466,37 +390,27 @@ const routes = [
           {
             path: '/components/typography/clamp-text',
             label: 'Clamp text',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/typography/list',
             label: 'List',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/typography/prose',
             label: 'Prose',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/typography/text',
             label: 'Text',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/typography/title',
             label: 'Title',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           }
         ]
       },
@@ -508,42 +422,32 @@ const routes = [
           {
             path: '/components/other/avatar',
             label: 'Avatar',
-            target: '',
-            wip: false
+            target: ''
           },
           {
             path: '/components/other/chip',
             label: 'Chip',
-            target: '',
-            wip: false
+            target: ''
+          },
+          {
+            path: '/components/other/datetime',
+            label: 'Datetime',
+            target: ''
           },
           {
             path: '/components/other/elevator',
             label: 'Elevator',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/other/icon',
             label: 'Icon',
-            target: '',
-            wip: false,
-            deprecated: false
+            target: ''
           },
           {
             path: '/components/other/star-meter',
             label: 'Star meter',
-            target: '',
-            wip: false,
-            deprecated: false
-          },
-          {
-            path: '/components/other/theme-switch',
-            label: 'Theme switch',
-            target: '',
-            wip: false,
-            deprecated: true
+            target: ''
           }
         ]
       }

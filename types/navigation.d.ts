@@ -1,3 +1,4 @@
+import { ChipProps } from '@wonderflow/react-components'
 import { IconNames } from '@wonderflow/react-components/icons/types'
 
 export type NavigationItem = {
@@ -5,9 +6,12 @@ export type NavigationItem = {
   label: string;
   target?: string;
   expandable?: boolean;
-  wip?: boolean;
   items?: NavigationItem[];
-  deprecated?: boolean;
+  wip?: boolean;
+  tag?: {
+    label: string;
+    color?: ChipProps['color'];
+  };
 }
 
 export type NavigationGroup = {

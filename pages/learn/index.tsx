@@ -1,4 +1,5 @@
-import { getPublishedPosts } from '@/api/queries'
+import { getPublishedPosts } from '@/services/queries'
+import { FadeIn } from '@/components/fade-in'
 import { ShellLayout } from '@/components/layouts/shell'
 import { Meta } from '@/components/meta'
 import { PostCard } from '@/components/post-card'
@@ -20,17 +21,19 @@ const Learn = ({ posts }: PostsPageProps) => {
     >
       <Meta title="Learn - Wanda Design System" description="Learn how to design and develop better user experiences." />
       <ol style={{ counterReset: 'post-counter', padding: 0 }}>
-        {posts.map((post) => (
+        {posts.map((post, i) => (
           <Stack as="li" verticalPadding={80} key={post.id}>
-            <PostCard
-              externalUrl={post.externalUrl}
-              slug={post.slug}
-              title={post.title}
-              updatedAt={post.updatedAt}
-              createdAt={post.createdAt}
-              authors={post.authors}
-              excerpt={post.excerpt}
-            />
+            <FadeIn delay={`${i < 3 ? i * 0.1 : 0}s`}>
+              <PostCard
+                externalUrl={post.externalUrl}
+                slug={post.slug}
+                title={post.title}
+                updatedAt={post.updatedAt}
+                createdAt={post.createdAt}
+                authors={post.authors}
+                excerpt={post.excerpt}
+              />
+            </FadeIn>
           </Stack>
         ))}
       </ol>

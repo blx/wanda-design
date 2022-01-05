@@ -33,7 +33,7 @@ export const AuthorCard = ({
       <Avatar src={avatar} />
       <Stack rowGap={2} className={AuthorInfo}>
         <Text size={16} weight="bold">{name}</Text>
-        {role && <Text size={14} dimmed={5}>{formatRole(role)}</Text>}
+        {role && <Text responsive={false} size={14} dimmed={5}>{formatRole(role)}</Text>}
       </Stack>
     </Stack>
   )

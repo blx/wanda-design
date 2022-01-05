@@ -11,36 +11,13 @@ export default ({ children }) => (
 );
 
 Themes are a set of predefined keys which should be used whenever the color should be dynamic based on the current active theme. They are used to customize component styles to fit the specific aesthetic of a brand or product.
-Wanda provides two themes, `light` and `dark`.
+Wanda provides two themes, `light` and `dark`, both combined into a single css file.
 
-## Single theme apps
+## How to use themes
 
-If you're planning to design your app by using a single theme, you only need to include a single-file theme within you application, just choose one from the available themes.
+To enable themes you only need to include a single-file theme within you application.
 
-A theme is activated by importing the relative `css` file inside your project. Once you include the file all the theme keys will be available as custom properties, eg. `var(--global-foreground)`.
-
-```js
-import "@wonderflow/react-components/themes/light.css";
-```
-
-If needed, you can also import the `json` format of the theme and use the theme keys inside javascript:
-
-```js
-import LightTheme from "@wonderflow/react-components/themes/light.json";
-
-export default () => (
-  <div style={{ color: LightTheme["dimmed-5"] }}>I'm dimmed</div>
-);
-```
-
-<Snackbar kind="warning" title="Keep in mind">
-  json themes are only meant to be used inside javascript, you still need to
-  import the css version to enable the theme.
-</Snackbar>
-
-## Light and dark themes
-
-The previous section shows how to use a single theme inside your digital product. Howhever, if you are going to introduce both `light` and `dark` you have to include a different `css` file inside your application, instead of the specific one.
+A theme is activated by importing the `css` file inside your project. Once you include the file all the theme keys will be available as _custom properties_, eg. `var(--global-foreground)`.
 
 ```js
 import "@wonderflow/react-components/themes.css";
@@ -71,6 +48,24 @@ The above CSS works this way:
 - **light**: activated when `data-theme` is set to `light`
 - **dark**: activated when `data-theme` is set to `dark`
 - **light/dark**: automatically activated based on the user's system preferences when `data-theme` is not **"light"** or **"dark"**, or when there is not the attribute at all and the `theme.css` is included.
+
+### Advanced usage
+
+If needed, you can also import the `json` format of the theme and use the theme keys inside javascript, however this is not recommended as you should use css strings whenever possible.
+
+```jsx
+import LightTheme from "@wonderflow/react-components/themes/light.json";
+
+export default () => (
+  <div style={{ color: LightTheme["dimmed-5"] }}>I'm dimmed</div>
+  /* Use style={{ color: 'var(--dimmed-5)' }} whenever possible */
+);
+```
+
+<Snackbar kind="warning" title="Keep in mind">
+  Json themes are only meant to be used inside javascript for special use cases,
+  you still need to import the css version to enable the theme.
+</Snackbar>
 
 ## Theme switching
 

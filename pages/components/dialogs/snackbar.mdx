@@ -22,11 +22,7 @@ export default ({ children }) => (
     links={[
       {
         label: "ARIA design",
-        url: "https://www.w3.org/TR/wai-aria-1.2/#alert",
-      },
-      {
-        label: "ARIA authoring",
-        url: "https://www.w3.org/TR/wai-aria-practices-1.2/#alert",
+        url: "https://www.w3.org/TR/wai-aria-1.2/#status",
       },
     ]}
     hero={
@@ -117,9 +113,9 @@ export default () => {
 
 ## Accessibility
 
-Adheres to the [`alert` role requirements](https://www.w3.org/TR/wai-aria-1.2/#alert).
+Adheres to the [`status` role requirements](https://www.w3.org/TR/wai-aria-1.2/#status).
 
-The `Snackbar` component uses the `role="alert"` by default with inplicits `aria-live="assertive"` and `aria-atomic="true"` attributes. Add those to change the default values.
+The `Snackbar` component uses the element `output` by default with inplicits `aria-live="polite"` and `aria-atomic="true"` attributes. Add those to change the default values.
 
 ### Keyboard interactions
 

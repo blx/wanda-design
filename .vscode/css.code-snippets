@@ -18,7 +18,7 @@
   "Import Wanda css media queries from inside a component": {
 		"prefix": "media",
 		"body": [
-			"@import '@wonderflow/react-components/core/media.css';"
+			"@import '@wonderflow/react-components/core/utils/media.css';"
 		],
     "scope": "css, postcss",
 		"description": "Import Wanda css media queries from inside a component"
@@ -34,7 +34,7 @@
   "Import Wanda css mixins": {
 		"prefix": "mixins",
 		"body": [
-			"@import '@wonderflow/react-components/core/vibrancy.css';"
+			"@import '@wonderflow/react-components/core/utils/vibrancy.css';"
 		],
     "scope": "css, postcss",
 		"description": "Import Wanda css mixins from inside a component"

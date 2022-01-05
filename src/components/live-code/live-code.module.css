@@ -35,4 +35,5 @@
   position: absolute;
   top: env(--space-8);
   right: env(--space-8);
+  z-index: 2;
 }
