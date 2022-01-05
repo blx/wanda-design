@@ -15,7 +15,7 @@ export const Navigation = ({ data }: NavigationProps) => {
   const router = useRouter()
 
   const includesPath = useCallback(
-    (path) => router.asPath.includes(`${path}/`),
+    (path) => router.asPath.includes(`${path}`),
     [router.asPath]
   )
 
