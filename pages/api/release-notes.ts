@@ -6,7 +6,7 @@ import { slackClient } from '@/services/slack'
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
   const body = req.body
   const releaseData: ReleaseNote = body.data
-  const signature = req.headers['gcms-signature']
+  const signature = req.headers.Signature
   const secret = process.env.CMS_SIGNATURE
   const hasChanges = releaseData.breaking || releaseData.new || releaseData.fixes
 
