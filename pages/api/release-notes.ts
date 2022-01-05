@@ -29,14 +29,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
       type: 'section',
       text: {
         type: 'mrkdwn',
-        text: '@here'
-      }
-    },
-    {
-      type: 'section',
-      text: {
-        type: 'mrkdwn',
-        text: `${slackifyMarkdown(releaseData.content || '') || ' '}`
+        text: `@here\n${slackifyMarkdown(releaseData.content || '') || ' '}`
       }
     },
     {
