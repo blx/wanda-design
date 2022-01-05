@@ -1,3 +1,10 @@
+## [1.67.1](https://github.com/wonderflow-bv/design/compare/v1.67.0...v1.67.1) (2022-01-05)
+
+
+### Bug Fixes
+
+* update signature header ([625a971](https://github.com/wonderflow-bv/design/commit/625a971a1e80d536c20b45675b37bc246b321f05))
+
 # [1.67.0](https://github.com/wonderflow-bv/design/compare/v1.66.0...v1.67.0) (2022-01-05)
 
 
