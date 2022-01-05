@@ -7,7 +7,6 @@
   padding: env(--space-16) env(--space-40);
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-  overflow: auto;
   block-size: 100%;
   z-index: 0;
   position: relative;
