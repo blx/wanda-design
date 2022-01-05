@@ -1,13 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import slackifyMarkdown from 'slackify-markdown'
-import { verifyWebhookSignature } from '@graphcms/utils'
 import { slackClient } from '@/services/slack'
 
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
   const body = req.body
   const releaseData: ReleaseNote = body.data
-  const signature = req.headers.Signature
-  const secret = process.env.CMS_SIGNATURE
   const hasChanges = releaseData.breaking || releaseData.new || releaseData.fixes
 
   const changesTemplate = `This release includes:\n\n
@@ -69,20 +66,14 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
     }
   ]
 
-  const isValid = verifyWebhookSignature({ body, signature, secret })
-
-  if (isValid) {
-    try {
-      const result = await slackClient.chat.postMessage({
-        channel: process.env.SLACK_RELEASE_CHANNEL,
-        text: 'New release',
-        blocks: slackMessage
-      })
-      res.status(200).send({ result })
-    } catch (err) {
-      res.status(500).send({ error: 'failed to fetch data' })
-    }
+  try {
+    const result = await slackClient.chat.postMessage({
+      channel: process.env.SLACK_RELEASE_CHANNEL,
+      text: 'New release',
+      blocks: slackMessage
+    })
+    res.status(200).send({ result })
+  } catch (err) {
+    res.status(500).send({ error: 'failed to fetch data' })
   }
-
-  res.status(500).send({ error: 'unverified signature' })
 }
