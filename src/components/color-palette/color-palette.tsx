@@ -34,7 +34,7 @@ export const ColorPalette = ({
     <Stack rowGap={16} className={ColoPaletteClass}>
       <Stack direction="row" fill={false} verticalAlign="center" horizontalAlign="space-between">
         <Title as="span" level="5">{title}</Title>
-        <Stack direction="row" fill={false} columnGap={8} verticalAlign="middle">
+        <Stack direction="row" fill={false} columnGap={8} verticalAlign="center">
           <Text as="label" htmlFor={uid('palette-color-format')} weight="bold" size={14}>{showHex ? 'HEX' : 'HSL'}</Text>
           <Toggle id={uid('palette-color-format')} onClick={() => setShowHex(!showHex)} dimension="small" />
         </Stack>

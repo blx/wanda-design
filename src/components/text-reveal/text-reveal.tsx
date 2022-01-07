@@ -13,12 +13,12 @@ export const TextReveal: FC<TextRevealProps> = ({
   style,
   ...otherProps
 }) => {
-  const ref = useRef<HTMLSpanElement>(null)
   const [visible, setVisible] = useState<boolean>(false)
+  const ref = useRef<HTMLSpanElement>(null)
   const [inViewport] = useInViewport(ref, {
     root: null,
     rootMargin: '0px',
-    threshold: 0
+    threshold: 0.8
   })
 
   const dynamicStyle: CSSProperties = {
