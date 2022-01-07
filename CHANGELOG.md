@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/wonderflow-bv/design/compare/v3.0.1...v3.0.2) (2022-01-07)
+
+
+### Bug Fixes
+
+* **text-reveal:** move IO to PostCard ([38164ba](https://github.com/wonderflow-bv/design/commit/38164babbd091a575eb64a050a0a2bd2bc24b169))
+
 ## [3.0.1](https://github.com/wonderflow-bv/design/compare/v3.0.0...v3.0.1) (2022-01-07)
 
 
