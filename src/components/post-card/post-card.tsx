@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { PostCard as PostCardClass, Authors } from './post-card.module.css'
 import { ClampText, Elevator, Stack, Text, Title, Datetime } from '@wonderflow/react-components'
 import { AuthorCard } from '@/components/author-card'
 import tkns from '@wonderflow/tokens/platforms/web/tokens.json'
-// import { TextReveal } from '@/components/text-reveal'
+import { useInViewport } from 'ahooks'
+import { TextReveal } from '@/components/text-reveal'
 
 type PostCardProps = PropsWithClass & Pick<
   PostType,
@@ -25,12 +26,20 @@ export const PostCard = ({
 }: PostCardProps) => {
   const [color, setColor] = useState<string>('var(--highlight-gray-foreground)')
   const [isMedium, setIsMedium] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false)
+  const ref = useRef<HTMLElement>(null)
+  const [inViewport] = useInViewport(ref, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.8
+  })
 
   useEffect(() => {
     window.matchMedia(`(min-width: ${tkns.breakpoint.medium})`).addEventListener('change', ({ matches }) => {
       setIsMedium(matches)
     })
-  }, [])
+    inViewport && setVisible(true)
+  }, [inViewport])
 
   useEffect(() => {
     const colors = [
@@ -47,7 +56,7 @@ export const PostCard = ({
   }, [])
 
   return (
-    <article style={{ '--c': color }} className={clsx(PostCardClass, className)} {...props}>
+    <article ref={ref} style={{ '--c': color }} className={clsx(PostCardClass, className)} {...props}>
       <Link href={externalUrl || `/learn/${encodeURIComponent(slug)}`} passHref>
         <Stack
           as="a"
@@ -66,9 +75,9 @@ export const PostCard = ({
               </Text>
             </Stack>
             <Title as="h2" level={isMedium ? '2' : '3'}>
-              {/* <TextReveal> */}
-              <ClampText rows={3}>{ title }</ClampText>
-              {/* </TextReveal> */}
+              <TextReveal play={visible}>
+                <ClampText rows={3}>{ title }</ClampText>
+              </TextReveal>
             </Title>
           </Stack>
           <Text maxWidth="50ch" dimmed={6}>
