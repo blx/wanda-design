@@ -1,3 +1,12 @@
+## [3.0.1](https://github.com/wonderflow-bv/design/compare/v3.0.0...v3.0.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* color palette color toggle alignment ([7d70753](https://github.com/wonderflow-bv/design/commit/7d70753ceb5bd1d5bd4c244be2a73e1901051e0d))
+* **live-area:** fix index layer ([9b0c70e](https://github.com/wonderflow-bv/design/commit/9b0c70e3755bb1aad1806460417257d3d8677790))
+* temporary disable TextReveal on PostCard ([286e6da](https://github.com/wonderflow-bv/design/commit/286e6da9bf024c3198f1b7c9abc55533d7b644bd))
+
 # [3.0.0](https://github.com/wonderflow-bv/design/compare/v2.0.0...v3.0.0) (2022-01-05)
 
 
