@@ -1,5 +1,5 @@
 import { MdxLayout } from "@/components/layouts/mdx";
-import { List } from "@wonderflow/react-components";
+import { List, Text } from "@wonderflow/react-components";
 
 export default ({ children }) => (
   <MdxLayout
@@ -85,82 +85,50 @@ Here you can find the full list of the elements that have a predefined elevetaio
 <table style={{ width: "100%", textAlign: "match-parent" }}>
   <thead>
     <tr>
-      <th scope="col">Component</th>
-      <th scope="col">Layer</th>
+      <th scope="col">
+        <Text textAlign="start">Component</Text>
+      </th>
+      <th scope="col">
+        <Text textAlign="end">Layer</Text>
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Tooltip</td>
-      <td>2</td>
+      <td>
+        <Text textAlign="end">2</Text>
+      </td>
     </tr>
     <tr>
       <td>Dropdown</td>
-      <td>2</td>
+      <td>
+        <Text textAlign="end">2</Text>
+      </td>
     </tr>
     <tr>
       <td>Floating snackbars</td>
-      <td>3</td>
+      <td>
+        <Text textAlign="end">3</Text>
+      </td>
     </tr>
     <tr>
       <td>Floating buttons</td>
-      <td>3</td>
+      <td>
+        <Text textAlign="end">3</Text>
+      </td>
     </tr>
     <tr>
       <td>Modal drawers</td>
-      <td>4</td>
+      <td>
+        <Text textAlign="end">4</Text>
+      </td>
     </tr>
     <tr>
       <td>Modal dialogs</td>
-      <td>4</td>
+      <td>
+        <Text textAlign="end">4</Text>
+      </td>
     </tr>
   </tbody>
 </table>
-<!--
-export const columns = [
-  {
-    name: "Component",
-    selector: (row) => row.name,
-  },
-  {
-    selector: (row) => row.layer,
-    name: "Layer",
-    width: "80px",
-    right: true,
-  },
-];
-
-export const data = [
-  {
-    id: 1,
-    name: "Tooltip",
-    layer: 1,
-  },
-  {
-    id: 2,
-    name: "Dropdown",
-    layer: 2,
-  },
-  {
-    id: 3,
-    name: "Floating snackbars",
-    layer: 3,
-  },
-  {
-    id: 4,
-    name: "Floating buttons",
-    layer: 3,
-  },
-  {
-    id: 5,
-    name: "Modal drawers",
-    layer: 4,
-  },
-  {
-    id: 6,
-    name: "Modal dialogs",
-    layer: 4,
-  },
-];
-
-<Table columns={columns} data={data} /> -->
