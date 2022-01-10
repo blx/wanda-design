@@ -1,3 +1,11 @@
+## [3.0.3](https://github.com/wonderflow-bv/design/compare/v3.0.2...v3.0.3) (2022-01-10)
+
+
+### Bug Fixes
+
+* temp removing bugged Table ([c81ff81](https://github.com/wonderflow-bv/design/commit/c81ff81c777e448c18bf6fb7bfcd3374a5d01cbb))
+* update deps ([6e1db5f](https://github.com/wonderflow-bv/design/commit/6e1db5fff2a81264e71958a0ef81473875df33ec))
+
 ## [3.0.2](https://github.com/wonderflow-bv/design/compare/v3.0.1...v3.0.2) (2022-01-07)
 
 
