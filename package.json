@@ -19,10 +19,9 @@
   },
   "homepage": "https://github.com/wonderflow-bv/design#readme",
   "browserslist": [
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari versions",
-    "last 2 Edge versions"
+    "> 0.2%",
+    "not dead",
+    "not op_mini all"
   ],
   "scripts": {
     "start": "next dev",
