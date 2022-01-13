@@ -37,13 +37,6 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
       }
     },
     {
-      type: 'section',
-      text: {
-        type: 'mrkdwn',
-        text: '<https://design.wonderflow.ai/release-notes|Full release notes>'
-      }
-    },
-    {
       type: 'divider'
     },
     {
@@ -60,7 +53,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
         },
         {
           type: 'mrkdwn',
-          text: 'design.wonderflow.ai'
+          text: '<https://design.wonderflow.ai/release-notes|Full release notes>'
         }
       ]
     }
