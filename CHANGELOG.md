@@ -1,3 +1,13 @@
+## [3.0.4](https://github.com/wonderflow-bv/design/compare/v3.0.3...v3.0.4) (2022-01-13)
+
+
+### Bug Fixes
+
+* temp fix preset-env ([50278d9](https://github.com/wonderflow-bv/design/commit/50278d9a362edf3f44dba4fd578803ade364263b))
+* update deps ([aa02c06](https://github.com/wonderflow-bv/design/commit/aa02c063a998ee9cc9ad5f6bc1fb84c0c348bbfa))
+* update postcss config ([71b2a5d](https://github.com/wonderflow-bv/design/commit/71b2a5d7cd23f5318611f56ec1b0eb69d4398503))
+* update release notes template ([1c7d8f5](https://github.com/wonderflow-bv/design/commit/1c7d8f5fec92d560defb953c9bbed70cd282e142))
+
 ## [3.0.3](https://github.com/wonderflow-bv/design/compare/v3.0.2...v3.0.3) (2022-01-10)
 
 
