@@ -6,28 +6,28 @@ export const Hero = () => {
   const columns: any = [
     {
       name: 'ID',
-      selector: (row) => row.id,
+      selector: (row: any) => row.id,
       width: '80px',
       sortable: true,
       reorder: true
     },
     {
       name: 'First column',
-      selector: (row) => row.someKey,
+      selector: (row: any) => row.someKey,
       sortable: true,
       reorder: true,
       hide: 'sm'
     },
     {
       name: 'Second column',
-      selector: (row) => row.anotherKey,
+      selector: (row: any) => row.anotherKey,
       sortable: true,
       reorder: true,
       hide: 'md'
     },
     {
       name: 'Value',
-      selector: (row) => row.value,
+      selector: (row: any) => row.value,
       sortable: true,
       reorder: true,
       right: true
