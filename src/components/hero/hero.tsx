@@ -137,18 +137,18 @@ export const Hero = () => {
       <Stack rowGap={160} className={Content}>
         <Stack rowGap={32} horizontalAlign="start" inline>
           <Title level="display">Wanda</Title>
+          <Table
+            noHeader={false}
+            title={<Title level="5">Sample Title</Title>}
+            columns={columns}
+            data={data}
+            selectableRows
+            actions={<Button kind="secondary">See more</Button>}
+            contextActions={<Button>Delete</Button>}
+            pagination
+            paginationPerPage={3}
+          />
           <Text size={28} maxWidth="50ch">
-            <Table
-              noHeader={false}
-              title={<Title level="5">Sample Title</Title>}
-              columns={columns}
-              data={data}
-              selectableRows
-              actions={<Button kind="secondary">See more</Button>}
-              contextActions={<Button>Delete</Button>}
-              pagination
-              paginationPerPage={3}
-            />
             Wanda is Wonderflow’s open-source design system built for digital products and experiences.
           </Text>
         </Stack>
